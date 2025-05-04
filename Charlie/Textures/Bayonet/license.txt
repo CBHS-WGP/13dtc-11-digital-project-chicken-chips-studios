@@ -1,0 +1,11 @@
+Model Information:
+* title:	M7 Bayonet and scabbard
+* source:	https://sketchfab.com/3d-models/m7-bayonet-and-scabbard-9d9d4c7f7baa4adeaef0f0d53cff0271
+* author:	teejlesdoodles (https://sketchfab.com/teejlesdoodles)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "M7 Bayonet and scabbard" (https://sketchfab.com/3d-models/m7-bayonet-and-scabbard-9d9d4c7f7baa4adeaef0f0d53cff0271) by teejlesdoodles (https://sketchfab.com/teejlesdoodles) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

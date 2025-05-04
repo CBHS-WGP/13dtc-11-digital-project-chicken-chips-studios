@@ -1,0 +1,155 @@
+[gd_scene load_steps=21 format=3 uid="uid://cydmgo8i3qo0x"]
+
+[ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
+[ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8wcif"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vlfef"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dcsjm"]
+animation = &"Returning"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rvfyq"]
+animation = &"Swing_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oj5la"]
+animation = &"Swing_2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b0e1a"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h06if"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"swinging == true"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q7ych"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"swinging == true"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xafsl"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"swinging == true"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5b5ef"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"swinging == false"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sseoh"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xpc1d"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"swinging == false"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7fwhw"]
+states/RESET/node = SubResource("AnimationNodeAnimation_vlfef")
+states/RESET/position = Vector2(367, 100)
+states/Returning/node = SubResource("AnimationNodeAnimation_dcsjm")
+states/Returning/position = Vector2(342, 202)
+states/Swing_1/node = SubResource("AnimationNodeAnimation_rvfyq")
+states/Swing_1/position = Vector2(520, 202)
+states/Swing_2/node = SubResource("AnimationNodeAnimation_oj5la")
+states/Swing_2/position = Vector2(675, 108)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_b0e1a"), "RESET", "Swing_1", SubResource("AnimationNodeStateMachineTransition_h06if"), "Swing_1", "Swing_2", SubResource("AnimationNodeStateMachineTransition_q7ych"), "Swing_2", "Swing_1", SubResource("AnimationNodeStateMachineTransition_xafsl"), "Swing_1", "Returning", SubResource("AnimationNodeStateMachineTransition_5b5ef"), "Returning", "RESET", SubResource("AnimationNodeStateMachineTransition_sseoh"), "Swing_2", "RESET", SubResource("AnimationNodeStateMachineTransition_xpc1d")]
+
+[sub_resource type="Animation" id="Animation_mdveg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gfklu"]
+resource_name = "Returning"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0, 0), Vector3(1, -0.2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uw7tg"]
+resource_name = "Swing_1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0662201, 0.510356, 0), Vector3(1.5, 0, 0), Vector3(1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p2tyt"]
+resource_name = "Swing_2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0, 0), Vector3(-0.5, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_csurt"]
+_data = {
+&"RESET": SubResource("Animation_mdveg"),
+&"Returning": SubResource("Animation_gfklu"),
+&"Swing_1": SubResource("Animation_uw7tg"),
+&"Swing_2": SubResource("Animation_p2tyt")
+}
+
+[node name="Held Item" type="Node3D"]
+script = ExtResource("1_dneek")
+
+[node name="Cube" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
+mesh = SubResource("BoxMesh_8wcif")
+
+[node name="Bayonet" parent="." instance=ExtResource("1_qo06o")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="Bayonet"]
+tree_root = SubResource("AnimationNodeStateMachine_7fwhw")
+anim_player = NodePath("../AnimationPlayer")
+"parameters/conditions/swinging == false" = false
+"parameters/conditions/swinging == true" = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bayonet"]
+libraries = {
+&"": SubResource("AnimationLibrary_csurt")
+}

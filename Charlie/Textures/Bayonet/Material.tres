@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://c06gxbgp5mywp"]
+
+[ext_resource type="Texture2D" uid="uid://cntx36k0gfqmq" path="res://Charlie/Inventory/Textures/Bayonet/textures/Material_baseColor.jpeg" id="1_shec4"]
+[ext_resource type="Texture2D" uid="uid://bua8hrw0n1buv" path="res://Charlie/Inventory/Textures/Bayonet/textures/Material_metallicRoughness.png" id="2_ubpt5"]
+[ext_resource type="Texture2D" uid="uid://bnsfu35ack2xh" path="res://Charlie/Inventory/Textures/Bayonet/textures/Material_normal.png" id="3_mo4pg"]
+
+[resource]
+resource_name = "Material"
+depth_draw_mode = 2
+no_depth_test = true
+albedo_texture = ExtResource("1_shec4")
+metallic = 1.0
+metallic_texture = ExtResource("2_ubpt5")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_ubpt5")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.01
+emission_operator = 1
+normal_enabled = true
+normal_texture = ExtResource("3_mo4pg")
+ao_enabled = true
+ao_light_affect = 0.65
+ao_texture = ExtResource("2_ubpt5")
+refraction_scale = 0.6
+refraction_texture = ExtResource("2_ubpt5")
