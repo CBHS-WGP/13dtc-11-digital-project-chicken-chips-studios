@@ -1,13 +1,14 @@
 [gd_scene load_steps=51 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
-[ext_resource type="Texture2D" uid="uid://cntx36k0gfqmq" path="res://Charlie/Textures/Bayonet/textures/Material_baseColor.jpeg" id="2_7d2he"]
+[ext_resource type="Texture2D" uid="uid://db38221a6ihup" path="res://Charlie/Textures/Grass.jpg" id="2_7d2he"]
 [ext_resource type="ArrayMesh" uid="uid://cxk2mgcm1q0j7" path="res://Charlie/Models/topoexport_modeling_SW_595760_5164943_NE_596597_5165476.obj" id="2_ogca2"]
 [ext_resource type="Texture2D" uid="uid://d4jgeasccu4l2" path="res://Charlie/Models/topoexport_vectorial_SW_595396_5164750_NE_596658_5165465.svg" id="3_f21sq"]
 [ext_resource type="Material" uid="uid://cwp0kckoiim6m" path="res://Charlie/Preset_Materials/Black_Material.tres" id="4_7d2he"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xb2o"]
-albedo_color = Color(0.517647, 0.517647, 0.517647, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7d2he"]
+albedo_texture = ExtResource("2_7d2he")
+uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iy2vf"]
 size = Vector2(50, 50)
@@ -174,11 +175,11 @@ data = PackedVector3Array(-3, 0.5, 3.5, 3, 0.5, 3.5, -3, -0.5, 3.5, 3, 0.5, 3.5,
 [node name="Test_Map" type="Node3D"]
 
 [node name="Wayne" parent="." instance=ExtResource("1_tcvu6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11561, -40.0199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.29367, -0.316242)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-material_override = SubResource("StandardMaterial3D_2xb2o")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.73264, 0)
+material_override = SubResource("StandardMaterial3D_7d2he")
 mesh = SubResource("PlaneMesh_iy2vf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
