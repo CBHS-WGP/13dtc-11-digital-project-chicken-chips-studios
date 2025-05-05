@@ -32,7 +32,6 @@ tonemap_mode = 2
 glow_enabled = true
 fog_mode = 1
 fog_density = 1.0
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.06
 volumetric_fog_albedo = Color(0.481789, 0.481789, 0.481789, 1)
 volumetric_fog_emission = Color(0.12549, 0, 0.00784314, 1)
@@ -178,6 +177,7 @@ data = PackedVector3Array(-3, 0.5, 3.5, 3, 0.5, 3.5, -3, -0.5, 3.5, 3, 0.5, 3.5,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11561, -40.0199)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("StandardMaterial3D_2xb2o")
 mesh = SubResource("PlaneMesh_iy2vf")
 

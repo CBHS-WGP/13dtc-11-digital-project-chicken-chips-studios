@@ -50,35 +50,31 @@ func walkandrun():
 	#print(input_dir)
 	print(speed)
 	#print(velocity)
+	#velocity.x = direction.x * speed
+	#velocity.z = direction.z * speed
+	velocity.x = move_toward(velocity.x, speed, 0)
+	velocity.z = move_toward(velocity.z, speed, 0)
 	if direction == Vector3(0, 0, 1):
 		if speed <= MAX_SPEED:
 			speed = speed + acceleration
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
 	
 	elif direction:
 		if speed <= MAX_SPEED:
 			speed = speed + acceleration
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
 		if speed > MAX_SPEED:
-			speed = speed - acceleration
-			velocity.x = move_toward(velocity.x, 0, acceleration)
-			velocity.z = move_toward(velocity.z, 0, acceleration)
+			speed = MAX_SPEED
 	else:
 		if speed > 0:
-			# creates slight pull in one direction!
 			speed = speed - acceleration
-			velocity.x = move_toward(velocity.x, 0, acceleration)
-			velocity.z = move_toward(velocity.z, 0, acceleration)
 		else:
 			speed = 0
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
+		#speed = 0
+		#velocity.x = move_toward(velocity.x, 0, MAX_SPEED)
+		#velocity.z = move_toward(velocity.z, 0, MAX_SPEED)
+		#Try adding if S is used, make speed slower
+		#ease (floatx ,0.4)
 "
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_24ntd"]
