@@ -12,7 +12,7 @@ var MAX_SPEED = 5
 var acceleration = 0.2
 var MAX_BACK_SPEED = 3
 const JUMP_VELOCITY = 4.5
-var gravity = 9.81
+var gravity = 9.81 * 1.5
 var input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
 var direction = Vector3(0, 0, 0)	
 #@export var inv: Inv
@@ -88,6 +88,7 @@ radius = 0.35
 height = 1.8
 
 [node name="Wayne" type="CharacterBody3D"]
+floor_max_angle = 0.523599
 script = SubResource("GDScript_yc2fa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
