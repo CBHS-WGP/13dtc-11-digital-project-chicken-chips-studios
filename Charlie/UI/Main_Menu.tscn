@@ -382,6 +382,27 @@ offset_right = 140.0
 offset_bottom = 1.0
 text = "Window Size"
 
+[node name="OptionButton" type="OptionButton" parent="Options/Options_Box"]
+layout_mode = 0
+offset_left = -348.0
+offset_top = -37.0
+offset_right = -221.0
+offset_bottom = -6.0
+item_count = 3
+popup/item_0/text = "Near"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Far"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Options/Options_Box/OptionButton"]
+layout_mode = 0
+offset_top = -22.0
+offset_right = 40.0
+offset_bottom = 1.0
+text = "Level of Detail"
+
 [node name="Back" type="Button" parent="Options"]
 layout_mode = 0
 offset_left = 1926.0
