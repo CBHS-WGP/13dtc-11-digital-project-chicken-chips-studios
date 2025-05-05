@@ -54,7 +54,7 @@ advance_condition = &"swinging == false"
 states/RESET/node = SubResource("AnimationNodeAnimation_vlfef")
 states/RESET/position = Vector2(367, 100)
 states/Returning/node = SubResource("AnimationNodeAnimation_dcsjm")
-states/Returning/position = Vector2(342, 202)
+states/Returning/position = Vector2(348, 202)
 states/Swing_1/node = SubResource("AnimationNodeAnimation_rvfyq")
 states/Swing_1/position = Vector2(520, 202)
 states/Swing_2/node = SubResource("AnimationNodeAnimation_oj5la")

@@ -1,0 +1,437 @@
+[gd_scene load_steps=13 format=3 uid="uid://cvjmminf2yfon"]
+
+[ext_resource type="Texture2D" uid="uid://b3y3l2jvdtx7m" path="res://Charlie/Textures/Sun.jpg" id="1_6r2sw"]
+[ext_resource type="Script" uid="uid://casg4qwba6q88" path="res://Charlie/UI/Main_Menu_Script.gd" id="1_lgnsp"]
+[ext_resource type="Texture2D" uid="uid://bhtvgdgw2w1fd" path="res://Charlie/Textures/Chip_Logo.png" id="2_k8rte"]
+
+[sub_resource type="Animation" id="Animation_xtcex"]
+resource_name = "Options_Close"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons/Exit:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-248, -138), Vector2(257, -138)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/Options:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-248, -261), Vector2(191, -261)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/Play:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-248, -386), Vector2(84, -386)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/TextureRect:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Options/Back:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1379, 211), Vector2(1926, 211)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Options/Options_Box:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(957, 518.5), Vector2(957, 1463)]
+}
+
+[sub_resource type="Animation" id="Animation_i5rp4"]
+resource_name = "Options_Open"
+length = 1.5
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons/Exit:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(257, -138), Vector2(-248, -138)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/Options:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(191, -261), Vector2(-248, -261)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/Play:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(84, -386), Vector2(-248, -386)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/TextureRect:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Options/Back:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1926, 211), Vector2(1373, 211)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Options/Options_Box:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(957, 1463), Vector2(957, 518.5)]
+}
+
+[sub_resource type="Animation" id="Animation_b6ttj"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_mn04e"]
+resource_name = "Startup_Animation"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Sun:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/Play:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.8, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-248, -386), Vector2(84, -386)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/Exit:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.8, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-248, -138), Vector2(257, -138)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Buttons/Options:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.8, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-248, -261), Vector2(191, -261)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buttons/TextureRect:scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.8, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e3eqo"]
+_data = {
+&"Options_Close": SubResource("Animation_xtcex"),
+&"Options_Open": SubResource("Animation_i5rp4"),
+&"RESET": SubResource("Animation_b6ttj"),
+&"Startup_Animation": SubResource("Animation_mn04e")
+}
+
+[sub_resource type="Theme" id="Theme_b67lw"]
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_ohe8q"]
+default_font_size = 23
+
+[sub_resource type="Gradient" id="Gradient_wu41k"]
+offsets = PackedFloat32Array(0.09, 0.39, 0.72)
+colors = PackedColorArray(0, 0, 0, 1, 0.31802, 0.31802, 0.31802, 0.941176, 0.890196, 0.890196, 0.890196, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8g7j4"]
+gradient = SubResource("Gradient_wu41k")
+fill = 1
+fill_from = Vector2(0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_lgnsp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e3eqo")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -957.5
+offset_top = -538.0
+offset_right = 957.5
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sun" type="Sprite2D" parent="ColorRect"]
+position = Vector2(960, 467)
+scale = Vector2(0.51278, 0.52766)
+texture = ExtResource("2_k8rte")
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/Sun"]
+offset_left = -454.0
+offset_top = 144.411
+offset_right = 433.0
+offset_bottom = 260.411
+theme = SubResource("Theme_b67lw")
+text = "Created by Chicken Chips"
+minimap_width = 150
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -957.0
+offset_top = -538.5
+offset_right = 957.0
+offset_bottom = 538.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options_Box" type="Control" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 924.5
+offset_bottom = 964.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backround" type="Sprite2D" parent="Options/Options_Box"]
+scale = Vector2(0.4, 0.357)
+texture = ExtResource("1_6r2sw")
+
+[node name="HSlider" type="HSlider" parent="Options/Options_Box"]
+layout_mode = 2
+offset_left = -328.0
+offset_top = 163.25
+offset_right = 323.0
+offset_bottom = 179.25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Options_Box"]
+visible = false
+layout_mode = 0
+offset_left = -337.0
+offset_top = -260.0
+offset_right = 314.0
+offset_bottom = 376.0
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Options/Options_Box"]
+layout_mode = 0
+offset_left = -362.0
+offset_top = -169.75
+offset_right = -178.0
+offset_bottom = -125.75
+theme = SubResource("Theme_ohe8q")
+button_pressed = true
+text = "Fullscreen"
+alignment = 1
+expand_icon = true
+
+[node name="Window_Sizes" type="OptionButton" parent="Options/Options_Box"]
+layout_mode = 0
+offset_left = -348.0
+offset_top = -97.0
+offset_right = -221.0
+offset_bottom = -66.0
+selected = 0
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1842x1036"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "256x144"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="Options/Options_Box/Window_Sizes"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -22.0
+offset_right = 140.0
+offset_bottom = 1.0
+text = "Window Size"
+
+[node name="Back" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 1926.0
+offset_top = 211.0
+offset_right = 2149.0
+offset_bottom = 285.0
+text = "Back"
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Buttons"]
+layout_mode = 0
+offset_top = -429.0
+offset_right = 538.0
+pivot_offset = Vector2(0, 429)
+texture = SubResource("GradientTexture2D_8g7j4")
+
+[node name="Play" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = -386.0
+offset_right = 307.0
+offset_bottom = -312.0
+text = "Play"
+
+[node name="Options" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = -261.0
+offset_right = 414.0
+offset_bottom = -187.0
+text = "Options"
+
+[node name="Exit" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = -138.0
+offset_right = 480.0
+offset_bottom = -64.0
+text = "Exit"
+
+[connection signal="toggled" from="Options/Options_Box/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="Options/Options_Box/Window_Sizes" to="." method="_on_window_sizes_item_selected"]
+[connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]
