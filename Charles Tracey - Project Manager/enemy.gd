@@ -5,6 +5,8 @@ extends CharacterBody3D
 var speed = 2
 var gravity = 9.8
 
+
+
 # Code which makes the enemy move towards the player
 func _process(delta):
 	if not is_on_floor():
@@ -17,6 +19,7 @@ func _process(delta):
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
 	
+	
 func target_position(target):
 	nav.set_target_position(target)
-	#look_at(target_location)
+	#look_at(target_position)
