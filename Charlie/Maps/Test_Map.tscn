@@ -11,9 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bnsfu35ack2xh" path="res://Charlie/Textures/Bayonet/textures/Material_normal.png" id="9_nviu8"]
 [ext_resource type="Texture2D" uid="uid://d3nv1gvv7dvih" path="res://Charlie/Textures/Bayonet/textures/MTL_Scabbard_metallicRoughness.png" id="10_rbrm6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7d2he"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nviu8"]
 albedo_texture = ExtResource("2_7d2he")
-uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iy2vf"]
 size = Vector2(50, 50)
@@ -55,7 +54,8 @@ agent_max_climb = 1.0
 agent_max_slope = 60.0
 edge_max_error = 2.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moi4y"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyc4n"]
+albedo_color = Color(0.517647, 0.556863, 0, 1)
 albedo_texture = ExtResource("2_7d2he")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ogca2"]
@@ -221,8 +221,8 @@ script = ExtResource("1_bbdrk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11009, -43.277)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.73264, 0)
-material_override = SubResource("StandardMaterial3D_7d2he")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4953, 2.73264, 0)
+material_override = SubResource("StandardMaterial3D_nviu8")
 mesh = SubResource("PlaneMesh_iy2vf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -262,7 +262,7 @@ navigation_mesh = SubResource("NavigationMesh_d4sa0")
 
 [node name="World" type="MeshInstance3D" parent="Enemies/Map_1"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.89502, 0, -2.5)
-material_override = SubResource("StandardMaterial3D_moi4y")
+material_override = SubResource("StandardMaterial3D_kyc4n")
 mesh = ExtResource("2_ogca2")
 skeleton = NodePath("../../..")
 
@@ -470,7 +470,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.6671, 0, -51.9899)
 mesh = SubResource("SphereMesh_y6h2w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sphere"]
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mru0c")
