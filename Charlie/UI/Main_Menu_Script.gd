@@ -1,9 +1,9 @@
 extends Control
 
 var dictionaryContainer = {
-	0: Vector2(1920, 1080),
-	1: Vector2(1842, 1036),
-	2: Vector2(1280, 720),
+	0: Vector2(1280, 720),
+	1: Vector2(1920, 1080),
+	2: Vector2(1842, 1036),
 	3: Vector2(256, 144)
 	}
 func _ready():
