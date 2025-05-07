@@ -17,6 +17,6 @@ func _process(delta):
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
 	
-func update_target_location(target_location):
-	nav.set_target_position(target_location)
+func target_position(target):
+	nav.set_target_position(target)
 	#look_at(target_location)
