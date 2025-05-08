@@ -259,6 +259,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.65076, -48.7446)
 [node name="Map_1" type="NavigationRegion3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -527.113, -72.5, 214.888)
 navigation_mesh = SubResource("NavigationMesh_d4sa0")
+enabled = false
 
 [node name="World" type="MeshInstance3D" parent="Enemies/Map_1"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.89502, 0, -2.5)
