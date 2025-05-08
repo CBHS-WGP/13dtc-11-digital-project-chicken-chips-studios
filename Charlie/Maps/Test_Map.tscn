@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b5uavx16u4g8q"]
+[gd_scene load_steps=63 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="Script" uid="uid://dmy8d2l1ecg8" path="res://Charlie/Maps/Enemy_NAV_Script.gd" id="1_bbdrk"]
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
@@ -185,6 +185,9 @@ size = Vector3(6, 1, 7)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xt2x3"]
 data = PackedVector3Array(-3, 0.5, 3.5, 3, 0.5, 3.5, -3, -0.5, 3.5, 3, 0.5, 3.5, 3, -0.5, 3.5, -3, -0.5, 3.5, 3, 0.5, -3.5, -3, 0.5, -3.5, 3, -0.5, -3.5, -3, 0.5, -3.5, -3, -0.5, -3.5, 3, -0.5, -3.5, 3, 0.5, 3.5, 3, 0.5, -3.5, 3, -0.5, 3.5, 3, 0.5, -3.5, 3, -0.5, -3.5, 3, -0.5, 3.5, -3, 0.5, -3.5, -3, 0.5, 3.5, -3, -0.5, -3.5, -3, 0.5, 3.5, -3, -0.5, 3.5, -3, -0.5, -3.5, 3, 0.5, 3.5, -3, 0.5, 3.5, 3, 0.5, -3.5, -3, 0.5, 3.5, -3, 0.5, -3.5, 3, 0.5, -3.5, -3, -0.5, 3.5, 3, -0.5, 3.5, -3, -0.5, -3.5, 3, -0.5, 3.5, 3, -0.5, -3.5, -3, -0.5, -3.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6n0ow"]
+size = Vector3(10, 1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl1fk"]
 transparency = 1
@@ -465,6 +468,10 @@ mesh = SubResource("BoxMesh_rbrm6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Map_1/Mapping-Roads/MeshInstance3D21/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_nviu8")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Enemies/Map_1/Mapping-Roads" groups=["Ceiling"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.67565, 3.19487, -44.6927)
+mesh = SubResource("BoxMesh_6n0ow")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.6671, 0, -51.9899)
