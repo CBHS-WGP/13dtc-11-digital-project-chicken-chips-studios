@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 @onready var nav = $NavigationAgent3D
-var speed = 2
+var speed = 0
 var gravity = 9.8
 
 
@@ -25,6 +25,9 @@ func target_position(target):
 	#look_at(target_position)
 
 
-func _on_area_3d_body_entered(body):
-	if body.is.in.group("player"):
+
+
+func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
+	if body.is_in_group("player"):
 		print("entered")
+		speed = 2
