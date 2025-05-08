@@ -19,11 +19,10 @@ var direction = Vector3(0, 0, 0)
 
 
 func _physics_process(delta):
+	print(Global.current_areas)
 	# Add the gravity.
-	#print(MAX_SPEED)
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		#print(crouching)
 	# Handle jump.
 	if Input.is_action_just_pressed(\"Space\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -71,9 +70,6 @@ func _physics_process(delta):
 func walkandrun():
 	input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
 	direction = ($Camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	#print(input_dir)
-	#print(speed)
-	#print(velocity)
 	if direction:
 		#Speeds the player up to walking speed
 		if speed <= MAX_SPEED:
@@ -101,17 +97,17 @@ func walkandrun():
 			velocity.z = direction.z * speed
 
 
-func _on_crouch_toggle_allow_area_entered(area):
-	if area.is_in_group(\"Ceiling\"):
-		Global.current_areas = Global.current_areas + 1
-
+#Functions that update if there are any objects above the players head!
 func _on_crouch_toggle_allow_area_exited(area):
 	if area.is_in_group(\"Ceiling\"):
 		Global.current_areas = Global.current_areas - 1
+func _on_crouch_toggle_allow_area_entered(area):
+	if area.is_in_group(\"Ceiling\"):
+		Global.current_areas = Global.current_areas + 1
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti5e3"]
-size = Vector3(1, 0.8, 1)
+size = Vector3(0.9, 0.9, 0.9)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ti5e3"]
 radius = 0.35
@@ -222,7 +218,7 @@ tracks/1/enabled = true
 tracks/1/path = NodePath("TopBean")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.9, 0, 0.6, 1, 0, 1.5496, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.9, 0, 0.3, 1, 0, 1.5496, 0)
 tracks/2/type = "position_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -250,9 +246,11 @@ floor_max_angle = 0.523599
 script = SubResource("GDScript_yc2fa")
 
 [node name="Crouch_Toggle_Allow" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89589, 0)
+collision_layer = 8
+collision_mask = 8
 
 [node name="Box" type="CollisionShape3D" parent="Crouch_Toggle_Allow"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68607, 0)
 shape = SubResource("BoxShape3D_ti5e3")
 
 [node name="TopBean" type="CollisionShape3D" parent="."]
