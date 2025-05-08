@@ -13,7 +13,6 @@ var acceleration = 0.2
 var MAX_BACK_SPEED = 3
 const JUMP_VELOCITY = 3.5
 var gravity = 9.81
-var crouching = false
 var input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
 var direction = Vector3(0, 0, 0)	
 #@export var inv: Inv
@@ -29,25 +28,25 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(\"Space\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed(\"Ctrl\"):
-		if crouching == false and $Collision_Player.is_playing() == false:
-			crouching = true
+		if Global.crouching == false and $Collision_Player.is_playing() == false:
+			Global.crouching = true
 			$Collision_Player.play(\"Crouch\")
-		elif crouching == true and $Collision_Player.is_playing() == false and Global.current_areas == 0:
+		elif Global.crouching == true and $Collision_Player.is_playing() == false and Global.current_areas == 0:
 			$Collision_Player.play(\"Un_Crouch\")
-			crouching = false
-	if Input.is_action_pressed(\"Shift\") and input_dir[0] <= 0.71 and input_dir[0] >= -0.71 and input_dir[1] > 0 and crouching == false:
+			Global.crouching = false
+	if Input.is_action_pressed(\"Shift\") and input_dir[0] <= 0.71 and input_dir[0] >= -0.71 and input_dir[1] > 0 and Global.crouching == false:
 		#Variables for walking backwards
 		acceleration = 0.2
 		MAX_SPEED = 3.5
 		walkandrun()
-	elif Input.is_action_pressed(\"Shift\") and crouching == false:
+	elif Input.is_action_pressed(\"Shift\") and Global.crouching == false:
 		#Varibles for running
 		acceleration = 0.3
 		MAX_SPEED = 8
 		walkandrun()
 	else:
 		if input_dir[0] <= 0.71 and input_dir[0] >= -0.71 and input_dir[1] > 0 :
-			if crouching == true:
+			if Global.crouching == true:
 				acceleration = 0.03
 				MAX_SPEED = 1
 				walkandrun()
@@ -56,7 +55,7 @@ func _physics_process(delta):
 				MAX_SPEED = 2
 				walkandrun()
 		else:
-			if crouching == true:
+			if Global.crouching == true:
 				acceleration = 0.075
 				MAX_SPEED = 2
 				walkandrun()
