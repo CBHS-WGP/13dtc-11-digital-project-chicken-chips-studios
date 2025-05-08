@@ -23,3 +23,8 @@ func _process(delta):
 func target_position(target):
 	nav.set_target_position(target)
 	#look_at(target_position)
+
+
+func _on_area_3d_body_entered(body):
+	if body.is.in.group("player"):
+		print("entered")
