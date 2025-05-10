@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://461xqg54dhg2"]
+[gd_scene load_steps=15 format=3 uid="uid://461xqg54dhg2"]
 
 [ext_resource type="Script" uid="uid://bthwkuo42uy6g" path="res://Charlie/Player/Camera_movement.gd" id="1_euoi1"]
+[ext_resource type="Resource" uid="uid://dirky84hgvity" path="res://Charlie/Inventory/Player_Inventory.tres" id="1_ms5rm"]
 [ext_resource type="PackedScene" uid="uid://cydmgo8i3qo0x" path="res://Charlie/Player/held_item.tscn" id="2_uiw4x"]
+[ext_resource type="PackedScene" uid="uid://ggmokxxoct5u" path="res://Charlie/Inventory/inventory.tscn" id="4_7bwoj"]
 
 [sub_resource type="GDScript" id="GDScript_yc2fa"]
 script/source = "extends CharacterBody3D
@@ -15,16 +17,15 @@ const JUMP_VELOCITY = 3.5
 var gravity = 9.81
 var input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
 var direction = Vector3(0, 0, 0)	
-#@export var inv: Inv
+@export var inv: Inv
 
 
 func _physics_process(delta):
-	print(Global.current_areas)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	# Handle jump.
-	if Input.is_action_just_pressed(\"Space\") and is_on_floor():
+	if Input.is_action_just_pressed(\"Space\") and is_on_floor() and Global.crouching == false:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed(\"Ctrl\"):
 		if Global.crouching == false and $Collision_Player.is_playing() == false:
@@ -115,7 +116,8 @@ radius = 0.35
 [sub_resource type="SphereShape3D" id="SphereShape3D_socw1"]
 radius = 0.35
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ms5rm"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ms5rm"]
+height = 1.12
 radius = 0.35
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_24ntd"]
@@ -159,6 +161,13 @@ tracks/3/path = NodePath("BottomBean")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 0, 0.45, 0, 0.6, 1, 0, 0.45, 0)
+tracks/4/type = "scale_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MiddleBean")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.5, 1, 0.01, 0.01, 0.01)
 
 [sub_resource type="Animation" id="Animation_ms5rm"]
 length = 0.001
@@ -233,6 +242,13 @@ tracks/3/path = NodePath("MiddleBean")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 0, 0.65, 0, 0.6, 1, 0, 1, 0)
+tracks/4/type = "scale_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MiddleBean")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.01, 0.01, 0.01, 0.5, 1, 1, 1, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7bwoj"]
 _data = {
@@ -244,6 +260,7 @@ _data = {
 [node name="Wayne" type="CharacterBody3D"]
 floor_max_angle = 0.523599
 script = SubResource("GDScript_yc2fa")
+inv = ExtResource("1_ms5rm")
 
 [node name="Crouch_Toggle_Allow" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89589, 0)
@@ -263,7 +280,7 @@ shape = SubResource("SphereShape3D_socw1")
 
 [node name="MiddleBean" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("SphereShape3D_ms5rm")
+shape = SubResource("CylinderShape3D_ms5rm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -290,9 +307,15 @@ collide_with_bodies = false
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1280.0
+offset_bottom = 720.0
+grow_horizontal = 0
+
+[node name="Inventory" parent="HUD" instance=ExtResource("4_7bwoj")]
+layout_mode = 1
 
 [node name="Collision_Player" type="AnimationPlayer" parent="."]
 libraries = {
