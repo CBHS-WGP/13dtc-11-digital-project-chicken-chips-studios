@@ -294,6 +294,14 @@ script = ExtResource("1_euoi1")
 [node name="Camera" type="Camera3D" parent="Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68, 0)
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.535337, -0.464616, -0.379782)
+light_color = Color(1, 1, 0.741176, 1)
+light_energy = 5.169
+shadow_enabled = true
+spot_range = 13.7357
+spot_angle = 14.6215
+
 [node name="Arms" type="Node3D" parent="Camera/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.35, -0.5)
 
