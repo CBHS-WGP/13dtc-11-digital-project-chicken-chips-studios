@@ -31,3 +31,11 @@ func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
 	if body.is_in_group("player"):
 		print("entered")
 		speed = 2
+
+
+
+# If player leaves 
+func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
+	if body.is_in_group("player"):
+		print("exited")
+		speed = 0

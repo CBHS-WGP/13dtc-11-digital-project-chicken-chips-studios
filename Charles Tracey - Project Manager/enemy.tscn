@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://xp2woouhmaf8"]
+[gd_scene load_steps=7 format=3 uid="uid://xp2woouhmaf8"]
 
 [ext_resource type="Script" uid="uid://cg1mrc3pr864y" path="res://Charles Tracey - Project Manager/enemy.gd" id="1_8uhvq"]
 
@@ -13,6 +13,9 @@ material = SubResource("StandardMaterial3D_am1u2")
 [sub_resource type="SphereShape3D" id="SphereShape3D_8uhvq"]
 radius = 5.095
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_hryg0"]
+radius = 16.375
+
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_8uhvq")
 
@@ -24,9 +27,17 @@ shape = SubResource("CapsuleShape3D_m83rg")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Inner Detection Radius" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inner Detection Radius"]
 shape = SubResource("SphereShape3D_8uhvq")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[node name="Outer Detection Radius" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Outer Detection Radius"]
+shape = SubResource("SphereShape3D_hryg0")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_body_exited"]
