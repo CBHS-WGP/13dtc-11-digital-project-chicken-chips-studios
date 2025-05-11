@@ -56,7 +56,7 @@ shadow_mesh = SubResource("ArrayMesh_blumw")
 [node name="Bayonet" type="Node3D"]
 
 [node name="Object_8" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.554354, 2.07936, -1.27238, -1.74562, -0.572229, -1.69569, -1.70162, 1.26444, 1.32502, -0.0119936, 0.00409396, -0.0131661)
+transform = Transform3D(1.6934, 1.77522, 0.480637, -1.38428, 1.66044, -1.25566, -1.21086, 0.584398, 2.10768, -0.0119936, 0.00409396, -0.0131661)
 material_override = ExtResource("1_mnw5b")
 material_overlay = ExtResource("1_mnw5b")
 lod_bias = 0.4

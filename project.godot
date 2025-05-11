@@ -81,4 +81,6 @@ tab={
 
 [layer_names]
 
+3d_physics/layer_1="Normal Collisions"
+3d_physics/layer_3="Attacking Collisions"
 3d_physics/layer_4="Ceiling Checks"
