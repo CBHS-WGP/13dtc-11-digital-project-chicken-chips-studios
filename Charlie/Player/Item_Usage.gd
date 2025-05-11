@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var Bayonetanimation : AnimationTree = $Bayonet/AnimationTree
+@onready var Bayonetanimation : AnimationTree = $M7_Bayonet/Bayonet/AnimationTree
 
 
 func _process(delta):

@@ -1,10 +1,20 @@
-[gd_scene load_steps=21 format=3 uid="uid://cydmgo8i3qo0x"]
+[gd_scene load_steps=24 format=3 uid="uid://cydmgo8i3qo0x"]
 
 [ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
 [ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8wcif"]
 size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p45wi"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.168627)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ynmh"]
+size = Vector3(0.4, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p45wi"]
+size = Vector3(0.4, 1, 1)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vlfef"]
 animation = &"RESET"
@@ -73,7 +83,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(1, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Area3D:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Area3D/MeshInstance3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_gfklu"]
@@ -85,10 +119,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.9),
+"times": PackedFloat32Array(0, 0.1, 0.866667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 0, 0), Vector3(1, -0.2, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -0.2, 0), Vector3(1, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_uw7tg"]
@@ -104,12 +138,85 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.0662201, 0.510356, 0), Vector3(1.5, 0, 0), Vector3(1, 0, 0)]
+"values": [Vector3(1, 0, 0), Vector3(1.5, 0, 0), Vector3(0.066, 0.51, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Area3D:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Area3D/MeshInstance3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area3D/CollisionShape3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.575, -0.277)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area3D/MeshInstance3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.575, -0.277)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area3D/MeshInstance3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.349066, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Area3D/CollisionShape3D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.349066, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_p2tyt"]
 resource_name = "Swing_2"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -120,7 +227,79 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 0, 0), Vector3(-0.5, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.5, 0, 0), Vector3(1, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Area3D:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Area3D/MeshInstance3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area3D/MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.552, 0.575, -0.277)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area3D/CollisionShape3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.552, 0.575, -0.277)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area3D/MeshInstance3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.349066, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Area3D/CollisionShape3D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.349066, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_csurt"]
@@ -140,16 +319,35 @@ visible = false
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
 mesh = SubResource("BoxMesh_8wcif")
 
-[node name="Bayonet" parent="." instance=ExtResource("1_qo06o")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+[node name="M7_Bayonet" type="Node3D" parent="."]
 
-[node name="AnimationTree" type="AnimationTree" parent="Bayonet"]
+[node name="Area3D" type="Area3D" parent="M7_Bayonet"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.221356, 0, -0.455244)
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="M7_Bayonet/Area3D"]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.575, -0.277)
+visible = false
+material_override = SubResource("StandardMaterial3D_p45wi")
+mesh = SubResource("BoxMesh_7ynmh")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="M7_Bayonet/Area3D"]
+transform = Transform3D(0.939692, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939692, 0, 0.575, -0.277)
+shape = SubResource("BoxShape3D_p45wi")
+
+[node name="Bayonet" parent="M7_Bayonet" instance=ExtResource("1_qo06o")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="M7_Bayonet/Bayonet"]
 tree_root = SubResource("AnimationNodeStateMachine_7fwhw")
 anim_player = NodePath("../AnimationPlayer")
 "parameters/conditions/swinging == false" = false
 "parameters/conditions/swinging == true" = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Bayonet"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="M7_Bayonet/Bayonet"]
 libraries = {
 &"": SubResource("AnimationLibrary_csurt")
 }
