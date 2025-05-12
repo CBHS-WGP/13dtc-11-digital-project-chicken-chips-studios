@@ -5,3 +5,13 @@ var sensitivity = 0.15
 var resolution = Vector2(1280, 720)
 var current_areas = 0
 var crouching = false
+var health = 100
+
+
+func hit():
+	health = health - 20 
+	print(health)
+	
+func dead(delta):
+	if health == 0:
+		get_tree().quit()

@@ -25,15 +25,15 @@ func _process(delta):
 	
 func target_position(target):
 	nav.set_target_position(target)
-	#look_at(target_position)
+	look_at(target)
 
 
 
 
 func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
 	if body.is_in_group("player"):
-		print("entered")
-		speed = 2
+		print("hit")
+#		"res://Global.gd".hit()
 
 
 
@@ -46,3 +46,11 @@ func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
 
 func _on_damage_checker_area_entered(area):
 	health = health - 20
+
+
+
+
+func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		print("entered")
+		speed = 2
