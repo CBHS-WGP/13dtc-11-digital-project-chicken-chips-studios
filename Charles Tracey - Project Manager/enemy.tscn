@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://xp2woouhmaf8"]
+[gd_scene load_steps=8 format=3 uid="uid://xp2woouhmaf8"]
 
 [ext_resource type="Script" uid="uid://cg1mrc3pr864y" path="res://Charles Tracey - Project Manager/enemy.gd" id="1_8uhvq"]
 
@@ -15,6 +15,9 @@ radius = 5.095
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hryg0"]
 radius = 16.375
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8uhvq"]
+size = Vector3(0.8, 1.717, 0.8)
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_8uhvq")
@@ -39,5 +42,19 @@ shape = SubResource("SphereShape3D_hryg0")
 
 [node name="Area3D" type="Area3D" parent="."]
 
+[node name="Damage_Checker" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="Health_Indicator" type="Label3D" parent="Damage_Checker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34506, 0)
+text = "aa"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101227, 0)
+shape = SubResource("BoxShape3D_8uhvq")
+
 [connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_body_exited"]
+[connection signal="area_entered" from="Damage_Checker" to="." method="_on_damage_checker_area_entered"]

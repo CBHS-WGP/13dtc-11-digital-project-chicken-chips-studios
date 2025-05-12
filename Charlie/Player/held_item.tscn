@@ -147,7 +147,7 @@ tracks/1/path = NodePath("../Area3D:monitorable")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.366667),
+"times": PackedFloat32Array(0, 0.233333, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -159,10 +159,10 @@ tracks/2/path = NodePath("../Area3D/MeshInstance3D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.366667),
+"times": PackedFloat32Array(0, 0.233333, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, false, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -236,7 +236,7 @@ tracks/1/path = NodePath("../Area3D:monitorable")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4),
+"times": PackedFloat32Array(0, 0.3, 0.35),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -248,10 +248,10 @@ tracks/2/path = NodePath("../Area3D/MeshInstance3D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4),
+"times": PackedFloat32Array(0, 0.3, 0.35),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, false, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -328,14 +328,14 @@ collision_mask = 4
 monitorable = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="M7_Bayonet/Area3D"]
-transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0.575, -0.277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_p45wi")
 mesh = SubResource("BoxMesh_7ynmh")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="M7_Bayonet/Area3D"]
-transform = Transform3D(0.939692, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939692, 0, 0.575, -0.277)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 shape = SubResource("BoxShape3D_p45wi")
 
 [node name="Bayonet" parent="M7_Bayonet" instance=ExtResource("1_qo06o")]

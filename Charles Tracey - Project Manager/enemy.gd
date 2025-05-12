@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var nav = $NavigationAgent3D
 var speed = 0
 var gravity = 9.8
-
+var health = 100
 
 
 # Code which makes the enemy move towards the player
@@ -19,6 +19,9 @@ func _process(delta):
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
 	
+	$Damage_Checker/Health_Indicator.text = str(health,"/100")
+	if health <= 0:
+		queue_free()
 	
 func target_position(target):
 	nav.set_target_position(target)
@@ -39,3 +42,7 @@ func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
 	if body.is_in_group("player"):
 		print("exited")
 		speed = 0
+
+
+func _on_damage_checker_area_entered(area):
+	health = health - 20
