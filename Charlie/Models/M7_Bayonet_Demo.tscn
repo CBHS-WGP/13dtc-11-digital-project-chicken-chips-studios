@@ -59,6 +59,6 @@ shadow_mesh = SubResource("ArrayMesh_blumw")
 transform = Transform3D(1.29026, -1.88432, -1.01714, -1.70505, -1.62247, 0.842865, -1.2954, 0.25869, -2.1225, -0.0119936, 0.00409396, -0.0131661)
 material_override = ExtResource("1_mnw5b")
 material_overlay = ExtResource("1_mnw5b")
-lod_bias = 0.4
+lod_bias = 0.3
 mesh = SubResource("ArrayMesh_7l4hj")
 skeleton = NodePath("")
