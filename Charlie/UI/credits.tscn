@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://j31amio2qxow"]
+
+[ext_resource type="Texture2D" uid="uid://db38221a6ihup" path="res://Charlie/Textures/Grass.jpg" id="1_od1y5"]
+[ext_resource type="Texture2D" uid="uid://b3y3l2jvdtx7m" path="res://Charlie/Textures/Sun.jpg" id="2_p1ufu"]
+
+[sub_resource type="FontFile" id="FontFile_di2ki"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/65/0/ascent = 0.0
+cache/0/65/0/descent = 0.0
+cache/0/65/0/underline_position = 0.0
+cache/0/65/0/underline_thickness = 0.0
+cache/0/65/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_8i52n"]
+default_font = SubResource("FontFile_di2ki")
+default_font_size = 40
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(652, 336)
+scale = Vector2(1.37778, 1.37778)
+texture = ExtResource("1_od1y5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(684, 343)
+scale = Vector2(0.437963, 0.437963)
+texture = ExtResource("2_p1ufu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -118.0
+offset_top = 115.0
+offset_right = 1465.0
+offset_bottom = 297.0
+theme = SubResource("Theme_8i52n")
+text = "Credits:
+
+Programming - Cartogen, Tacobellbeans
+Models and design direction - Sinergy
+Music and Sound - M.M.Iaudio
+:Special thanks:
+Dihtthew"
+horizontal_alignment = 1
