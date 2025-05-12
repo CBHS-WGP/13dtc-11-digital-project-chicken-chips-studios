@@ -21,6 +21,7 @@ var direction = Vector3(0, 0, 0)
 
 
 func _physics_process(delta):
+	print(velocity)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -74,9 +75,12 @@ func walkandrun():
 	if direction:
 		#Speeds the player up to walking speed
 		if speed <= MAX_SPEED:
+			#velocity = velocity.move_toward(direction * speed, acceleration * 1.5)
+			velocity.x = lerp(velocity.x, direction.normalized().x * speed, acceleration)
+			velocity.z = lerp(velocity.z, direction.normalized().z * speed, acceleration)
 			speed = speed + acceleration
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
+			#velocity.x = direction.x * speed
+			#velocity.z = direction.z * speed
 		#if the player stops sprinting, return value to walking pace.
 		if speed > MAX_SPEED:
 			speed = speed - acceleration
@@ -117,7 +121,7 @@ radius = 0.35
 radius = 0.35
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ms5rm"]
-height = 1.12
+height = 1.11
 radius = 0.35
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_24ntd"]
