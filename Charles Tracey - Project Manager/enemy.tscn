@@ -54,7 +54,7 @@ collision_mask = 4
 monitorable = false
 
 [node name="Health_Indicator" type="Label3D" parent="Damage_Checker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34506, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.34506, 0)
 text = "aa"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
