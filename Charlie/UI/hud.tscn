@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://u7d4ea0b411t"]
+
+[ext_resource type="Script" uid="uid://bhol1mcmpvo1c" path="res://Charlie/UI/hud.gd" id="1_jnci8"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnci8")
+
+[node name="Main_Objective" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Main Objective:"
+
+[node name="Label" type="Label" parent="Main_Objective"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 30.0
+offset_right = 41.0
+offset_bottom = 53.0
+text = "Kill 5 ememies: 0/5"

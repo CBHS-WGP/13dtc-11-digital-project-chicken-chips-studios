@@ -21,6 +21,7 @@ func _process(delta):
 	
 	$Damage_Checker/Health_Indicator.text = str(health,"/100")
 	if health <= 0:
+		Progress.objective_1 = Progress.objective_1 + 1
 		queue_free()
 	
 func target_position(target):

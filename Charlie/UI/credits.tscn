@@ -29,10 +29,25 @@ cache/0/40/0/descent = 0.0
 cache/0/40/0/underline_position = 0.0
 cache/0/40/0/underline_thickness = 0.0
 cache/0/40/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
 
 [sub_resource type="Theme" id="Theme_8i52n"]
 default_font = SubResource("FontFile_di2ki")
-default_font_size = 40
+default_font_size = 80
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -52,18 +67,17 @@ position = Vector2(684, 343)
 scale = Vector2(0.437963, 0.437963)
 texture = ExtResource("2_p1ufu")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = -118.0
-offset_top = 115.0
-offset_right = 1465.0
-offset_bottom = 297.0
+[node name="Label" type="Label" parent="Sprite2D2"]
+offset_left = -801.438
+offset_top = -484.059
+offset_right = 781.562
+offset_bottom = 181.941
 theme = SubResource("Theme_8i52n")
 text = "Credits:
 
 Programming - Cartogen, Tacobellbeans
 Models and design direction - Sinergy
-Music and Sound - M.M.Iaudio
+Music and Sound - Cartogen
 :Special thanks:
 Dihtthew"
 horizontal_alignment = 1
