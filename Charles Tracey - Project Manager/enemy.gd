@@ -5,8 +5,6 @@ extends CharacterBody3D
 var speed = 0
 var gravity = 9.8
 var health = 100
-var Globalscript = "res://Global.gd"
-
 
 
 # Code which makes the enemy move towards the player
@@ -28,16 +26,15 @@ func _process(delta):
 	
 func target_position(target):
 	nav.set_target_position(target)
-#	look_at(target)
+	look_at(target)
 
 
 
 
 func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
 	if body.is_in_group("player"):
-		emit_decrease_in_health()
 		print("hit")
-		
+#		"res://Global.gd".hit()
 
 
 
@@ -58,12 +55,3 @@ func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		print("entered")
 		speed = 2
-		
-func emit_decrease_in_health():
-	Global.shot.emit()
-	
-	
-func dead(delta):
-	if health == 0:
-		get_tree().quit()
-	
