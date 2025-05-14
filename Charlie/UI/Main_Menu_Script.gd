@@ -1,5 +1,6 @@
 extends Control
 
+#dictionary of all allowed resolutions (can be easily expanded in the future)
 var dictionaryContainer = {
 	0: Vector2(1280, 720),
 	1: Vector2(1920, 1080),
@@ -7,6 +8,7 @@ var dictionaryContainer = {
 	3: Vector2(256, 144)
 	}
 func _ready():
+	#Sets the resolution to the default when starting up the game.
 	get_window().size = Global.resolution
 	size = Global.resolution
 	$AnimationPlayer.play("Startup_Animation")
@@ -16,9 +18,11 @@ func _process(delta):
 	pass
 	#print(Global.resolution)
 
+#Quits the game
 func _on_exit_pressed():
 	get_tree().quit()
-
+	
+#begins the game
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Charlie/Maps/Test_Map.tscn")
 
@@ -38,6 +42,7 @@ func _on_check_box_toggled(toggled_on):
 
 
 func _on_window_sizes_item_selected(index):
+	#Sets the default resolution to the option selected by getting the corresponding resolution in the dictionary.
 	Global.resolution = dictionaryContainer[index]
 	get_window().size = Global.resolution
 	#size = Global.resolution
