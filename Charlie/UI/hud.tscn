@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://u7d4ea0b411t"]
+[gd_scene load_steps=3 format=3 uid="uid://u7d4ea0b411t"]
 
 [ext_resource type="Script" uid="uid://bhol1mcmpvo1c" path="res://Charlie/UI/hud.gd" id="1_jnci8"]
+[ext_resource type="PackedScene" uid="uid://dwthpvqx2ijsp" path="res://health_bar.tscn" id="2_7yo04"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -24,3 +25,6 @@ offset_top = 30.0
 offset_right = 41.0
 offset_bottom = 53.0
 text = "Kill 5 ememies: 0/5"
+
+[node name="Health Bar" parent="Main_Objective" instance=ExtResource("2_7yo04")]
+layout_mode = 1
