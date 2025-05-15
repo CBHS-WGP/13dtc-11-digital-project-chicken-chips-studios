@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcdm5bwkte7pq"]
+
+[ext_resource type="PackedScene" uid="uid://dt57kmvrj5do6" path="res://Patrick/exportinterrain3.glb" id="1_a202f"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="exportinterrain3" parent="." instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0309, 61.8868, -115.02)
