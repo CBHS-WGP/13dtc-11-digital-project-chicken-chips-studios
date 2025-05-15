@@ -6,7 +6,7 @@ var speed = 0
 var gravity = 9.8
 var health = 100
 var Globalscript = "res://Global.gd"
-
+var inhitbox = false
 
 
 # Code which makes the enemy move towards the player
@@ -28,18 +28,20 @@ func _process(delta):
 	
 func target_position(target):
 	nav.set_target_position(target)
-#	look_at(target)
+	look_at(target)
 
 
 
 
 func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
 	if body.is_in_group("player"):
+		print("hit2")
+		inhitbox = true
+		
+func _on_timer_timeout():
+	if inhitbox == true:
 		emit_decrease_in_health()
 		print("hit")
-		
-
-
 
 # If player leaves 
 func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
@@ -67,3 +69,12 @@ func dead(delta):
 	if health == 0:
 		get_tree().quit()
 	
+
+
+
+	
+
+
+func _on_area_3d_body_exited(body):
+	if body.is_in_group("player"):
+		inhitbox = false
