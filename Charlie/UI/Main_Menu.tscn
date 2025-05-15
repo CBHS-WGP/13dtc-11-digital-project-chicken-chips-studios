@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvjmminf2yfon"]
+[gd_scene load_steps=13 format=3 uid="uid://cvjmminf2yfon"]
 
-[ext_resource type="Texture2D" uid="uid://b3y3l2jvdtx7m" path="res://Charlie/Textures/Sun.jpg" id="1_6r2sw"]
 [ext_resource type="Script" uid="uid://casg4qwba6q88" path="res://Charlie/UI/Main_Menu_Script.gd" id="1_lgnsp"]
 [ext_resource type="Texture2D" uid="uid://bhtvgdgw2w1fd" path="res://Charlie/Textures/Chip_Logo.png" id="2_k8rte"]
 [ext_resource type="Texture2D" uid="uid://df6vqhku6e0tc" path="res://Patrick/Placeholder_Files/Placeholder_Earth.png" id="2_xirei"]
+[ext_resource type="PackedScene" uid="uid://b6hnwyuweh4nf" path="res://Charlie/UI/settings.tscn" id="4_xirei"]
 
 [sub_resource type="Animation" id="Animation_xtcex"]
 resource_name = "Options_Close"
@@ -248,9 +248,6 @@ _data = {
 [sub_resource type="Theme" id="Theme_b67lw"]
 default_font_size = 70
 
-[sub_resource type="Theme" id="Theme_ohe8q"]
-default_font_size = 23
-
 [sub_resource type="Gradient" id="Gradient_wu41k"]
 offsets = PackedFloat32Array(0.09, 0.39, 0.72)
 colors = PackedColorArray(0, 0, 0, 1, 0.31802, 0.31802, 0.31802, 0.941176, 0.890196, 0.890196, 0.890196, 0)
@@ -334,94 +331,10 @@ offset_bottom = 538.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Options_Box" type="Control" parent="Options"]
+[node name="Options_Box" parent="Options" instance=ExtResource("4_xirei")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_top = 924.5
 offset_bottom = 964.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Backround" type="Sprite2D" parent="Options/Options_Box"]
-scale = Vector2(0.4, 0.357)
-texture = ExtResource("1_6r2sw")
-
-[node name="HSlider" type="HSlider" parent="Options/Options_Box"]
-layout_mode = 2
-offset_left = -328.0
-offset_top = 163.25
-offset_right = 323.0
-offset_bottom = 179.25
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Options/Options_Box"]
-visible = false
-layout_mode = 0
-offset_left = -337.0
-offset_top = -260.0
-offset_right = 314.0
-offset_bottom = 376.0
-alignment = 1
-
-[node name="CheckBox" type="CheckBox" parent="Options/Options_Box"]
-layout_mode = 0
-offset_left = -362.0
-offset_top = -169.75
-offset_right = -178.0
-offset_bottom = -125.75
-theme = SubResource("Theme_ohe8q")
-text = "Fullscreen"
-alignment = 1
-expand_icon = true
-
-[node name="Window_Sizes" type="OptionButton" parent="Options/Options_Box"]
-layout_mode = 0
-offset_left = -348.0
-offset_top = -97.0
-offset_right = -221.0
-offset_bottom = -66.0
-selected = 0
-item_count = 4
-popup/item_0/text = "1280x720"
-popup/item_0/id = 2
-popup/item_1/text = "1920x1080"
-popup/item_1/id = 0
-popup/item_2/text = "1842x1036"
-popup/item_2/id = 1
-popup/item_3/text = "256x144"
-popup/item_3/id = 3
-
-[node name="Label" type="Label" parent="Options/Options_Box/Window_Sizes"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = -22.0
-offset_right = 140.0
-offset_bottom = 1.0
-text = "Window Size"
-
-[node name="OptionButton" type="OptionButton" parent="Options/Options_Box"]
-layout_mode = 0
-offset_left = -348.0
-offset_top = -37.0
-offset_right = -221.0
-offset_bottom = -6.0
-item_count = 3
-popup/item_0/text = "Near"
-popup/item_0/id = 0
-popup/item_1/text = "Medium"
-popup/item_1/id = 1
-popup/item_2/text = "Far"
-popup/item_2/id = 2
-
-[node name="Label" type="Label" parent="Options/Options_Box/OptionButton"]
-layout_mode = 0
-offset_top = -22.0
-offset_right = 40.0
-offset_bottom = 1.0
-text = "Level of Detail"
 
 [node name="Back" type="Button" parent="Options"]
 layout_mode = 0
@@ -470,8 +383,6 @@ offset_right = -25.0
 offset_bottom = -64.0
 text = "Exit"
 
-[connection signal="toggled" from="Options/Options_Box/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="item_selected" from="Options/Options_Box/Window_Sizes" to="." method="_on_window_sizes_item_selected"]
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
