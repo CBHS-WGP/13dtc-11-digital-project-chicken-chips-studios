@@ -5,7 +5,6 @@ extends CharacterBody3D
 var speed = 0
 var gravity = 9.8
 var health = 100
-var Globalscript = "res://Global.gd"
 var inhitbox = false
 
 
@@ -28,7 +27,7 @@ func _process(delta):
 	
 func target_position(target):
 	nav.set_target_position(target)
-	look_at(target)
+	#look_at(target)
 
 
 
@@ -39,7 +38,6 @@ func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
 		inhitbox = true
 		
 func _on_timer_timeout():
-	if inhitbox == true:
 		emit_decrease_in_health()
 		print("hit")
 
@@ -57,12 +55,18 @@ func _on_damage_checker_area_entered(area):
 
 
 func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	while body.is_in_group("player") and Global.crouching == false:
 		print("entered")
 		speed = 2
+		print(Global.crouching)
+	if Global.crouching == true:
+		pass
 		
 func emit_decrease_in_health():
-	Global.shot.emit()
+	if inhitbox == true:
+		Global.shot.emit()
+	else:
+		pass
 	
 	
 func dead(delta):

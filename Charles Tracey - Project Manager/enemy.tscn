@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xp2woouhmaf8"]
+[gd_scene load_steps=10 format=3 uid="uid://xp2woouhmaf8"]
 
 [ext_resource type="Script" uid="uid://cg1mrc3pr864y" path="res://Charles Tracey - Project Manager/enemy.gd" id="1_8uhvq"]
 
@@ -17,9 +17,13 @@ radius = 5.095
 radius = 16.375
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hryg0"]
+size = Vector3(0.50415, 1, 0.50647)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8uhvq"]
 size = Vector3(0.8, 1.717, 0.8)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m83rg"]
+radius = 12.978
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
 axis_lock_angular_x = true
@@ -44,10 +48,10 @@ shape = SubResource("SphereShape3D_8uhvq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outer Detection Radius"]
 shape = SubResource("SphereShape3D_hryg0")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Damage Area" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, 0, 0, -0.0112259)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Damage Area"]
+transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, -0.0022693, 0, 0.0652078)
 shape = SubResource("BoxShape3D_hryg0")
 
 [node name="Damage_Checker" type="Area3D" parent="."]
@@ -66,10 +70,15 @@ shape = SubResource("BoxShape3D_8uhvq")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Stealth Area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stealth Area"]
+shape = SubResource("SphereShape3D_m83rg")
+
 [connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_entered"]
 [connection signal="body_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_body_exited"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Damage Area" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Damage Area" to="." method="_on_area_3d_body_exited"]
 [connection signal="area_entered" from="Damage_Checker" to="." method="_on_damage_checker_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
