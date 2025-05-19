@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @onready var nav = $NavigationAgent3D
 var speed = 0
-var gravity = 9.8
+var gravity = 9.81
 var health = 100
 var inhitbox = false
 
@@ -54,13 +54,16 @@ func _on_damage_checker_area_entered(area):
 
 
 
-func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
-	while body.is_in_group("player") and Global.crouching == false:
-		print("entered")
-		speed = 2
-		print(Global.crouching)
-	if Global.crouching == true:
-		pass
+#func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
+#	if body.is_in_group("player") and Global.crouching == false:
+		#print("entered")
+	#	speed = 2
+		#print(Global.crouching)
+	#while :
+		#speed = 2
+		
+#	if Global.crouching == true:
+	#	pass
 		
 func emit_decrease_in_health():
 	if inhitbox == true:
