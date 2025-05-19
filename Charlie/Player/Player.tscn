@@ -309,7 +309,7 @@ skeleton = NodePath("")
 script = ExtResource("1_euoi1")
 
 [node name="Camera" type="Camera3D" parent="Camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Arms" type="Node3D" parent="Camera/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.35, -0.5)
@@ -341,6 +341,13 @@ layout_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_7bwoj")
 }
+
+[node name="Player_Animations" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Player_Bobbing")
+
+[node name="Player_Bobbing" type="AnimationTree" parent="."]
+root_node = NodePath(".")
+anim_player = NodePath("../Player_Animations")
 
 [connection signal="area_entered" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_entered"]
 [connection signal="area_exited" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_exited"]
