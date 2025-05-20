@@ -6,7 +6,7 @@ extends Node3D
 func _process(delta):
 	#Code that allows the animation tree to paly the correct animation, and thus be able to use
 	#the knife.
-	if Global.inv_open == false:
+	if Global.inv_open == false and Global.settings_open == false:
 		if Input.is_action_pressed("leftclick"):
 			Bayonetanimation["parameters/conditions/swinging == false"] = false
 			Bayonetanimation["parameters/conditions/swinging == true"] = true

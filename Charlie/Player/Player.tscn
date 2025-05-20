@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://461xqg54dhg2"]
+[gd_scene load_steps=22 format=3 uid="uid://461xqg54dhg2"]
 
 [ext_resource type="Script" uid="uid://bthwkuo42uy6g" path="res://Charlie/Player/Camera_movement.gd" id="1_euoi1"]
 [ext_resource type="Resource" uid="uid://dirky84hgvity" path="res://Charlie/Inventory/Player_Inventory.tres" id="1_ms5rm"]
 [ext_resource type="PackedScene" uid="uid://cydmgo8i3qo0x" path="res://Charlie/Player/held_item.tscn" id="2_uiw4x"]
 [ext_resource type="PackedScene" uid="uid://ggmokxxoct5u" path="res://Charlie/Inventory/inventory.tscn" id="4_7bwoj"]
+[ext_resource type="Script" uid="uid://b0faeqfv21i0p" path="res://Charlie/Player/hud.gd" id="4_aqwou"]
 [ext_resource type="PackedScene" uid="uid://u7d4ea0b411t" path="res://Charlie/UI/hud.tscn" id="5_7bwoj"]
+[ext_resource type="PackedScene" uid="uid://b6hnwyuweh4nf" path="res://Charlie/UI/settings.tscn" id="7_g6nvv"]
 
 [sub_resource type="GDScript" id="GDScript_yc2fa"]
 script/source = "extends CharacterBody3D
@@ -140,6 +142,97 @@ radius = 0.35
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_24ntd"]
 radius = 0.35
 height = 1.8
+
+[sub_resource type="Animation" id="Animation_m73r6"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/Options_Box:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 1463)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/Options_Box:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_o5tpb"]
+resource_name = "Open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/Options_Box:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 1000), Vector2(640, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/Options_Box:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_rn0aa"]
+resource_name = "Close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/Options_Box:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 340), Vector2(640, 1000)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/Options_Box:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3x0hu"]
+_data = {
+&"Close": SubResource("Animation_rn0aa"),
+&"Open": SubResource("Animation_o5tpb"),
+&"RESET": SubResource("Animation_m73r6")
+}
 
 [sub_resource type="Animation" id="Animation_ti5e3"]
 resource_name = "Crouch"
@@ -330,12 +423,30 @@ anchor_right = 1.0
 offset_left = -1280.0
 offset_bottom = 720.0
 grow_horizontal = 0
+script = ExtResource("4_aqwou")
+
+[node name="Settings animations" type="AnimationPlayer" parent="HUD"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_3x0hu")
+}
 
 [node name="Inventory" parent="HUD" instance=ExtResource("4_7bwoj")]
 layout_mode = 1
 
 [node name="HUD" parent="HUD" instance=ExtResource("5_7bwoj")]
 layout_mode = 1
+
+[node name="Options_Box" parent="HUD" instance=ExtResource("7_g6nvv")]
+layout_mode = 1
+
+[node name="Leave_Settings" type="Button" parent="HUD"]
+layout_mode = 0
+offset_left = 1379.0
+offset_top = 211.0
+offset_right = 1602.0
+offset_bottom = 285.0
+text = "Back"
 
 [node name="Collision_Player" type="AnimationPlayer" parent="."]
 libraries = {

@@ -8,7 +8,7 @@ var resolution = Vector2(1280, 720)
 var current_areas = 0
 var crouching = false
 var health = 100
-
+var settings_open = false
 	
 func dead(delta):
 	if health == 0:

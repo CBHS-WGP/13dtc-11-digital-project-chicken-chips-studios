@@ -14,7 +14,7 @@ func _input(event):
 		camera_input = event.relative
 	
 func _process(delta):
-	if Global.inv_open == false:
+	if Global.inv_open == false and Global.settings_open == false:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		Input.warp_mouse(mouse_pos)
 		rotation_velocity = rotation_velocity.lerp(camera_input * Global.sensitivity, delta * smoothness)

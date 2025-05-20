@@ -36,6 +36,10 @@ script = ExtResource("1_bkyi2")
 
 [node name="Wayne" parent="." groups=["player"] instance=ExtResource("1_am1u2")]
 
+[node name="Options_Box" parent="Wayne/HUD" index="3"]
+offset_top = 1103.0
+offset_bottom = 1143.0
+
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
