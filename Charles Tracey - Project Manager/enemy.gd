@@ -37,9 +37,15 @@ func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
 		print("hit2")
 		inhitbox = true
 		
+func _on_area_3d_body_exited(body: CharacterBody3D) -> void:
+	if body.is_in_group("player"):
+		inhitbox = false
+
+		
 func _on_timer_timeout():
-		emit_decrease_in_health()
+	if inhitbox == true:
 		print("hit")
+		Global.shot.emit()
 
 # If player leaves 
 func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
@@ -54,22 +60,15 @@ func _on_damage_checker_area_entered(area):
 
 
 
-#func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
-#	if body.is_in_group("player") and Global.crouching == false:
-		#print("entered")
-	#	speed = 2
-		#print(Global.crouching)
-	#while :
-		#speed = 2
-		
-#	if Global.crouching == true:
-	#	pass
-		
-func emit_decrease_in_health():
-	if inhitbox == true:
-		Global.shot.emit()
-	else:
+func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player") and Global.crouching == false:
+		print("entered")
+		speed = 2
+		print(Global.crouching)	
+	if Global.crouching == true:
 		pass
+		
+
 	
 	
 func dead(delta):
@@ -80,8 +79,3 @@ func dead(delta):
 
 
 	
-
-
-func _on_area_3d_body_exited(body):
-	if body.is_in_group("player"):
-		inhitbox = false

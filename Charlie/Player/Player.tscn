@@ -29,7 +29,7 @@ func _ready():
 	
 func healthdecrease():
 	health = health - 20
-	print(\"hit1\")
+	print(\"TAKEDAMAMGE\")
 	if health == 0:
 		print(\"dead\")
 		get_tree().change_scene_to_file(\"res://Charlie/UI/credits.tscn\")
@@ -143,20 +143,20 @@ radius = 0.35
 radius = 0.35
 height = 1.8
 
-[sub_resource type="Animation" id="Animation_m73r6"]
-resource_name = "RESET"
-length = 0.001
+[sub_resource type="Animation" id="Animation_rn0aa"]
+resource_name = "Close"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("HUD/Options_Box:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(640, 1463)]
+"values": [Vector2(640, 340), Vector2(640, 1000)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -165,10 +165,10 @@ tracks/1/path = NodePath("HUD/Options_Box:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_o5tpb"]
@@ -199,20 +199,20 @@ tracks/1/keys = {
 "values": [true, true]
 }
 
-[sub_resource type="Animation" id="Animation_rn0aa"]
-resource_name = "Close"
-length = 0.4
+[sub_resource type="Animation" id="Animation_m73r6"]
+resource_name = "RESET"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("HUD/Options_Box:position")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(640, 340), Vector2(640, 1000)]
+"values": [Vector2(640, 1463)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -221,10 +221,10 @@ tracks/1/path = NodePath("HUD/Options_Box:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3x0hu"]
@@ -439,6 +439,8 @@ layout_mode = 1
 
 [node name="Options_Box" parent="HUD" instance=ExtResource("7_g6nvv")]
 layout_mode = 1
+offset_top = 1103.0
+offset_bottom = 1143.0
 
 [node name="Leave_Settings" type="Button" parent="HUD"]
 layout_mode = 0
@@ -459,6 +461,10 @@ root_node = NodePath("../Player_Bobbing")
 [node name="Player_Bobbing" type="AnimationTree" parent="."]
 root_node = NodePath(".")
 anim_player = NodePath("../Player_Animations")
+
+[node name="Damage_from_enemy" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 16
 
 [connection signal="area_entered" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_entered"]
 [connection signal="area_exited" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_exited"]
