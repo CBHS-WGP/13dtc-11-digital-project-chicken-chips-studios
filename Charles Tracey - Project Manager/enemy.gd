@@ -31,15 +31,17 @@ func target_position(target):
 
 
 
-
-func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
-	if body.is_in_group("player"):
+func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group("playerhitbox"):
 		print("hit2")
 		inhitbox = true
-		
-func _on_area_3d_body_exited(body: CharacterBody3D) -> void:
-	if body.is_in_group("player"):
+
+
+func _on_area_3d_area_shape_exited(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group("playerhitbox"):
 		inhitbox = false
+
+
 
 		
 func _on_timer_timeout():
