@@ -6,6 +6,7 @@ var speed = 0
 var gravity = 9.81
 var health = 100
 var inhitbox = false
+var target = self
 
 
 # Code which makes the enemy move towards the player
@@ -27,23 +28,27 @@ func _process(delta):
 	
 func target_position(target):
 	nav.set_target_position(target)
-	#look_at(target)
+	look_at(target)
+	rotation.x = 0
+	rotation.z = 0
 
 
 
 func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("playerhitbox"):
+		target = area
 		print("hit2")
 		inhitbox = true
 
 
 func _on_area_3d_area_shape_exited(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("playerhitbox"):
+		target = self
 		inhitbox = false
 
 
 
-		
+# This codes plays every second, if the player area is inside the enemy then hitbox is set to true and the player will start to take damage.
 func _on_timer_timeout():
 	if inhitbox == true:
 		print("hit")
