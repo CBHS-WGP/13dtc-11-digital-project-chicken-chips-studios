@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://b5uavx16u4g8q"]
+[gd_scene load_steps=62 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="Script" uid="uid://dmy8d2l1ecg8" path="res://Charlie/Maps/Enemy_NAV_Script.gd" id="1_bbdrk"]
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://brt5nhqe2b6ba" path="res://Charlie/Models/Section2_homes.obj" id="6_kyc4n"]
 [ext_resource type="PackedScene" uid="uid://xp2woouhmaf8" path="res://Charles Tracey - Project Manager/enemy.tscn" id="6_moi4y"]
 [ext_resource type="Texture2D" uid="uid://dvvtr45htbs8a" path="res://Charlie/Textures/Soil.jpg" id="8_7uao1"]
+[ext_resource type="PackedScene" uid="uid://dwuqvkxi0aqeo" path="res://Charlie/Specific Objective files/Satellite/Sattelite_Box.tscn" id="11_nviu8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xsla7"]
 sky_top_color = Color(0.348571, 0.423453, 0.731222, 1)
@@ -221,7 +222,7 @@ script = ExtResource("1_bbdrk")
 [node name="Progression_Tracker" parent="." instance=ExtResource("2_7uao1")]
 
 [node name="Wayne" parent="." instance=ExtResource("1_tcvu6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.557, 21.3623, -138.008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2284, 21.3623, -52.1918)
 floor_max_angle = 0.872665
 
 [node name="Enviroment" type="Node3D" parent="."]
@@ -514,3 +515,8 @@ mesh = SubResource("CylinderMesh_gl1fk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mru0c")
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="Sattelite_Box" parent="Pickups" instance=ExtResource("11_nviu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8563, 4.21697, -50.2226)

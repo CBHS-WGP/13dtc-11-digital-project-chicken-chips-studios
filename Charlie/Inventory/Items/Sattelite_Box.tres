@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://bw41qf4aiu7m0"]
+
+[ext_resource type="Script" uid="uid://65m5x7dykwy8" path="res://Charlie/Inventory/inventory_item.gd" id="1_raxs0"]
+
+[sub_resource type="Gradient" id="Gradient_raxs0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52nnm"]
+gradient = SubResource("Gradient_raxs0")
+fill_from = Vector2(0.739316, 0.350427)
+
+[resource]
+script = ExtResource("1_raxs0")
+name = "Sattellite Box"
+texture = SubResource("GradientTexture2D_52nnm")
+metadata/_custom_type_script = "uid://65m5x7dykwy8"
