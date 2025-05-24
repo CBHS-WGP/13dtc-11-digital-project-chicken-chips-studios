@@ -22,16 +22,16 @@ var gravity = 9.81
 var input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
 var direction = Vector3(0, 0, 0)	
 @export var inv: Inv
-var health = 100
 
-
+#Emmited from the enemy, sent to global, and callected by the player script to decrase health
 func _ready():
 	Global.shot.connect(healthdecrease)
 	
+	#Changes the health, and when it hits 0, send to credits
 func healthdecrease():
-	health = health - 20
+	Global.health = Global.health - 20
 	print(\"TAKEDAMAMGE\")
-	if health == 0:
+	if Global.health == 0:
 		print(\"dead\")
 		get_tree().change_scene_to_file(\"res://Charlie/UI/credits.tscn\")
 

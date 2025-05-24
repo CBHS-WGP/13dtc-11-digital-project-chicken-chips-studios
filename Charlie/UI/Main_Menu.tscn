@@ -333,12 +333,14 @@ grow_vertical = 2
 
 [node name="Options_Box" parent="Options" instance=ExtResource("4_xirei")]
 layout_mode = 1
+offset_top = 924.5
+offset_bottom = 964.5
 
 [node name="Back" type="Button" parent="Options"]
 layout_mode = 0
-offset_left = 1379.0
+offset_left = 1926.0
 offset_top = 211.0
-offset_right = 1602.0
+offset_right = 2149.0
 offset_bottom = 285.0
 text = "Back"
 
