@@ -41,7 +41,7 @@ func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_inde
 		inhitbox = true
 
 
-func _on_area_3d_area_shape_exited(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_area_3d_area_shape_exited(area_rid: RID, area: Area3D, area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("playerhitbox"):
 		target = self
 		inhitbox = false
@@ -61,7 +61,7 @@ func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
 		speed = 0
 
 
-func _on_damage_checker_area_entered(area):
+func _on_damage_checker_area_entered(_area):
 	health = health - 20
 
 
@@ -78,7 +78,7 @@ func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
 
 	
 	
-func dead(delta):
+func dead(_delta):
 	if health == 0:
 		get_tree().quit()
 	

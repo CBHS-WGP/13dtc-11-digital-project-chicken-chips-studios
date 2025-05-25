@@ -8,7 +8,7 @@ func _ready():
 	update_slots()
 	Global.inv_open = false
 	
-func _process(delta):
+func _process(_delta):
 	# Close and opens the inventory by clicking E (only when certain parapeters are met)
 	if Input.is_action_just_pressed("E") and $Open_Close.is_playing() == false and Global.settings_open == false:
 		if Global.inv_open == false:

@@ -1,7 +1,7 @@
 extends Control
 var damage_taken
 
-func _process(delta):
+func _process(_delta):
 	if Progress.current_objective == 1:
 		$Main_Objective/Label.text = str("Kill 5 ememies:", Progress.objective_1, "/5")
 	if Progress.current_objective == 2:
@@ -18,11 +18,11 @@ func _process(delta):
 	$Heatlh_Visualizer/Health.text = str("Health:", Global.health, "/100")
 	
 	$Heatlh_Visualizer/Red_Hue.modulate = Color8(255, 255, 255, damage_taken/2.5)
-	if damage_taken <= 225/2:
+	if damage_taken <= 112:
 		$"Heatlh_Visualizer/Damage 1".modulate =  Color8(255, 255, 255, damage_taken * 2)
 	
-	if 225/2 < damage_taken and damage_taken <= 225:
-		$Heatlh_Visualizer/Critital.modulate = Color8(255, 255, 255, (damage_taken - 225/2) * 2)
+	if 112 < damage_taken and damage_taken <= 225:
+		$Heatlh_Visualizer/Critital.modulate = Color8(255, 255, 255, (damage_taken - 112) * 2)
 	else:
 		$Heatlh_Visualizer/Critital.modulate = Color8(255, 255, 255, 0)
 		

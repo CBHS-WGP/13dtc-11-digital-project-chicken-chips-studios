@@ -8,7 +8,7 @@ var sattelite_activated = false
 #Objective 2 varibles
 
 
-func _process(delta):
+func _process(_delta):
 	#Progressing past objective 1
 	if Progress.objective_1 >= 5:
 		current_objective = current_objective + 1
@@ -18,5 +18,10 @@ func _process(delta):
 		pass
 	#If objective 3, win the game
 	if Progress.current_objective == 3:
+		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
+		
+	#Player death
+	if Global.health <= 0:
+		print("dead")
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
 		

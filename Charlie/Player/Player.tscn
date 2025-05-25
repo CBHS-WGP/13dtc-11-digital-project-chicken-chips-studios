@@ -29,11 +29,10 @@ func _ready():
 	
 	#Changes the health, and when it hits 0, send to credits
 func healthdecrease():
-	Global.health = Global.health - 20
-	print(\"TAKEDAMAMGE\")
-	if Global.health == 0:
-		print(\"dead\")
-		get_tree().change_scene_to_file(\"res://Charlie/UI/credits.tscn\")
+	if Global.health > 0:
+		Global.health = Global.health - 20
+		print(\"TAKEDAMAMGE\")
+
 
 func _physics_process(delta):
 	#print(velocity)

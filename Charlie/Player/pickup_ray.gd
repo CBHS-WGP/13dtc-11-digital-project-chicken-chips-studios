@@ -2,7 +2,7 @@ extends Node3D
 
 const RAY_LENGTH = 10
 
-func _process(delta):
+func _process(_delta):
 	var space_state = get_world_3d().direct_space_state
 	var cam = get_parent().get_parent().get_node("Camera/Camera")
 	var mousepos = get_viewport().get_mouse_position()

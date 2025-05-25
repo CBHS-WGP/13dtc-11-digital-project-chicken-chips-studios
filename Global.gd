@@ -10,6 +10,6 @@ var crouching = false
 var health = 100
 var settings_open = false
 	
-func dead(delta):
+func dead(_delta):
 	if health == 0:
 		get_tree().quit()

@@ -3,7 +3,7 @@ extends Node3D
 @onready var Bayonetanimation : AnimationTree = $M7_Bayonet/Bayonet/AnimationTree
 
 
-func _process(delta):
+func _process(_delta):
 	#Code that allows the animation tree to paly the correct animation, and thus be able to use
 	#the knife.
 	if Global.inv_open == false and Global.settings_open == false:
