@@ -68,6 +68,8 @@ shape = SubResource("BoxShape3D_8uhvq")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Area3D2" type="Area3D" parent="."]
+
 [connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_entered"]
 [connection signal="body_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_body_exited"]
 [connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]

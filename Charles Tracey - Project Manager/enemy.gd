@@ -36,7 +36,7 @@ func target_position(target):
 
 func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("playerhitbox"):
-		target = area
+		target = $"../Wayne"
 		print("hit2")
 		inhitbox = true
 
@@ -69,11 +69,10 @@ func _on_damage_checker_area_entered(_area):
 
 func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and Global.crouching == false:
-		print("entered")
 		speed = 2
-		print(Global.crouching)	
-	if Global.crouching == true:
+	while Global.crouching == true:
 		pass
+
 		
 
 	
@@ -81,8 +80,3 @@ func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
 func dead(_delta):
 	if health == 0:
 		get_tree().quit()
-	
-
-
-
-	
