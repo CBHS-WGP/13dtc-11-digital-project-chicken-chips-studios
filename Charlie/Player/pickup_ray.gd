@@ -10,8 +10,13 @@ func _process(_delta):
 	var origin = cam.project_ray_origin(mousepos)
 	var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.exclude = [self]
 	query.collide_with_areas = true
 
 	var result = space_state.intersect_ray(query)
-	#print(result)
+	if result.has("collider"):
+		print(result)
+	var collision = $Pickup.get_collider()
 	
+func pickup_item():
+	pass

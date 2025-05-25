@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ciulnl5upgiim"]
 
 [ext_resource type="Texture2D" uid="uid://bhtvgdgw2w1fd" path="res://Charlie/Textures/Chip_Logo.png" id="1_0xrjo"]
-[ext_resource type="Script" uid="uid://bel32aiv2gb47" path="res://Charlie/Inventory/inv_slot.gd" id="1_qctm2"]
+[ext_resource type="Script" uid="uid://bel32aiv2gb47" path="res://Charlie/Inventory/inv_UI_slot.gd" id="1_qctm2"]
 
 [node name="Panel" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -43,3 +43,11 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 0
+offset_left = -49.5
+offset_top = 27.5
+offset_right = -9.5
+offset_bottom = 50.5
+text = "64"

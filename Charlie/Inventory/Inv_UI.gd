@@ -25,6 +25,7 @@ func _process(_delta):
 
 
 func update_slots():
-	for i in range(min(inv.items.size(), slots.size())):
-		slots[i].update(inv.items[i])
+	pass
+#	for i in range(min(inv.items.size(), slots.size())):
+		#slots[i].update(inv.items[i])
 		
