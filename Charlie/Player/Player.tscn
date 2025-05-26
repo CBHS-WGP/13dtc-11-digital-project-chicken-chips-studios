@@ -409,19 +409,23 @@ script = ExtResource("1_euoi1")
 [node name="Camera" type="Camera3D" parent="Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
+[node name="Pickup_Ray" type="Node3D" parent="Camera/Camera"]
+process_priority = 5000
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, -0.555919)
+script = ExtResource("4_g6nvv")
+
+[node name="Pickup" type="RayCast3D" parent="Camera/Camera/Pickup_Ray"]
+process_priority = 5000
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+target_position = Vector3(0.03, 0, -1.5)
+collision_mask = 32
+collide_with_areas = true
+collide_with_bodies = false
+
 [node name="Arms" type="Node3D" parent="Camera/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.35, -0.5)
 
 [node name="Held Item" parent="Camera/Camera/Arms" instance=ExtResource("2_uiw4x")]
-
-[node name="Pickup_Ray" type="Node3D" parent="Camera"]
-script = ExtResource("4_g6nvv")
-
-[node name="Pickup" type="RayCast3D" parent="Camera/Pickup_Ray"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
-collision_mask = 2
-collide_with_areas = true
-collide_with_bodies = false
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
