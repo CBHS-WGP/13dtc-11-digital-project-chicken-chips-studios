@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2bkdg7hpkp2a"]
+
+[ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_0syom"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_j2wcq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d23nc"]
+
+[node name="M7_Bayonet" type="Area3D"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_0syom")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_j2wcq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_d23nc")

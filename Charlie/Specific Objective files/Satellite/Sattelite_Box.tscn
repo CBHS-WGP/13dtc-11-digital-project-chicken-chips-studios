@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwuqvkxi0aqeo"]
 
-[ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/sattelite_box.gd" id="1_nwbxu"]
+[ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_nwbxu"]
 [ext_resource type="Resource" uid="uid://bw41qf4aiu7m0" path="res://Charlie/Inventory/Items/Sattelite_Box.tres" id="2_nrfnc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ho42y"]
