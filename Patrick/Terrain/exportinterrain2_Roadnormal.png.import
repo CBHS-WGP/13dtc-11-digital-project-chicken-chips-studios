@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c266vniir4lsd"
-path.s3tc="res://.godot/imported/exportinterrain3_Roadnormal.png-fab060c7577e236a9be0c44174fbb799.s3tc.ctex"
+uid="uid://bevfojckygg0y"
+path.s3tc="res://.godot/imported/exportinterrain2_Roadnormal.png-21b71971427fce63ce1f26c304f36c78.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Patrick/exportinterrain3_Roadnormal.png"
-dest_files=["res://.godot/imported/exportinterrain3_Roadnormal.png-fab060c7577e236a9be0c44174fbb799.s3tc.ctex"]
+source_file="res://Patrick/Terrain/exportinterrain2_Roadnormal.png"
+dest_files=["res://.godot/imported/exportinterrain2_Roadnormal.png-21b71971427fce63ce1f26c304f36c78.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Patrick/exportinterrain3_Roadnormal.png"
+roughness/src_normal="res://Patrick/exportinterrain2_Roadnormal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

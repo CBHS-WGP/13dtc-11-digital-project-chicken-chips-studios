@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqhw5cvenk056"
-path.s3tc="res://.godot/imported/exportinterrain_Roadrough.png-9ef30327be9d120d87e291a0eefe302b.s3tc.ctex"
+uid="uid://8apk2jlwbdke"
+path.s3tc="res://.godot/imported/exportinterrain3_Roadrough.png-69d1f8073dd5d06ecfcc2bfef22afc41.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Patrick/exportinterrain_Roadrough.png"
-dest_files=["res://.godot/imported/exportinterrain_Roadrough.png-9ef30327be9d120d87e291a0eefe302b.s3tc.ctex"]
+source_file="res://Patrick/Terrain/exportinterrain3_Roadrough.png"
+dest_files=["res://.godot/imported/exportinterrain3_Roadrough.png-69d1f8073dd5d06ecfcc2bfef22afc41.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxollfognoogf"
-path="res://.godot/imported/exportinterrain2.glb-464143836278c3b6545c92778b0f23f6.scn"
+uid="uid://bu4u7i3v4qk8m"
+path="res://.godot/imported/Gunmodel1NA.glb-3acd86cb53d536a20cd381035a3dedf0.scn"
 
 [deps]
 
-source_file="res://Patrick/exportinterrain2.glb"
-dest_files=["res://.godot/imported/exportinterrain2.glb-464143836278c3b6545c92778b0f23f6.scn"]
+source_file="res://Patrick/G32/Gunmodel1NA.glb"
+dest_files=["res://.godot/imported/Gunmodel1NA.glb-3acd86cb53d536a20cd381035a3dedf0.scn"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byuxrth5n6quk"
-path.s3tc="res://.godot/imported/exportinterrain_Roadcolor.png-c34c47ec999bd762bff311f110765698.s3tc.ctex"
+uid="uid://b2r4unlflx4rm"
+path.s3tc="res://.godot/imported/G32NA2_GunhandlNorm.png-693723fa991d53cb96419746e7e115a1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "880aca7859d203393506f1d1acc9bfa2"
+"md5": "0fe2a80f0c2dedb600cec34eae657e42"
 }
 
 [deps]
 
-source_file="res://Patrick/exportinterrain_Roadcolor.png"
-dest_files=["res://.godot/imported/exportinterrain_Roadcolor.png-c34c47ec999bd762bff311f110765698.s3tc.ctex"]
+source_file="res://Patrick/G32/G32NA2_GunhandlNorm.png"
+dest_files=["res://.godot/imported/G32NA2_GunhandlNorm.png-693723fa991d53cb96419746e7e115a1.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Patrick/G32/G32NA2_GunhandlNorm.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

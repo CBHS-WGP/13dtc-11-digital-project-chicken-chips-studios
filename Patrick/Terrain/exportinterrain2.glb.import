@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ccfsm55auvpwg"
-path="res://.godot/imported/exportinterrain.glb-68af4fae2efe885ee9f2124de4ab2e15.scn"
+uid="uid://bxollfognoogf"
+path="res://.godot/imported/exportinterrain2.glb-774a19b13d505b1accf46babed914377.scn"
 
 [deps]
 
-source_file="res://Patrick/exportinterrain.glb"
-dest_files=["res://.godot/imported/exportinterrain.glb-68af4fae2efe885ee9f2124de4ab2e15.scn"]
+source_file="res://Patrick/Terrain/exportinterrain2.glb"
+dest_files=["res://.godot/imported/exportinterrain2.glb-774a19b13d505b1accf46babed914377.scn"]
 
 [params]
 
