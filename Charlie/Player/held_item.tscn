@@ -320,6 +320,7 @@ visible = false
 mesh = SubResource("BoxMesh_8wcif")
 
 [node name="M7_Bayonet" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.35, -0.5)
 
 [node name="Area3D" type="Area3D" parent="M7_Bayonet"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.221356, 0, -0.455244)

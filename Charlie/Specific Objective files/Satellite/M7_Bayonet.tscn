@@ -6,7 +6,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d23nc"]
 
-[node name="M7_Bayonet" type="Area3D"]
+[node name="Bayonet" type="Area3D"]
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("1_0syom")
