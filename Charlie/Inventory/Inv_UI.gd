@@ -1,12 +1,7 @@
 extends Control
-#https://youtu.be/fyRcR6C5H2g?si=-8PLohTG6hwv2L17
-#Part 2 to follow!!!
-@onready var inv: Inv = preload("res://Charlie/Inventory/Player_Inventory.tres")
-@onready var slots: Array = $Slots/NinePatchRect/GridContainer.get_children()
+
 
 func _ready():
-	inv.update.connect(update_slots())
-	update_slots()
 	Global.inv_open = false
 	
 func _process(_delta):
@@ -23,9 +18,3 @@ func _process(_delta):
 		Global.inv_open = false
 		$Open_Close.play("close")
 			
-
-
-func update_slots():
-	for i in range(min(inv.slots.size(), slots.size())):
-		slots[i].update(inv.slots[i])
-		

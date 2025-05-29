@@ -1,6 +1,8 @@
 extends Node3D
 
+
 var hit = null
+@export var ItemTypes : Array[ItemData] = []
 
 func _process(delta: float) -> void:
 	var ray = $Pickup

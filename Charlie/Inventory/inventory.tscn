@@ -96,16 +96,16 @@ offset_bottom = 224.0
 grow_horizontal = 2
 columns = 2
 
-[node name="Panel4" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
+[node name="Inv_Slot" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
 layout_mode = 2
 
-[node name="Panel3" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
+[node name="Inv_Slot2" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
 layout_mode = 2
 
-[node name="Panel2" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
+[node name="Inv_Slot3" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
 layout_mode = 2
 
-[node name="Panel" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
+[node name="Inv_Slot4" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
 layout_mode = 2
 
 [node name="Open_Close" type="AnimationPlayer" parent="."]

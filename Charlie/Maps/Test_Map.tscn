@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b5uavx16u4g8q"]
+[gd_scene load_steps=63 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="Script" uid="uid://dmy8d2l1ecg8" path="res://Charlie/Maps/Enemy_NAV_Script.gd" id="1_bbdrk"]
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://xp2woouhmaf8" path="res://Charles Tracey - Project Manager/enemy.tscn" id="6_moi4y"]
 [ext_resource type="Texture2D" uid="uid://dvvtr45htbs8a" path="res://Charlie/Textures/Soil.jpg" id="8_7uao1"]
 [ext_resource type="PackedScene" uid="uid://dwuqvkxi0aqeo" path="res://Charlie/Specific Objective files/Satellite/Sattelite_Box.tscn" id="11_nviu8"]
+[ext_resource type="PackedScene" uid="uid://dvb1wioo3eayi" path="res://Charlie/Specific Objective files/Satellite/Sattelite.tscn" id="11_rbrm6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xsla7"]
 sky_top_color = Color(0.348571, 0.423453, 0.731222, 1)
@@ -517,6 +518,9 @@ mesh = SubResource("CylinderMesh_gl1fk")
 shape = SubResource("ConcavePolygonShape3D_mru0c")
 
 [node name="Pickups" type="Node3D" parent="."]
+
+[node name="Sattelite" parent="Pickups" instance=ExtResource("11_rbrm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.192, 4.36489, -51.9013)
 
 [node name="Sattelite_Box" parent="Pickups" instance=ExtResource("11_nviu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8563, 4.21697, -50.2226)

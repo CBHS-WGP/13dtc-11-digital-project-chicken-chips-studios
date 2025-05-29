@@ -1,6 +1,13 @@
-extends Resource
+extends Panel
 
-class_name InvSlot
+class_name InventorySlot
 
-@export var item: InvItem
-@export var amount: int
+@export var IconSlot : TextureRect
+var InventorySlotID : int = -1
+var SlotFilled : bool = false
+var SlotData : ItemData
+
+func FillSlot(data: ItemData):
+	SlotData = data
+	SlotFilled = true
+	IconSlot.texture = data.icon
