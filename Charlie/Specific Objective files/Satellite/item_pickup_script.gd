@@ -2,7 +2,6 @@ extends Area3D
 @export var item: InvItem
 var obj_name = name
 var player = null
-
 func _process(delta):
 	#print(Progress.current_objective)
 	if Input.is_action_pressed("F") and Global.current_raycast == name:
@@ -14,6 +13,7 @@ func _process(delta):
 		
 		#Specific Sattelite Box code
 		if Global.current_raycast == "Sattelite_Box":
+			player.collect(item)
 			Progress.current_objective = Progress.current_objective + 0.5
 			queue_free()
 		

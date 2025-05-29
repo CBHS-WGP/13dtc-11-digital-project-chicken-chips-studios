@@ -5,6 +5,7 @@ extends Control
 @onready var slots: Array = $Slots/NinePatchRect/GridContainer.get_children()
 
 func _ready():
+	inv.update.connect(update_slots())
 	update_slots()
 	Global.inv_open = false
 	
@@ -25,7 +26,6 @@ func _process(_delta):
 
 
 func update_slots():
-	pass
-#	for i in range(min(inv.items.size(), slots.size())):
-		#slots[i].update(inv.items[i])
+	for i in range(min(inv.slots.size(), slots.size())):
+		slots[i].update(inv.slots[i])
 		
