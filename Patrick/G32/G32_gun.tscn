@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccblkv2im1cmg"]
+
+[ext_resource type="PackedScene" uid="uid://s43vjwnql2vl" path="res://Patrick/G32/G32NA3.glb" id="1_5mxbn"]
+
+[node name="G32Gun" type="Node3D"]
+
+[node name="G32NA3" parent="." instance=ExtResource("1_5mxbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295125, 0, -0.394858)

@@ -10,6 +10,3 @@ func _process(delta: float) -> void:
 		Global.current_raycast = hit.name
 	else:
 		Global.current_raycast = null
-
-
-	
