@@ -17,7 +17,6 @@ radius = 5.095
 radius = 16.375
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hryg0"]
-size = Vector3(0.7, 1, 0.7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8uhvq"]
 size = Vector3(0.8, 1.717, 0.8)

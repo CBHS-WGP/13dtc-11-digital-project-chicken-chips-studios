@@ -11,27 +11,30 @@ var target = self
 
 # Code which makes the enemy move towards the player
 func _process(delta):
-	if not is_on_floor():
+	if not is_on_floor() :
 		velocity.y -= gravity * delta
 	else:
 		velocity.y -= 2
+	if target != self:
+		look_at(target.global_transform.origin)
+		rotation.x = 0
+		rotation.z = 0
 	var next_location = nav.get_next_path_position()
 	var current_location = global_transform.origin
 	var new_velocity = (next_location - current_location).normalized() * speed
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
-	
+
 	$Damage_Checker/Health_Indicator.text = str(health,"/100")
 	if health <= 0:
 		Progress.objective_1 = Progress.objective_1 + 1
 		queue_free()
-	
-func target_position(target):
-	nav.set_target_position(target)
-	look_at(target)
-	rotation.x = 0
-	rotation.z = 0
 
+#func target_position(target):
+#	nav.set_target_position(target.global_transform.origin)
+#	look_at(target.global_transform.origin)
+#	rotation.x = 0
+#	rotation.z = 0
 
 
 func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
