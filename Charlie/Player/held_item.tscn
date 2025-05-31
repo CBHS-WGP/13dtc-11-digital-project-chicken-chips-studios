@@ -329,14 +329,14 @@ collision_mask = 4
 monitorable = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="M7_Bayonet/Area3D"]
-transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -0.552, 0.575, -0.277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_p45wi")
 mesh = SubResource("BoxMesh_7ynmh")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="M7_Bayonet/Area3D"]
-transform = Transform3D(0.939692, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939692, 0, 0.575, -0.277)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 shape = SubResource("BoxShape3D_p45wi")
 
 [node name="Bayonet" parent="M7_Bayonet" instance=ExtResource("1_qo06o")]

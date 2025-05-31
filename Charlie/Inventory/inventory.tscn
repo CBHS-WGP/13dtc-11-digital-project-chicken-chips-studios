@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ggmokxxoct5u"]
+[gd_scene load_steps=7 format=3 uid="uid://ggmokxxoct5u"]
 
-[ext_resource type="Script" uid="uid://di012fyql0h1k" path="res://Charlie/Inventory/Inv_UI.gd" id="1_2s7m8"]
+[ext_resource type="Script" uid="uid://kvjqhu5goo7l" path="res://Charlie/Inventory/Inventory_handler.gd" id="1_2s7m8"]
 [ext_resource type="Texture2D" uid="uid://db38221a6ihup" path="res://Charlie/Textures/Grass.jpg" id="1_cu82g"]
-[ext_resource type="PackedScene" uid="uid://ciulnl5upgiim" path="res://Charlie/Inventory/Inv_Slot.tscn" id="3_qpsoo"]
 
 [sub_resource type="Animation" id="Animation_47dbb"]
 length = 0.001
@@ -58,7 +57,7 @@ _data = {
 &"open": SubResource("Animation_qna3k")
 }
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" node_paths=PackedStringArray("InventoryGrid")]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -67,6 +66,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 grow_horizontal = 0
 script = ExtResource("1_2s7m8")
+InventoryGrid = NodePath("Slots/NinePatchRect/GridContainer")
 
 [node name="Slots" type="Control" parent="."]
 layout_mode = 1
@@ -95,18 +95,6 @@ offset_right = 102.0
 offset_bottom = 224.0
 grow_horizontal = 2
 columns = 2
-
-[node name="Inv_Slot" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
-layout_mode = 2
-
-[node name="Inv_Slot2" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
-layout_mode = 2
-
-[node name="Inv_Slot3" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
-layout_mode = 2
-
-[node name="Inv_Slot4" parent="Slots/NinePatchRect/GridContainer" instance=ExtResource("3_qpsoo")]
-layout_mode = 2
 
 [node name="Open_Close" type="AnimationPlayer" parent="."]
 libraries = {

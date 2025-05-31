@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bjbemg3f2fft" path="res://Charlie/Inventory/inv_slot.gd" id="1_0xrjo"]
 
-[node name="Inv_Slot" type="Panel"]
+[node name="Inv_Slot" type="Panel" node_paths=PackedStringArray("IconSlot")]
 offset_right = 100.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_0xrjo")
+IconSlot = NodePath("Item_Slot/TextureRect")
 
 [node name="Item_Slot" type="Button" parent="."]
 layout_mode = 1
