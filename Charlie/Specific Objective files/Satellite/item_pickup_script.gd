@@ -14,6 +14,7 @@ func _process(delta):
 		
 		#Specific Sattelite Box code
 		if Global.current_raycast == "Sattelite_Box":
+			_add_item()
 			Progress.current_objective = Progress.current_objective + 0.5
 			queue_free()
 		
@@ -22,8 +23,9 @@ func _process(delta):
 			queue_free()
 
 func _add_item():
-	pass
-func emit_away():
+	print("sent")
 	OnItemPickedUp.emit(Global.current_raycast)
 	queue_free()
+func emit_away():
+	pass
 	

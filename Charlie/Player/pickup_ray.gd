@@ -1,6 +1,6 @@
 extends Node3D
 
-
+signal OnItemPickedUp(item)
 var hit = null
 @export var ItemTypes : Array[ItemData] = []
 
@@ -18,5 +18,6 @@ func _process(delta: float) -> void:
 		for i in ItemTypes.size():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
 				print("Item ID:" + str(i) + "Item Name" + ItemTypes[i].ItemName)
+				OnItemPickedUp.emit(ItemTypes[i])
 				return
 			print("na")

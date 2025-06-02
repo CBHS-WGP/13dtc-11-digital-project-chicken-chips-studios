@@ -329,7 +329,6 @@ collision_mask = 4
 monitorable = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="M7_Bayonet/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_p45wi")
 mesh = SubResource("BoxMesh_7ynmh")

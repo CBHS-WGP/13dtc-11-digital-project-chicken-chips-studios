@@ -10,4 +10,4 @@ var SlotData : ItemData
 func FillSlot(data: ItemData):
 	SlotData = data
 	SlotFilled = true
-	IconSlot.texture = data.icon
+	IconSlot.texture = data.Icon
