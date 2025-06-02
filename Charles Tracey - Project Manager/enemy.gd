@@ -6,6 +6,7 @@ var speed = 0
 var gravity = 9.81
 var health = 100
 var inhitbox = false
+@onready var player = $"../Wayne"
 var target = self
 
 
@@ -15,10 +16,6 @@ func _process(delta):
 		velocity.y -= gravity * delta
 	else:
 		velocity.y -= 2
-	if target != self:
-		look_at(target.global_transform.origin)
-		rotation.x = 0
-		rotation.z = 0
 	var next_location = nav.get_next_path_position()
 	var current_location = global_transform.origin
 	var new_velocity = (next_location - current_location).normalized() * speed
@@ -30,16 +27,17 @@ func _process(delta):
 		Progress.objective_1 = Progress.objective_1 + 1
 		queue_free()
 
-#func target_position(target):
-#	nav.set_target_position(target.global_transform.origin)
-#	look_at(target.global_transform.origin)
-#	rotation.x = 0
-#	rotation.z = 0
-
+# if target equals player and in inner radius, the enemy will follow the player.
+func target_position(delta):
+	if target == player:
+		nav.set_target_position(player.global_transform.origin)
+		look_at(player.global_transform.origin)
+		rotation.x = 0
+		rotation.z = 0
 
 func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("playerhitbox"):
-		target = $"../Wayne"
+		target = player
 		print("hit2")
 		inhitbox = true
 
@@ -62,6 +60,7 @@ func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
 	if body.is_in_group("player"):
 		print("exited")
 		speed = 0
+		target = self
 
 
 func _on_damage_checker_area_entered(_area):
@@ -72,6 +71,7 @@ func _on_damage_checker_area_entered(_area):
 
 func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and Global.crouching == false:
+		target = player
 		speed = 2
 	while Global.crouching == true:
 		pass
