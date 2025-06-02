@@ -418,12 +418,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Pickup_Ray" type="Node3D" parent="Camera/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, 0)
 script = ExtResource("4_g6nvv")
-ItemTypes = Array[ExtResource("3_m73r6")]([SubResource("Resource_3x0hu"), SubResource("Resource_o5tpb")])
+ItemTypes = Array[ExtResource("3_m73r6")]([SubResource("Resource_3x0hu"), SubResource("Resource_o5tpb"), null, null])
 
 [node name="Pickup" type="RayCast3D" parent="Camera/Camera/Pickup_Ray"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, -0.279859)
 target_position = Vector3(0, 0, -2)
-collision_mask = 32
+collision_mask = 33
 collide_with_areas = true
 collide_with_bodies = false
 

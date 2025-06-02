@@ -2,9 +2,9 @@ extends Area3D
 var obj_name = name
 
 signal OnItemPickedUp(item)
-
+@onready var raycast = preload("res://Charlie/Player/pickup_ray.gd")
 func _process(delta):
-	#print(Progress.current_objective)
+	#print(Global.current_raycast)
 	if Input.is_action_pressed("F") and Global.current_raycast == name:
 		
 		#Specific Sattelite activation code
@@ -16,14 +16,13 @@ func _process(delta):
 		if Global.current_raycast == "Sattelite_Box":
 			_add_item()
 			Progress.current_objective = Progress.current_objective + 0.5
-			queue_free()
 		
 		#Specific Sphere cade
-		if Global.current_raycast == "Area3D":
-			queue_free()
+		if Global.current_raycast == "Bayonet":
+			_add_item()
 
 func _add_item():
-	print("sent")
+	print("picked up " + Global.current_raycast)
 	OnItemPickedUp.emit(Global.current_raycast)
 	queue_free()
 func emit_away():

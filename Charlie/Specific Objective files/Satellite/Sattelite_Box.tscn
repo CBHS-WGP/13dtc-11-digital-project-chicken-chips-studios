@@ -9,7 +9,7 @@
 [node name="Sattelite_Box" type="Area3D" groups=["item"]]
 collision_layer = 32
 collision_mask = 32
-collision_priority = 5000.0
+collision_priority = -1.0
 script = ExtResource("1_nwbxu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
