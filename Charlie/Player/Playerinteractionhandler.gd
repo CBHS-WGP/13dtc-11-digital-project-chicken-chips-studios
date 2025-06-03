@@ -1,10 +1,37 @@
 extends Node3D
-#Inventory tutorial vars
-class_name InteractableItem
-@export var ItemHighlightMesh : MeshInstance3D
 
-func GainFocus():
-	ItemHighlightMesh.visible = true
-	
-func LoseFocus():
-	ItemHighlightMesh.visible = false
+signal OnItemPickedUp(item)
+
+@export var ItemTypes : Array[ItemData] = []
+
+var NearbyAreas : Array[InteractableItem]
+
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("F")):
+		PickupNearestItem()
+
+func PickupNearestItem():
+	var NearestItem : InteractableItem = null
+	var NearestItemDistance : float = INF
+	for item in NearbyAreas:
+		if (item.global_position.distance_to(global_position) < NearestItemDistance):
+			NearestItemDistance = item.global_position.distance_to(global_position)
+			NearestItem = item
+		if (NearestItem != null):
+			NearestItem.queue_free()
+			NearbyAreas.remove_at(NearbyAreas.find(NearestItem))
+			var itemPrefab = NearestItem.scene_file_path
+			for i in ItemTypes.size():
+				if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
+					print(str(i) + ItemTypes[i].ItemName)
+					OnItemPickedUp.emit(ItemTypes[i])
+
+func OnObjectEnteredArea(area: Area3D):
+	if (area is InteractableItem):
+		area.GainFocus()
+		NearbyAreas.append(area)
+
+func OnObjectExitedArea(area: Area3D):
+	if (area is InteractableItem and NearbyAreas.has(area)):
+		area.LoseFocus()
+		NearbyAreas.remove_at(NearbyAreas.find(area))

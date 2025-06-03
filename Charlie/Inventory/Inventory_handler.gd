@@ -3,6 +3,7 @@ extends Control
 class_name InventoryHandler 
 
 @export var ItemSlotsCount : int = 4
+
 @export var InventoryGrid : GridContainer
 @export var InventorySlotPrefab : PackedScene = preload("res://Charlie/Inventory/Inv_Slot.tscn")
 

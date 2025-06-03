@@ -1,13 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://461xqg54dhg2"]
+[gd_scene load_steps=30 format=3 uid="uid://461xqg54dhg2"]
 
 [ext_resource type="Script" uid="uid://bthwkuo42uy6g" path="res://Charlie/Player/Camera_movement.gd" id="1_euoi1"]
 [ext_resource type="PackedScene" uid="uid://cydmgo8i3qo0x" path="res://Charlie/Player/held_item.tscn" id="2_uiw4x"]
 [ext_resource type="Script" uid="uid://b6d2uymxqkxml" path="res://Charlie/Inventory/Item_Data.gd" id="3_m73r6"]
 [ext_resource type="PackedScene" uid="uid://ggmokxxoct5u" path="res://Charlie/Inventory/inventory.tscn" id="4_7bwoj"]
-[ext_resource type="Script" uid="uid://dnxded2b7jdos" path="res://Charlie/Player/pickup_ray.gd" id="4_g6nvv"]
 [ext_resource type="PackedScene" uid="uid://dwuqvkxi0aqeo" path="res://Charlie/Specific Objective files/Satellite/Sattelite_Box.tscn" id="4_m73r6"]
 [ext_resource type="PackedScene" uid="uid://u7d4ea0b411t" path="res://Charlie/UI/hud.tscn" id="5_7bwoj"]
+[ext_resource type="Script" uid="uid://cerjgkl6y3opq" path="res://Charlie/Player/Playerinteractionhandler.gd" id="6_m73r6"]
 [ext_resource type="PackedScene" uid="uid://b6hnwyuweh4nf" path="res://Charlie/UI/settings.tscn" id="7_g6nvv"]
+[ext_resource type="Texture2D" uid="uid://d1n83mxafmrys" path="res://Charlie/Textures/Inventory_Item_Textures/Sattelite_Box.png" id="7_o5tpb"]
+[ext_resource type="Texture2D" uid="uid://cdv2e0o6y5vsu" path="res://Charlie/Textures/Inventory_Item_Textures/M7_Bayonet.png" id="7_rn0aa"]
+[ext_resource type="PackedScene" uid="uid://b2bkdg7hpkp2a" path="res://Charlie/Specific Objective files/Satellite/M7_Bayonet.tscn" id="8_3x0hu"]
 
 [sub_resource type="GDScript" id="GDScript_yc2fa"]
 script/source = "extends CharacterBody3D
@@ -141,17 +144,23 @@ radius = 0.35
 radius = 0.35
 height = 1.8
 
-[sub_resource type="Resource" id="Resource_3x0hu"]
+[sub_resource type="Resource" id="Resource_rn0aa"]
 script = ExtResource("3_m73r6")
-ItemName = "Sattellite_Box"
+ItemName = "Sattelite_Box"
+Icon = ExtResource("7_o5tpb")
 ItemModelPrefab = ExtResource("4_m73r6")
 metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 
-[sub_resource type="Resource" id="Resource_o5tpb"]
+[sub_resource type="Resource" id="Resource_0csyg"]
 script = ExtResource("3_m73r6")
-ItemName = "Sattelite_Box"
-ItemModelPrefab = ExtResource("4_m73r6")
+ItemName = "M7_Bayonet"
+Icon = ExtResource("7_rn0aa")
+ItemModelPrefab = ExtResource("8_3x0hu")
 metadata/_custom_type_script = "uid://b6d2uymxqkxml"
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o5tpb"]
+height = 2.5
+radius = 0.05
 
 [sub_resource type="Animation" id="Animation_rn0aa"]
 resource_name = "Close"
@@ -415,6 +424,7 @@ script = ExtResource("1_euoi1")
 [node name="Camera" type="Camera3D" parent="Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
+<<<<<<< Updated upstream
 [node name="Pickup_Ray" type="Node3D" parent="Camera/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, 0)
 script = ExtResource("4_g6nvv")
@@ -427,9 +437,23 @@ collision_mask = 33
 collide_with_areas = true
 collide_with_bodies = false
 
+=======
+>>>>>>> Stashed changes
 [node name="Arms" type="Node3D" parent="Camera/Camera"]
 
 [node name="Held Item" parent="Camera/Camera/Arms" instance=ExtResource("2_uiw4x")]
+
+[node name="Player_Area_Cast" type="Node3D" parent="Camera/Camera"]
+
+[node name="Area_Cast" type="Area3D" parent="Camera/Camera/Player_Area_Cast"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("6_m73r6")
+ItemTypes = Array[ExtResource("3_m73r6")]([SubResource("Resource_rn0aa"), SubResource("Resource_0csyg")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera/Camera/Player_Area_Cast/Area_Cast"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.3191)
+shape = SubResource("CylinderShape3D_o5tpb")
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -487,3 +511,6 @@ shape = SubResource("SphereShape3D_aqwou")
 
 [connection signal="area_entered" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_entered"]
 [connection signal="area_exited" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_exited"]
+[connection signal="OnItemPickedUp" from="Camera/Camera/Player_Area_Cast/Area_Cast" to="HUD/Inventory" method="PickupItem"]
+[connection signal="area_entered" from="Camera/Camera/Player_Area_Cast/Area_Cast" to="Camera/Camera/Player_Area_Cast/Area_Cast" method="OnObjectEnteredArea"]
+[connection signal="area_exited" from="Camera/Camera/Player_Area_Cast/Area_Cast" to="Camera/Camera/Player_Area_Cast/Area_Cast" method="OnObjectExitedArea"]
