@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwuqvkxi0aqeo"]
+[gd_scene load_steps=6 format=3 uid="uid://dwuqvkxi0aqeo"]
 
 [ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_nwbxu"]
 
@@ -6,14 +6,28 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1uty"]
 
-[node name="Sattelite_Box" type="Area3D" groups=["item"]]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1uty"]
+transparency = 1
+cull_mode = 1
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwbxu"]
+material = SubResource("StandardMaterial3D_f1uty")
+size = Vector3(1.1, 1.1, 1.1)
+
+[node name="Sattelite_Box" type="Area3D" node_paths=PackedStringArray("ItemHighlightMesh") groups=["item"]]
 collision_layer = 32
 collision_mask = 32
 collision_priority = -1.0
 script = ExtResource("1_nwbxu")
+ItemHighlightMesh = NodePath("Glow")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ho42y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_f1uty")
+
+[node name="Glow" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_nwbxu")

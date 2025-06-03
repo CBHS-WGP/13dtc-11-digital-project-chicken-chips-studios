@@ -1,18 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2bkdg7hpkp2a"]
+[gd_scene load_steps=8 format=3 uid="uid://b2bkdg7hpkp2a"]
 
 [ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_0syom"]
+[ext_resource type="Texture2D" uid="uid://cdv2e0o6y5vsu" path="res://Charlie/Textures/Inventory_Item_Textures/M7_Bayonet.png" id="2_j2wcq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d23nc"]
+albedo_texture = ExtResource("2_j2wcq")
 
 [sub_resource type="SphereMesh" id="SphereMesh_j2wcq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d23nc"]
 
-[node name="Bayonet" type="Area3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0syom"]
+transparency = 1
+cull_mode = 1
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_d23nc"]
+material = SubResource("StandardMaterial3D_0syom")
+radius = 0.55
+height = 1.1
+
+[node name="Bayonet" type="Area3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("1_0syom")
+ItemHighlightMesh = NodePath("Glow")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_d23nc")
 mesh = SubResource("SphereMesh_j2wcq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_d23nc")
+
+[node name="Glow" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_d23nc")

@@ -9,8 +9,6 @@ var current_areas = 0
 var crouching = false
 var health = 100
 var settings_open = false
-var current_raycast
-var ray_global
 
 func dead(_delta):
 	if health == 0:
