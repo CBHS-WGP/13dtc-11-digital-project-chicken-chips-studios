@@ -1,29 +1,22 @@
 extends Node3D
 
-signal OnItemPickedUp(item)
 var hit = null
-@export var ItemTypes : Array[ItemData] = []
 var ray
 func _ready():
-	ray = $Pickup
+	ray = $Interacter
+
 func _process(delta: float) -> void:
-	
 	if ray.is_colliding():
 		hit = ray.get_collider()
-		print(hit)
-		#print(hit.name)
 		Global.current_raycast = hit.name
 	else:
 		Global.current_raycast = null
-
-func _pickup():
-	print("on PICKUP")
-	if Global.current_raycast != null:
-		var itemPrefab = ray.scene_file_path
-		for i in ItemTypes.size():
-			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
-				print("Item ID:" + str(i) + "Item Name" + ItemTypes[i].ItemName)
-				OnItemPickedUp.emit(ItemTypes[i])
-				return
-			print("na")
-	
+	#print(Global.current_raycast)
+	print(Progress.current_objective)
+	#These are all the code needed for interacting with specific objects.
+	#For things like light switches, i need to consider moving this code to a script on the item
+	#instead so the code works for just the instantiated object!
+	if Input.is_action_pressed("F") and Global.current_raycast == "Sattelite" and Progress.current_objective == 2.5:
+		if Progress.sattelite_box_collected == true:
+			Progress.sattelite_box_collected = false
+			Progress.current_objective = Progress.current_objective + 0.5

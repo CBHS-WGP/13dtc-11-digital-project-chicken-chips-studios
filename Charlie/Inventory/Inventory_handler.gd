@@ -23,6 +23,9 @@ func PickupItem(item : ItemData):
 		if (!slot.SlotFilled):
 			slot.FillSlot(item)
 			break
+	if item.ItemName == "Sattelite_Box":
+		Progress.sattelite_box_collected = true
+		Progress.current_objective = Progress.current_objective + 0.5
 
 func _process(_delta):
 	# Close and opens the inventory by clicking E (only when certain parapeters are met)

@@ -100,6 +100,7 @@ F={
 [layer_names]
 
 3d_physics/layer_1="Normal Collisions"
+3d_physics/layer_2="Object_Interaction Layer"
 3d_physics/layer_3="Attacking Collisions"
 3d_physics/layer_4="Ceiling Checks"
 3d_physics/layer_5="Player Damage"
