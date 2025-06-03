@@ -1,6 +1,6 @@
 extends Area3D
-var obj_name = name
 
+<<<<<<< Updated upstream
 signal OnItemPickedUp(item)
 @onready var raycast = preload("res://Charlie/Player/pickup_ray.gd")
 func _process(delta):
@@ -27,4 +27,16 @@ func _add_item():
 	queue_free()
 func emit_away():
 	pass
+=======
+class_name InteractableItem
+
+@export var ItemHighlightMesh : MeshInstance3D
+
+
+func GainFocus():
+	ItemHighlightMesh.visible = true
+	
+func LoseFocus():
+	ItemHighlightMesh.visible = false
+>>>>>>> Stashed changes
 	
