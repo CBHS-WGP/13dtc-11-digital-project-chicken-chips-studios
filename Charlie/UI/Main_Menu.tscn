@@ -399,7 +399,6 @@ text = "Exit"
 [node name="Main_Menu_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vmt7w")
 autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]

@@ -6,7 +6,7 @@ var speed = 0
 var gravity = 9.81
 var health = 100
 var inhitbox = false
-@onready var player = $"../Wayne"
+@onready var player = $"../../Wayne"
 var target = self
 
 
