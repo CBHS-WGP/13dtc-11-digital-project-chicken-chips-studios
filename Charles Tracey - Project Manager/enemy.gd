@@ -8,7 +8,7 @@ var health = 100
 var inhitbox = false
 @onready var player = $"../../Wayne"
 var target = self
-
+var insideinner = false
 
 # Code which makes the enemy move towards the player
 func _process(delta):
@@ -73,10 +73,13 @@ func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and Global.crouching == false:
 		target = player
 		speed = 2
-	while Global.crouching == true:
+		insideinner = true
+		
+	if Global.crouching == true:
 		pass
 
-		
+func _on_crouching_checker_timeout() -> void:
+	if insideinner = false
 
 	
 	
