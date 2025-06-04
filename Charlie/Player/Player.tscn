@@ -480,8 +480,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_3x0hu")
 }
 
-[node name="Inventory" parent="HUD" instance=ExtResource("4_7bwoj")]
+[node name="Inventory" parent="HUD" node_paths=PackedStringArray("PlayerBody") instance=ExtResource("4_7bwoj")]
 layout_mode = 1
+PlayerBody = NodePath("../..")
 
 [node name="HUD" parent="HUD" instance=ExtResource("5_7bwoj")]
 layout_mode = 1
