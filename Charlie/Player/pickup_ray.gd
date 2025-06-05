@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	else:
 		Global.current_raycast = null
 	#print(Global.current_raycast)
-	print(Progress.current_objective)
+	#print(Progress.current_objective)
 	#These are all the code needed for interacting with specific objects.
 	#For things like light switches, i need to consider moving this code to a script on the item
 	#instead so the code works for just the instantiated object!

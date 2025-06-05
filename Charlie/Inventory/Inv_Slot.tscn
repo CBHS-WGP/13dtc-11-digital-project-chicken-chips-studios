@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ciulnl5upgiim"]
 
-[ext_resource type="Script" uid="uid://bjbemg3f2fft" path="res://Charlie/Inventory/Inv_slot.gd" id="1_0xrjo"]
+[ext_resource type="Script" uid="uid://bjbemg3f2fft" path="res://Charlie/Inventory/inv_slot.gd" id="1_0xrjo"]
 [ext_resource type="StyleBox" uid="uid://by2sysoje0u1" path="res://Charlie/Box_Styles/test_inv_slot_hover_style.tres" id="2_22eic"]
 [ext_resource type="Texture2D" uid="uid://p7o54dxg0vsx" path="res://Charlie/Textures/Bayonet/textures/MTL_Scabbard_normal.png" id="3_18x75"]
 
@@ -17,12 +17,15 @@ texture = SubResource("GradientTexture1D_18x75")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wfty"]
 texture = ExtResource("3_18x75")
 
-[node name="Inv_Slot" type="Panel" node_paths=PackedStringArray("IconSlot")]
+[node name="Inv_Slot" type="Panel" node_paths=PackedStringArray("EquippedHighlight", "IconSlot")]
+process_priority = 1000
 offset_right = 100.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 1
 script = ExtResource("1_0xrjo")
+EquippedHighlight = NodePath("Highlight")
 IconSlot = NodePath("TextureRect")
 
 [node name="Item_Slot" type="Button" parent="."]
@@ -62,3 +65,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 expand_mode = 1
+
+[node name="Highlight" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.701961)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0

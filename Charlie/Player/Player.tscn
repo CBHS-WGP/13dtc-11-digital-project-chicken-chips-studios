@@ -27,7 +27,7 @@ var MAX_BACK_SPEED = 3
 const JUMP_VELOCITY = 3.5
 var gravity = 9.81
 var input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
-var direction = Vector3(0, 0, 0)	
+var direction = Vector3(0, 0, 0)
 
 #Emmited from the enemy, sent to global, and callected by the player script to decrase health
 func _ready():
@@ -37,7 +37,7 @@ func _ready():
 func healthdecrease():
 	if Global.health > 0:
 		Global.health = Global.health - 20
-		print(\"TAKEDAMAMGE\")
+		#print(\"TAKEDAMAMGE\")
 
 
 func _physics_process(delta):
@@ -474,6 +474,7 @@ anchor_right = 1.0
 offset_left = -1280.0
 offset_bottom = 720.0
 grow_horizontal = 0
+mouse_filter = 2
 script = ExtResource("12_ys5wq")
 
 [node name="Settings animations" type="AnimationPlayer" parent="HUD"]
@@ -494,7 +495,6 @@ offset_bottom = 1143.0
 process_priority = 10
 layout_mode = 1
 PlayerBody = NodePath("../..")
-CollisionMask = 1
 
 [node name="Leave_Settings" type="Button" parent="HUD"]
 layout_mode = 0
