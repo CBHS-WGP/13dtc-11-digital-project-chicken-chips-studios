@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ciulnl5upgiim"]
 
-[ext_resource type="Script" uid="uid://bjbemg3f2fft" path="res://Charlie/Inventory/inv_slot.gd" id="1_0xrjo"]
+[ext_resource type="Script" uid="uid://bjbemg3f2fft" path="res://Charlie/Inventory/Inv_slot.gd" id="1_0xrjo"]
 
 [node name="Inv_Slot" type="Panel" node_paths=PackedStringArray("IconSlot")]
 offset_right = 100.0

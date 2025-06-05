@@ -79,7 +79,8 @@ func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
 		pass
 
 func _on_crouching_checker_timeout() -> void:
-	if insideinner = false
+	if insideinner == false:
+		pass
 
 	
 	
