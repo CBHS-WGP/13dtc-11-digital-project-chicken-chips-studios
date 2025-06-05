@@ -61,8 +61,8 @@ func _physics_process(delta):
 		walkandrun()
 	elif Input.is_action_pressed(\"Shift\") and Global.crouching == false:
 		#Varibles for running
-		acceleration = 0.3
-		MAX_SPEED = 8
+		acceleration = 0.25
+		MAX_SPEED = 7
 		walkandrun()
 	else:
 		if input_dir[0] <= 0.71 and input_dir[0] >= -0.71 and input_dir[1] > 0 :
