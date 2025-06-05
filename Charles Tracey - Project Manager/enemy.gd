@@ -70,20 +70,20 @@ func _on_damage_checker_area_entered(_area):
 
 
 func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") and Global.crouching == false:
-		target = player
-		speed = 2
+	if body.is_in_group("player") :
 		insideinner = true
-		
-	if Global.crouching == true:
-		pass
 
 func _on_crouching_checker_timeout() -> void:
-	if insideinner == false:
-		pass
+	if insideinner == true and Global.crouching == false:
+			target = player
+			speed = 2
 
 	
 	
 func dead(_delta):
 	if health == 0:
 		get_tree().quit()
+
+
+func _on_inner_detection_radius_body_exited(body: Node3D) -> void:
+	insideinner = false
