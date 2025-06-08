@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://b5uavx16u4g8q"]
+[gd_scene load_steps=65 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="Script" uid="uid://dmy8d2l1ecg8" path="res://Charlie/Maps/Enemy_NAV_Script.gd" id="1_bbdrk"]
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dwuqvkxi0aqeo" path="res://Charlie/Specific Objective files/Satellite/Sattelite_Box.tscn" id="11_nviu8"]
 [ext_resource type="PackedScene" uid="uid://dvb1wioo3eayi" path="res://Charlie/Specific Objective files/Satellite/Sattelite.tscn" id="11_rbrm6"]
 [ext_resource type="PackedScene" uid="uid://b2bkdg7hpkp2a" path="res://Charlie/Specific Objective files/Satellite/M7_Bayonet.tscn" id="13_gl1fk"]
+[ext_resource type="PackedScene" uid="uid://bdbobsof2qn4f" path="res://Patrick/Terrain/TreePine.glb" id="14_y6h2w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xsla7"]
 sky_top_color = Color(0.348571, 0.423453, 0.731222, 1)
@@ -537,3 +538,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.8794, 3.99264, -57.0195)
 
 [node name="Bayonet4" parent="Pickups" instance=ExtResource("13_gl1fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3915, 4.31732, -52.6385)
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="TreePine" parent="Trees" instance=ExtResource("14_y6h2w")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 31.2397, 3.77378, -38.9772)
+
+[node name="TreePine2" parent="Trees" instance=ExtResource("14_y6h2w")]
+transform = Transform3D(5.06463, 0, -4.07425, 0, 6.5, 0, 4.07425, 0, 5.06463, 24.925, 3.77378, -39.5326)
+
+[node name="TreePine3" parent="Trees" instance=ExtResource("14_y6h2w")]
+transform = Transform3D(0.740986, 0, 5.95407, 0, 6, 0, -5.95407, 0, 0.740986, 19.8856, 3.77378, -38.9772)
+
+[node name="TreePine4" parent="Trees" instance=ExtResource("14_y6h2w")]
+transform = Transform3D(-2.78263, 0, 5.08891, 0, 5.8, 0, -5.08891, 0, -2.78263, 37.103, 3.77378, -41.0761)
