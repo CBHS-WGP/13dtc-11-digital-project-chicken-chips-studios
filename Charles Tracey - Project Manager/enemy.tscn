@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xp2woouhmaf8"]
+[gd_scene load_steps=10 format=3 uid="uid://xp2woouhmaf8"]
 
 [ext_resource type="Script" uid="uid://cg1mrc3pr864y" path="res://Charles Tracey - Project Manager/enemy.gd" id="1_8uhvq"]
 
@@ -21,6 +21,9 @@ size = Vector3(0.614197, 1, 0.55188)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8uhvq"]
 size = Vector3(0.8, 1.717, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m83rg"]
+size = Vector3(1, 2, 1)
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
 axis_lock_angular_x = true
@@ -75,6 +78,13 @@ autostart = true
 [node name="Crouching_Checker" type="Timer" parent="."]
 wait_time = 0.001
 autostart = true
+
+[node name="Enemy_Gun_Collider" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Gun_Collider"]
+shape = SubResource("BoxShape3D_m83rg")
 
 [connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_entered"]
 [connection signal="body_exited" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_exited"]
