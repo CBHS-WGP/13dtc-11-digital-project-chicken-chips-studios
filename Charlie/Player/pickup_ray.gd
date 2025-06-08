@@ -5,7 +5,7 @@ var ray
 func _ready():
 	ray = $Interacter
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if ray.is_colliding():
 		hit = ray.get_collider()
 		Global.current_raycast = hit.name

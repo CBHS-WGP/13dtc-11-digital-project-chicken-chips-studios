@@ -27,7 +27,7 @@ func FillSlot(data : ItemData, equipped : bool):
 		SlotFilled = false
 		IconSlot.texture = null
 
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	if (SlotFilled):
 		var preview : TextureRect = TextureRect.new()
 		preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -40,9 +40,9 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	else:
 		return false
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return typeof(data) == TYPE_DICTIONARY and data["Type"] == "Item"
 	
 
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	OnItemDropped.emit(data["ID"], InventorySlotID)

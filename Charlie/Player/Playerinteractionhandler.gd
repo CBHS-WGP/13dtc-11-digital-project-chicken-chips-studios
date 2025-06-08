@@ -6,12 +6,11 @@ signal OnItemPickedUp(item)
 
 var NearbyAreas : Array[InteractableItem]
 
-func _ready():
-	OnItemPickedUp.emit(ItemTypes[1])
-	print("Item id:" + str(1) + " Item Name:" + ItemTypes[1].ItemName)
+
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("F")):
+		OnItemPickedUp.emit(ItemTypes[1])
 		PickupNearestItem()
 
 func PickupNearestItem():

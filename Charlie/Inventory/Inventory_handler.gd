@@ -59,10 +59,10 @@ func ItemDroppedOnSlot(fromSlotID : int, toSlotID : int):
 	InventorySlots[toSlotID].FillSlot(fromSlotItem, EquippedSlot == toSlotID)
 	InventorySlots[fromSlotID].FillSlot(toSlotItem, EquippedSlot == fromSlotID)
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return typeof(data) == TYPE_DICTIONARY and data["Type"] == "Item"
 
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if (EquippedSlot == data["ID"]):
 		EquippedSlot = -1
 	
@@ -104,3 +104,12 @@ func _process(_delta):
 		$Open_Close.play("close")
 			
 			
+
+
+func _on_area_3d_on_item_picked_up(item: Variant) -> void:
+	pass # Replace with function body.
+	#find out where this should connect to
+	#
+	#
+	#
+	#THISTHISTHISTHISTHISTHISTHISTHISTHIS
