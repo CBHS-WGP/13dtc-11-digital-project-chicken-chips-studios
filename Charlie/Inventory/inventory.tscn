@@ -66,7 +66,6 @@ offset_right = 1080.0
 offset_bottom = 720.0
 grow_horizontal = 0
 script = ExtResource("1_2s7m8")
-CollisionMask = 1
 InventoryGrid = NodePath("Slots/NinePatchRect/GridContainer")
 
 [node name="Slots" type="Control" parent="."]
