@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://b6mfax6p64brh"]
+[gd_scene load_steps=2 format=3 uid="uid://b6mfax6p64brh"]
+
+[ext_resource type="PackedScene" uid="uid://bdbobsof2qn4f" path="res://Patrick/Terrain/TreePine.glb" id="1_8oskl"]
 
 [node name="Tree" type="Node3D"]
+
+[node name="TreePine" parent="." instance=ExtResource("1_8oskl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0239278, 1.19209e-07, -0.0628328)
