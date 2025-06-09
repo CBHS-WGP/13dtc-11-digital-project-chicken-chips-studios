@@ -27,7 +27,7 @@ func _process(_delta):
 	if selection == 0:
 		_hiding()
 
-	if selection == 1:
+	if Global.equipped_item_id == str("M7 Bayonet"):
 		_hiding()
 		$M7_Bayonet.visible = true
 		if Global.inv_open == false and Global.settings_open == false:
@@ -37,12 +37,16 @@ func _process(_delta):
 			else:
 				Bayonetanimation["parameters/conditions/swinging == true"] = false
 				Bayonetanimation["parameters/conditions/swinging == false"] = true
-	if selection == 2:
+	if Global.equipped_item_id == str("G32 Pistol"):
 		_hiding()
 		$G32.visible = true
 		if Global.inv_open == false and Global.settings_open == false:
 			if Input.is_action_just_pressed("leftclick"):
 				_shoot()
+	if Global.equipped_item_id == str("Sattelite_Box"):
+		_hiding()
+		$Cube.visible = true
+		
 
 func _hiding():
 		for child in get_children():

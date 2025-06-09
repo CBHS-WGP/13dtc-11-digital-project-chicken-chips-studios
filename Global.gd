@@ -10,7 +10,7 @@ var crouching = false
 var health = 100
 var settings_open = false
 var current_raycast 
-
+var equipped_item_id = str("null")
 func dead(_delta):
 	if health == 0:
 		get_tree().quit()

@@ -315,9 +315,10 @@ _data = {
 script = ExtResource("1_dneek")
 
 [node name="Cube" type="Node3D" parent="."]
-visible = false
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.447909, -0.24469, -0.169213)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.409825)
 mesh = SubResource("BoxMesh_8wcif")
 
 [node name="M7_Bayonet" type="Node3D" parent="."]

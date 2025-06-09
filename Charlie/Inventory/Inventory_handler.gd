@@ -69,6 +69,8 @@ func ItemDroppedOnSlot(fromSlotID : int, toSlotID : int):
 	
 	InventorySlots[toSlotID].FillSlot(fromSlotItem, EquippedSlot == toSlotID)
 	InventorySlots[fromSlotID].FillSlot(toSlotItem, EquippedSlot == fromSlotID)
+	
+
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return typeof(data) == TYPE_DICTIONARY and data["Type"] == "Item"
@@ -82,7 +84,6 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	
 	PlayerBody.get_parent().add_child(newItem)
 	newItem.global_position = GetWorldMousePosition()
-
 
 func GetWorldMousePosition() -> Vector3:
 	var mousePos = get_viewport().get_mouse_position()
@@ -113,5 +114,4 @@ func _process(_delta):
 	if Input.is_action_just_pressed("esc") and Global.inv_open == true:
 		Global.inv_open = false
 		$Open_Close.play("close")
-			
 			
