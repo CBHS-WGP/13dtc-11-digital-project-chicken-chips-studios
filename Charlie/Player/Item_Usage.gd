@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var Bayonetanimation : AnimationTree = $M7_Bayonet/Bayonet/AnimationTree
+@onready var Explosion = preload("res://Charlie/Specific Objective files/small_explosion.tscn")
 var selection = 0
 
 #gun raycast varibles
@@ -50,7 +51,9 @@ func _shoot():
 	#print(gun_raycast)
 	if ray.is_colliding():
 		hit = ray.get_collider()
-		print(ray)
+		#Explosion.global_position = ray.get_collider().global_position
+		#add_child(Explosion)
+		print(ray.get_collider().global_position)
 		hit.get_parent().health = hit.get_parent().health - 15
 		gun_raycast = hit.name
 	else:
