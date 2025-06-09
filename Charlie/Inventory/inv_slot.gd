@@ -1,4 +1,4 @@
-extends Control
+extends Panel
 class_name InventorySlot
 
 signal OnItemEquiped(SlotID)
@@ -12,7 +12,7 @@ var SlotFilled : bool = false
 
 var SlotData : ItemData
 
-func _gui_input(event: InputEvent) -> void:
+func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if (event.button_index == MOUSE_BUTTON_LEFT and event.double_click):
 			OnItemEquiped.emit(InventorySlotID)
@@ -32,10 +32,12 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		var preview : TextureRect = TextureRect.new()
 		preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		preview.size = IconSlot.size
-		preview.pivot_offset = IconSlot.size / 2.0
-		preview.rotation = 2.0
+		preview.pivot_offset = IconSlot.size / 1.0
+		preview.rotation = 0.2
 		preview.texture = IconSlot.texture
+		preview.PRESET_CENTER
 		set_drag_preview(preview)
+		
 		return {"Type": "Item", "ID": InventorySlotID}
 	else:
 		return false

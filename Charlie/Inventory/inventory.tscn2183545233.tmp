@@ -67,8 +67,11 @@ offset_bottom = 720.0
 grow_horizontal = 0
 mouse_filter = 2
 script = ExtResource("1_2s7m8")
+CollisionMask = null
+ItemSlotsCount = null
 InventoryGrid = NodePath("Slots/NinePatchRect/GridContainer")
-EquippingSlot = NodePath("Slots/Equipping_Slot")
+InventorySlotPrefab = null
+EquippingSlot = NodePath("Slots/Equipped_Slot")
 
 [node name="Slots" type="Control" parent="."]
 layout_mode = 1
@@ -100,12 +103,13 @@ grow_horizontal = 2
 mouse_filter = 2
 columns = 2
 
-[node name="Equipping_Slot" type="Control" parent="Slots"]
-anchors_preset = 0
-offset_left = 78.0
-offset_top = 250.0
-offset_right = 199.0
-offset_bottom = 376.0
+[node name="Equipped_Slot" type="Control" parent="Slots"]
+layout_mode = 1
+anchor_bottom = 0.028
+offset_left = 85.0
+offset_top = 237.0
+offset_right = 179.0
+offset_bottom = 323.728
 
 [node name="Open_Close" type="AnimationPlayer" parent="."]
 libraries = {

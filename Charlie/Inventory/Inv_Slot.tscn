@@ -18,12 +18,13 @@ texture = SubResource("GradientTexture1D_18x75")
 texture = ExtResource("3_18x75")
 
 [node name="Inv_Slot" type="Panel" node_paths=PackedStringArray("EquippedHighlight", "IconSlot")]
-process_priority = 1000
+process_priority = 10000
 offset_right = 100.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
+mouse_default_cursor_shape = 1
 script = ExtResource("1_0xrjo")
 EquippedHighlight = NodePath("Highlight")
 IconSlot = NodePath("TextureRect")
@@ -41,6 +42,7 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = SubResource("Theme_0xrjo")
 theme_override_colors/icon_hover_pressed_color = Color(0.509286, 0.509286, 0.509286, 1)
 theme_override_colors/icon_hover_color = Color(0.273873, 0.273873, 0.273873, 1)
@@ -72,3 +74,6 @@ modulate = Color(1, 1, 0, 0.701961)
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 100.0
+mouse_filter = 2
+
+[connection signal="button_down" from="Item_Slot" to="." method="_on_item_slot_button_down"]
