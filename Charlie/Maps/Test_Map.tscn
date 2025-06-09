@@ -552,3 +552,5 @@ transform = Transform3D(0.740986, 0, 5.95407, 0, 6, 0, -5.95407, 0, 0.740986, 19
 
 [node name="TreePine4" parent="Trees" instance=ExtResource("14_y6h2w")]
 transform = Transform3D(-2.78263, 0, 5.08891, 0, 5.8, 0, -5.08891, 0, -2.78263, 37.103, 3.77378, -41.0761)
+
+[node name="Intro_Animation" type="Node2D" parent="."]

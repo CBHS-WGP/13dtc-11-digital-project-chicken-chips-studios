@@ -3,7 +3,7 @@ class_name InventoryHandler
 
 @export var PlayerBody : CharacterBody3D
 @export_flags_3d_physics var CollisionMask : int
-#1, 2, 3 and 4 are inv, slot 5 is equipped slot
+#0, 1, 2 and 3 are inv, slot 4 is equipped slot (need the int to be five tho)
 @export var ItemSlotsCount : int = 5
 
 @export var InventoryGrid : GridContainer

@@ -48,3 +48,5 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	OnItemDropped.emit(data["ID"], InventorySlotID)
+
+#set the equippable slot to send out a signal for the held item node to know what item to hold!
