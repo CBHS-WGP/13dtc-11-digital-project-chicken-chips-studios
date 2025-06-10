@@ -15,15 +15,15 @@ albedo_color = Color(0, 1, 1, 1)
 material = SubResource("StandardMaterial3D_f1uty")
 size = Vector3(1.1, 1.1, 1.1)
 
-[node name="Sattelite_Box" type="Area3D" node_paths=PackedStringArray("ItemHighlightMesh") groups=["item"]]
-collision_layer = 32
-collision_mask = 32
-collision_priority = -1.0
+[node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh") groups=["item"]]
+collision_layer = 33
+collision_mask = 33
 script = ExtResource("1_nwbxu")
 ItemHighlightMesh = NodePath("Glow")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ho42y")
+skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_f1uty")
@@ -31,3 +31,4 @@ shape = SubResource("BoxShape3D_f1uty")
 [node name="Glow" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("BoxMesh_nwbxu")
+skeleton = NodePath("")

@@ -530,5 +530,5 @@ shape = SubResource("SphereShape3D_aqwou")
 [connection signal="area_entered" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_entered"]
 [connection signal="area_exited" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_exited"]
 [connection signal="OnItemPickedUp" from="Camera/Camera/Player_Area_Scanner/Area3D" to="HUD/Inventory" method="PickupItem"]
-[connection signal="area_entered" from="Camera/Camera/Player_Area_Scanner/Area3D" to="Camera/Camera/Player_Area_Scanner/Area3D" method="OnObjectEnteredArea"]
-[connection signal="area_exited" from="Camera/Camera/Player_Area_Scanner/Area3D" to="Camera/Camera/Player_Area_Scanner/Area3D" method="OnObjectExitedArea"]
+[connection signal="body_entered" from="Camera/Camera/Player_Area_Scanner/Area3D" to="Camera/Camera/Player_Area_Scanner/Area3D" method="OnObjectEnteredBody"]
+[connection signal="body_exited" from="Camera/Camera/Player_Area_Scanner/Area3D" to="Camera/Camera/Player_Area_Scanner/Area3D" method="OnObjectExitedBody"]

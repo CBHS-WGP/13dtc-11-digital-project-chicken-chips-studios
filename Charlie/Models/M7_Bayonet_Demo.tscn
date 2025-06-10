@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://btyt7y6cml5ys"]
+[gd_scene load_steps=9 format=4 uid="uid://btyt7y6cml5ys"]
 
-[ext_resource type="Material" uid="uid://c06gxbgp5mywp" path="res://Charlie/Textures/Bayonet/Material.tres" id="1_mnw5b"]
+[ext_resource type="Material" uid="uid://c48xc8lccetke" path="res://Charlie/Textures/Bayonet/Material_No_Depth.tres" id="1_66bb7"]
 [ext_resource type="Texture2D" uid="uid://cntx36k0gfqmq" path="res://Charlie/Textures/Bayonet/textures/Material_baseColor.jpeg" id="2_cf3fj"]
+[ext_resource type="Material" uid="uid://br12m0r18qyem" path="res://Charlie/Textures/Bayonet/M7_Bayonet_Depth.tres" id="2_im1r2"]
 [ext_resource type="Texture2D" uid="uid://bua8hrw0n1buv" path="res://Charlie/Textures/Bayonet/textures/Material_metallicRoughness.png" id="3_vqeoo"]
 [ext_resource type="Texture2D" uid="uid://bnsfu35ack2xh" path="res://Charlie/Textures/Bayonet/textures/Material_normal.png" id="4_f2b0a"]
 
@@ -57,8 +58,8 @@ shadow_mesh = SubResource("ArrayMesh_blumw")
 
 [node name="Object_8" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.29026, -1.88432, -1.01714, -1.70505, -1.62247, 0.842865, -1.2954, 0.25869, -2.1225, -0.0119936, 0.00409396, -0.0131661)
-material_override = ExtResource("1_mnw5b")
-material_overlay = ExtResource("1_mnw5b")
+material_override = ExtResource("1_66bb7")
+material_overlay = ExtResource("2_im1r2")
 lod_bias = 0.3
 mesh = SubResource("ArrayMesh_7l4hj")
 skeleton = NodePath("")

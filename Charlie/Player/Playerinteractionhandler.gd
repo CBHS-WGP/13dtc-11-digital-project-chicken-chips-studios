@@ -33,12 +33,12 @@ func PickupNearestItem():
 		printerr("Item not found")
 
 
-func OnObjectEnteredArea(area: Area3D):
-	if (area is InteractableItem):
-		area.GainFocus()
-		NearbyAreas.append(area)
+func OnObjectEnteredBody(body: Node3D):
+	if (body is InteractableItem):
+		body.GainFocus()
+		NearbyAreas.append(body)
 
-func OnObjectExitedArea(area: Area3D):
-	if (area is InteractableItem and NearbyAreas.has(area)):
-		area.LoseFocus()
-		NearbyAreas.remove_at(NearbyAreas.find(area))
+func OnObjectExitedBody(body: Node3D):
+	if (body is InteractableItem and NearbyAreas.has(body)):
+		body.LoseFocus()
+		NearbyAreas.remove_at(NearbyAreas.find(body))

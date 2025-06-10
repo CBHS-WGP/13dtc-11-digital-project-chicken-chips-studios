@@ -529,19 +529,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.192, 4.36489, -51.9013)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8563, 4.21697, -50.2226)
 
 [node name="Bayonet" parent="Pickups" instance=ExtResource("13_gl1fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5429, 4.68256, -54.9884)
-
-[node name="Bayonet2" parent="Pickups" instance=ExtResource("13_gl1fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4313, 4.75041, -49.3797)
-
-[node name="Bayonet3" parent="Pickups" instance=ExtResource("13_gl1fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.8794, 3.99264, -57.0195)
-
-[node name="Bayonet4" parent="Pickups" instance=ExtResource("13_gl1fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3915, 4.31732, -52.6385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.9576, 4.68256, -54.9884)
 
 [node name="G32Pistol" parent="Pickups" instance=ExtResource("14_rm3tq")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 29.7432, 3.41332, -50.7027)
+transform = Transform3D(-0.0198978, 0.299339, 0, -0.299339, -0.0198978, 0, 0, 0, 0.3, 29.7432, 3.58494, -50.7027)
 
 [node name="Trees" type="Node3D" parent="."]
 

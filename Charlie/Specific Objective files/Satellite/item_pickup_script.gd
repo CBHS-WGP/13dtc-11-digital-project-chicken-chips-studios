@@ -1,4 +1,4 @@
-extends Area3D
+extends RigidBody3D
 
 class_name InteractableItem
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvb1wioo3eayi"]
+[gd_scene load_steps=8 format=3 uid="uid://dvb1wioo3eayi"]
 
-[ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_662rk"]
 [ext_resource type="Texture2D" uid="uid://bhtvgdgw2w1fd" path="res://Charlie/Textures/Chip_Logo.png" id="1_ced3y"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hye2s"]
@@ -25,12 +24,10 @@ top_radius = 0.55
 bottom_radius = 0.55
 height = 2.1
 
-[node name="Sattelite" type="Area3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+[node name="Sattelite" type="Area3D"]
 collision_layer = 2
 collision_mask = 2
 collision_priority = 0.0
-script = ExtResource("1_662rk")
-ItemHighlightMesh = NodePath("Glow")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

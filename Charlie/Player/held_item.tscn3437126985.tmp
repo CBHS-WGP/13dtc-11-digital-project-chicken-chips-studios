@@ -317,7 +317,6 @@ _data = {
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ynmh"]
 animation = &"Focus"
-advance_on_start = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_see5a"]
 animation = &"RESET"
@@ -325,23 +324,19 @@ animation = &"RESET"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fglwj"]
 animation = &"Un_Focus"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jtwlh"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gyxob"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_en3nj"]
-switch_mode = 2
 advance_mode = 2
 advance_condition = &"focus"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ynmh"]
-switch_mode = 2
 advance_mode = 2
 advance_condition = &"focus"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_see5a"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"unfocus"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7ynmh"]
 states/Focus/node = SubResource("AnimationNodeAnimation_7ynmh")
@@ -350,39 +345,54 @@ states/RESET/node = SubResource("AnimationNodeAnimation_see5a")
 states/RESET/position = Vector2(274, 162)
 states/Un_Focus/node = SubResource("AnimationNodeAnimation_fglwj")
 states/Un_Focus/position = Vector2(673, 112)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_gyxob"), "RESET", "Focus", SubResource("AnimationNodeStateMachineTransition_en3nj"), "Focus", "Un_Focus", SubResource("AnimationNodeStateMachineTransition_7ynmh"), "Un_Focus", "Focus", SubResource("AnimationNodeStateMachineTransition_see5a")]
+transitions = ["Focus", "Un_Focus", SubResource("AnimationNodeStateMachineTransition_jtwlh"), "Start", "RESET", SubResource("AnimationNodeStateMachineTransition_gyxob"), "RESET", "Focus", SubResource("AnimationNodeStateMachineTransition_en3nj"), "Un_Focus", "Focus", SubResource("AnimationNodeStateMachineTransition_7ynmh")]
 
 [sub_resource type="Animation" id="Animation_see5a"]
 resource_name = "Focus"
-length = 0.3
-tracks/0/type = "position_3d"
+length = 0.5
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
+tracks/0/path = NodePath("../../G32/G32Gun:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.366, -0.154, -0.541, 0.266667, 1, 0, -0.053, -0.598)
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.365569, -0.27291, -0.541032), Vector3(0, 0, -0.374)]
+}
 
 [sub_resource type="Animation" id="Animation_fglwj"]
 resource_name = "Un_Focus"
-length = 0.3
-tracks/0/type = "position_3d"
+length = 0.5
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
+tracks/0/path = NodePath("../../G32/G32Gun:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.053, -0.598, 0.266667, 1, 0.366, -0.154, -0.541)
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.374), Vector3(0.365569, -0.27291, -0.541032)]
+}
 
 [sub_resource type="Animation" id="Animation_0gmfa"]
 length = 0.001
-tracks/0/type = "position_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
+tracks/0/path = NodePath("../../G32/G32Gun:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.366, -0.154, -0.541)
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.365569, -0.27291, -0.541032)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jtwlh"]
 _data = {
@@ -435,26 +445,24 @@ libraries = {
 }
 
 [node name="G32" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="G32Gun" parent="G32" instance=ExtResource("3_7ynmh")]
-transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0.366, -0.154, -0.541)
-
-[node name="GunTree" type="AnimationTree" parent="G32/G32Gun"]
-root_node = NodePath("../..")
-tree_root = SubResource("AnimationNodeStateMachine_7ynmh")
-anim_player = NodePath("../Gun_Animations")
-parameters/conditions/focus = false
-parameters/conditions/unfocus = false
-
-[node name="Gun_Animations" type="AnimationPlayer" parent="G32/G32Gun"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_jtwlh")
-}
+transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0.365569, -0.27291, -0.541032)
 
 [node name="Gun_Cast" type="RayCast3D" parent="G32"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0390263, -0.374115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.374115)
 target_position = Vector3(0, 0, -1000)
 collision_mask = 64
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="GunTree" type="AnimationTree" parent="G32"]
+tree_root = SubResource("AnimationNodeStateMachine_7ynmh")
+anim_player = NodePath("../Gun_Animations")
+parameters/conditions/focus = false
+
+[node name="Gun_Animations" type="AnimationPlayer" parent="G32"]
+libraries = {
+&"": SubResource("AnimationLibrary_jtwlh")
+}
