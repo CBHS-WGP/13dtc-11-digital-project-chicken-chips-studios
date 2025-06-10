@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b5uavx16u4g8q"]
+[gd_scene load_steps=83 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="Script" uid="uid://dmy8d2l1ecg8" path="res://Charlie/Maps/Enemy_NAV_Script.gd" id="1_bbdrk"]
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
@@ -174,6 +174,32 @@ size = Vector3(13, 1, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x6wgi"]
 data = PackedVector3Array(-6.5, 0.5, 0.5, 6.5, 0.5, 0.5, -6.5, -0.5, 0.5, 6.5, 0.5, 0.5, 6.5, -0.5, 0.5, -6.5, -0.5, 0.5, 6.5, 0.5, -0.5, -6.5, 0.5, -0.5, 6.5, -0.5, -0.5, -6.5, 0.5, -0.5, -6.5, -0.5, -0.5, 6.5, -0.5, -0.5, 6.5, 0.5, 0.5, 6.5, 0.5, -0.5, 6.5, -0.5, 0.5, 6.5, 0.5, -0.5, 6.5, -0.5, -0.5, 6.5, -0.5, 0.5, -6.5, 0.5, -0.5, -6.5, 0.5, 0.5, -6.5, -0.5, -0.5, -6.5, 0.5, 0.5, -6.5, -0.5, 0.5, -6.5, -0.5, -0.5, 6.5, 0.5, 0.5, -6.5, 0.5, 0.5, 6.5, 0.5, -0.5, -6.5, 0.5, 0.5, -6.5, 0.5, -0.5, 6.5, 0.5, -0.5, -6.5, -0.5, 0.5, 6.5, -0.5, 0.5, -6.5, -0.5, -0.5, 6.5, -0.5, 0.5, 6.5, -0.5, -0.5, -6.5, -0.5, -0.5)
 
+[sub_resource type="Gradient" id="Gradient_mru0c"]
+offsets = PackedFloat32Array(0, 0.233216, 0.374558, 0.583039, 0.840989, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.229682, 0.229682, 0.229682, 1, 0.0923971, 0.0923971, 0.092397, 1, 1, 1, 1, 1, 0.646029, 0.646029, 0.646029, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wn6u5"]
+noise_type = 3
+seed = 75
+frequency = 0.1902
+fractal_type = 0
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_fractal_type = 2
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ksmsj"]
+width = 128
+height = 128
+depth = 200
+color_ramp = SubResource("Gradient_mru0c")
+noise = SubResource("FastNoiseLite_wn6u5")
+
+[sub_resource type="FogMaterial" id="FogMaterial_mru0c"]
+density = 0.11
+height_falloff = 0.125
+edge_fade = 0.509824
+density_texture = SubResource("NoiseTexture3D_ksmsj")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbrm6"]
 cull_mode = 1
 albedo_texture = ExtResource("8_7uao1")
@@ -254,8 +280,159 @@ background_mode = 2
 sky = SubResource("Sky_6upvm")
 tonemap_mode = 2
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_sky_affect = 0.524
+volumetric_fog_temporal_reprojection_amount = 0.67
 adjustment_enabled = true
 adjustment_saturation = 1.5
+
+[sub_resource type="Animation" id="Animation_s7pey"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/clouds_light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.227451, 0.447059, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.027451, 0.101961, 0.25098, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/bottom_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.027451, 0.101961, 0.25098, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/sun_scatter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.12549, 0.0862745, 0.372549, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/astro_tint")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/stars_intensity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/shooting_stars_intensity")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/astro_intensity")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/clouds_smoothness")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/clouds_shadow_intensity")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/high_clouds_density")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/astro_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
 
 [sub_resource type="Animation" id="Animation_vkf7a"]
 resource_name = "cycle"
@@ -406,153 +583,6 @@ tracks/11/keys = {
 "values": [10.0, 4.5]
 }
 
-[sub_resource type="Animation" id="Animation_s7pey"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/clouds_light_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.227451, 0.447059, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/top_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.027451, 0.101961, 0.25098, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/bottom_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.027451, 0.101961, 0.25098, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/sun_scatter")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.12549, 0.0862745, 0.372549, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/astro_tint")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/stars_intensity")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/shooting_stars_intensity")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.5]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/astro_intensity")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.2]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/clouds_smoothness")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.05]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/clouds_shadow_intensity")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [8.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/high_clouds_density")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/astro_scale")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [10.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jydog"]
 _data = {
 &"RESET": SubResource("Animation_s7pey"),
@@ -565,7 +595,7 @@ script = ExtResource("1_bbdrk")
 [node name="Progression_Tracker" parent="." instance=ExtResource("2_7uao1")]
 
 [node name="Wayne" parent="." instance=ExtResource("1_tcvu6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2284, 21.3623, -52.1918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2284, 3.47742, -52.1918)
 floor_max_angle = 0.872665
 
 [node name="Vectorial" type="Node2D" parent="."]
@@ -839,6 +869,11 @@ mesh = SubResource("BoxMesh_pwrr5")
 transform = Transform3D(1, 2.98023e-08, 0, 0, 1, 2.98023e-08, 2.98023e-08, -1.49012e-08, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_x6wgi")
 
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.1598, 3.47742, -56.7513)
+size = Vector3(765.298, 40, 519.797)
+material = SubResource("FogMaterial_mru0c")
+
 [node name="Sphere" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, -71.6671, 0, -51.9899)
 mesh = SubResource("CylinderMesh_gl1fk")
@@ -882,7 +917,7 @@ transform = Transform3D(-2.78263, 0, 5.08891, 0, 5.8, 0, -5.08891, 0, -2.78263, 
 environment = SubResource("Environment_pwrr5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.52605, 0.134157, 0.839805, 0.810545, -0.219858, 0.542844, 0.257463, 0.966263, 0.00691551, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -0.712026, 0.702153, 0, -0.702153, -0.712026, 0, 82.0123, -62.8925)
 shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

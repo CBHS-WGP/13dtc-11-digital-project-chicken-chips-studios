@@ -121,3 +121,7 @@ rightclick={
 3d_physics/layer_5="Player Damage"
 3d_physics/layer_6="Item Pickups collision"
 3d_physics/layer_7="Gun Shoot Collider"
+
+[rendering]
+
+environment/volumetric_fog/volume_size=256

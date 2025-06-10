@@ -363,6 +363,16 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.366, -0.154, -0.541, 0.266667, 1, 0, -0.053, -0.598)
 
+[sub_resource type="Animation" id="Animation_0gmfa"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("G32Gun")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.366, -0.154, -0.541)
+
 [sub_resource type="Animation" id="Animation_fglwj"]
 resource_name = "Un_Focus"
 length = 0.3
@@ -373,16 +383,6 @@ tracks/0/path = NodePath("G32Gun")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.053, -0.598, 0.266667, 1, 0.366, -0.154, -0.541)
-
-[sub_resource type="Animation" id="Animation_0gmfa"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.366, -0.154, -0.541)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jtwlh"]
 _data = {
