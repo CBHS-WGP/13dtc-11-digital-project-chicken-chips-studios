@@ -39,19 +39,23 @@ shape = SubResource("CapsuleShape3D_m83rg")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="Inner Detection Radius" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inner Detection Radius"]
 shape = SubResource("SphereShape3D_8uhvq")
 
 [node name="Outer Detection Radius" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outer Detection Radius"]
 shape = SubResource("SphereShape3D_hryg0")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.026225)
-collision_layer = 16
-collision_mask = 16
+collision_layer = 144
+collision_mask = 144
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, -0.0389389, 0, -0.0342282)
@@ -73,8 +77,6 @@ shape = SubResource("BoxShape3D_8uhvq")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Area3D2" type="Area3D" parent="."]
-
 [node name="Crouching_Checker" type="Timer" parent="."]
 wait_time = 0.001
 autostart = true
@@ -88,7 +90,7 @@ shape = SubResource("BoxShape3D_m83rg")
 
 [connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_entered"]
 [connection signal="body_exited" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_exited"]
-[connection signal="body_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_body_exited"]
+[connection signal="area_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_area_exited"]
 [connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Area3D" to="." method="_on_area_3d_area_shape_exited"]
 [connection signal="area_entered" from="Damage_Checker" to="." method="_on_damage_checker_area_entered"]

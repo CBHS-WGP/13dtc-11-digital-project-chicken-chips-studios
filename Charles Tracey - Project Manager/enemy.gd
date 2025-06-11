@@ -6,7 +6,7 @@ var speed = 0
 var gravity = 9.81
 var health = 100
 var inhitbox = false
-@onready var player = $"../../Wayne"
+@onready var player = $"../../Wayne/Enemy detect"
 var target = self
 var insideinner = false
 
@@ -55,13 +55,6 @@ func _on_timer_timeout():
 		print("hit")
 		Global.shot.emit()
 
-# If player leaves 
-func _on_outer_detection_radius_body_exited(body: CharacterBody3D) -> void:
-	if body.is_in_group("player"):
-		print("exited")
-		speed = 0
-		target = self
-
 
 func _on_damage_checker_area_entered(_area):
 	health = health - 20
@@ -87,3 +80,11 @@ func dead(_delta):
 
 func _on_inner_detection_radius_body_exited(body: Node3D) -> void:
 	insideinner = false
+
+
+
+func _on_outer_detection_radius_area_exited(area: Area3D) -> void:
+	if area.is_in_group("player"):
+		print("exited")
+		speed = 0
+		target = self
