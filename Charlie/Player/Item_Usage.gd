@@ -58,12 +58,13 @@ func _hiding():
 		for child in get_children():
 			child.visible = false
 func _shoot():
-	#print(gun_raycast)
 	if ray.is_colliding():
 		hit = ray.get_collider()
-		#Explosion.global_position = ray.get_collider().global_position
-		#add_child(Explosion)
 		print(ray.get_collider().global_position)
+		var instance = Explosion.instantiate()
+		instance.global_position = Vector3(hit.global_position)
+		$G32.add_child(instance)
+		#Explosion.position = ray.get_collider().global_position
 		hit.get_parent().health = hit.get_parent().health - 15
 		gun_raycast = hit.name
 	else:

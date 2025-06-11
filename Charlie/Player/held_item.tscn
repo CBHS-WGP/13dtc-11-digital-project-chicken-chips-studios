@@ -455,6 +455,5 @@ libraries = {
 [node name="Gun_Cast" type="RayCast3D" parent="G32"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0390263, -0.374115)
 target_position = Vector3(0, 0, -1000)
-collision_mask = 64
 collide_with_areas = true
 collide_with_bodies = false

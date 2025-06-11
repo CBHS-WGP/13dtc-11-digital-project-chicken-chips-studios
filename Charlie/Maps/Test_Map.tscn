@@ -196,7 +196,7 @@ noise = SubResource("FastNoiseLite_wn6u5")
 
 [sub_resource type="FogMaterial" id="FogMaterial_mru0c"]
 density = 0.11
-height_falloff = 0.125
+height_falloff = 0.170755
 edge_fade = 0.509824
 density_texture = SubResource("NoiseTexture3D_ksmsj")
 

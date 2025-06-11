@@ -18,12 +18,11 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.647239, 59.9755), 0.0, 0.0, 0,
 point_count = 4
 
 [node name="Small_Explosion" type="CPUParticles3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_k7lx4")
 lod_bias = 0.001
-emitting = false
-amount = 20
+amount = 50
 lifetime = 4.0
-one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
 mesh = SubResource("PrismMesh_dvj1r")
