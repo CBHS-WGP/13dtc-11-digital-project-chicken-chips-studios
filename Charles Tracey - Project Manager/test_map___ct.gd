@@ -1,5 +1,5 @@
 extends Node3D
-@onready var target = $Wayne
+@onready var target = $"Wayne/Enemy detect"
 
 
 
