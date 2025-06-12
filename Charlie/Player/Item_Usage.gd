@@ -62,7 +62,7 @@ func _shoot():
 		hit = ray.get_collider()
 		print(ray.get_collider().global_position)
 		var instance = Explosion.instantiate()
-		instance.global_position = Vector3(hit.global_position)
+		instance.position = Vector3(hit.global_position)
 		$G32.add_child(instance)
 		#Explosion.position = ray.get_collider().global_position
 		hit.get_parent().health = hit.get_parent().health - 15
