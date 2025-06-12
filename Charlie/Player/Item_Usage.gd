@@ -3,12 +3,12 @@ extends Node3D
 @onready var Bayonetanimation : AnimationTree = $M7_Bayonet/Bayonet/AnimationTree
 @onready var Gun_Animation : AnimationTree = $G32/G32Gun/GunTree
 @onready var Explosion = preload("res://Charlie/Specific Objective files/small_explosion.tscn")
+@export var Test_Map = preload("res://Charlie/Maps/Test_Map.tscn")
 var selection = 0
 
 #gun raycast varibles
 var hit = null
 var ray
-var gun_raycast
 
 func _ready():
 	#resetting the gun animation state (needs this to work the first time for some reason?)
@@ -63,9 +63,16 @@ func _shoot():
 		print(ray.get_collider().global_position)
 		var instance = Explosion.instantiate()
 		instance.position = Vector3(hit.global_position)
-		$G32.add_child(instance)
-		#Explosion.position = ray.get_collider().global_position
-		hit.get_parent().health = hit.get_parent().health - 15
-		gun_raycast = hit.name
-	else:
-		Global.current_raycast = null
+		#gets the main scene tree and put thi instance under the main node
+		#This is done so it is based on global position instead of being
+		#relative to player position
+		get_tree().get_root().add_child(instance)
+		#print(get_tree().get_root())
+		#Sets the actual position
+		instance.global_position = ray.get_collider().position
+		#Enemy damage if nessesary
+		#print(hit.get_collision_mask())
+		if hit.get_collision_mask() == 64:
+			hit.get_parent().health = hit.get_parent().health - 15
+		else:
+			print("poke")
