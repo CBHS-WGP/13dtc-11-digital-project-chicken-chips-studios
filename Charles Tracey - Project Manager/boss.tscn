@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://xp2woouhmaf8"]
+[gd_scene load_steps=10 format=3 uid="uid://otwcl2cyi657"]
 
-[ext_resource type="Script" uid="uid://cg1mrc3pr864y" path="res://Charles Tracey - Project Manager/enemy.gd" id="1_8uhvq"]
+[ext_resource type="Script" uid="uid://bas4imsb1n4cp" path="res://Charles Tracey - Project Manager/boss.gd" id="1_lrncw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_am1u2"]
 albedo_color = Color(1, 0, 1, 1)
@@ -25,15 +25,17 @@ size = Vector3(0.8, 1.717, 0.8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_m83rg"]
 size = Vector3(1, 2, 1)
 
-[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
+[node name="boss" type="CharacterBody3D" groups=["enemy"]]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-script = ExtResource("1_8uhvq")
+script = ExtResource("1_lrncw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.155, 0, 0, 0, 3.155, 0, 0, 0, 3.155, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_hryg0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.155, 0, 0, 0, 3.155, 0, 0, 0, 3.155, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_m83rg")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -88,8 +90,8 @@ collision_mask = 64
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Gun_Collider"]
 shape = SubResource("BoxShape3D_m83rg")
 
-[connection signal="area_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_area_entered"]
-[connection signal="area_exited" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_area_exited"]
+[connection signal="body_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_entered"]
+[connection signal="body_exited" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_body_exited"]
 [connection signal="area_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_area_exited"]
 [connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Area3D" to="." method="_on_area_3d_area_shape_exited"]
