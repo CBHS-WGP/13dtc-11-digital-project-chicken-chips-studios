@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://b5uavx16u4g8q"]
+[gd_scene load_steps=72 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="Script" uid="uid://dmy8d2l1ecg8" path="res://Charlie/Maps/Enemy_NAV_Script.gd" id="1_bbdrk"]
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b2bkdg7hpkp2a" path="res://Charlie/Specific Objective files/Satellite/M7_Bayonet.tscn" id="13_gl1fk"]
 [ext_resource type="PackedScene" uid="uid://lxbuewtc8tss" path="res://Charlie/Specific Objective files/G32_Pistol.tscn" id="14_rm3tq"]
 [ext_resource type="PackedScene" uid="uid://bdbobsof2qn4f" path="res://Patrick/Terrain/TreePine.glb" id="14_y6h2w"]
+[ext_resource type="PackedScene" uid="uid://b6mfax6p64brh" path="res://Patrick/Terrain/Tree.tscn" id="15_wn6u5"]
 [ext_resource type="Environment" uid="uid://ccl85ojwrmelb" path="res://Charlie/Box_Styles/Sky_Style_Dark.tres" id="16_mru0c"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_d4sa0"]
@@ -540,8 +541,8 @@ transform = Transform3D(-0.0198978, 0.299339, 0, -0.299339, -0.0198978, 0, 0, 0,
 
 [node name="Trees" type="Node3D" parent="."]
 
-[node name="TreePine" parent="Trees" instance=ExtResource("14_y6h2w")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 31.2397, 3.77378, -38.9772)
+[node name="Tree" parent="Trees" instance=ExtResource("15_wn6u5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 31.24, 3.774, -38.977)
 
 [node name="TreePine2" parent="Trees" instance=ExtResource("14_y6h2w")]
 transform = Transform3D(5.06463, 0, -4.07425, 0, 6.5, 0, 4.07425, 0, 5.06463, 24.925, 3.77378, -39.5326)

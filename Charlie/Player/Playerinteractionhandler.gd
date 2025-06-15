@@ -5,7 +5,7 @@ signal OnItemPickedUp(item)
 @export var ItemTypes : Array[ItemData] = []
 
 var NearbyAreas : Array[InteractableItem]
-
+var sattelite_box_collected = false
 
 
 func _input(event: InputEvent) -> void:
@@ -28,6 +28,12 @@ func PickupNearestItem():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
 				print("Item id:" + str(i) + " Item Name:" + ItemTypes[i].ItemName)
 				OnItemPickedUp.emit(ItemTypes[i])
+				
+				#One time use script for when the player picks up the sattelite box
+				if ItemTypes[i].ItemName == "Sattelite_Box" and sattelite_box_collected == false:
+					sattelite_box_collected = true
+					Progress.current_objective = Progress.current_objective + 0.5
+					print("SATTELLITE BOX COLLECTED")
 				return
 		
 		printerr("Item not found")
