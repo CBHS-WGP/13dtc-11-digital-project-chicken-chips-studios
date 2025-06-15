@@ -2,10 +2,7 @@ extends Node
 var current_objective = 1
 # Objectinve 1 varibles
 var objective_1 = 0
-var sattelite_box_collected = false
-var sattelite_activated = false
 
-#Objective 2 varibles
 
 
 func _process(_delta):
@@ -14,9 +11,6 @@ func _process(_delta):
 		current_objective = current_objective + 1
 		objective_1 = 0
 	if Progress.current_objective == 1:
-		pass
-	#Progressing past objective 2
-	if Progress.sattelite_activated == true:
 		pass
 	#If objective 3, win the game
 	if Progress.current_objective == 3:

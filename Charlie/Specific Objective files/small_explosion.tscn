@@ -17,7 +17,7 @@ particles_anim_loop = false
 
 [sub_resource type="PrismMesh" id="PrismMesh_dvj1r"]
 material = SubResource("StandardMaterial3D_5vmgi")
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(5, 5, 5)
 
 [sub_resource type="Curve" id="Curve_j1s8n"]
 _limits = [0.0, 200.0, 0.0, 1.0]

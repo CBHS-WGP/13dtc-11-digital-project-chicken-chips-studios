@@ -9,6 +9,7 @@ var selection = 0
 #gun raycast varibles
 var hit = null
 var ray
+var pos = Vector3()
 
 func _ready():
 	#resetting the gun animation state (needs this to work the first time for some reason?)
@@ -60,9 +61,10 @@ func _hiding():
 func _shoot():
 	if ray.is_colliding():
 		hit = ray.get_collider()
+		pos = Vector3(ray.get_collision_point())
 		print(ray.get_collider().global_position)
 		var instance = Explosion.instantiate()
-		instance.position = Vector3(hit.global_position)
+		instance.position = Vector3(pos)
 		#gets the main scene tree and put thi instance under the main node
 		#This is done so it is based on global position instead of being
 		#relative to player position
