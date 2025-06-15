@@ -30,6 +30,12 @@ var gravity = 9.81
 var input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
 var direction = Vector3(0, 0, 0)
 
+@onready var cam: Camera3D = $Camera/Camera
+
+@onready var flashlight: SpotLight3D = $flashlight
+var flashlight_rotation_smoothness := 15.0
+var flashlight_position_smoothness := 15.0
+
 #Emmited from the enemy, sent to global, and callected by the player script to decrase health
 func _ready():
 	Global.shot.connect(healthdecrease)
@@ -42,6 +48,10 @@ func healthdecrease():
 
 
 func _physics_process(delta):
+	update_flashlight(delta)
+	
+	if Input.is_action_just_pressed(\"flashlight\"):
+		flashlight.visible = not flashlight.visible
 	#print(velocity)
 	# Add the gravity.
 	if not is_on_floor():
@@ -89,6 +99,13 @@ func _physics_process(delta):
 	
 
 	move_and_slide()
+
+func update_flashlight(delta: float) -> void:
+	flashlight.global_transform = Transform3D(
+		flashlight.global_transform.basis.slerp(cam.global_transform.basis, delta * flashlight_rotation_smoothness),
+		flashlight.global_transform.origin.slerp(cam.global_transform.origin, delta * flashlight_position_smoothness)
+	)
+	
 
 func walkandrun():
 	input_dir = Input.get_vector(\"A\", \"D\", \"W\", \"S\")
@@ -536,6 +553,10 @@ collision_mask = 128
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy detect"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0231, 0)
 shape = SubResource("CapsuleShape3D_aq3s3")
+
+[node name="flashlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29593, 0)
+light_energy = 3.39
 
 [connection signal="area_entered" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_entered"]
 [connection signal="area_exited" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_exited"]
