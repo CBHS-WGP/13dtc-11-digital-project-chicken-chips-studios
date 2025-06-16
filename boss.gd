@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 @onready var nav = $NavigationAgent3D
 var speed = 0
 var gravity = 9.81
@@ -61,11 +60,6 @@ func _on_damage_checker_area_entered(_area):
 
 
 
-
-func _on_inner_detection_radius_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") :
-		insideinner = true
-
 func _on_crouching_checker_timeout() -> void:
 	if insideinner == true and Global.crouching == false:
 			target = player
@@ -82,8 +76,11 @@ func _on_inner_detection_radius_body_exited(body: Node3D) -> void:
 	insideinner = false
 
 
+func _on_inner_detection_radius_area_entered(area: Area3D) -> void:
+	if area.is_in_group("player"):
+		insideinner = true
 
-func _on_outer_detection_radius_area_exited(area: Area3D) -> void:
+func _on_inner_detection_radius_area_exited(area: Area3D) -> void:
 	if area.is_in_group("player"):
 		print("exited")
 		speed = 0
