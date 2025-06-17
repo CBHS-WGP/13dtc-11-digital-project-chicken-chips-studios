@@ -532,11 +532,7 @@ libraries = {
 }
 
 [node name="Player_Animations" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Player_Bobbing")
-
-[node name="Player_Bobbing" type="AnimationTree" parent="."]
-root_node = NodePath(".")
-anim_player = NodePath("../Player_Animations")
+root_node = NodePath("")
 
 [node name="Damage_from_enemy" type="Area3D" parent="." groups=["playerhitbox"]]
 collision_layer = 16

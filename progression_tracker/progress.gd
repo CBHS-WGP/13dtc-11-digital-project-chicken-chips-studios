@@ -1,4 +1,5 @@
 extends Node
+#Begin with a reset objective
 var current_objective = 0
 # Objective 1 to 1.99 varibles
 var Sattelite_Discovered = false
@@ -14,7 +15,7 @@ var obj_2_enemies_killed = 0
 var impact_site_discovered = false
 var boss_killed = false
 
-
+var objective_1 = 0
 
 #Objective level notes
 # 0 equals just spawned in. This is where the intro and starting ambiance are built
@@ -22,6 +23,8 @@ var boss_killed = false
 # apon finding the sattelite, we reach objective 1
 # now when interacting with the sattelite, we get 1.5, find the parts
 # after finding and instering all ___ parts AND fixing the sattelite functions, move to objective 2
+
+#Go from here!
 # Spawn in enemies, and start new communications up, now move to objective 2.1.
 # Upon location of the weapons cache, get lots of ammo and the G32 + move to objective 2.5
 # Now killing spree. Once all located enemies are dead, move to objective 3
@@ -32,14 +35,15 @@ var boss_killed = false
 
 
 func _process(_delta):
+	print(Progress.current_objective)
 	#Progressing past objective 1 (killing 5 enemies)
-	if Progress.objective_1 >= 5:
-		current_objective = current_objective + 1
-	if Progress.current_objective == 1:
-		pass
+	#if Progress.objective_1 >= 5:
+	#	current_objective = current_objective + 1
+	#if Progress.current_objective == 1:
+	#	pass
 	#If objective 3, win the game
-	if Progress.current_objective == 3:
-		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
+	#if Progress.current_objective == 3:
+	#	get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
 		
 	#Player death
 	if Global.health <= 0:

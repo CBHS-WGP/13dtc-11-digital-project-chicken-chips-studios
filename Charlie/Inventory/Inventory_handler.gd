@@ -102,6 +102,16 @@ func GetWorldMousePosition() -> Vector3:
 		return ray_start.lerp(ray_end, 0.5) + Vector3(0.0, 0.5, 0.0)
 	
 func _process(_delta):
+	#Code that can olny be in this script, as i need to physically remove it
+	#from the inventory before allowing the next objective to commence!
+	if Progress.current_objective == 1.99:
+		#Remove the sattelite cude from the current equipped slot!
+		#Yes the way ive coded this is sloppy by using like 3 scripts... no i dont care
+		InventorySlots[4].SlotData = null
+		InventorySlots[4].IconSlot.texture = null
+		Global.equipped_item_id = null
+		Progress.current_objective = 2
+		
 	# Close and opens the inventory by clicking E (only when certain parapeters are met)
 	if Input.is_action_just_pressed("E") and $Open_Close.is_playing() == false and Global.settings_open == false:
 		if Global.inv_open == false:

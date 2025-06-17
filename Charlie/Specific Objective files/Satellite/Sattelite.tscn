@@ -1,6 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dvb1wioo3eayi"]
 
 [ext_resource type="Texture2D" uid="uid://bhtvgdgw2w1fd" path="res://Charlie/Textures/Chip_Logo.png" id="1_ced3y"]
+[ext_resource type="PackedScene" uid="uid://duekgil185vcu" path="res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/Sattelite_Found.tscn" id="2_662rk"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hye2s"]
 
@@ -24,9 +25,6 @@ top_radius = 0.55
 bottom_radius = 0.55
 height = 2.1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ced3y"]
-size = Vector3(4.16675, 2, 3.57574)
-
 [node name="Sattelite" type="Area3D"]
 collision_layer = 2
 collision_mask = 2
@@ -48,8 +46,4 @@ shape = SubResource("ConcavePolygonShape3D_jnkte")
 visible = false
 mesh = SubResource("CylinderMesh_jnkte")
 
-[node name="Sattelite_Discovery" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sattelite_Discovery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0548096, -0.0391393, -0.0802307)
-shape = SubResource("BoxShape3D_ced3y")
+[node name="SatteliteFound" parent="." instance=ExtResource("2_662rk")]

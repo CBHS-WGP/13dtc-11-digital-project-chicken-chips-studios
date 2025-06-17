@@ -32,8 +32,11 @@ func PickupNearestItem():
 				#One time use script for when the player picks up the sattelite box
 				if ItemTypes[i].ItemName == "Sattelite_Box" and sattelite_box_collected == false:
 					sattelite_box_collected = true
-					Progress.current_objective = Progress.current_objective + 0.5
 					print("SATTELLITE BOX COLLECTED")
+					if Progress.current_objective == 0:
+						Progress.current_objective = 0.5
+					if Progress.current_objective == 1:
+						Progress.current_objective = 1.5
 				return
 		
 		printerr("Item not found")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://duekgil185vcu"]
+
+[ext_resource type="Script" uid="uid://c47fw0qq3xywh" path="res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/found_area.gd" id="1_fcfcc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xq386"]
+size = Vector3(4, 4, 4)
+
+[node name="Sattelite_Found" type="Area3D"]
+script = ExtResource("1_fcfcc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xq386")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
