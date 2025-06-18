@@ -18,7 +18,6 @@ var EquippedSlot : int = -1
 func _ready():
 	#main inv slots
 	for i in ItemSlotsCount - 1:
-		print(i)
 		var slot = InventorySlotPrefab.instantiate() as InventorySlot
 		InventoryGrid.add_child(slot)
 		slot.InventorySlotID = i

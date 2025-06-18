@@ -35,7 +35,7 @@ var objective_1 = 0
 
 
 func _process(_delta):
-	print(Progress.current_objective)
+	#print(Progress.current_objective)
 	#Progressing past objective 1 (killing 5 enemies)
 	#if Progress.objective_1 >= 5:
 	#	current_objective = current_objective + 1

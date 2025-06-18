@@ -12,7 +12,8 @@ var insideinner = false
 
 # Code which makes the enemy move towards the player
 func _process(delta):
-	if not is_on_floor() :
+
+	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
 		velocity.y -= 2

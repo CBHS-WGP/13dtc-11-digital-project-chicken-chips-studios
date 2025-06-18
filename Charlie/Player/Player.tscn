@@ -531,9 +531,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_7bwoj")
 }
 
-[node name="Player_Animations" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
-
 [node name="Damage_from_enemy" type="Area3D" parent="." groups=["playerhitbox"]]
 collision_layer = 16
 collision_mask = 16

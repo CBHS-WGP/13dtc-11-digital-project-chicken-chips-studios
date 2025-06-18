@@ -12,7 +12,6 @@ func _process(_delta: float) -> void:
 		print(hit.name)
 	else:
 		Global.current_raycast = null
-	#print(Global.current_raycast)
 
 	#These are all the code needed for interacting with specific objects.
 	#For things like light switches, i need to consider moving this code to a script on the item

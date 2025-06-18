@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5ngu47i3y81y"]
+[gd_scene load_steps=14 format=3 uid="uid://c5ngu47i3y81y"]
 
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_am1u2"]
 [ext_resource type="Script" uid="uid://cwiv2gohl2xyh" path="res://Charles Tracey - Project Manager/test_map___ct.gd" id="1_bkyi2"]
 [ext_resource type="PackedScene" uid="uid://xp2woouhmaf8" path="res://Charles Tracey - Project Manager/enemy.tscn" id="3_bkyi2"]
 [ext_resource type="PackedScene" uid="uid://dpx0qvn25khhr" path="res://boss.tscn" id="4_dvyry"]
+[ext_resource type="PackedScene" uid="uid://lxbuewtc8tss" path="res://Charlie/Specific Objective files/G32_Pistol.tscn" id="5_5m3ab"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_am1u2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,6 +37,7 @@ material = SubResource("StandardMaterial3D_dvyry")
 script = ExtResource("1_bkyi2")
 
 [node name="Wayne" parent="." groups=["player"] instance=ExtResource("1_am1u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.487481, 0)
 
 [node name="Enviroment" type="Node3D" parent="."]
 
@@ -103,9 +105,12 @@ skeleton = NodePath("../..")
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="enemy" parent="Enemies" instance=ExtResource("3_bkyi2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2392, 1.06731, -4.83262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2392, 4.5245, -4.83262)
 
 [node name="boss" parent="Enemies" instance=ExtResource("4_dvyry")]
 transform = Transform3D(2.63, 0, 0, 0, 2.63, 0, 0, 0, 2.63, 9.9286, 3.13, -8.13963)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("5_5m3ab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713917, -1.3083)
 
 [editable path="Wayne"]
