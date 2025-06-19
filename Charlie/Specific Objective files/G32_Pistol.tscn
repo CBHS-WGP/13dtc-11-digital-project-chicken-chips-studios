@@ -180,6 +180,7 @@ ItemHighlightMesh = NodePath("Glow")
 
 [node name="Gun" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.037, -1.83588e-09, 0, 1.61732e-09, 0.042, 0, 0, 0, 0.424, 0, 0, 0)
+lod_bias = 128.0
 mesh = SubResource("ArrayMesh_c5b8j")
 skeleton = NodePath("")
 

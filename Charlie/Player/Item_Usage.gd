@@ -15,7 +15,7 @@ func _ready():
 	#resetting the gun animation state (needs this to work the first time for some reason?)
 	Gun_Animation["parameters/conditions/focus"] = true
 	Gun_Animation["parameters/conditions/unfocus"] = false
-	ray = $G32/Gun_Cast
+	ray = $G32/G32Gun/Gun_Cast
 
 func _process(_delta):
 
