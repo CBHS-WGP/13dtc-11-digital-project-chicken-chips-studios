@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cydmgo8i3qo0x"]
+[gd_scene load_steps=41 format=3 uid="uid://cydmgo8i3qo0x"]
 
 [ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
 [ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
@@ -325,21 +325,28 @@ animation = &"RESET"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fglwj"]
 animation = &"Un_Focus"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jtwlh"]
+animation = &"iDLE"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gyxob"]
 advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_en3nj"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"focus"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ynmh"]
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"focus"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0gmfa"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"focus"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_see5a"]
 switch_mode = 2
+advance_mode = 2
+advance_condition = &"focus"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fglwj"]
 advance_mode = 2
 advance_condition = &"unfocus"
 
@@ -350,7 +357,9 @@ states/RESET/node = SubResource("AnimationNodeAnimation_see5a")
 states/RESET/position = Vector2(274, 162)
 states/Un_Focus/node = SubResource("AnimationNodeAnimation_fglwj")
 states/Un_Focus/position = Vector2(673, 112)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_gyxob"), "RESET", "Focus", SubResource("AnimationNodeStateMachineTransition_en3nj"), "Focus", "Un_Focus", SubResource("AnimationNodeStateMachineTransition_7ynmh"), "Un_Focus", "Focus", SubResource("AnimationNodeStateMachineTransition_see5a")]
+states/iDLE/node = SubResource("AnimationNodeAnimation_jtwlh")
+states/iDLE/position = Vector2(414, 208)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_gyxob"), "Focus", "Un_Focus", SubResource("AnimationNodeStateMachineTransition_7ynmh"), "Un_Focus", "iDLE", SubResource("AnimationNodeStateMachineTransition_0gmfa"), "RESET", "iDLE", SubResource("AnimationNodeStateMachineTransition_see5a"), "iDLE", "Focus", SubResource("AnimationNodeStateMachineTransition_fglwj")]
 
 [sub_resource type="Animation" id="Animation_see5a"]
 resource_name = "Focus"
@@ -361,7 +370,19 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("G32Gun")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.366, -0.154, -0.541, 0.266667, 1, 0, -0.053, -0.598)
+tracks/0/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541, 0.266667, 1, 0, -0.053, -0.8)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.14159, 0), Vector3(0, -3.14159, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0gmfa"]
 length = 0.001
@@ -371,7 +392,19 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("G32Gun")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.366, -0.154, -0.541)
+tracks/0/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.14159, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_fglwj"]
 resource_name = "Un_Focus"
@@ -382,13 +415,49 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("G32Gun")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.053, -0.598, 0.266667, 1, 0.366, -0.154, -0.541)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.053, -0.8, 0.266667, 1, 0.5, -0.154, -0.541)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(-1.5708, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7ynmh"]
+resource_name = "iDLE"
+length = 10.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("G32Gun")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541, 5.03333, 1, 0.5, -0.16, -0.541, 10, 1, 0.5, -0.154, -0.541)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.43333, 2.4, 4.6, 6.9, 8.2, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.14159, 0), Vector3(-1.62316, -3.07178, -0.0523599), Vector3(-1.51844, -3.19395, 0.0349066), Vector3(-1.5708, -3.14159, 0.10472), Vector3(-1.5708, -3.12414, -0.0349066), Vector3(-1.53589, -3.19395, 0.0349066), Vector3(-1.5708, -3.14159, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jtwlh"]
 _data = {
 &"Focus": SubResource("Animation_see5a"),
 &"RESET": SubResource("Animation_0gmfa"),
-&"Un_Focus": SubResource("Animation_fglwj")
+&"Un_Focus": SubResource("Animation_fglwj"),
+&"iDLE": SubResource("Animation_7ynmh")
 }
 
 [node name="Held Item" type="Node3D"]
@@ -396,6 +465,7 @@ script = ExtResource("1_dneek")
 
 [node name="Cube" type="Node3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.447909, -0.24469, -0.169213)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.409825)
@@ -403,6 +473,7 @@ mesh = SubResource("BoxMesh_8wcif")
 
 [node name="M7_Bayonet" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.35, -0.5)
+visible = false
 
 [node name="Area3D" type="Area3D" parent="M7_Bayonet"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.221356, 0, -0.455244)
@@ -437,7 +508,7 @@ libraries = {
 [node name="G32" type="Node3D" parent="."]
 
 [node name="G32Gun" parent="G32" instance=ExtResource("3_7ynmh")]
-transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0.366, -0.154, -0.541)
+transform = Transform3D(-0.1, -8.74228e-09, -3.82137e-16, 0, -4.37114e-09, 0.1, -8.74228e-09, 0.1, 4.37114e-09, 0.5, -0.154, -0.541)
 
 [node name="GunTree" type="AnimationTree" parent="G32/G32Gun"]
 root_node = NodePath("../..")
@@ -452,8 +523,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_jtwlh")
 }
 
-[node name="Gun_Cast" type="RayCast3D" parent="G32"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0390263, -0.374115)
+[node name="Gun_Cast" type="RayCast3D" parent="G32/G32Gun"]
+transform = Transform3D(-10, 1.7053e-13, -8.74228e-07, 1.7053e-13, 10, -5.68434e-14, 8.74228e-07, -8.52651e-14, -10, 0.0149028, 0.130857, 1.54303)
 target_position = Vector3(0, 0, -1000)
 collision_mask = 65
 collide_with_areas = true
