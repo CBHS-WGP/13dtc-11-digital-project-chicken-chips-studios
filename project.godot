@@ -34,6 +34,10 @@ Ceiling=""
 playerhitbox=""
 player=""
 
+[gui]
+
+theme/custom_font="uid://sssopknbkw1r"
+
 [input]
 
 W={

@@ -26,6 +26,7 @@ size = Vector3(0.8, 1.717, 0.8)
 size = Vector3(1, 2, 1)
 
 [node name="boss" type="CharacterBody3D" groups=["enemy"]]
+transform = Transform3D(3.685, 0, 0, 0, 3.685, 0, 0, 0, 3.685, 0, 1.11159, 0)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 script = ExtResource("1_0bnu1")
