@@ -4,14 +4,13 @@ var damage_taken
 func _process(_delta):
 	if Progress.current_objective == 0 or 0.5:
 		$Main_Objective/Label.text = str("Locate the sattellite for inspection")
-	if Progress.current_objective == 1:
+	elif Progress.current_objective == 1:
 		$Main_Objective/Label.text = str("Locate the cube for the sattilite!")
-	if Progress.current_objective == 1.5:
+	elif Progress.current_objective == 1.5:
 		$Main_Objective/Label.text = str("Use the parts to repair the sattelite")
-	if Progress.current_objective == 2:
+	else:
 		$Main_Objective/Label.text = str("TBC")
-	if Progress.current_objective == 3:
-		$Main_Objective/Label.text = str(".")
+
 		
 	#Code to update the health HUD visual
 	$Heatlh_Visualizer/Heart_Beating.play("Fast_pulse")

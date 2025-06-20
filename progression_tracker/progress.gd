@@ -1,4 +1,6 @@
 extends Node
+@onready var enemy1 = preload("res://Charles Tracey - Project Manager/enemy.tscn")
+@onready var spawn = get_node("../Enemies")
 #Begin with a reset objective
 var current_objective = 0
 # Objective 1 to 1.99 varibles
@@ -9,6 +11,7 @@ var Sattelite_repaired = false
 
 # Objective 2 to 2.99 varibles
 var weapons_cache_found = false
+var spawn_enemies_obj_2 = 2
 var obj_2_enemies_killed = 0
 
 #Objective 3 to 5 varibles
@@ -35,12 +38,22 @@ var objective_1 = 0
 
 
 func _process(_delta):
+	#if spawn != null:
+		#print(spawn)
 	#print(Progress.current_objective)
 	#Progressing past objective 1 (killing 5 enemies)
 	#if Progress.objective_1 >= 5:
 	#	current_objective = current_objective + 1
-	#if Progress.current_objective == 1:
-	#	pass
+	if Progress.current_objective == 2:
+		if spawn != null:
+			for i in spawn_enemies_obj_2:
+				var instance = enemy1.instantiate()
+				instance.position = Vector3(0, 0, 0)
+				spawn.add_child(instance)
+				print(i)
+				print(instance.global_position)
+			Progress.current_objective = 2.1
+
 	#If objective 3, win the game
 	#if Progress.current_objective == 3:
 	#	get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")

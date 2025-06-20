@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://pierbaveg43y" path="res://progression_tracker/progress.gd" id="1_3u7nt"]
 
-[node name="Progression_Tracker" type="Node"]
+[node name="Node" type="Node"]
 script = ExtResource("1_3u7nt")
