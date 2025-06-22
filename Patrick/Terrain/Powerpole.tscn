@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf7egh1e45tbh"]
+
+[ext_resource type="PackedScene" uid="uid://degiupo5bowrw" path="res://Patrick/Terrain/Powerline.glb" id="1_ruwen"]
+
+[node name="Powerpole" type="Node3D"]
+
+[node name="Powerline" parent="." instance=ExtResource("1_ruwen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0700536, -1.19209e-07, -0.267263)
