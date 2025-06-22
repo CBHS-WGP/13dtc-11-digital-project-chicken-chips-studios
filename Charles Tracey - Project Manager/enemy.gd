@@ -12,7 +12,7 @@ var insideinner = false
 
 # Code which makes the enemy move towards the player
 func _process(delta):
-
+	#print(global_position.y)
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
@@ -44,9 +44,10 @@ func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_inde
 
 
 func _on_area_3d_area_shape_exited(area_rid: RID, area: Area3D, area_shape_index: int, _local_shape_index: int) -> void:
-	if area.is_in_group("playerhitbox"):
-		target = self
-		inhitbox = false
+	if area != null:
+		if area.is_in_group("playerhitbox"):
+			target = self
+			inhitbox = false
 
 
 

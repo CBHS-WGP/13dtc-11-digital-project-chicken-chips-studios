@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://b5uavx16u4g8q"]
+[gd_scene load_steps=73 format=3 uid="uid://b5uavx16u4g8q"]
 
 [ext_resource type="Script" uid="uid://dmy8d2l1ecg8" path="res://Charlie/Maps/Enemy_NAV_Script.gd" id="1_bbdrk"]
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_tcvu6"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://d4jgeasccu4l2" path="res://Charlie/Models/topoexport_vectorial_SW_595396_5164750_NE_596658_5165465.svg" id="3_f21sq"]
 [ext_resource type="Material" uid="uid://cwp0kckoiim6m" path="res://Charlie/Preset_Materials/Black_Material.tres" id="4_7d2he"]
 [ext_resource type="ArrayMesh" uid="uid://brt5nhqe2b6ba" path="res://Charlie/Models/Section2_homes.obj" id="6_kyc4n"]
-[ext_resource type="PackedScene" uid="uid://xp2woouhmaf8" path="res://Charles Tracey - Project Manager/enemy.tscn" id="6_moi4y"]
 [ext_resource type="Texture2D" uid="uid://dvvtr45htbs8a" path="res://Charlie/Textures/Soil.jpg" id="8_7uao1"]
 [ext_resource type="PackedScene" uid="uid://dwuqvkxi0aqeo" path="res://Charlie/Specific Objective files/Satellite/Sattelite_Box.tscn" id="11_nviu8"]
 [ext_resource type="PackedScene" uid="uid://dvb1wioo3eayi" path="res://Charlie/Specific Objective files/Satellite/Sattelite.tscn" id="11_rbrm6"]
@@ -232,9 +231,10 @@ _data = {
 }
 
 [sub_resource type="BoxMesh" id="BoxMesh_63ei4"]
-size = Vector3(10, 1, 10)
+size = Vector3(10, 4, 10)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4b2bj"]
+margin = 2.0
 data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
 
 [node name="Test_Map" type="Node3D"]
@@ -243,6 +243,9 @@ script = ExtResource("1_bbdrk")
 [node name="Wayne" parent="." groups=["player", "playerhitbox"] instance=ExtResource("1_tcvu6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1612, 3.47742, -27.5831)
 floor_max_angle = 0.872665
+
+[node name="Enemy_Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.26867, 0)
 
 [node name="Progression_Tracker" parent="." instance=ExtResource("2_7uao1")]
 
@@ -499,11 +502,6 @@ mesh = SubResource("BoxMesh_pwrr5")
 transform = Transform3D(1, 2.98023e-08, 0, 0, 1, 2.98023e-08, 2.98023e-08, -1.49012e-08, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_x6wgi")
 
-[node name="Enemies" type="Node3D" parent="."]
-
-[node name="enemy" parent="Enemies" instance=ExtResource("6_moi4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.03172, -9.14081)
-
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.1598, 3.47742, -56.7513)
 size = Vector3(765.298, 40, 519.797)
@@ -563,7 +561,7 @@ libraries = {
 autoplay = "cycle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4224, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.1402, 0)
 mesh = SubResource("BoxMesh_63ei4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
