@@ -135,7 +135,7 @@ offset_top = 30.0
 offset_right = 41.0
 offset_bottom = 53.0
 theme_override_fonts/font = ExtResource("2_1dgca")
-text = "Kill 5 enemies: 05"
+text = "NA"
 
 [node name="Heatlh_Visualizer" type="Control" parent="."]
 layout_mode = 1

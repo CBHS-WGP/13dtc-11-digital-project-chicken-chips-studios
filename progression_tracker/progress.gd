@@ -1,6 +1,9 @@
 extends Node
+#Varible for the path to the enemy, plus a reference to where the sqawn node.  
 @onready var enemy1 = preload("res://Charles Tracey - Project Manager/enemy.tscn")
 var spawn
+@onready var weapons_cache = preload("res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/Weapons_Cache_Found.tscn")
+var cache_spawn
 
 #Begin with a reset objective
 var current_objective = 0
@@ -29,8 +32,8 @@ var objective_1 = 0
 # after finding and instering all ___ parts AND fixing the sattelite functions, move to objective 2
 
 #Go from here!
-# Spawn in enemies, and start new communications up, now move to objective 2.1.
-# Upon location of the weapons cache, get lots of ammo and the G32 + move to objective 2.5
+# Spawn in weapons cache, and start new communications up, now move to objective 2.1.
+# Upon location of the weapons cache, get lots of ammo and the G32 + move + spawn in enemies to objective 2.5
 # Now killing spree. Once all located enemies are dead, move to objective 3
 # Locate the impact site, move to objective 3.5 as you kill random protecting enemies.
 # Dungeon like gameplay 
@@ -38,11 +41,11 @@ var objective_1 = 0
 #Killing the boss ends the game
 
 func _process(_delta):
-	#print(Progress.current_objective)
-	#Progressing past objective 1 (killing 5 enemies)
-	#if Progress.objective_1 >= 5:
-	#	current_objective = current_objective + 1
 	if Progress.current_objective == 2:
+		var instance = weapons_cache.instantiate()
+		cache_spawn.add_child(instance)
+		Progress.current_objective = 2.1
+	if Progress.current_objective == 2.5:
 			for i in spawn_enemies_obj_2:
 				var instance = enemy1.instantiate()
 				instance.position.x = randf() * 4
@@ -50,12 +53,8 @@ func _process(_delta):
 				spawn.add_child(instance)
 				print(i)
 				print(instance.global_position)
-			Progress.current_objective = 2.1
+			Progress.current_objective = 2.6
 
-	#If objective 3, win the game
-	#if Progress.current_objective == 3:
-	#	get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
-		
 	#Player death
 	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")

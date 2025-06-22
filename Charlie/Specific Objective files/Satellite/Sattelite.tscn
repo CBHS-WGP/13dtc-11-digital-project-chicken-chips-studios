@@ -47,3 +47,5 @@ visible = false
 mesh = SubResource("CylinderMesh_jnkte")
 
 [node name="SatteliteFound" parent="." instance=ExtResource("2_662rk")]
+collision_layer = 2
+collision_mask = 2
