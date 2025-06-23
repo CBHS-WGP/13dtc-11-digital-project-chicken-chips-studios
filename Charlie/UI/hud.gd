@@ -2,12 +2,16 @@ extends Control
 var damage_taken
 
 func _process(_delta):
+	print(Progress.current_objective)
 	if Progress.current_objective == 0 or 0.5:
 		$Main_Objective/Label.text = str("Locate the sattellite for inspection")
 	elif Progress.current_objective == 1:
 		$Main_Objective/Label.text = str("Locate the cube for the sattilite!")
 	elif Progress.current_objective == 1.5:
 		$Main_Objective/Label.text = str("Use the parts to repair the sattelite")
+	elif Progress.current_objective == 2.1:
+		$Main_Objective/Label.text = str("Kill all 10 enemies")
+	
 	else:
 		$Main_Objective/Label.text = str("TBC")
 
@@ -15,7 +19,6 @@ func _process(_delta):
 	#Code to update the health HUD visual
 	$Heatlh_Visualizer/Heart_Beating.play("Fast_pulse")
 	damage_taken = (100 - Global.health) * 2.25
-	#sprint(damage_taken)
 	$Heatlh_Visualizer/Health.text = str("Health:", Global.health, "/100")
 	
 	$Heatlh_Visualizer/Red_Hue.modulate = Color8(255, 255, 255, damage_taken/2.5)

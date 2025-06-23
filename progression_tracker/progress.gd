@@ -41,19 +41,19 @@ var objective_1 = 0
 #Killing the boss ends the game
 
 func _process(_delta):
-	if Progress.current_objective == 2:
+	if current_objective == 2:
 		var instance = weapons_cache.instantiate()
 		cache_spawn.add_child(instance)
-		Progress.current_objective = 2.1
-	if Progress.current_objective == 2.5:
+		current_objective = 2.1
+	if current_objective == 2.5:
 			for i in spawn_enemies_obj_2:
-				var instance = enemy1.instantiate()
-				instance.position.x = randf() * 4
-				instance.position.z = randf() * 4
-				spawn.add_child(instance)
+				var instance2 = enemy1.instantiate()
+				instance2.position.x = randf() * 4
+				instance2.position.z = randf() * 4
+				spawn.add_child(instance2)
 				print(i)
-				print(instance.global_position)
-			Progress.current_objective = 2.6
+				print(instance2.global_position)
+			current_objective = 2.6
 
 	#Player death
 	if Global.health <= 0:

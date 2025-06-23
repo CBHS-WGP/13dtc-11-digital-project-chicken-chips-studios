@@ -6,7 +6,7 @@ func _ready():
 	ray = $Interacter
 
 func _process(_delta: float) -> void:
-	print(Progress.current_objective)
+	#print(Progress.current_objective)
 	if ray.is_colliding():
 		hit = ray.get_collider()
 		Global.current_raycast = hit.name
