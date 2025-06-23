@@ -1,17 +1,24 @@
 extends Control
 var damage_taken
 
+
 func _process(_delta):
 	print(Progress.current_objective)
-	if Progress.current_objective == 0 or 0.5:
+	if Progress.current_objective == 0 or Progress.current_objective == 0.5:
 		$Main_Objective/Label.text = str("Locate the sattellite for inspection")
 	elif Progress.current_objective == 1:
 		$Main_Objective/Label.text = str("Locate the cube for the sattilite!")
 	elif Progress.current_objective == 1.5:
 		$Main_Objective/Label.text = str("Use the parts to repair the sattelite")
 	elif Progress.current_objective == 2.1:
-		$Main_Objective/Label.text = str("Kill all 10 enemies")
-	
+		$Main_Objective/Label.text = str("Find the weapons cache")
+	elif Progress.current_objective == 2.6:
+		$Main_Objective/Label.text = str("Kill all 10 enemies!")
+		$Main_Objective/Sub_Objective.visible = true
+		$Main_Objective/Sub_Objective.text = str("Killed:", Progress.obj_2_enemies_killed, "/10")
+	elif Progress.current_objective == 3:
+		$Main_Objective/Sub_Objective.visible = false
+		$Main_Objective.text = str("Make the impact site")
 	else:
 		$Main_Objective/Label.text = str("TBC")
 

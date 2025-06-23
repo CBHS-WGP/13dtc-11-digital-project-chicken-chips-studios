@@ -1,14 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://duekgil185vcu"]
+[gd_scene load_steps=4 format=3 uid="uid://duekgil185vcu"]
 
 [ext_resource type="Script" uid="uid://c47fw0qq3xywh" path="res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/found_area.gd" id="1_fcfcc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xq386"]
-size = Vector3(4, 4, 4)
+margin = 2.38
+size = Vector3(0.2, 4, 4.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcfcc"]
+size = Vector3(3, 4, 0.2)
 
 [node name="Sattelite_Found" type="Area3D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_fcfcc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0)
 shape = SubResource("BoxShape3D_xq386")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+shape = SubResource("BoxShape3D_fcfcc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.6, 0, 0)
+shape = SubResource("BoxShape3D_xq386")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -2)
+shape = SubResource("BoxShape3D_fcfcc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

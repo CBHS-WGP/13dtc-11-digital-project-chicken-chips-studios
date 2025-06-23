@@ -25,25 +25,26 @@ func _process(delta):
 
 	$Damage_Checker/Health_Indicator.text = str(health,"/100")
 	if health <= 0:
-		Progress.objective_1 = Progress.objective_1 + 1
+		if Progress.current_objective == 2.6:
+			Progress.obj_2_enemies_killed += 1
 		queue_free()
 
 # if target equals player and in inner radius, the enemy will follow the player.
-func target_position(delta):
+func target_position(_delta):
 	if target == player:
 		nav.set_target_position(player.global_transform.origin)
 		look_at(player.global_transform.origin)
 		rotation.x = 0
 		rotation.z = 0
 
-func _on_area_3d_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_area_3d_area_shape_entered(_area_rid: RID, area: Area3D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("playerhitbox"):
 		target = player
 		print("hit2")
 		inhitbox = true
 
 
-func _on_area_3d_area_shape_exited(area_rid: RID, area: Area3D, area_shape_index: int, _local_shape_index: int) -> void:
+func _on_area_3d_area_shape_exited(area_rid: RID, area: Area3D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area != null:
 		if area.is_in_group("playerhitbox"):
 			target = self
@@ -75,7 +76,7 @@ func dead(_delta):
 		get_tree().quit()
 
 
-func _on_inner_detection_radius_body_exited(body: Node3D) -> void:
+func _on_inner_detection_radius_body_exited(_body: Node3D) -> void:
 	insideinner = false
 
 

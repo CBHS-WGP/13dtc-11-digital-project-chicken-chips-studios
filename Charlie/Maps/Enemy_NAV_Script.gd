@@ -7,8 +7,8 @@ func _ready():
 	else:
 		#Sets the path for objectives to be put in later
 		Progress.cache_spawn = $Cache_Spawn
-		Progress.spawn = $Enemy_Spawn
+		Progress.spawn = $Enemy_Spawn1
 
 
-func _process(delta):
+func _process(_delta):
 	get_tree().call_group("enemy", "target_position", target.global_transform.origin)
