@@ -218,7 +218,7 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id="Animation_vkf7a"]
 resource_name = "cycle"
-length = 720.0
+length = 7.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -227,7 +227,7 @@ tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.227451, 0.447059, 1, 1), Color(1, 1, 1, 1)]
@@ -239,7 +239,7 @@ tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.027451, 0.101961, 0.25098, 1), Color(0.34902, 0.588235, 1, 1)]
@@ -251,7 +251,7 @@ tracks/2/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.027451, 0.101961, 0.25098, 1), Color(0, 0.329412, 0.968627, 1)]
@@ -263,7 +263,7 @@ tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.12549, 0.0862745, 0.372549, 1), Color(0.298039, 0.298039, 0.298039, 1)]
@@ -275,7 +275,7 @@ tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.905882, 0.788235, 0.627451, 1)]
@@ -287,7 +287,7 @@ tracks/5/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [2.0, 0.0]
@@ -299,7 +299,7 @@ tracks/6/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.5, 0.0]
@@ -311,7 +311,7 @@ tracks/7/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.2, 3.0]
@@ -323,7 +323,7 @@ tracks/8/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.05, 0.03]
@@ -335,7 +335,7 @@ tracks/9/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_p
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [8.0, 1.0]
@@ -347,7 +347,7 @@ tracks/10/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.2]
@@ -359,7 +359,7 @@ tracks/11/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 720),
+"times": PackedFloat32Array(0, 6.76667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [10.0, 4.5]
