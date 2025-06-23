@@ -3,7 +3,6 @@ var damage_taken
 
 
 func _process(_delta):
-	print(Progress.current_objective)
 	if Progress.current_objective == 0 or Progress.current_objective == 0.5:
 		$Main_Objective/Label.text = str("Locate the sattellite for inspection")
 	elif Progress.current_objective == 1:
@@ -22,7 +21,8 @@ func _process(_delta):
 	else:
 		$Main_Objective/Label.text = str("TBC")
 
-		
+	if Global.health < 100:
+		Global.health = Global.health + 0.01
 	#Code to update the health HUD visual
 	$Heatlh_Visualizer/Heart_Beating.play("Fast_pulse")
 	damage_taken = (100 - Global.health) * 2.25
