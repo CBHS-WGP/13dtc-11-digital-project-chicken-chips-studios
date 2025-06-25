@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4rls2r84qms7"]
+
+[ext_resource type="PackedScene" uid="uid://c5gt3mi1n0yxt" path="res://Patrick/Terrain/wall3.glb" id="1_guv3o"]
+
+[node name="Hole" type="Node3D"]
+
+[node name="wall3" parent="." instance=ExtResource("1_guv3o")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -2.02396, 15.3598, -5.0289)
