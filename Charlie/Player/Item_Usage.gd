@@ -48,7 +48,9 @@ func _process(_delta):
 			elif Input.is_action_just_released("rightclick"):
 				Gun_Animation["parameters/conditions/focus"] = true
 				Gun_Animation["parameters/conditions/unfocus"] = false
-	
+		elif Global.inv_open == true or Global.settings_open == true:
+			Gun_Animation["parameters/conditions/focus"] = true
+			Gun_Animation["parameters/conditions/unfocus"] = false
 	
 	if Global.equipped_item_id == str("Sattelite_Box"):
 		_hiding()
