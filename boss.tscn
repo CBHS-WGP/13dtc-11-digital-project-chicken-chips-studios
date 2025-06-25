@@ -26,7 +26,7 @@ size = Vector3(0.8, 1.717, 0.8)
 size = Vector3(1, 2, 1)
 
 [node name="boss" type="CharacterBody3D" groups=["enemy"]]
-transform = Transform3D(3.685, 0, 0, 0, 3.685, 0, 0, 0, 3.685, 0, 1.11159, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11159, 0)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 script = ExtResource("1_0bnu1")
@@ -54,25 +54,26 @@ collision_mask = 128
 shape = SubResource("SphereShape3D_hryg0")
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.026225)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0.026225)
 collision_layer = 144
 collision_mask = 144
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, -0.0389389, 0, -0.0342282)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -0.0389389, 0, -0.0342282)
 shape = SubResource("BoxShape3D_hryg0")
 
 [node name="Damage_Checker" type="Area3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 collision_layer = 4
 collision_mask = 4
 monitorable = false
 
 [node name="Health_Indicator" type="Label3D" parent="Damage_Checker"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.34506, 0)
+transform = Transform3D(-2.5, 0, -3.77489e-07, 0, 2.5, 0, 3.77489e-07, 0, -2.5, 0, 1.34506, 0)
 text = "aa"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101227, 0)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0.101227, 0)
 shape = SubResource("BoxShape3D_8uhvq")
 
 [node name="Timer" type="Timer" parent="."]
@@ -83,10 +84,12 @@ wait_time = 0.001
 autostart = true
 
 [node name="Enemy_Gun_Collider" type="Area3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 collision_layer = 64
 collision_mask = 64
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Gun_Collider"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_m83rg")
 
 [connection signal="area_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_area_entered"]
