@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7kr8y2toul8k"]
+
+[ext_resource type="PackedScene" uid="uid://c5gt3mi1n0yxt" path="res://Patrick/Terrain/wall3.glb" id="1_2kh0w"]
+
+[node name="Dunsandel" type="Node3D"]
+
+[node name="wall3" parent="." instance=ExtResource("1_2kh0w")]
+transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 0, 0)
