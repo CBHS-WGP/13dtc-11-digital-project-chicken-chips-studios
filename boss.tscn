@@ -1,14 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpx0qvn25khhr"]
+[gd_scene load_steps=12 format=3 uid="uid://dpx0qvn25khhr"]
 
 [ext_resource type="Script" uid="uid://djn6ji3xx6s8w" path="res://boss.gd" id="1_0bnu1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_am1u2"]
-albedo_color = Color(1, 0, 1, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_hryg0"]
-material = SubResource("StandardMaterial3D_am1u2")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m83rg"]
+[ext_resource type="Texture2D" uid="uid://cjysm1bjtgup2" path="res://Charles Tracey - Project Manager/Awesome rat.png" id="2_6xxrv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8uhvq"]
 radius = 5.095
@@ -25,17 +18,25 @@ size = Vector3(0.8, 1.717, 0.8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_m83rg"]
 size = Vector3(1, 2, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skx2t"]
+albedo_texture = ExtResource("2_6xxrv")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnbgr"]
+uv1_scale = Vector3(10, 10, 10)
+uv1_offset = Vector3(1, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6xxrv"]
+material = SubResource("StandardMaterial3D_lnbgr")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0bnu1"]
+radius = 2.0
+
 [node name="boss" type="CharacterBody3D" groups=["enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11159, 0)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 script = ExtResource("1_0bnu1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_hryg0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_m83rg")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
@@ -91,6 +92,16 @@ collision_mask = 64
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Gun_Collider"]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_m83rg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.01, 0, 0, 0, 5.01, 0, 0, 0, 5.01, 0.00312233, 0.0342308, 0.00487709)
+material_override = SubResource("StandardMaterial3D_skx2t")
+mesh = SubResource("SphereMesh_6xxrv")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5.01, 0, 0, 0, 5.01, 0, 0, 0, 5.01, 0, 0, 0)
+shape = SubResource("SphereShape3D_0bnu1")
 
 [connection signal="area_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_area_entered"]
 [connection signal="area_exited" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_area_exited"]
