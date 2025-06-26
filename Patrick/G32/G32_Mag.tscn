@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chuo56f7222dc"]
+
+[ext_resource type="PackedScene" uid="uid://bbw8wotshfngk" path="res://Patrick/G32/MAGAZINE2.glb" id="1_bxmfy"]
+
+[node name="G32Mag" type="Node3D"]
+
+[node name="MAGAZINE2" parent="." instance=ExtResource("1_bxmfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.645752, 0, 0.149658)
