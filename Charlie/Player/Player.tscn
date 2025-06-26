@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://461xqg54dhg2"]
+[gd_scene load_steps=42 format=3 uid="uid://461xqg54dhg2"]
 
 [ext_resource type="Script" uid="uid://bthwkuo42uy6g" path="res://Charlie/Player/Camera_movement.gd" id="1_euoi1"]
 [ext_resource type="PackedScene" uid="uid://cydmgo8i3qo0x" path="res://Charlie/Player/held_item.tscn" id="2_uiw4x"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://d1n83mxafmrys" path="res://Charlie/Textures/Inventory_Item_Textures/Sattelite_Box.png" id="5_rn0aa"]
 [ext_resource type="PackedScene" uid="uid://b6hnwyuweh4nf" path="res://Charlie/UI/settings.tscn" id="7_g6nvv"]
 [ext_resource type="Texture2D" uid="uid://cdv2e0o6y5vsu" path="res://Charlie/Textures/Inventory_Item_Textures/M7_Bayonet.png" id="7_rn0aa"]
-[ext_resource type="PackedScene" uid="uid://b2bkdg7hpkp2a" path="res://Charlie/Specific Objective files/Satellite/M7_Bayonet.tscn" id="8_3x0hu"]
+[ext_resource type="PackedScene" uid="uid://b2bkdg7hpkp2a" path="res://Charlie/Specific Objective files/M7_Bayonet.tscn" id="8_3x0hu"]
 [ext_resource type="Texture2D" uid="uid://85tair1wsf4g" path="res://Charlie/Textures/Inventory_Item_Textures/G32_Pistol.png" id="9_0csyg"]
 [ext_resource type="PackedScene" uid="uid://lxbuewtc8tss" path="res://Charlie/Specific Objective files/G32_Pistol.tscn" id="10_aq3s3"]
 [ext_resource type="Texture2D" uid="uid://b51gpagy111mg" path="res://Charlie/Textures/Inventory_Item_Textures/Bullets.png" id="10_hdjcv"]
 [ext_resource type="Script" uid="uid://dnxded2b7jdos" path="res://Charlie/Player/pickup_ray.gd" id="11_hdjcv"]
+[ext_resource type="PackedScene" uid="uid://ciipxd6ikrq4y" path="res://Charlie/Specific Objective files/Satellite/Bullet_Magazine.tscn" id="12_u0fbb"]
 [ext_resource type="Script" uid="uid://c3j85a5vn4fs8" path="res://Charlie/Player/hud_animation.gd" id="12_ys5wq"]
 
 [sub_resource type="GDScript" id="GDScript_yc2fa"]
@@ -191,6 +192,20 @@ metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 script = ExtResource("3_m73r6")
 ItemName = ".40 bullets"
 Icon = ExtResource("10_hdjcv")
+metadata/_custom_type_script = "uid://b6d2uymxqkxml"
+
+[sub_resource type="Gradient" id="Gradient_wc82c"]
+colors = PackedColorArray(0.772549, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5r2l6"]
+gradient = SubResource("Gradient_wc82c")
+fill_to = Vector2(0.952991, 0.978632)
+
+[sub_resource type="Resource" id="Resource_ykdt2"]
+script = ExtResource("3_m73r6")
+ItemName = "Pistol_Magazine"
+Icon = SubResource("GradientTexture2D_5r2l6")
+ItemModelPrefab = ExtResource("12_u0fbb")
 metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7bwoj"]
@@ -452,6 +467,7 @@ shape = SubResource("CylinderShape3D_ms5rm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_24ntd")
 skeleton = NodePath("")
 
@@ -471,7 +487,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("3_o5tpb")
-ItemTypes = Array[ExtResource("3_m73r6")]([SubResource("Resource_3x0hu"), SubResource("Resource_0csyg"), SubResource("Resource_ys5wq"), SubResource("Resource_aq3s3")])
+ItemTypes = Array[ExtResource("3_m73r6")]([SubResource("Resource_3x0hu"), SubResource("Resource_0csyg"), SubResource("Resource_ys5wq"), SubResource("Resource_aq3s3"), SubResource("Resource_ykdt2")])
 
 [node name="Area_Collision" type="CollisionShape3D" parent="Camera/Camera/Player_Area_Scanner/Area3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.35084)

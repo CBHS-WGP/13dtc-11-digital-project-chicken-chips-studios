@@ -469,6 +469,7 @@ visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.409825)
+cast_shadow = 0
 mesh = SubResource("BoxMesh_8wcif")
 
 [node name="M7_Bayonet" type="Node3D" parent="."]

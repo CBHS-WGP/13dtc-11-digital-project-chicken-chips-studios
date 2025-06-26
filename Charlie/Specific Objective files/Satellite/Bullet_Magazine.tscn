@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ciipxd6ikrq4y"]
+
+[ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_d46y1"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_5erp6"]
+inner_radius = 0.05
+outer_radius = 0.3
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rim1j"]
+points = PackedVector3Array(0.0550038, -0.0149244, 0.293277, -0.0550038, -0.0149244, -0.293277, -0.0635219, -0.0510924, -0.281384, -0.293107, 0.030861, 0.0366097, 0.204565, 0.118893, -0.0533285, 0.195906, -0.121431, -0.0533986, -0.186887, -0.121373, 0.0800865, -0.204565, 0.118893, 0.0533285, 0.197299, 0.0839891, 0.179373, -0.134622, 0.102072, -0.206517, 0.22631, 0.0304908, -0.190123, 0.233316, -0.0864304, 0.125628, -0.145173, 0.0396156, 0.254125, -0.205225, -0.0948686, -0.151668, -0.0358235, -0.113212, 0.224037, 0.053383, 0.11889, 0.204561, 0.293107, 0.030861, -0.0366097, 0.0717237, -0.113244, -0.215171, 0.0625326, 0.110498, -0.223371, -0.245966, 0.0306933, -0.163996, -0.2439, -0.0689118, 0.135506, 0.252927, -0.068904, -0.117437, 0.118633, -0.0148663, -0.273741, -0.281271, -0.0601613, -0.0362673, -0.097954, -0.121398, -0.178058, 0.236349, -0.0148168, 0.181833, 0.097954, -0.121398, 0.178058, -0.117437, -0.0689044, 0.252929, -0.19572, 0.118936, -0.0800494, -0.197299, 0.083989, 0.179373, 0.0361299, 0.0756184, 0.271144, 0.135506, -0.0689118, 0.2439)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oq4qg"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_4j3i6"]
+flip_faces = true
+inner_radius = 0.04
+outer_radius = 0.32
+rings = 16
+ring_segments = 8
+
+[node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+collision_layer = 33
+collision_mask = 33
+script = ExtResource("1_d46y1")
+ItemHighlightMesh = NodePath("Glow")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_5erp6")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_rim1j")
+
+[node name="Glow" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_oq4qg")
+mesh = SubResource("TorusMesh_4j3i6")

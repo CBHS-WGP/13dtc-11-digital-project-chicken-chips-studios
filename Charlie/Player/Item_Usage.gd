@@ -40,7 +40,7 @@ func _process(_delta):
 		_hiding()
 		$G32.visible = true
 		if Global.inv_open == false and Global.settings_open == false:
-			if Input.is_action_just_pressed("leftclick"):
+			if Input.is_action_just_pressed("leftclick") and Global.pistol_bullets > 0:
 				_shoot()
 			if Input.is_action_just_pressed("rightclick"):
 				Gun_Animation["parameters/conditions/focus"] = false
@@ -61,6 +61,7 @@ func _hiding():
 		for child in get_children():
 			child.visible = false
 func _shoot():
+	Global.pistol_bullets -= 1
 	if ray.is_colliding():
 		hit = ray.get_collider()
 		pos = Vector3(ray.get_collision_point())
@@ -71,11 +72,9 @@ func _shoot():
 		#This is done so it is based on global position instead of being
 		#relative to player position
 		get_tree().get_root().add_child(instance)
-		#print(get_tree().get_root())
 		#Sets the actual position
 		instance.global_position = ray.get_collider().position
 		#Enemy damage if nessesary
-		#print(hit.get_collision_mask())
 		if hit.get_collision_mask() == 64:
 			hit.get_parent().health = hit.get_parent().health - 15
 		else:

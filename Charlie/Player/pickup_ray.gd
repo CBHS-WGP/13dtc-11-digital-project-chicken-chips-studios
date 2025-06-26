@@ -6,7 +6,6 @@ func _ready():
 	ray = $Interacter
 
 func _process(_delta: float) -> void:
-	#print(Progress.current_objective)
 	if ray.is_colliding():
 		hit = ray.get_collider()
 		Global.current_raycast = hit.name
@@ -20,6 +19,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("F") and Global.current_raycast == "Sattelite" and Progress.current_objective == 1.5:
 		if Global.equipped_item_id == str("Sattelite_Box"):
 			Progress.current_objective = 1.99
+
 	
 	#ode to check finding the sattelite when the player has or hasnt already found the parts
 	if Progress.current_objective == 0 and Global.current_raycast == "SatteliteFound" and Progress.Sattelite_Discovered == false:

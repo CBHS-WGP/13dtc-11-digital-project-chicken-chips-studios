@@ -37,4 +37,4 @@ func _process(_delta):
 	else:
 		$Heatlh_Visualizer/Critital.modulate = Color8(255, 255, 255, 0)
 		
-	
+	$Bullets.text = str(Global.pistol_bullets)

@@ -19,8 +19,7 @@ func PickupNearestItem():
 		if (item.global_position.distance_to(global_position) < nearestItemDistance):
 			nearestItemDistance = item.global_position.distance_to(global_position)
 			nearestItem = item
-	
-	if (nearestItem != null):
+	if (nearestItem != null) and nearestItem.name != "Magazine":
 		nearestItem.queue_free()
 		NearbyAreas.remove_at(NearbyAreas.find(nearestItem))
 		var itemPrefab = nearestItem.scene_file_path
@@ -37,9 +36,12 @@ func PickupNearestItem():
 						Progress.current_objective = 0.5
 					if Progress.current_objective == 1:
 						Progress.current_objective = 1.5
+				
 				return
-		
-		printerr("Item not found")
+	elif nearestItem.name == "Magazine":
+		nearestItem.queue_free()
+		Global.pistol_bullets = Global.pistol_bullets + 12
+	printerr("Item not found")
 
 
 func OnObjectEnteredBody(body: Node3D):
