@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bca0fy6b7kgvs"]
+
+[ext_resource type="ArrayMesh" uid="uid://crawt48gvkkf1" path="res://Charles Tracey - Project Manager/obj/wooden watch tower2.obj" id="1_hshb0"]
+
+[node name="BOSSREDONE" type="Node3D"]
+
+[node name="WoodenWatchTower2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.412883, 0, -3.64701)
+mesh = ExtResource("1_hshb0")
