@@ -72,19 +72,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.139093)
 shape = SubResource("SphereShape3D_ofouk")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-
-[node name="Ray_Casts" type="Node3D" parent="."]
-
-[node name="Floor" type="RayCast3D" parent="Ray_Casts"]
-
-[node name="Wall_Right" type="RayCast3D" parent="Ray_Casts"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Wall_left" type="RayCast3D" parent="Ray_Casts"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Wall_Front" type="RayCast3D" parent="Ray_Casts"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
-
-[node name="Wall_Back" type="RayCast3D" parent="Ray_Casts"]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+path_desired_distance = 2.0

@@ -38,7 +38,7 @@ func PickupNearestItem():
 						Progress.current_objective = 1.5
 				
 				return
-	elif nearestItem.name == "Magazine":
+	elif (nearestItem != null) and nearestItem.name == str("Magazine"):
 		nearestItem.queue_free()
 		Global.pistol_bullets = Global.pistol_bullets + 12
 	printerr("Item not found")
