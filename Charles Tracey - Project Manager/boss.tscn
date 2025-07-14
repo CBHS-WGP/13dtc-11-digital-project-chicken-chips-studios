@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dpx0qvn25khhr"]
 
-[ext_resource type="Script" uid="uid://djn6ji3xx6s8w" path="res://boss.gd" id="1_0bnu1"]
+[ext_resource type="Script" uid="uid://djn6ji3xx6s8w" path="res://Charles Tracey - Project Manager/boss.gd" id="1_0bnu1"]
 [ext_resource type="Texture2D" uid="uid://cjysm1bjtgup2" path="res://Charles Tracey - Project Manager/Awesome rat.png" id="2_6xxrv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8uhvq"]
