@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceuv6yrsmc1ke"]
+
+[ext_resource type="Texture2D" uid="uid://cs46ean34ryys" path="res://Charles Tracey - Project Manager/obj/textures/34-cottage_textures/cottage_textures/cottage_diffuse.png" id="1_nly5w"]
+[ext_resource type="ArrayMesh" uid="uid://b3yb4kal0305k" path="res://Charles Tracey - Project Manager/obj/textures/34-cottage_textures/cottage_textures/cottage_blender.obj" id="2_ks6wu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7t42"]
+albedo_texture = ExtResource("1_nly5w")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nly5w"]
+points = PackedVector3Array(6.87184, 6.79765, 9.3557, 9.02449, 8.41107, -10.5696, -19.5166, 8.41107, -8.41484, -17.3606, -0.205192, 9.3557, -17.2675, 14.1045, 2.10543, 12.4997, 14.2342, -1.79049, 13.3365, -0.205192, 7.20094, -17.5244, 0.220696, -6.92682, -3.27632, 13.8236, 7.66907, -18.4369, 8.41107, 10.4351, 14.4128, 8.41107, 8.28038, 14.9527, -0.205192, -1.95058, 13.3365, 8.41107, -10.5696, -19.5166, -0.205192, 2.35275, -17.3153, 14.1261, 0.171654, 12.6157, 14.2883, -0.315613, -10.356, 8.41107, 10.4351, 7.84989, 0.239342, 8.29517, 11.4982, 0.188256, -9.00042, -17.9939, 13.4183, 3.2249, 12.2568, 8.41107, 8.81907, -13.5884, 8.41107, -8.95353, 12.9394, 12.9164, -3.87197, -18.6957, 11.4372, -3.913, 11.7001, 9.26169, -9.4692, 7.40832, 7.87228, 9.3557, -18.5319, 8.8576, -7.93792)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CottageBlender" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, -4.46879, 0, -2.0033)
+material_override = SubResource("StandardMaterial3D_v7t42")
+mesh = ExtResource("2_ks6wu")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Area3D/CottageBlender"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/CottageBlender/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_nly5w")

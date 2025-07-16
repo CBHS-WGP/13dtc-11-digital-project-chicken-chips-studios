@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ca6awa77uemcf"]
+[gd_scene load_steps=12 format=3 uid="uid://ca6awa77uemcf"]
 
 [ext_resource type="Texture2D" uid="uid://q5uwi8la7jal" path="res://Charles Tracey - Project Manager/obj/textures/Wood_Tower_Col.jpg" id="1_x5ofi"]
 [ext_resource type="ArrayMesh" uid="uid://crawt48gvkkf1" path="res://Charles Tracey - Project Manager/obj/wooden watch tower2.obj" id="2_6plbt"]
@@ -17,13 +17,16 @@ size = Vector3(1.44736, 0.104004, 0.570496)
 size = Vector3(2.64374, 0.158203, 0.772034)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a4yqf"]
-size = Vector3(0.726074, 0.119019, 0.615841)
+size = Vector3(0.712479, 0.113001, 0.646926)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kyc76"]
-size = Vector3(2.54649, 0.0762329, 0.665405)
+size = Vector3(2.54653, 0.0762329, 0.705627)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6pm7y"]
-size = Vector3(2.78689, 0.001, 0.591248)
+size = Vector3(2.95704, 0.001, 0.591248)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wood"]
+size = Vector3(0.685913, 0.0614958, 0.650787)
 
 [node name="Node3D" type="Node3D"]
 
@@ -54,15 +57,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47934, 1.25712, -1.47172)
 shape = SubResource("BoxShape3D_a4yqf")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D/WoodenWatchTower2/StaticBody3D"]
-transform = Transform3D(-0.866025, -0.5, -8.74228e-08, -0.5, 0.866025, 0, 7.57104e-08, 4.37114e-08, -1, 0.00151713, 3.23629, 1.44362)
+transform = Transform3D(-0.866025, -0.5, 8.74228e-08, -0.5, 0.866025, 0, -7.57103e-08, -4.37114e-08, -1, 0.00153643, 3.2403, 1.42351)
 shape = SubResource("BoxShape3D_kyc76")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Area3D/WoodenWatchTower2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47934, 2.57396, 1.41533)
-shape = SubResource("BoxShape3D_a4yqf")
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Area3D/WoodenWatchTower2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43825, 3.83378, 1.46503)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47934, 2.56543, 1.39979)
 shape = SubResource("BoxShape3D_a4yqf")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Area3D/WoodenWatchTower2/StaticBody3D"]
@@ -74,8 +73,12 @@ transform = Transform3D(-3.78552e-08, 2.18557e-08, 1, 0.5, 0.866025, 0, -0.86602
 shape = SubResource("BoxShape3D_6pm7y")
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="Area3D/WoodenWatchTower2/StaticBody3D"]
-transform = Transform3D(-0.866025, 0.5, -8.74228e-08, 0.5, 0.866025, 0, 7.57104e-08, -4.37114e-08, -1, 0.231149, 5.75061, -1.48891)
+transform = Transform3D(-0.866025, 0.5, -8.74228e-08, 0.5, 0.866025, 0, 7.57104e-08, -4.37114e-08, -1, 0.15747, 5.80252, -1.48891)
 shape = SubResource("BoxShape3D_6pm7y")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Area3D/WoodenWatchTower2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43057, 3.87209, 1.41651)
+shape = SubResource("BoxShape3D_2wood")
 
 [node name="Wayne" parent="." instance=ExtResource("3_6plbt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91709, 3.82124, -1.17819)
