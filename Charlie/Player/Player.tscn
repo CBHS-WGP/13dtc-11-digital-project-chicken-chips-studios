@@ -442,6 +442,7 @@ radius = 0.925
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aq3s3"]
 
 [node name="Wayne" type="CharacterBody3D"]
+wall_min_slide_angle = 0.410152
 floor_max_angle = 0.523599
 script = SubResource("GDScript_yc2fa")
 
@@ -567,10 +568,11 @@ shape = SubResource("CapsuleShape3D_aq3s3")
 
 [node name="flashlight" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29593, 0)
-light_energy = 3.39
-spot_range = 21.114
+light_energy = 10.0
+light_volumetric_fog_energy = 0.0
+spot_range = 23.9111
 spot_attenuation = 2.0
-spot_angle = 26.7026
+spot_angle = 60.0
 
 [connection signal="area_entered" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_entered"]
 [connection signal="area_exited" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_exited"]
