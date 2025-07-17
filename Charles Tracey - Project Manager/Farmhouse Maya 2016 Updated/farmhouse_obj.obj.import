@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b753w17nhro4s"
+path="res://.godot/imported/farmhouse_obj.obj-055c7bbad6c48e67331b605e31b2b4a8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/farmhouse_obj.obj-055c7bbad6c48e67331b605e31b2b4a8.mesh"]
+
+source_file="res://Charles Tracey - Project Manager/Farmhouse Maya 2016 Updated/farmhouse_obj.obj"
+dest_files=["res://.godot/imported/farmhouse_obj.obj-055c7bbad6c48e67331b605e31b2b4a8.mesh", "res://.godot/imported/farmhouse_obj.obj-055c7bbad6c48e67331b605e31b2b4a8.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

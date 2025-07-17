@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5ngu47i3y81y"]
+[gd_scene load_steps=16 format=3 uid="uid://c5ngu47i3y81y"]
 
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_am1u2"]
 [ext_resource type="Script" uid="uid://cwiv2gohl2xyh" path="res://Charles Tracey - Project Manager/test_map___ct.gd" id="1_bkyi2"]
 [ext_resource type="PackedScene" uid="uid://lxbuewtc8tss" path="res://Charlie/Specific Objective files/G32_Pistol.tscn" id="5_5m3ab"]
 [ext_resource type="PackedScene" uid="uid://dpx0qvn25khhr" path="res://Charles Tracey - Project Manager/boss.tscn" id="5_30n4f"]
 [ext_resource type="PackedScene" uid="uid://ca6awa77uemcf" path="res://woodenwatchtower.tscn" id="5_v5r68"]
+[ext_resource type="PackedScene" uid="uid://bq5rb454010na" path="res://big_cottage.tscn" id="6_30n4f"]
+[ext_resource type="PackedScene" uid="uid://ceuv6yrsmc1ke" path="res://oldcottage.tscn" id="7_v5r68"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_am1u2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -115,6 +117,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5921, -0.679188, 17.4707)
 
 [node name="CollisionShape3D2" parent="Node3D/Area3D/WoodenWatchTower2/StaticBody3D" index="1"]
 transform = Transform3D(0.876416, 0.481555, 0, -0.481555, 0.876416, 0, 0, 0, 1, -0.557625, 0.944217, -1.45829)
+
+[node name="Node3D2" parent="." instance=ExtResource("6_30n4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2986, 0.78444, -6.4493)
+
+[node name="Node3D3" parent="." instance=ExtResource("7_v5r68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2743, 0.499998, -17.9621)
 
 [editable path="Wayne"]
 [editable path="Node3D"]
