@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://73x7e2kpodu6"
+path.s3tc="res://.godot/imported/Old House 2 3D Models_alpha_1.png-fd8dc70729ed3a8355855a1e7aa8218f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "e89c30c22a24d48b874134485868f291"
+}
+
+[deps]
+
+source_file="res://Charles Tracey - Project Manager/ny5ajt5gc0lc-House/Old House 2/Old House Files/Old House 2 3D Models_alpha_1.png"
+dest_files=["res://.godot/imported/Old House 2 3D Models_alpha_1.png-fd8dc70729ed3a8355855a1e7aa8218f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
