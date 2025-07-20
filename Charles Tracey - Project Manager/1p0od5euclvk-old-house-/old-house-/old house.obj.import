@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://oj8s5s14ehal"
+path="res://.godot/imported/old house.obj-e7a67d9fbaab396975d172b95a40e878.mesh"
+
+[deps]
+
+files=["res://.godot/imported/old house.obj-e7a67d9fbaab396975d172b95a40e878.mesh"]
+
+source_file="res://Charles Tracey - Project Manager/1p0od5euclvk-old-house-/old-house-/old house.obj"
+dest_files=["res://.godot/imported/old house.obj-e7a67d9fbaab396975d172b95a40e878.mesh", "res://.godot/imported/old house.obj-e7a67d9fbaab396975d172b95a40e878.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

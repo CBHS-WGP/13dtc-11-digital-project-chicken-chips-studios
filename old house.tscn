@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfa3xvx0jup80"]
+
+[ext_resource type="Texture2D" uid="uid://qiaeohri1o08" path="res://Charles Tracey - Project Manager/1p0od5euclvk-old-house-/old-house-/SAN_RUMAHGEN05.png" id="1_aglar"]
+[ext_resource type="ArrayMesh" uid="uid://oj8s5s14ehal" path="res://Charles Tracey - Project Manager/1p0od5euclvk-old-house-/old-house-/old house.obj" id="2_0tpf7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggc4o"]
+albedo_texture = ExtResource("1_aglar")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mumcr"]
+points = PackedVector3Array(-0.141926, -7.66955, 5.41672, -4.90713, -8.43063, -2.85843, 5.0995, -8.0419, -2.65799, -4.90713, 8.37923, -2.85843, 5.33538, 8.37923, 0.293498, -3.88927, 7.43675, 3.09229, 0.333268, 7.14509, 5.41991, 4.17457, -7.70764, 3.27518, 5.0996, 7.99223, -2.65888, -4.90713, -8.43063, 0.293498, 4.17457, 7.17499, 3.27518, 5.33638, -8.43063, 0.293498, -3.88927, -7.98689, 3.09229, -4.90713, 8.37923, 0.293498, -0.141793, 7.13661, 5.41525, 0.333267, -7.67567, 5.41988)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="OldHouse" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.34, 0, 0, 0, -2.7713e-07, 6.34, 0, -6.34, -2.7713e-07, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ggc4o")
+mesh = ExtResource("2_0tpf7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OldHouse"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OldHouse/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_mumcr")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1707scd5rpth"]
+
+[ext_resource type="Texture2D" uid="uid://b6atvl0eos82o" path="res://Charles Tracey - Project Manager/Farmhouse Maya 2016 Updated/textures/Diffuse map.png" id="1_3abe8"]
+[ext_resource type="ArrayMesh" uid="uid://dhhd136bxigxw" path="res://Charles Tracey - Project Manager/Farmhouse Maya 2016 Updated/Barrack.obj" id="2_pdwkx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_es3iw"]
+albedo_texture = ExtResource("1_3abe8")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Barrack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0108477, 0, 0.283309)
+material_override = SubResource("StandardMaterial3D_es3iw")
+mesh = ExtResource("2_pdwkx")
