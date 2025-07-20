@@ -1,25 +1,28 @@
 extends Control
 var damage_taken
 
-
 func _process(_delta):
 	if Progress.current_objective == 0 or Progress.current_objective == 0.5:
-		$Objective_Control/Main_Objective/Label.text = str("Locate the sattellite for inspection")
+		$Main_Objective.text = str("Locate the sattellite for inspection")
 	elif Progress.current_objective == 1:
-		$Objective_Control/Main_Objective/Label.text = str("Locate the cube for the sattilite!")
+		$Main_Objective.text = str("Locate the cube for the sattilite!")
 	elif Progress.current_objective == 1.5:
-		$Objective_Control/Main_Objective/Label.text = str("Use the parts to repair the sattelite")
+		$Main_Objective.text = str("Use the parts to repair the sattelite")
 	elif Progress.current_objective == 2.1:
-		$Objective_Control/Main_Objective/Label.text = str("Find the weapons cache")
+		$Main_Objective.text = str("Find the weapons cache")
 	elif Progress.current_objective == 2.6:
-		$Objective_Control/Main_Objective/Label.text = str("Kill all 10 enemies!")
-		$Objective_Control/Main_Objective/Sub_Objective.visible = true
-		$Objective_Control/Main_Objective/Sub_Objective.text = str("Killed:", Progress.obj_2_enemies_killed, "/10")
+		$Main_Objective.text = str("Kill all 10 enemies!")
+		$Sub_Objective.visible = true
+		$Objective_Control/UI_Control/Back_Bottom_UI.visible = true
+		$Sub_Objective.text = str("Killed:", Progress.obj_2_enemies_killed, "/10")
 	elif Progress.current_objective == 3:
-		$Objective_Control/Main_Objective/Sub_Objective.visible = false
-		$Objective_Control/Main_Objective.text = str("Make the impact site")
+		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
+		$Sub_Objective.visible = false
+		$Main_Objective.text = str("Make the impact site")
 	else:
-		$Objective_Control/Main_Objective/Label.text = str("TBC")
+		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
+		$Sub_Objective.visible = false
+		$Main_Objective.text = str("TBC")
 
 	if Global.health < 100:
 		Global.health = Global.health + 0.01
@@ -37,4 +40,10 @@ func _process(_delta):
 	else:
 		$Heatlh_Visualizer/Critital.modulate = Color8(255, 255, 255, 0)
 		
-	$Bullets.text = str(Global.pistol_bullets)
+	if Global.equipped_item_id == str("G32 Pistol"):
+		$Bullets.visible = true
+		$Bullets.text = str("Bullets - ", Global.pistol_bullets)
+	else:
+		$Bullets.visible = false
+func update_test():
+	pass

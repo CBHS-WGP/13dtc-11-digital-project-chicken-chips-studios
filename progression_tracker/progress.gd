@@ -59,5 +59,5 @@ func _process(_delta):
 	#Player death
 	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
-		print("You reached objective " + Progress.current_objective)
+		print("You reached objective ", Progress.current_objective)
 		
