@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://cydmgo8i3qo0x"]
+[gd_scene load_steps=42 format=3 uid="uid://cydmgo8i3qo0x"]
 
 [ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
 [ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
 [ext_resource type="PackedScene" uid="uid://ccblkv2im1cmg" path="res://Patrick/G32/G32_gun.tscn" id="3_7ynmh"]
+[ext_resource type="PackedScene" uid="uid://ccjj53kb8whrl" path="res://Patrick/p90gun/prep90.glb" id="4_see5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ynmh"]
 no_depth_test = true
@@ -527,5 +528,17 @@ libraries = {
 [node name="Gun_Cast" type="RayCast3D" parent="G32/G32Gun"]
 transform = Transform3D(-10, 1.7053e-13, -8.74228e-07, 1.7053e-13, 10, -5.68434e-14, 8.74228e-07, -8.52651e-14, -10, 0.0149028, 0.130857, 1.54303)
 target_position = Vector3(0, 0, -1000)
+collision_mask = 65
+collide_with_areas = true
+
+[node name="P90" type="Node3D" parent="."]
+visible = false
+
+[node name="prep90" parent="P90" instance=ExtResource("4_see5a")]
+transform = Transform3D(-0.036, 0, -5.43585e-09, 0, 0.036, 0, 5.43585e-09, 0, -0.036, 0.477093, -0.0837261, -0.645173)
+
+[node name="P90_Gun_Cast" type="RayCast3D" parent="P90/prep90"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, -1.90735e-06, 0, 7.94919)
+target_position = Vector3(0, 0, 1000)
 collision_mask = 65
 collide_with_areas = true

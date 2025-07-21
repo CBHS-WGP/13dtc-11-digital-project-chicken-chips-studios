@@ -323,3 +323,10 @@ theme_override_fonts/font = ExtResource("3_bohhl")
 position = Vector2(3.05176e-05, -2.00002)
 scale = Vector2(5.00781, 734)
 texture = SubResource("GradientTexture1D_1dgca")
+
+[node name="P90_Bullets" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 643.0
+offset_right = 121.0
+offset_bottom = 666.0
