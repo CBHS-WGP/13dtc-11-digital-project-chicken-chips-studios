@@ -15,7 +15,6 @@ func _ready():
 	#resetting the gun animation state (needs this to work the first time for some reason?)
 	Gun_Animation["parameters/conditions/focus"] = true
 	Gun_Animation["parameters/conditions/unfocus"] = false
-	ray = $G32/G32Gun/Gun_Cast
 
 func _process(_delta):
 
@@ -39,8 +38,10 @@ func _process(_delta):
 	if Global.equipped_item_id == str("G32 Pistol"):
 		_hiding()
 		$G32.visible = true
+		ray = $G32/G32Gun/Gun_Cast
 		if Global.inv_open == false and Global.settings_open == false:
 			if Input.is_action_just_pressed("leftclick") and Global.pistol_bullets > 0:
+				Global.pistol_bullets -= 1
 				_shoot()
 			if Input.is_action_just_pressed("rightclick"):
 				Gun_Animation["parameters/conditions/focus"] = false
@@ -56,12 +57,22 @@ func _process(_delta):
 		_hiding()
 		$Cube.visible = true
 		
+	if Global.equipped_item_id == str("P90"):
+		_hiding()
+		$P90.visible = true
+		ray = $P90/prep90/P90_Gun_Cast
+		if Global.inv_open == false and Global.settings_open == false:
+			if Input.is_action_pressed("leftclick") and Global.P90_bullets > 0:
+				Global.P90_bullets -= 1
+				_shoot()
+		
+		
+		
 
 func _hiding():
 		for child in get_children():
 			child.visible = false
 func _shoot():
-	Global.pistol_bullets -= 1
 	if ray.is_colliding():
 		hit = ray.get_collider()
 		pos = Vector3(ray.get_collision_point())
