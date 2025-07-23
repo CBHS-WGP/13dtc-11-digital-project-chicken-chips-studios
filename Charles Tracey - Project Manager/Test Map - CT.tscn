@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_am1u2"]
 [ext_resource type="Script" uid="uid://cwiv2gohl2xyh" path="res://Charles Tracey - Project Manager/test_map___ct.gd" id="1_bkyi2"]
 [ext_resource type="PackedScene" uid="uid://lxbuewtc8tss" path="res://Charlie/Specific Objective files/G32_Pistol.tscn" id="5_5m3ab"]
-[ext_resource type="PackedScene" uid="uid://dpx0qvn25khhr" path="res://Charles Tracey - Project Manager/boss.tscn" id="5_30n4f"]
 [ext_resource type="PackedScene" uid="uid://ca6awa77uemcf" path="res://woodenwatchtower.tscn" id="5_v5r68"]
 [ext_resource type="PackedScene" uid="uid://bq5rb454010na" path="res://big_cottage.tscn" id="6_30n4f"]
+[ext_resource type="PackedScene" uid="uid://b1x770wv6m518" path="res://boss.tscn" id="7_gm03w"]
 [ext_resource type="PackedScene" uid="uid://ceuv6yrsmc1ke" path="res://oldcottage.tscn" id="7_v5r68"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_am1u2"]
@@ -106,8 +106,18 @@ skeleton = NodePath("../..")
 
 [node name="Enemies" type="Node3D" parent="."]
 
-[node name="boss" parent="Enemies" instance=ExtResource("5_30n4f")]
+[node name="boss" parent="Enemies"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87437, 3.715, 17.2267)
+script = null
 
 [node name="RigidBody3D" parent="." instance=ExtResource("5_5m3ab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713917, -1.3083)
@@ -123,6 +133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2986, 0.78444, -6.4493)
 
 [node name="Node3D3" parent="." instance=ExtResource("7_v5r68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2743, 0.499998, -17.9621)
+
+[node name="Node3D4" parent="." instance=ExtResource("7_gm03w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33611, 1.86, -4.3976)
 
 [editable path="Wayne"]
 [editable path="Node3D"]

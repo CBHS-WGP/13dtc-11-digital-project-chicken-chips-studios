@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1x770wv6m518"]
+[gd_scene load_steps=6 format=3 uid="uid://b1x770wv6m518"]
+
+[ext_resource type="Script" uid="uid://bwgpfmpy6an1u" path="res://boss.gd" id="1_0bnu1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mihky"]
 albedo_color = Color(1.01075e-06, 0.643502, 0.281243, 1)
@@ -11,11 +13,13 @@ points = PackedVector3Array(-0.5, -0.5, 0, -0.497651, -0.5, -0.0490407, -0.49246
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_skx2t"]
 
-[node name="Node3D" type="Node3D"]
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_0bnu1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.2, 0, 0, 0, 1.36, 0, 0, 0, 4.965, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_0bnu1")
+skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
@@ -27,3 +31,5 @@ shape = SubResource("ConvexPolygonShape3D_6xxrv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inner detect"]
 transform = Transform3D(19.23, 0, 0, 0, 19.23, 0, 0, 0, 19.23, 0, 0, 0)
 shape = SubResource("SphereShape3D_skx2t")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
