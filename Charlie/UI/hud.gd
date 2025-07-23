@@ -24,8 +24,6 @@ func _process(_delta):
 		$Sub_Objective.visible = false
 		$Main_Objective.text = str("TBC")
 
-
-	$P90_Bullets.text = str(Global.P90_bullets)
 	if Global.health < 100:
 		Global.health = Global.health + 0.01
 	#Code to update the health HUD visual
@@ -44,8 +42,14 @@ func _process(_delta):
 		
 	if Global.equipped_item_id == str("G32 Pistol"):
 		$Bullets.visible = true
+		$P90_Bullets.visible = false
 		$Bullets.text = str("Bullets - ", Global.pistol_bullets)
+	elif Global.equipped_item_id == str("P90"):
+		$Bullets.visible = false
+		$P90_Bullets.visible = true
+		$P90_Bullets.text = str("Bullets - ", Global.P90_bullets_in_mag, "/", Global.P90_bullets)
 	else:
 		$Bullets.visible = false
+		$P90_Bullets.visible = false
 func update_test():
 	pass
