@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://75mouu8jvv27"]
+[gd_scene load_steps=5 format=3 uid="uid://75mouu8jvv27"]
 
 [ext_resource type="Script" uid="uid://ndcabu88j6fa" path="res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/weapons_cache_found.gd" id="1_y44h1"]
+[ext_resource type="PackedScene" uid="uid://cn4jcye1uyc4p" path="res://Charlie/Specific Objective files/P90.tscn" id="2_de6q4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f86en"]
 
@@ -23,5 +24,8 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Weapons_Cache_Found"]
 shape = SubResource("BoxShape3D_y44h1")
+
+[node name="RigidBody3D" parent="." instance=ExtResource("2_de6q4")]
+transform = Transform3D(0.144892, 0.989448, 0, -0.989448, 0.144892, 0, 0, 0, 1, 0, 1.0394, 0)
 
 [connection signal="body_entered" from="Weapons_Cache_Found" to="." method="_on_weapons_cache_found_body_entered"]

@@ -61,13 +61,15 @@ func _process(_delta):
 		_hiding()
 		$P90.visible = true
 		ray = $P90/prep90/P90_Gun_Cast
-		if Global.inv_open == false and Global.settings_open == false:
-			if Input.is_action_pressed("leftclick") and Global.P90_bullets > 0:
-				Global.P90_bullets -= 1
-				_shoot()
-		
-		
-		
+		if Input.is_action_just_pressed("R") and Global.P90_bullets_in_mag < 50:
+			if Global.P90_bullets <= 0:
+				pass
+			if 50 - Global.P90_bullets_in_mag > Global.P90_bullets:
+				Global.P90_bullets_in_mag = Global.P90_bullets_in_mag + Global.P90_bullets
+				Global.P90_bullets = 0
+			else:
+				Global.P90_bullets = Global.P90_bullets - (50 - Global.P90_bullets_in_mag)
+				Global.P90_bullets_in_mag = 50
 
 func _hiding():
 		for child in get_children():
@@ -90,3 +92,12 @@ func _shoot():
 			hit.get_parent().health = hit.get_parent().health - 15
 		else:
 			print("poke")
+
+
+func _on_p_90_shoot_timer_timeout() -> void:
+	if Global.equipped_item_id == str("P90"):
+		if Input.is_action_pressed("leftclick") and Global.P90_bullets_in_mag > 0:
+			$"P90/prep90/Proto Muzzle flash".play("flash")
+			Global.P90_bullets_in_mag -= 1
+			_shoot()
+		

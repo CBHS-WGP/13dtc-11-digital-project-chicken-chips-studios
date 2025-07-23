@@ -25,7 +25,7 @@ func _process(_delta):
 		$Main_Objective.text = str("TBC")
 
 
-	$P90_Bullets.text = str(Global.P90_bullets)
+	$P90_Bullets.text = str(Global.P90_bullets_in_mag, "/", Global.P90_bullets)
 	if Global.health < 100:
 		Global.health = Global.health + 0.01
 	#Code to update the health HUD visual
