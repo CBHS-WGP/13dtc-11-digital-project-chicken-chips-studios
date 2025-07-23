@@ -61,7 +61,7 @@ func _process(_delta):
 		_hiding()
 		$P90.visible = true
 		ray = $P90/prep90/P90_Gun_Cast
-		if Input.is_action_just_pressed("R") and Global.P90_bullets_in_mag < 50:
+		if Input.is_action_just_pressed("R") and Global.P90_bullets_in_mag < 50 and Global.inv_open == false and Global.settings_open == false:
 			if Global.P90_bullets <= 0:
 				pass
 			if 50 - Global.P90_bullets_in_mag > Global.P90_bullets:
@@ -96,7 +96,7 @@ func _shoot():
 
 func _on_p_90_shoot_timer_timeout() -> void:
 	if Global.equipped_item_id == str("P90"):
-		if Input.is_action_pressed("leftclick") and Global.P90_bullets_in_mag > 0:
+		if Input.is_action_pressed("leftclick") and Global.P90_bullets_in_mag > 0  and Global.inv_open == false and Global.settings_open == false:
 			$"P90/prep90/Proto Muzzle flash".play("flash")
 			Global.P90_bullets_in_mag -= 1
 			_shoot()

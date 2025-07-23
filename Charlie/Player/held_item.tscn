@@ -470,6 +470,21 @@ albedo_color = Color(1, 0.631373, 0.360784, 1)
 material = SubResource("StandardMaterial3D_see5a")
 size = Vector3(0.15, 120, 0.15)
 
+[sub_resource type="Animation" id="Animation_gyxob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_jtwlh"]
 resource_name = "flash"
 length = 0.05
@@ -484,21 +499,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.637278),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_gyxob"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_en3nj"]

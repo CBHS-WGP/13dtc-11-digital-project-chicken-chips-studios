@@ -242,9 +242,19 @@ theme_override_fonts/font = ExtResource("3_bohhl")
 theme_override_font_sizes/font_size = 25
 text = "Bullets - "
 
-[node name="BackIMage" type="Sprite2D" parent="Bullets"]
+[node name="P90_Bullets" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 671.0
+offset_right = 121.0
+offset_bottom = 703.0
+theme_override_fonts/font = ExtResource("3_bohhl")
+theme_override_font_sizes/font_size = 25
+text = "Bullets - "
+
+[node name="Bullets_Back_Image" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(88, 19)
+position = Vector2(120, 690)
 scale = Vector2(0.4, -0.5)
 texture = ExtResource("2_xpki4")
 
@@ -298,12 +308,14 @@ libraries = {
 }
 
 [node name="Damage 1" type="Sprite2D" parent="Heatlh_Visualizer"]
+visible = false
 light_mask = 4
 visibility_layer = 4
 z_index = 50
 texture = ExtResource("2_c0vt8")
 
 [node name="Critital" type="Sprite2D" parent="Heatlh_Visualizer"]
+visible = false
 light_mask = 2
 visibility_layer = 2
 z_index = 50
@@ -320,13 +332,7 @@ offset_bottom = -257.0
 theme_override_fonts/font = ExtResource("3_bohhl")
 
 [node name="Red_Hue" type="Sprite2D" parent="Heatlh_Visualizer"]
+visible = false
 position = Vector2(3.05176e-05, -2.00002)
 scale = Vector2(5.00781, 734)
 texture = SubResource("GradientTexture1D_1dgca")
-
-[node name="P90_Bullets" type="Label" parent="."]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 643.0
-offset_right = 121.0
-offset_bottom = 666.0
