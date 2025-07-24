@@ -552,8 +552,8 @@ text = "Back"
 [node name="Inventory" parent="HUD" node_paths=PackedStringArray("PlayerBody") instance=ExtResource("4_7bwoj")]
 process_priority = 10
 layout_mode = 1
+offset_left = -1280.0
 PlayerBody = NodePath("../..")
-CollisionMask = 1
 
 [node name="Collision_Player" type="AnimationPlayer" parent="."]
 libraries = {
@@ -577,12 +577,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0231, 0)
 shape = SubResource("CapsuleShape3D_aq3s3")
 
 [node name="flashlight" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29593, 0)
+transform = Transform3D(0.982366, 0, -0.18697, 0, 1, 0, 0.18697, 0, 0.982366, -0.309551, 0.928585, 0)
 light_energy = 10.0
 light_volumetric_fog_energy = 0.0
 spot_range = 23.9111
 spot_attenuation = 2.0
-spot_angle = 60.0
+spot_angle = 30.0428
 
 [connection signal="area_entered" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_entered"]
 [connection signal="area_exited" from="Crouch_Toggle_Allow" to="." method="_on_crouch_toggle_allow_area_exited"]

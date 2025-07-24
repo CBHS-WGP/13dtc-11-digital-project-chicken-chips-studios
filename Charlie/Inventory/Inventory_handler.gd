@@ -9,6 +9,7 @@ class_name InventoryHandler
 @export var InventoryGrid : GridContainer
 @export var InventorySlotPrefab : PackedScene = preload("res://Charlie/Inventory/Inv_Slot.tscn")
 @export var EquippingSlot : Control
+@onready var camera = $"../../Camera/Camera"
 
 var InventorySlots : Array[InventorySlot] = []
 
@@ -96,9 +97,9 @@ func GetWorldMousePosition() -> Vector3:
 	
 	var results = space_state.intersect_ray(query)
 	if (results):
-		return results["position"] as Vector3 + Vector3(0.0, 0.5, 0.0)
+		return results["position"] as Vector3 + Vector3(0.5, 0, 0.0)
 	else:
-		return ray_start.lerp(ray_end, 0.5) + Vector3(0.0, 0.5, 0.0)
+		return ray_start.lerp(ray_end, 0.5) + Vector3(0.5, 0.0, 0.0)
 	
 func _process(_delta):
 	#Code that can olny be in this script, as i need to physically remove it

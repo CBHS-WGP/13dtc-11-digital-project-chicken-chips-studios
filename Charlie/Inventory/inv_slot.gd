@@ -14,8 +14,9 @@ var SlotData : ItemData
 
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
-		if (event.button_index == MOUSE_BUTTON_LEFT and event.double_click):
-			OnItemEquiped.emit(InventorySlotID)
+		pass
+		#if (event.button_index == MOUSE_BUTTON_LEFT):
+			#OnItemEquiped.emit(InventorySlotID)
 
 func FillSlot(data : ItemData, equipped : bool):
 	SlotData = data
@@ -53,3 +54,4 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	else:
 		Global.equipped_item_id = null
 		print("null")
+		
