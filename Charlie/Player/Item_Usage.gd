@@ -17,6 +17,7 @@ func _ready():
 	Gun_Animation["parameters/conditions/unfocus"] = false
 
 func _process(_delta):
+	
 
 	#Code that allows the animation tree to paly the correct animation, and thus be able to use
 	#the knife.

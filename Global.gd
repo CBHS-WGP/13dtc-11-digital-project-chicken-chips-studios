@@ -15,6 +15,7 @@ var G32_bullets = 0
 var P90_bullets = 100
 var P90_bullets_in_mag = 50
 var pistol_bullets = 12
+var flashlight_out = true
 func dead(_delta):
 	if health == 0:
 		get_tree().quit()
