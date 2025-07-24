@@ -1,10 +1,10 @@
 
 extends CharacterBody3D
 var speed = 0
-var player
+@onready var player = $"../Wayne/Enemy detect"
 var gravity = 9.81
 @onready var nav = $NavigationAgent3D
-@onready var target = $"../../Wayne/Enemy detect"
+@onready var target = self
 
 func _process(delta):
 	#print(global_position.y)
@@ -24,3 +24,9 @@ func target_position(_delta):
 		look_at(player.global_transform.origin)
 		rotation.x = 0
 		rotation.z = 0
+
+
+func _on_inner_detect_area_entered(area: Area3D) -> void:
+	if area.is_in_group("playerhitbox"):
+		print("entered")
+		target = player
