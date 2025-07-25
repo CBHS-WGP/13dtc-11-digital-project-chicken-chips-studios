@@ -27,6 +27,10 @@ window/size/viewport_height=720
 window/size/resizable=false
 window/stretch/mode="viewport"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 enemy=""
