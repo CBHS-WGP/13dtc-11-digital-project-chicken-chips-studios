@@ -9,7 +9,7 @@ func _process(_delta: float) -> void:
 	if ray.is_colliding():
 		hit = ray.get_collider()
 		Global.current_raycast = hit.name
-		print(hit.name)
+		#print(hit.name)
 	else:
 		Global.current_raycast = null
 

@@ -16,9 +16,8 @@ func _process(_delta):
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = true
 		$Sub_Objective.text = str("Killed:", Progress.obj_2_enemies_killed, "/10")
 	elif Progress.current_objective == 3:
-		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
 		$Sub_Objective.visible = false
-		$Main_Objective.text = str("Make the impact site")
+		$Main_Objective.text = str("Find the impact site!")
 	else:
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
 		$Sub_Objective.visible = false
@@ -42,14 +41,17 @@ func _process(_delta):
 		
 	if Global.equipped_item_id == str("G32 Pistol"):
 		$Bullets.visible = true
+		$Bullets_Back_Image.visible = true
 		$P90_Bullets.visible = false
 		$Bullets.text = str("Bullets - ", Global.pistol_bullets)
 	elif Global.equipped_item_id == str("P90"):
 		$Bullets.visible = false
+		$Bullets_Back_Image.visible = true
 		$P90_Bullets.visible = true
 		$P90_Bullets.text = str("Bullets - ", Global.P90_bullets_in_mag, "/", Global.P90_bullets)
 	else:
 		$Bullets.visible = false
 		$P90_Bullets.visible = false
+		$Bullets_Back_Image.visible = false
 func update_test():
 	pass

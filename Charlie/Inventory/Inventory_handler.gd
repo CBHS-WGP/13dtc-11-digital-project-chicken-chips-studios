@@ -111,7 +111,7 @@ func _process(_delta):
 		#Yes the way ive coded this is sloppy by using like 3 scripts... no i dont care
 		InventorySlots[4].SlotData = null
 		InventorySlots[4].IconSlot.texture = null
-		Global.equipped_item_id = null
+		Global.equipped_item_id = str("null")
 		Progress.current_objective = 2
 		
 	# Close and opens the inventory by clicking E (only when certain parapeters are met)

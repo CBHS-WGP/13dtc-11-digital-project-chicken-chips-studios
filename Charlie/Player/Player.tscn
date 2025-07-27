@@ -561,7 +561,6 @@ shape = SubResource("CylinderShape3D_ms5rm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-visible = false
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_24ntd")
 skeleton = NodePath("")
