@@ -4,7 +4,6 @@ extends Node3D
 @onready var Gun_Animation : AnimationTree = $G32/G32Gun/GunTree
 @onready var Explosion = preload("res://Charlie/Specific Objective files/small_explosion.tscn")
 @export var Test_Map = preload("res://Charlie/Maps/Test_Map.tscn")
-var selection = 0
 
 #gun raycast varibles
 var hit = null
@@ -21,7 +20,7 @@ func _process(_delta):
 
 	#Code that allows the animation tree to paly the correct animation, and thus be able to use
 	#the knife.
-	if selection == 0:
+	if Global.equipped_item_id == str("null"):
 		_hiding()
 
 	if Global.equipped_item_id == str("M7 Bayonet"):

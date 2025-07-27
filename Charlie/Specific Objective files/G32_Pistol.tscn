@@ -165,12 +165,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bkmjf")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_718u2"]
-points = PackedVector3Array(0.659, 0, -0.778, -0.106, 0, -0.778, -0.106, 0, 0.481, 0.76, 0.187, -0.697, -0.109, 0.187, -0.736, -0.109, 0.187, 0.472)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifqch"]
 cull_mode = 1
 albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_718u2"]
+margin = 0.1
+size = Vector3(0.570313, 0.171326, 1.10938)
 
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 33
@@ -185,13 +186,13 @@ lod_bias = 128.0
 mesh = SubResource("ArrayMesh_c5b8j")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0101759, -0.0904499, 0.119942)
-shape = SubResource("ConvexPolygonShape3D_718u2")
-
 [node name="Glow" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.04, -1.87959e-09, 0, 1.74845e-09, 0.043, 0, 0, 0, 0.43, 0, 0, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_ifqch")
 mesh = SubResource("ArrayMesh_c5b8j")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.826128, 0, -0.563483, 0, 1, 0, 0.563483, 0, 0.826128, 0.136992, 0.0128479, -0.159533)
+shape = SubResource("BoxShape3D_718u2")
