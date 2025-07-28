@@ -61,3 +61,7 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
 		print("You reached objective ", current_objective)
 		
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
