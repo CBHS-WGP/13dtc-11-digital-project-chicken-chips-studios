@@ -30,4 +30,5 @@ func target_position():
 func _on_inner_detect_area_entered(area: Area3D) -> void:
 	if area.is_in_group("playerhitbox"):
 		print("entered")
+		$AnimationPlayer.play("attac_anim")
 		target = player

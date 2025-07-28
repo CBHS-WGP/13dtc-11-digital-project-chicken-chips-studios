@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1x770wv6m518"]
+[gd_scene load_steps=14 format=3 uid="uid://b1x770wv6m518"]
 
 [ext_resource type="Script" uid="uid://bwgpfmpy6an1u" path="res://boss.gd" id="1_0bnu1"]
 
@@ -14,9 +14,64 @@ material = SubResource("StandardMaterial3D_mihky")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0bnu1"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_0bnu1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bnu1"]
+albedo_color = Color(1, 0, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6xxrv"]
+[sub_resource type="BoxMesh" id="BoxMesh_6xxrv"]
+material = SubResource("StandardMaterial3D_0bnu1")
+
+[sub_resource type="Animation" id="Animation_0bnu1"]
+resource_name = "attac_anim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.85741, 0, -1.40448), Vector3(-0.962319, 0, -1.40448)]
+}
+
+[sub_resource type="Animation" id="Animation_6xxrv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.06132, 0, -1.40448)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_skx2t"]
+_data = {
+&"RESET": SubResource("Animation_6xxrv"),
+&"attac_anim": SubResource("Animation_0bnu1")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_lnbgr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1i15"]
+size = Vector3(1, 1, 0.519409)
 
 [node name="BOSS" type="CharacterBody3D"]
 script = ExtResource("1_0bnu1")
@@ -48,10 +103,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.351202, 0)
 shape = SubResource("CapsuleShape3D_0bnu1")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.26, 0, 0, 0, 0.75, 0, 0, 0, 1, -2.44928, 0, 0.083499)
-mesh = SubResource("BoxMesh_0bnu1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.071944, 1.04831, -2.03879)
+mesh = SubResource("BoxMesh_6xxrv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2"]
-shape = SubResource("BoxShape3D_6xxrv")
+[node name="Label3D" type="Label3D" parent="MeshInstance3D2"]
+transform = Transform3D(-0.999999, 0, 0.0011169, 0, 1, 0, -0.0011169, 0, -0.999999, 0, 1.31834, 0)
+text = "FRONT"
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.999802, 0, -0.0198779, 0, 1, 0, 0.0198779, 0, -0.999802, 0.071944, 1.04831, 1.92144)
+mesh = SubResource("BoxMesh_6xxrv")
+
+[node name="Label3D" type="Label3D" parent="MeshInstance3D3"]
+transform = Transform3D(-0.999999, 0, 0.0011169, 0, 1, 0, -0.0011169, 0, -0.999999, 0, 1.31834, 0)
+text = "BACK"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_skx2t")
+}
+autoplay = "attac_anim"
+
+[node name="Attack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.14, 1.06132, 0, -1.40448)
+mesh = SubResource("BoxMesh_lnbgr")
+
+[node name="Area3D" type="Area3D" parent="Attack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attack/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00759315, 0, -0.240295)
+shape = SubResource("BoxShape3D_o1i15")
 
 [connection signal="area_entered" from="Inner detect" to="." method="_on_inner_detect_area_entered"]
