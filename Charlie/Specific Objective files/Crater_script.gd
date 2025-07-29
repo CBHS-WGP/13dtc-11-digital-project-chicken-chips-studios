@@ -5,7 +5,6 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	print(Crater.position)
 	if Progress.current_objective > 2.6 and Crater.position.y > -20:
 		$"../Hiding crater/StaticBody3D/CollisionShape3D".disabled = true
 		Crater.position += position.direction_to(Crater.position - Vector3(0, 20 , 0) * 0.25 * delta)

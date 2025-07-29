@@ -40,8 +40,8 @@ func _process(_delta):
 		$G32.visible = true
 		ray = $G32/G32Gun/Gun_Cast
 		if Global.inv_open == false and Global.settings_open == false:
-			if Input.is_action_just_pressed("leftclick") and Global.pistol_bullets > 0:
-				Global.pistol_bullets -= 1
+			if Input.is_action_just_pressed("leftclick") and Global.G32_bullets_in_mag > 0:
+				Global.G32_bullets_in_mag -= 1
 				_shoot()
 			if Input.is_action_just_pressed("rightclick"):
 				Gun_Animation["parameters/conditions/focus"] = false
@@ -52,7 +52,11 @@ func _process(_delta):
 		elif Global.inv_open == true or Global.settings_open == true:
 			Gun_Animation["parameters/conditions/focus"] = true
 			Gun_Animation["parameters/conditions/unfocus"] = false
-	
+		
+		if Input.is_action_just_pressed("R") and Global.G32_bullets_in_mag < 12 and Global.inv_open == false and Global.settings_open == false:
+			var Temp_Array = _bullet_calculator(Global.G32_bullets_in_mag, Global.G32_bullets, 12)
+			Global.G32_bullets_in_mag = Temp_Array[0]
+			Global.G32_bullets = Temp_Array[1]
 	if Global.equipped_item_id == str("Sattelite_Box"):
 		_hiding()
 		$Cube.visible = true
@@ -62,18 +66,35 @@ func _process(_delta):
 		$P90.visible = true
 		ray = $P90/prep90/P90_Gun_Cast
 		if Input.is_action_just_pressed("R") and Global.P90_bullets_in_mag < 50 and Global.inv_open == false and Global.settings_open == false:
-			if Global.P90_bullets <= 0:
-				pass
-			if 50 - Global.P90_bullets_in_mag > Global.P90_bullets:
-				Global.P90_bullets_in_mag = Global.P90_bullets_in_mag + Global.P90_bullets
-				Global.P90_bullets = 0
-			else:
-				Global.P90_bullets = Global.P90_bullets - (50 - Global.P90_bullets_in_mag)
-				Global.P90_bullets_in_mag = 50
+			var Temp_Array = _bullet_calculator(Global.P90_bullets_in_mag, Global.P90_bullets, 50)
+			Global.P90_bullets_in_mag = Temp_Array[0]
+			Global.P90_bullets = Temp_Array[1]
+
+
 
 func _hiding():
 		for child in get_children():
 			child.visible = false
+
+#Used by BOTH guns to calculate reloading
+func _bullet_calculator(in_mag, current, max) -> Array:
+	#when the gun is already full
+	if current <= 0:
+		pass
+	#Reloading the gun as normal
+	if max - in_mag > current:
+		in_mag = in_mag + current
+		current = 0
+		#print([in_mag, current, max])
+		return [in_mag, current, max]
+	#Edge case for when there arnt enough bullets to fully fill the gun
+	else:
+		current = current - (max - in_mag)
+		in_mag = max
+		#print([in_mag, current, max])
+		return [in_mag, current, max]
+	
+
 func _shoot():
 	if ray.is_colliding():
 		hit = ray.get_collider()

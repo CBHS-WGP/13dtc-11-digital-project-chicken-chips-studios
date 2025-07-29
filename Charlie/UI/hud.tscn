@@ -232,7 +232,7 @@ position = Vector2(120, 84.65)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_xpki4")
 
-[node name="Bullets" type="Label" parent="."]
+[node name="G32_Bullets" type="Label" parent="."]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 671.0

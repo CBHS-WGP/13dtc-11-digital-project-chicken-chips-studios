@@ -17,7 +17,10 @@ func _process(_delta):
 		$Sub_Objective.text = str("Killed:", Progress.obj_2_enemies_killed, "/10")
 	elif Progress.current_objective == 3:
 		$Sub_Objective.visible = false
+		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
 		$Main_Objective.text = str("Find the impact site!")
+	elif Progress.current_objective == 3.1:
+		$Main_Objective.text = str("Uncover the mastermind of the invasion")
 	else:
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
 		$Sub_Objective.visible = false
@@ -40,17 +43,17 @@ func _process(_delta):
 		$Heatlh_Visualizer/Critital.modulate = Color8(255, 255, 255, 0)
 		
 	if Global.equipped_item_id == str("G32 Pistol"):
-		$Bullets.visible = true
+		$G32_Bullets.visible = true
 		$Bullets_Back_Image.visible = true
 		$P90_Bullets.visible = false
-		$Bullets.text = str("Bullets - ", Global.pistol_bullets)
+		$G32_Bullets.text = str("Bullets ", Global.G32_bullets_in_mag, "/", Global.G32_bullets)
 	elif Global.equipped_item_id == str("P90"):
-		$Bullets.visible = false
+		$G32_Bullets.visible = false
 		$Bullets_Back_Image.visible = true
 		$P90_Bullets.visible = true
-		$P90_Bullets.text = str("Bullets - ", Global.P90_bullets_in_mag, "/", Global.P90_bullets)
+		$P90_Bullets.text = str("Bullets ", Global.P90_bullets_in_mag, "/", Global.P90_bullets)
 	else:
-		$Bullets.visible = false
+		$G32_Bullets.visible = false
 		$P90_Bullets.visible = false
 		$Bullets_Back_Image.visible = false
 func update_test():

@@ -464,6 +464,7 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_see5a"]
 transparency = 1
 blend_mode = 1
+no_depth_test = true
 albedo_color = Color(1, 0.631373, 0.360784, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_fglwj"]
@@ -588,7 +589,7 @@ wait_time = 0.075
 autostart = true
 
 [node name="P90_Gun_Cast" type="RayCast3D" parent="P90/prep90"]
-transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, -1.90735e-06, 0, 7.94919)
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 2.86102e-06, 0, -15.4483)
 target_position = Vector3(0, 0, 1000)
 collision_mask = 65
 collide_with_areas = true
