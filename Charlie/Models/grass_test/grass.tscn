@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq8wg1w25p2b8"]
+
+[ext_resource type="ArrayMesh" uid="uid://bfr610lop0hvf" path="res://Charlie/Models/grass_test/p90_grass_ahh.res" id="1_nwtvl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4lhnc"]
+size = Vector2(10, 10)
+
+[sub_resource type="MultiMesh" id="MultiMesh_3e2bd"]
+transform_format = 1
+mesh = ExtResource("1_nwtvl")
+
+[node name="Grass" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_4lhnc")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("MultiMesh_3e2bd")

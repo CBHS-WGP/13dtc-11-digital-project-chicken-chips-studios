@@ -42,6 +42,9 @@ script = ExtResource("1_bkyi2")
 [node name="Wayne" parent="." groups=["player"] instance=ExtResource("1_am1u2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.487481, 0)
 
+[node name="MeshInstance3D" parent="Wayne/Camera/Camera/Additional_Flahlight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, -0.220269, -0.172558, -0.313136)
+
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
