@@ -5,6 +5,8 @@ var speed = 2
 var gravity = 9.81
 @onready var nav = $NavigationAgent3D
 @onready var target = self
+var health = 100 
+var inhitbox = false
 
 func _process(delta):
 	target_position()
@@ -18,6 +20,10 @@ func _process(delta):
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
 	
+#	$Damage_Checker/Health_Indicator.text = str(health,"/100")
+	if health <= 0:
+		queue_free()
+	
 func target_position():
 	if target == player:
 		print("hello")
@@ -29,6 +35,13 @@ func target_position():
 
 func _on_inner_detect_area_entered(area: Area3D) -> void:
 	if area.is_in_group("playerhitbox"):
-		print("entered")
+		print("entered and hit")
+		inhitbox = true
 		$AnimationPlayer.play("attac_anim")
 		target = player
+		
+		
+
+
+func _on_damage_checker_area_entered(area: Area3D) -> void:
+	health = health - 20

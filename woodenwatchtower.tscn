@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ca6awa77uemcf"]
+[gd_scene load_steps=11 format=3 uid="uid://ca6awa77uemcf"]
 
 [ext_resource type="Texture2D" uid="uid://q5uwi8la7jal" path="res://Charles Tracey - Project Manager/obj/textures/Wood_Tower_Col.jpg" id="1_x5ofi"]
 [ext_resource type="ArrayMesh" uid="uid://crawt48gvkkf1" path="res://Charles Tracey - Project Manager/obj/wooden watch tower2.obj" id="2_6plbt"]
-[ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="3_6plbt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6plbt"]
 albedo_texture = ExtResource("1_x5ofi")
@@ -79,6 +78,3 @@ shape = SubResource("BoxShape3D_6pm7y")
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="Area3D/WoodenWatchTower2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43057, 3.87209, 1.41651)
 shape = SubResource("BoxShape3D_2wood")
-
-[node name="Wayne" parent="." instance=ExtResource("3_6plbt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91709, 3.82124, -1.17819)
