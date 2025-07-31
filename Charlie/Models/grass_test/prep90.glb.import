@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfmr7642uspfv"
+uid="uid://b44ku3mn0dppy"
 path="res://.godot/imported/prep90.glb-834e5617ee0c390fbfa182dfe10e0d8e.scn"
 
 [deps]
@@ -36,11 +36,11 @@ _subresources={
 "meshes": {
 "prep90_Cube": {
 "generate/lightmap_uv": 0,
-"generate/lods": 1,
+"generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Charlie/Models/grass_test/p90_grass_ahh.res"
+"save_to_file/path": "res://Charlie/Models/grass_test/groos.res"
 }
 }
 }
