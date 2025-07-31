@@ -308,14 +308,12 @@ libraries = {
 }
 
 [node name="Damage 1" type="Sprite2D" parent="Heatlh_Visualizer"]
-visible = false
 light_mask = 4
 visibility_layer = 4
 z_index = 50
 texture = ExtResource("2_c0vt8")
 
 [node name="Critital" type="Sprite2D" parent="Heatlh_Visualizer"]
-visible = false
 light_mask = 2
 visibility_layer = 2
 z_index = 50
@@ -332,7 +330,6 @@ offset_bottom = -257.0
 theme_override_fonts/font = ExtResource("3_bohhl")
 
 [node name="Red_Hue" type="Sprite2D" parent="Heatlh_Visualizer"]
-visible = false
 position = Vector2(3.05176e-05, -2.00002)
 scale = Vector2(5.00781, 734)
 texture = SubResource("GradientTexture1D_1dgca")
