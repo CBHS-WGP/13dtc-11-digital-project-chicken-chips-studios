@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://1fnqrdcp8gko"
+path.s3tc="res://.godot/imported/ARMS_ARM_Norm.png-656e57d02faf70e27bea2c815a78c39b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "c3a007144fe08148cf501b4c7ad0eaae"
+}
+
+[deps]
+
+source_file="res://Patrick/PLayer/ARMS_ARM_Norm.png"
+dest_files=["res://.godot/imported/ARMS_ARM_Norm.png-656e57d02faf70e27bea2c815a78c39b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

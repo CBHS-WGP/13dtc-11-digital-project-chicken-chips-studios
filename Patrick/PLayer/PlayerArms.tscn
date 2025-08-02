@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://gkhiy5t6ph2n"]
-
-[ext_resource type="PackedScene" uid="uid://ca4pbmgho6lsy" path="res://Patrick/PLayer/ARMStest.gltf" id="1_wsl2i"]
-
-[node name="PlayerArms" type="Node3D"]
-
-[node name="ARMStest" parent="." instance=ExtResource("1_wsl2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269221, -0.931678, 1.14711)
