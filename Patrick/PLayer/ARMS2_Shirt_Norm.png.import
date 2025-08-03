@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://r8xilk6riird"
+path.s3tc="res://.godot/imported/ARMS2_Shirt_Norm.png-6b82b73b8b7187c77f8e8591d45cb7f9.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "12e458e9d06395707a3362c9bd4cf494"
+}
+
+[deps]
+
+source_file="res://Patrick/PLayer/ARMS2_Shirt_Norm.png"
+dest_files=["res://.godot/imported/ARMS2_Shirt_Norm.png-6b82b73b8b7187c77f8e8591d45cb7f9.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
