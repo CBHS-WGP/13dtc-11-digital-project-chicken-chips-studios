@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://xhxlwsc3rqxv" path="res://Charlie/Textures/Inventory_Item_Textures/p90.png" id="13_5r2l6"]
 [ext_resource type="PackedScene" uid="uid://cn4jcye1uyc4p" path="res://Charlie/Specific Objective files/P90.tscn" id="14_ykdt2"]
 [ext_resource type="Script" uid="uid://cykxpmhg3g5kv" path="res://Charlie/Player/flahlight.gd" id="16_ykdt2"]
+[ext_resource type="PackedScene" uid="uid://bfas0lhfhfbo1" path="res://Patrick/Misc/torch.glb" id="17_ikvbr"]
 
 [sub_resource type="GDScript" id="GDScript_yc2fa"]
 script/source = "extends CharacterBody3D
@@ -211,37 +212,8 @@ metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 height = 2.5
 radius = 0.05
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_ikvbr"]
-top_radius = 0.04
-bottom_radius = 0.04
-height = 0.25
-
 [sub_resource type="Animation" id="Animation_1j075"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.220269, -0.172558, -0.313136)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_f3xy8"]
 resource_name = "down"
@@ -249,26 +221,26 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("torch:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 0.176777),
 "update": 0,
-"values": [Vector3(-0.220269, -0.172558, -0.313136), Vector3(-0.220269, -0.590991, -0.107777)]
+"values": [Vector3(3.14159, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/path = NodePath("torch:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 0.176777),
+"transitions": PackedFloat32Array(1, 2),
 "update": 0,
-"values": [Vector3(-1.41005, 0, 0), Vector3(-4.71239, 0, 0)]
+"values": [Vector3(-0.220269, -0.172558, -0.313136), Vector3(-0.220269, -0.590991, -0.107777)]
 }
 
 [sub_resource type="Animation" id="Animation_en3nj"]
@@ -277,7 +249,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("torch:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -289,14 +261,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/path = NodePath("torch:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1.6818, 1),
 "update": 0,
-"values": [Vector3(-4.71239, 0, 0), Vector3(-1.41005, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(3.14159, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6g5ix"]
@@ -604,12 +576,11 @@ collide_with_bodies = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.074267, 0, 0)
 script = ExtResource("16_ykdt2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera/Camera/Additional_Flahlight"]
-transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, -0.220269, -0.172558, -0.313136)
-mesh = SubResource("CylinderMesh_ikvbr")
+[node name="torch" parent="Camera/Camera/Additional_Flahlight" instance=ExtResource("17_ikvbr")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.021, -0.220269, -0.590991, -0.107777)
 
-[node name="flashlight" type="SpotLight3D" parent="Camera/Camera/Additional_Flahlight/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -6.92904e-05, 0.133077, -0.00255764)
+[node name="flashlight" type="SpotLight3D" parent="Camera/Camera/Additional_Flahlight/torch"]
+transform = Transform3D(25, 0, 0, 0, -25, 1.14742e-06, 0, -2.18557e-06, -47.619, 0.0366158, -0.0127754, 6.11308)
 light_energy = 10.0
 light_volumetric_fog_energy = 0.0
 spot_range = 23.9111
