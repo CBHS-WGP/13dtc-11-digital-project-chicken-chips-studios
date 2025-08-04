@@ -140,6 +140,13 @@ R={
 3d_physics/layer_6="Item Pickups collision"
 3d_physics/layer_7="Gun Shoot Collider"
 
+[physics]
+
+3d/default_linear_damp=0.2
+3d/default_angular_damp=0.2
+3d/time_before_sleep=1.0
+3d/solver/solver_iterations=30
+
 [rendering]
 
 environment/volumetric_fog/volume_size=256

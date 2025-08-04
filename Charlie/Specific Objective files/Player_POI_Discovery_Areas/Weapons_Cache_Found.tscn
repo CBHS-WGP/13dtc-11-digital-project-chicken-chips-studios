@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://75mouu8jvv27"]
+[gd_scene load_steps=7 format=3 uid="uid://75mouu8jvv27"]
 
 [ext_resource type="Script" uid="uid://ndcabu88j6fa" path="res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/weapons_cache_found.gd" id="1_y44h1"]
 [ext_resource type="PackedScene" uid="uid://cn4jcye1uyc4p" path="res://Charlie/Specific Objective files/P90.tscn" id="2_de6q4"]
@@ -7,6 +7,17 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y44h1"]
 size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de6q4"]
+albedo_color = Color(0, 1, 1, 1)
+emission_enabled = true
+emission = Color(0.474878, 0.527628, 0.701699, 1)
+emission_energy_multiplier = 2.84
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ip38n"]
+material = SubResource("StandardMaterial3D_de6q4")
+bottom_radius = 0.1
+height = 100.0
 
 [node name="WeaponsCacheFound" type="Node3D"]
 script = ExtResource("1_y44h1")
@@ -27,5 +38,9 @@ shape = SubResource("BoxShape3D_y44h1")
 
 [node name="RigidBody3D" parent="." instance=ExtResource("2_de6q4")]
 transform = Transform3D(0.144892, 0.989448, 0, -0.989448, 0.144892, 0, 0, 0, 1, 0, 1.0394, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 53.4532, 0)
+mesh = SubResource("CylinderMesh_ip38n")
 
 [connection signal="body_entered" from="Weapons_Cache_Found" to="." method="_on_weapons_cache_found_body_entered"]

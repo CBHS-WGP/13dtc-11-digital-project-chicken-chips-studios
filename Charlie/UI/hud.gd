@@ -27,7 +27,7 @@ func _process(_delta):
 		$Main_Objective.text = str("TBC")
 
 	if Global.health < 100:
-		Global.health = Global.health + 0.01
+		Global.health = Global.health + 0.02
 	#Code to update the health HUD visual
 	$Heatlh_Visualizer/Heart_Beating.play("Fast_pulse")
 	damage_taken = (100 - Global.health) * 2.25
