@@ -56,6 +56,9 @@ func _process(_delta):
 			current_objective = 2.6
 	if obj_2_enemies_killed >= 10 and current_objective == 2.6:
 		current_objective = 3
+	if current_objective == 4 and boss_killed == true:
+		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
+		
 	#Player death
 	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")

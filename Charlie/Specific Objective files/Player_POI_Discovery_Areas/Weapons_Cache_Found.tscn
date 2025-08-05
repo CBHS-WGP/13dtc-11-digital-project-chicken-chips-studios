@@ -37,10 +37,11 @@ collision_mask = 2
 shape = SubResource("BoxShape3D_y44h1")
 
 [node name="RigidBody3D" parent="." instance=ExtResource("2_de6q4")]
-transform = Transform3D(0.144892, 0.989448, 0, -0.989448, 0.144892, 0, 0, 0, 1, 0, 1.0394, 0)
+transform = Transform3D(0.144892, 0.989448, 0, -0.989448, 0.144892, 0, 0, 0, 1, 0, -0.224382, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 53.4532, 0)
+cast_shadow = 0
 mesh = SubResource("CylinderMesh_ip38n")
 
 [connection signal="body_entered" from="Weapons_Cache_Found" to="." method="_on_weapons_cache_found_body_entered"]

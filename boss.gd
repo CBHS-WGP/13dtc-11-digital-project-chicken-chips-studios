@@ -45,6 +45,9 @@ func _on_inner_detect_area_entered(area: Area3D) -> void:
 
 func _on_damage_checker_area_entered(area: Area3D) -> void:
 	health = health - 20
+	if health < 0:
+		Progress.boss_killed = true
+		queue_free()
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

@@ -19,8 +19,9 @@ func _process(_delta):
 		$Sub_Objective.visible = false
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
 		$Main_Objective.text = str("Find the impact site!")
-	elif Progress.current_objective == 3.1:
-		$Main_Objective.text = str("Uncover the mastermind of the invasion")
+	elif Progress.current_objective == 4:
+		$Main_Objective.text = str("Enter the crater to end this all!")
+
 	else:
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
 		$Sub_Objective.visible = false

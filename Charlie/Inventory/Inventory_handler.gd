@@ -98,9 +98,11 @@ func GetWorldMousePosition() -> Vector3:
 	var results = space_state.intersect_ray(query)
 	if (results):
 		Global.equipped_item_id = str("null")
+		Global.item_update.emit()
 		return results["position"] as Vector3 + Vector3(0.0, 0, 0.0)
 	else:
 		Global.equipped_item_id = str("null")
+		Global.item_update.emit()
 		return ray_start.lerp(ray_end, 0.5) + Vector3(0.0, 0.0, 0.0)
 	
 func _process(_delta):
@@ -112,6 +114,7 @@ func _process(_delta):
 		InventorySlots[4].SlotData = null
 		InventorySlots[4].IconSlot.texture = null
 		Global.equipped_item_id = str("null")
+		Global.item_update.emit()
 		Progress.current_objective = 2
 		
 	# Close and opens the inventory by clicking E (only when certain parapeters are met)
