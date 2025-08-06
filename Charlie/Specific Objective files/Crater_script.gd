@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and Progress.current_objective == 3:
-		Progress.current_objective = 3.1
+		Progress.current_objective = 4

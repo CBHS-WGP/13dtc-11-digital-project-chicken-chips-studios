@@ -114,7 +114,7 @@ func walkandrun():
 			#velocity.x = direction.x * speed
 			#velocity.z = direction.z * speed
 		#if the player stops sprinting, return value to walking pace.
-		if speed > MAX_SPEED:
+		elif speed > MAX_SPEED:
 			speed = speed - acceleration
 			velocity.x = lerp(velocity.x, direction.normalized().x * speed, acceleration * 1.5)
 			velocity.z = lerp(velocity.z, direction.normalized().z * speed, acceleration * 1.5)

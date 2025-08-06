@@ -15,9 +15,8 @@ func _ready():
 	Gun_Animation["parameters/conditions/focus"] = true
 	Gun_Animation["parameters/conditions/unfocus"] = false
 
-func _process(_delta):
+func _process(delta):
 	
-
 	#Code that allows the animation tree to paly the correct animation, and thus be able to use
 	#the knife.
 	if Global.equipped_item_id == str("null"):

@@ -53,5 +53,6 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		Global.equipped_item_id = SlotData.ItemName
 	else:
 		Global.equipped_item_id = str("null")
+		Global.item_update.emit()
 		print("null")
 		
