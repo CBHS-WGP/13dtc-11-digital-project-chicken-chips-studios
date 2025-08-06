@@ -22,7 +22,7 @@ func _process(delta):
 	if Global.equipped_item_id == str("null"):
 		_hiding()
 
-	if Global.equipped_item_id == str("M7 Bayonet"):
+	elif Global.equipped_item_id == str("M7 Bayonet"):
 		_hiding()
 		$M7_Bayonet.visible = true
 		if Global.inv_open == false and Global.settings_open == false:
@@ -34,7 +34,7 @@ func _process(delta):
 				Bayonetanimation["parameters/conditions/swinging == false"] = true
 	
 	
-	if Global.equipped_item_id == str("G32 Pistol"):
+	elif Global.equipped_item_id == str("G32 Pistol"):
 		_hiding()
 		$G32.visible = true
 		ray = $G32/G32Gun/Gun_Cast
@@ -56,11 +56,11 @@ func _process(delta):
 			var Temp_Array = _bullet_calculator(Global.G32_bullets_in_mag, Global.G32_bullets, 12)
 			Global.G32_bullets_in_mag = Temp_Array[0]
 			Global.G32_bullets = Temp_Array[1]
-	if Global.equipped_item_id == str("Sattelite_Box"):
+	elif Global.equipped_item_id == str("Sattelite_Box"):
 		_hiding()
 		$Cube.visible = true
 		
-	if Global.equipped_item_id == str("P90"):
+	elif Global.equipped_item_id == str("P90"):
 		_hiding()
 		$P90.visible = true
 		ray = $P90/prep90/P90_Gun_Cast

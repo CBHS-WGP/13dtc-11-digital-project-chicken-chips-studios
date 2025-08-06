@@ -79,9 +79,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1ex44")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5erp6"]
-custom_solver_bias = 0.2
-margin = 0.09
-size = Vector3(0.69873, 0.109131, 0.258873)
+margin = 0.15
+size = Vector3(0.475037, 0.145493, 0.165314)
 
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 33
@@ -91,15 +90,15 @@ script = ExtResource("1_d46y1")
 ItemHighlightMesh = NodePath("Glow")
 
 [node name="MAGAZINE2" parent="." instance=ExtResource("2_5erp6")]
-transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, -0.137398, 0, 0.358876)
+transform = Transform3D(-8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0, 0, 0.2, -0.137398, 0, 0.358876)
 
 [node name="Glow" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.84239e-09, -0.297999, 0.0359313, 0.04, -1.38128e-08, 1.57061e-09, 3.31361e-11, 0.105132, 0.101848, -0.0563159, 3.54421e-09, -0.00478512)
+transform = Transform3D(-1.28967e-09, -0.208411, 0.0252849, 0.028, -9.66022e-09, 1.10524e-09, 2.31939e-11, 0.0735258, 0.0716706, -0.087362, -0.0111776, 0.112784)
 visible = false
 material_override = SubResource("StandardMaterial3D_rim1j")
 mesh = SubResource("ArrayMesh_1srnq")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.937834, 0, 0.347083, 0, 1, 0, -0.347083, 0, 0.937834, 0.0179023, -0.0032959, -0.0210409)
+transform = Transform3D(0.932853, 0, 0.360257, 0, 1, 0, -0.360257, 0, 0.932853, -0.0438797, -0.0110855, 0.103595)
 shape = SubResource("BoxShape3D_5erp6")
