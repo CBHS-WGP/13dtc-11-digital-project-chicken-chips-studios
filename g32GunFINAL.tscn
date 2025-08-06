@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmal0trbp4ti1"]
+
+[ext_resource type="PackedScene" uid="uid://dc7ojos4jdqgn" path="res://Patrick/G32finished.glb" id="1_fwgpb"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="G32finished" parent="." instance=ExtResource("1_fwgpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0561467, 1.19209e-07, -0.106578)
