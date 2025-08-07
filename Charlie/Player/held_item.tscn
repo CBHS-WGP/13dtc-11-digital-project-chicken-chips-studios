@@ -555,7 +555,6 @@ libraries = {
 }
 
 [node name="G32" type="Node3D" parent="."]
-visible = false
 
 [node name="G32Gun" parent="G32" instance=ExtResource("3_7ynmh")]
 transform = Transform3D(-0.1, 2.53518e-07, 9.17733e-13, 0, -3.61999e-07, 0.1, 2.53518e-07, 0.1, 3.61999e-07, 0.5, -0.154, -0.541)
@@ -580,6 +579,7 @@ collision_mask = 65
 collide_with_areas = true
 
 [node name="P90" type="Node3D" parent="."]
+visible = false
 
 [node name="prep90" parent="P90" instance=ExtResource("4_see5a")]
 transform = Transform3D(-0.036, 0, -5.43585e-09, 0, 0.036, 0, 5.43585e-09, 0, -0.036, 0.477093, -0.0837261, -0.645173)
