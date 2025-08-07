@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsww70fljd4w5"
+path="res://.godot/imported/gun-shotwav-14566.mp3-e8a0cc947e79ea4f6850620207dff920.mp3str"
+
+[deps]
+
+source_file="res://Charles Tracey - Project Manager/sfx/gun-shotwav-14566.mp3"
+dest_files=["res://.godot/imported/gun-shotwav-14566.mp3-e8a0cc947e79ea4f6850620207dff920.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

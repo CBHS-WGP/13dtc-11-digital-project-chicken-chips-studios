@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bp83qed7wxdwr"
+path="res://.godot/imported/footsteps-dirt-gravel-6823.mp3-09740a08e4c7aaac06c4791d4adfb14f.mp3str"
+
+[deps]
+
+source_file="res://Charles Tracey - Project Manager/sfx/footsteps/footsteps-dirt-gravel-6823.mp3"
+dest_files=["res://.godot/imported/footsteps-dirt-gravel-6823.mp3-09740a08e4c7aaac06c4791d4adfb14f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

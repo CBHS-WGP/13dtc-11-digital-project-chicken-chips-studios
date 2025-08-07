@@ -74,8 +74,8 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1i15"]
 size = Vector3(1, 1, 0.519409)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_skx2t"]
-size = Vector3(0.8, 1.717, 0.8)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xxrv"]
+size = Vector3(7.85901, 4.55225, 7.91754)
 
 [node name="BOSS" type="CharacterBody3D"]
 script = ExtResource("1_0bnu1")
@@ -95,6 +95,8 @@ transform = Transform3D(19.23, 0, 0, 0, 19.23, 0, 0, 0, 19.23, 0, 0, 0)
 shape = SubResource("SphereShape3D_skx2t")
 
 [node name="Outer detect" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outer detect"]
 transform = Transform3D(24.15, 0, 0, 0, 24.15, 0, 0, 0, 24.15, 0, 0, 0)
@@ -149,8 +151,8 @@ text = "aa"
 font = ExtResource("2_6xxrv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
-transform = Transform3D(6.055, 0, 0, 0, 1, 0, 0, 0, 6.52, 0, 0.101227, 0)
-shape = SubResource("BoxShape3D_skx2t")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26398, 1.23413, -0.450836)
+shape = SubResource("BoxShape3D_6xxrv")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

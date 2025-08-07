@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2pevqre8irad"
+path="res://.godot/imported/footsteps-in-thin-snow-46199.mp3-eef57ba878b9f2967b7a7e3f56680efb.mp3str"
+
+[deps]
+
+source_file="res://Charles Tracey - Project Manager/sfx/footsteps/footsteps-in-thin-snow-46199.mp3"
+dest_files=["res://.godot/imported/footsteps-in-thin-snow-46199.mp3-eef57ba878b9f2967b7a7e3f56680efb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
