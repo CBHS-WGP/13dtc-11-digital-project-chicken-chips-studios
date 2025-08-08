@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
 [ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
 [ext_resource type="PackedScene" uid="uid://ccblkv2im1cmg" path="res://Patrick/G32/G32_gun.tscn" id="3_7ynmh"]
-[ext_resource type="PackedScene" uid="uid://ccjj53kb8whrl" path="res://Patrick/p90gun/prep90.glb" id="4_see5a"]
+[ext_resource type="PackedScene" uid="uid://c0tmpthnt00lw" path="res://Patrick/p90gun/P90main.glb" id="4_see5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ynmh"]
 no_depth_test = true
@@ -476,7 +476,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:visible")
+tracks/0/path = NodePath("../P91/MeshInstance3D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -492,7 +492,7 @@ length = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:visible")
+tracks/0/path = NodePath("../P91/MeshInstance3D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -513,7 +513,6 @@ script = ExtResource("1_dneek")
 
 [node name="Cube" type="Node3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.447909, -0.24469, -0.169213)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.409825)
@@ -522,7 +521,6 @@ mesh = SubResource("BoxMesh_8wcif")
 
 [node name="M7_Bayonet" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.35, -0.5)
-visible = false
 
 [node name="Area3D" type="Area3D" parent="M7_Bayonet"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.221356, 0, -0.455244)
@@ -579,29 +577,31 @@ collision_mask = 65
 collide_with_areas = true
 
 [node name="P90" type="Node3D" parent="."]
-visible = false
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.469404, 0, -0.308476)
 
-[node name="prep90" parent="P90" instance=ExtResource("4_see5a")]
-transform = Transform3D(-0.036, 0, -5.43585e-09, 0, 0.036, 0, 5.43585e-09, 0, -0.036, 0.477093, -0.0837261, -0.645173)
+[node name="P90main" parent="P90" instance=ExtResource("4_see5a")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0138588, 0, 0.125819)
 
-[node name="P90_Shoot_Timer" type="Timer" parent="P90/prep90"]
+[node name="P90_Shoot_Timer" type="Timer" parent="P90"]
 wait_time = 0.075
 autostart = true
 
-[node name="P90_Gun_Cast" type="RayCast3D" parent="P90/prep90"]
-transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 2.86102e-06, 0, -15.4483)
+[node name="P90_Gun_Cast" type="RayCast3D" parent="P90"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, 0, -0.327207)
 target_position = Vector3(0, 0, 1000)
 collision_mask = 65
 collide_with_areas = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="P90/prep90"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="P90"]
 transform = Transform3D(0.999999, -1.42109e-14, 1.27055e-21, 0, -4.37114e-08, -0.999999, 1.42109e-14, 0.999999, -4.37114e-08, -9.53674e-06, 0, 68.2741)
 visible = false
 mesh = SubResource("PrismMesh_fglwj")
+skeleton = NodePath("")
 
-[node name="Proto Muzzle flash" type="AnimationPlayer" parent="P90/prep90"]
+[node name="Proto Muzzle flash" type="AnimationPlayer" parent="P90"]
+root_node = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_en3nj")
 }
 
-[connection signal="timeout" from="P90/prep90/P90_Shoot_Timer" to="." method="_on_p_90_shoot_timer_timeout"]
+[connection signal="timeout" from="P90/P90_Shoot_Timer" to="." method="_on_p_90_shoot_timer_timeout"]
