@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://qxd1iar1g4vk"]
+
+[ext_resource type="PackedScene" uid="uid://c0tmpthnt00lw" path="res://Patrick/p90gun/P90main.glb" id="1_iucb6"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="P90main" parent="." instance=ExtResource("1_iucb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0395465, 0, 0.0106701)

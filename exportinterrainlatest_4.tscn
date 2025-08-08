@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1x6p42vwdalx"]
+
+[ext_resource type="PackedScene" uid="uid://cey4xru28itp1" path="res://Patrick/Terrain/map/exportinterrainlatest4.glb" id="1_3trc8"]
+
+[node name="exportinterrainlatest4" instance=ExtResource("1_3trc8")]
