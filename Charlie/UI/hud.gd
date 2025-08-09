@@ -25,7 +25,7 @@ func _process(_delta):
 	else:
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false
 		$Sub_Objective.visible = false
-		$Main_Objective.text = str("TBC")
+		$Main_Objective.text = str("")
 
 	if Global.health < 100:
 		Global.health = Global.health + 0.02

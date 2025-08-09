@@ -53,7 +53,7 @@ func _process(_delta):
 				spawn.add_child(instance2)
 				#print(i)
 				#print(instance2.global_position)
-			current_objective = 2.6
+			current_objective = 2.55
 	if obj_2_enemies_killed >= 10 and current_objective == 2.6:
 		current_objective = 3
 	if current_objective == 4 and boss_killed == true:

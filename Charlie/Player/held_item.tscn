@@ -464,7 +464,6 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_see5a"]
 transparency = 1
 blend_mode = 1
-no_depth_test = true
 albedo_color = Color(1, 0.631373, 0.360784, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_fglwj"]
@@ -476,13 +475,13 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../P91/MeshInstance3D:visible")
+tracks/0/path = NodePath("MeshInstance3D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 
@@ -492,13 +491,13 @@ length = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../P91/MeshInstance3D:visible")
+tracks/0/path = NodePath("MeshInstance3D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 0.637278),
-"update": 1,
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
 "values": [true, false]
 }
 
@@ -577,7 +576,7 @@ collision_mask = 65
 collide_with_areas = true
 
 [node name="P90" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.469404, 0, -0.308476)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.469404, -0.146947, -0.308476)
 
 [node name="P90main" parent="P90" instance=ExtResource("4_see5a")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0138588, 0, 0.125819)
@@ -593,13 +592,12 @@ collision_mask = 65
 collide_with_areas = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="P90"]
-transform = Transform3D(0.999999, -1.42109e-14, 1.27055e-21, 0, -4.37114e-08, -0.999999, 1.42109e-14, 0.999999, -4.37114e-08, -9.53674e-06, 0, 68.2741)
+transform = Transform3D(0.1, -8.88178e-16, 5.29396e-23, 0, -4.37114e-09, -0.1, 8.88178e-16, 0.1, -4.37114e-09, -0.01, 0.01, 6.524)
 visible = false
 mesh = SubResource("PrismMesh_fglwj")
 skeleton = NodePath("")
 
-[node name="Proto Muzzle flash" type="AnimationPlayer" parent="P90"]
-root_node = NodePath("")
+[node name="Proto_Muzzle_flash" type="AnimationPlayer" parent="P90"]
 libraries = {
 &"": SubResource("AnimationLibrary_en3nj")
 }

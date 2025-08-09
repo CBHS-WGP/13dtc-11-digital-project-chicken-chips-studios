@@ -22,12 +22,14 @@ func _process(_delta: float) -> void:
 
 	
 	#ode to check finding the sattelite when the player has or hasnt already found the parts
-	if Progress.current_objective == 0 and Global.current_raycast == "SatteliteFound" and Progress.Sattelite_Discovered == false:
+	elif Progress.current_objective == 0 and Global.current_raycast == "SatteliteFound" and Progress.Sattelite_Discovered == false:
 		Progress.current_objective = 1
 		Progress.Sattelite_Discovered = true
 	#Extra statement incase the player has already foud the parts to repair the sattelite
-	if Progress.current_objective == 0.5 and Global.current_raycast == "SatteliteFound" and Progress.Sattelite_Discovered == false:
+	elif Progress.current_objective == 0.5 and Global.current_raycast == "SatteliteFound" and Progress.Sattelite_Discovered == false:
 		Progress.current_objective = 1.5
 		Progress.Sattelite_Discovered = true
-	if Progress.current_objective == 2.1 and Global.current_raycast == "Weapons_Cache_Found":
+	elif Input.is_action_pressed("F") and Progress.current_objective == 2.1 and Global.current_raycast == "Weapons_Cache_Found":
 		Progress.current_objective = 2.5
+	else:
+		pass
