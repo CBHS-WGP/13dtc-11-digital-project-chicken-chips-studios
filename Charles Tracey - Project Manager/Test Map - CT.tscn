@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5ngu47i3y81y"]
+[gd_scene load_steps=18 format=3 uid="uid://c5ngu47i3y81y"]
 
 [ext_resource type="PackedScene" uid="uid://461xqg54dhg2" path="res://Charlie/Player/Player.tscn" id="1_am1u2"]
 [ext_resource type="Script" uid="uid://cwiv2gohl2xyh" path="res://Charles Tracey - Project Manager/test_map___ct.gd" id="1_bkyi2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b1x770wv6m518" path="res://boss.tscn" id="7_gm03w"]
 [ext_resource type="PackedScene" uid="uid://ceuv6yrsmc1ke" path="res://oldcottage.tscn" id="7_v5r68"]
 [ext_resource type="PackedScene" uid="uid://b2bkdg7hpkp2a" path="res://Charlie/Specific Objective files/M7_Bayonet.tscn" id="8_gm03w"]
+[ext_resource type="PackedScene" uid="uid://xp2woouhmaf8" path="res://Charles Tracey - Project Manager/enemy.tscn" id="9_do8ai"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_am1u2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -43,8 +44,9 @@ script = ExtResource("1_bkyi2")
 [node name="Wayne" parent="." groups=["player"] instance=ExtResource("1_am1u2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.487481, 0)
 
-[node name="torch" parent="Wayne/Camera/Camera/Additional_Flahlight" index="0"]
-transform = Transform3D(0.04, 0, 0, 0, -0.04, -5.32388e-08, 0, 1.01407e-07, -0.021, -0.220269, -0.172558, -0.313136)
+[node name="Options_Box" parent="Wayne/HUD" index="2"]
+offset_top = 1103.0
+offset_bottom = 1143.0
 
 [node name="Enviroment" type="Node3D" parent="."]
 
@@ -114,6 +116,9 @@ skeleton = NodePath("../..")
 
 [node name="BOSS" parent="Enemies" instance=ExtResource("7_gm03w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.921, 1.86, -5.97462)
+
+[node name="enemy" parent="Enemies" instance=ExtResource("9_do8ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.771496, 1.98642, 12.8772)
 
 [node name="RigidBody3D" parent="." instance=ExtResource("5_5m3ab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713917, -1.3083)

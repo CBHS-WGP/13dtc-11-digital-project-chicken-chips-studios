@@ -1,13 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://xp2woouhmaf8"]
+[gd_scene load_steps=10 format=3 uid="uid://xp2woouhmaf8"]
 
 [ext_resource type="Script" uid="uid://cg1mrc3pr864y" path="res://Charles Tracey - Project Manager/enemy.gd" id="1_8uhvq"]
 [ext_resource type="FontFile" uid="uid://wsa2utca31dd" path="res://Charles Tracey - Project Manager/call-of-ops-duty-font/CallOfOpsDuty-qAyq.ttf" id="2_hryg0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_am1u2"]
-albedo_color = Color(1, 0, 1, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_hryg0"]
-material = SubResource("StandardMaterial3D_am1u2")
+[ext_resource type="PackedScene" uid="uid://ctmg4j5kbvjga" path="res://Patrick/ENEMYFOLLOWER/follower.glb" id="3_m83rg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m83rg"]
 
@@ -32,7 +27,9 @@ axis_lock_angular_z = true
 script = ExtResource("1_8uhvq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_hryg0")
+
+[node name="follower" parent="MeshInstance3D" instance=ExtResource("3_m83rg")]
+transform = Transform3D(-0.415, 0, -6.26633e-08, 0, 0.415, 0, 6.26633e-08, 0, -0.415, 0, -0.646959, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000803769, 0)
