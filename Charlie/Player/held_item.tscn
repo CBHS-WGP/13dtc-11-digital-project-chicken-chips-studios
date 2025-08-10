@@ -1,9 +1,10 @@
-[gd_scene load_steps=47 format=3 uid="uid://cydmgo8i3qo0x"]
+[gd_scene load_steps=48 format=3 uid="uid://cydmgo8i3qo0x"]
 
 [ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
 [ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
 [ext_resource type="PackedScene" uid="uid://ccblkv2im1cmg" path="res://Patrick/G32/G32_gun.tscn" id="3_7ynmh"]
 [ext_resource type="PackedScene" uid="uid://c0tmpthnt00lw" path="res://Patrick/p90gun/P90main.glb" id="4_see5a"]
+[ext_resource type="AudioStream" uid="uid://dcedyg17gugpu" path="res://Charlie/SFX/P90_Single Shot.wav" id="5_fglwj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ynmh"]
 no_depth_test = true
@@ -601,5 +602,11 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_en3nj")
 }
+
+[node name="Shoot" type="AudioStreamPlayer3D" parent="P90"]
+stream = ExtResource("5_fglwj")
+max_polyphony = 4
+panning_strength = 0.65
+bus = &"SFX"
 
 [connection signal="timeout" from="P90/P90_Shoot_Timer" to="." method="_on_p_90_shoot_timer_timeout"]
