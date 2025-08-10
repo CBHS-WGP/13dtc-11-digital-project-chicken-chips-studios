@@ -37,6 +37,7 @@ func PickupItem(item : ItemData):
 	var foundSlot : bool = false
 	for slot in InventorySlots:
 		if (!slot.SlotFilled):
+			$Rustle.play()
 			slot.FillSlot(item, false)
 			foundSlot = true
 			break
@@ -66,7 +67,7 @@ func ItemDroppedOnSlot(fromSlotID : int, toSlotID : int):
 	
 	var toSlotItem = InventorySlots[toSlotID].SlotData
 	var fromSlotItem = InventorySlots[fromSlotID].SlotData
-	
+	$Rustle.play()
 	InventorySlots[toSlotID].FillSlot(fromSlotItem, EquippedSlot == toSlotID)
 	InventorySlots[fromSlotID].FillSlot(toSlotItem, EquippedSlot == fromSlotID)
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ggmokxxoct5u"]
+[gd_scene load_steps=8 format=3 uid="uid://ggmokxxoct5u"]
 
 [ext_resource type="Script" uid="uid://kvjqhu5goo7l" path="res://Charlie/Inventory/Inventory_handler.gd" id="1_2s7m8"]
 [ext_resource type="Texture2D" uid="uid://db38221a6ihup" path="res://Charlie/Textures/Grass.jpg" id="1_cu82g"]
+[ext_resource type="AudioStream" uid="uid://br6gwwblklqnr" path="res://Charles Tracey - Project Manager/sfx/backpackrustle.mp3" id="3_2s7m8"]
 
 [sub_resource type="Animation" id="Animation_47dbb"]
 length = 0.001
@@ -139,3 +140,7 @@ offset_bottom = 376.0
 libraries = {
 &"": SubResource("AnimationLibrary_oqrha")
 }
+
+[node name="Rustle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2s7m8")
+bus = &"SFX"
