@@ -118,6 +118,8 @@ func _on_p_90_shoot_timer_timeout() -> void:
 	if Global.equipped_item_id == str("P90"):
 		if Input.is_action_pressed("leftclick") and Global.P90_bullets_in_mag > 0  and Global.inv_open == false and Global.settings_open == false:
 			$"P90/Proto_Muzzle_flash".play("flash")
+			$P90/Shoot.pitch_scale = randf_range(0.85, 1.15)
+			$P90/Shoot.play()
 			Global.P90_bullets_in_mag -= 1
 			_shoot()
 		

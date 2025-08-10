@@ -3,7 +3,7 @@ func _ready():
 	$MeshInstance3D2.visible = true
 
 func _process(_delta: float) -> void:
-	print(Progress.current_objective)
+	#print(Progress.current_objective)
 	if Progress.current_objective == 2.55:
 		$Crate.play("open")
 		$MeshInstance3D2.visible = false
