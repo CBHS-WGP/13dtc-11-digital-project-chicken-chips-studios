@@ -24,6 +24,7 @@ scale = Vector2(0.4, 0.357)
 texture = ExtResource("1_fa8c8")
 
 [node name="HSlider" type="HSlider" parent="."]
+visible = false
 layout_mode = 2
 offset_left = -328.0
 offset_top = 163.25
@@ -76,6 +77,7 @@ offset_bottom = 1.0
 text = "Window Size"
 
 [node name="OptionButton" type="OptionButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -348.0
 offset_top = -37.0

@@ -528,12 +528,14 @@ grow_vertical = 2
 
 [node name="Options_Box" parent="Options" instance=ExtResource("4_xirei")]
 layout_mode = 1
+offset_top = 924.5
+offset_bottom = 964.5
 
 [node name="Back" type="Button" parent="Options"]
 layout_mode = 0
-offset_left = 1379.0
+offset_left = 1926.0
 offset_top = 211.0
-offset_right = 1602.0
+offset_right = 2149.0
 offset_bottom = 285.0
 text = "Back"
 
@@ -548,31 +550,30 @@ grow_vertical = 0
 layout_mode = 0
 offset_top = -429.0
 offset_right = 538.0
-scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(0, 429)
 texture = SubResource("GradientTexture2D_8g7j4")
 
 [node name="Play" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = -248.0
+offset_left = 84.0
 offset_top = -386.0
-offset_right = -25.0
+offset_right = 307.0
 offset_bottom = -312.0
 text = "Play"
 
 [node name="Options" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = -248.0
+offset_left = 191.0
 offset_top = -261.0
-offset_right = -25.0
+offset_right = 414.0
 offset_bottom = -187.0
 text = "Options"
 
 [node name="Exit" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = -248.0
+offset_left = 257.0
 offset_top = -138.0
-offset_right = -25.0
+offset_right = 480.0
 offset_bottom = -64.0
 text = "Exit"
 
