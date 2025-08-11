@@ -39,18 +39,17 @@ var direction = Vector3(0, 0, 0)
 
 #Emmited from the enemy, sent to global, and callected by the player script to decrase health
 func _ready():
-	pass
-	#Global.shot.connect(healthdecrease)
+	Global.shot.connect(healthdecrease)
 	
 	#Changes the health, and when it hits 0, send to credits
 func healthdecrease():
 	if Global.health > 0:
 		Global.health = Global.health - 20
-		#print(\"TAKEDAMAMGE\")
+		print(\"TAKEDAMAMGE\")
 
 
 func _physics_process(delta):
-	
+	#print(Global.health)
 	#print(velocity)
 	# Add the gravity.
 	if not is_on_floor():
@@ -614,8 +613,8 @@ layout_mode = 1
 
 [node name="Options_Box" parent="HUD" instance=ExtResource("7_g6nvv")]
 layout_mode = 1
-offset_top = 640.0
-offset_bottom = 680.0
+offset_top = 1103.0
+offset_bottom = 1143.0
 
 [node name="Leave_Settings" type="Button" parent="HUD"]
 layout_mode = 0
