@@ -613,8 +613,8 @@ layout_mode = 1
 
 [node name="Options_Box" parent="HUD" instance=ExtResource("7_g6nvv")]
 layout_mode = 1
-offset_top = 1103.0
-offset_bottom = 1143.0
+offset_top = 640.0
+offset_bottom = 680.0
 
 [node name="Leave_Settings" type="Button" parent="HUD"]
 layout_mode = 0
