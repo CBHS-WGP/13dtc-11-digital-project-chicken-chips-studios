@@ -10,6 +10,7 @@ albedo_color = Color(1.01075e-06, 0.643502, 0.281243, 1)
 material = SubResource("StandardMaterial3D_mihky")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_skx2t"]
+radius = 0.730706
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0bnu1"]
 
@@ -75,7 +76,7 @@ _data = {
 size = Vector3(1, 1, 0.519409)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6xxrv"]
-size = Vector3(7.85901, 4.55225, 7.91754)
+size = Vector3(7.85901, 4.55225, 7.99686)
 
 [node name="BOSS" type="CharacterBody3D"]
 script = ExtResource("1_0bnu1")
@@ -86,7 +87,7 @@ mesh = SubResource("CapsuleMesh_0bnu1")
 skeleton = NodePath("../..")
 
 [node name="Inner detect" type="Area3D" parent="."]
-transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 0, 0, 0)
+transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 0.335931, 0, 0)
 collision_layer = 128
 collision_mask = 128
 
@@ -151,7 +152,7 @@ text = "aa"
 font = ExtResource("2_6xxrv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26398, 1.23413, -0.450836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26398, 1.23413, -0.490494)
 shape = SubResource("BoxShape3D_6xxrv")
 
 [node name="Timer" type="Timer" parent="."]
