@@ -55,8 +55,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	Global.shot.emit()
 
 
-func _on_timer_timeout() -> void:
-	if inhitbox == true:
-		print("hit")
-		$AnimationPlayer.play("attac_anim")
-		Global.shot.emit()
+#func _on_timer_timeout() -> void:
+	#if inhitbox == true:
+#		print("hit")
+#		$AnimationPlayer.play("attac_anim")
+#		Global.shot.emit()

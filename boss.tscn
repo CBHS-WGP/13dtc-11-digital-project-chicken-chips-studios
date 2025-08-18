@@ -51,6 +51,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_0bnu1"]
 resource_name = "attac_anim"
+length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -58,10 +60,10 @@ tracks/0/path = NodePath("Attack:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.85741, 0, -1.40448), Vector3(-0.962319, 0, -1.40448)]
+"values": [Vector3(0.85741, 0, -1.40448), Vector3(-0.962319, 0, -1.40448), Vector3(0.85741, 0, -1.40448)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_skx2t"]
@@ -73,7 +75,7 @@ _data = {
 [sub_resource type="BoxMesh" id="BoxMesh_lnbgr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1i15"]
-size = Vector3(1, 1, 0.519409)
+size = Vector3(1, 1, 0.500885)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6xxrv"]
 size = Vector3(7.85901, 4.55225, 7.99686)
@@ -129,7 +131,6 @@ text = "BACK"
 libraries = {
 &"": SubResource("AnimationLibrary_skx2t")
 }
-autoplay = "attac_anim"
 
 [node name="Attack" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.14, 1.06132, 0, -1.40448)
@@ -138,7 +139,7 @@ mesh = SubResource("BoxMesh_lnbgr")
 [node name="Area3D" type="Area3D" parent="Attack"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Attack/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00759315, 0, -0.240295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00759315, 0, -0.249557)
 shape = SubResource("BoxShape3D_o1i15")
 
 [node name="Damage_Checker" type="Area3D" parent="."]
