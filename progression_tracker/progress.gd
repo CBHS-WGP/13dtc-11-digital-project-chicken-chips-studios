@@ -30,8 +30,6 @@ var objective_1 = 0
 # apon finding the sattelite, we reach objective 1
 # now when interacting with the sattelite, we get 1.5, find the parts
 # after finding and instering all ___ parts AND fixing the sattelite functions, move to objective 2
-
-#Go from here!
 # Spawn in weapons cache, and start new communications up, now move to objective 2.1.
 # Upon location of the weapons cache, get lots of ammo and the G32 + move + spawn in enemies to objective 2.5
 # Now killing spree. Once all located enemies are dead, move to objective 3

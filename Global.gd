@@ -1,6 +1,7 @@
 extends Node
-
+#fired when the player needs to take damage
 signal shot
+#fired when the player presses F on an available object in 3D space.
 signal item_update
 
 var inv_open = false

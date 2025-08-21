@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	else:
 		Global.current_raycast = null
 
-	#These are all the code needed for interacting with specific objects.
+	#This is all the code needed for interacting with specific objects.
 	#For things like light switches, i need to consider moving this code to a script on the item
 	#instead so the code works for just the instantiated object!
 	if Input.is_action_pressed("F") and Global.current_raycast == "Sattelite" and Progress.current_objective == 1.5:
@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 			Progress.current_objective = 1.99
 
 	
-	#ode to check finding the sattelite when the player has or hasnt already found the parts
+	#Code to check finding the sattelite when the player has or hasnt already found the parts
 	elif Progress.current_objective == 0 and Global.current_raycast == "SatteliteFound" and Progress.Sattelite_Discovered == false:
 		Progress.current_objective = 1
 		Progress.Sattelite_Discovered = true
