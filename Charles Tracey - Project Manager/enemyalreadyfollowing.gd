@@ -1,15 +1,15 @@
 extends CharacterBody3D
 
 
+
 @onready var nav = $NavigationAgent3D
 var speed = 0
 var gravity = 9.81
 var health = 100
 var inhitbox = false
 @onready var player = $"../../Wayne/Enemy detect"
-var target = self
+var target = player
 var insideinner = false
-const rotation_speed = 5.0
 
 # Code which makes the enemy move towards the player
 func _process(delta):
@@ -24,8 +24,6 @@ func _process(delta):
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
 
-
-
 	$Damage_Checker/Health_Indicator.text = str(health,"/100")
 	if health <= 0:
 		if Progress.current_objective == 2.6:
@@ -33,17 +31,10 @@ func _process(delta):
 		queue_free()
 
 # if target equals player and in inner radius, the enemy will follow the player.
-func target_position(delta):
+func target_position(_delta):
 	if target == player:
 		nav.set_target_position(player.global_transform.origin)
-		var target_pos = $"../../Wayne/Enemy detect".global_transform.origin
-		var my_pos = global_transform.origin
-		
-		var direction = (target_pos - my_pos).normalized()
-		var target_angle = atan2(direction.x, direction.z)
-		
-		rotation.y = lerp_angle(rotation.y, target_angle + PI, 0.04)
-		
+		look_at(player.global_transform.origin)
 		rotation.x = 0
 		rotation.z = 0
 

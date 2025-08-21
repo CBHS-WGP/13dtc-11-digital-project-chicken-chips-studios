@@ -119,7 +119,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.921, 1.86, -5.97462)
 
 [node name="enemy" parent="Enemies" instance=ExtResource("9_do8ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.771496, 1.98642, 12.8772)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0228264, 1.32107, 10.81)
 
 [node name="RigidBody3D" parent="." instance=ExtResource("5_5m3ab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713917, -1.3083)

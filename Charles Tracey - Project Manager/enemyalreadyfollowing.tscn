@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://xp2woouhmaf8"]
+[gd_scene load_steps=10 format=3 uid="uid://ctc0lif7elwop"]
 
-[ext_resource type="Script" uid="uid://cg1mrc3pr864y" path="res://Charles Tracey - Project Manager/enemy.gd" id="1_8uhvq"]
-[ext_resource type="FontFile" uid="uid://wsa2utca31dd" path="res://Charles Tracey - Project Manager/call-of-ops-duty-font/CallOfOpsDuty-qAyq.ttf" id="2_hryg0"]
-[ext_resource type="PackedScene" uid="uid://ctmg4j5kbvjga" path="res://Patrick/ENEMYFOLLOWER/follower.glb" id="3_m83rg"]
+[ext_resource type="Script" uid="uid://dvtm7wwshdja5" path="res://Charles Tracey - Project Manager/enemyalreadyfollowing.gd" id="1_bijlm"]
+[ext_resource type="PackedScene" uid="uid://ctmg4j5kbvjga" path="res://Patrick/ENEMYFOLLOWER/follower.glb" id="2_pta87"]
+[ext_resource type="FontFile" uid="uid://wsa2utca31dd" path="res://Charles Tracey - Project Manager/call-of-ops-duty-font/CallOfOpsDuty-qAyq.ttf" id="3_8udvn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m83rg"]
 
@@ -22,14 +22,13 @@ size = Vector3(0.8, 1.717, 0.8)
 size = Vector3(1, 2, 1)
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-script = ExtResource("1_8uhvq")
+script = ExtResource("1_bijlm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
-[node name="follower" parent="MeshInstance3D" instance=ExtResource("3_m83rg")]
+[node name="follower" parent="MeshInstance3D" instance=ExtResource("2_pta87")]
 transform = Transform3D(-0.415, 0, -6.26633e-08, 0, 0.415, 0, 6.26633e-08, 0, -0.415, 0, -0.646959, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -69,7 +68,7 @@ monitorable = false
 [node name="Health_Indicator" type="Label3D" parent="Damage_Checker"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.34506, 0)
 text = "aa"
-font = ExtResource("2_hryg0")
+font = ExtResource("3_8udvn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101227, 0)
