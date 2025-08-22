@@ -56,7 +56,7 @@ func _process(_delta):
 		current_objective = 3
 	print(current_objective)
 	print(boss_killed)
-	if boss_killed == true:
+	if current_objective == 4 and boss_killed == true:
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
 		
 	#Player death

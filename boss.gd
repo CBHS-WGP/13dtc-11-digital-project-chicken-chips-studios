@@ -20,9 +20,10 @@ func _process(delta):
 	var new_velocity = (next_location - current_location).normalized() * speed
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
-	
+	#boss death/end the game
 #	$Damage_Checker/Health_Indicator.text = str(health,"/100")
 	if health <= 0:
+		Progress.boss_killed = true
 		queue_free()
 	
 func target_position():
@@ -43,11 +44,10 @@ func _on_inner_detect_area_entered(area: Area3D) -> void:
 		
 		
 
-
+#player death
 func _on_damage_checker_area_entered(area: Area3D) -> void:
 	health = health - 20
 	if health < 0:
-		Progress.boss_killed = true
 		queue_free()
 
 
