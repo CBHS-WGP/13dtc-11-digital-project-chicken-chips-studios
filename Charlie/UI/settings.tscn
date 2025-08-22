@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6hnwyuweh4nf"]
+[gd_scene load_steps=6 format=3 uid="uid://b6hnwyuweh4nf"]
 
 [ext_resource type="Texture2D" uid="uid://b3y3l2jvdtx7m" path="res://Charlie/Textures/Sun.jpg" id="1_fa8c8"]
 [ext_resource type="Script" uid="uid://bgmhktyj73erp" path="res://Charlie/UI/settings.gd" id="1_yqnya"]
 [ext_resource type="Script" uid="uid://8k6ak6iatol" path="res://Charlie/UI/music_slider_script.gd" id="3_ngpyx"]
 [ext_resource type="Script" uid="uid://beu1ykp6an7a1" path="res://Charlie/UI/sfx_slider.gd" id="4_51o7t"]
-[ext_resource type="AudioStream" uid="uid://dcedyg17gugpu" path="res://Charlie/SFX/P90_Single Shot.wav" id="4_weva7"]
 
 [sub_resource type="Theme" id="Theme_yqnya"]
 default_font_size = 23
@@ -120,11 +119,6 @@ offset_right = -7.0
 offset_bottom = 19.0
 text = "Music:"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("4_weva7")
-max_polyphony = 2
-bus = &"Music"
-
 [node name="SFX" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = -307.0
@@ -143,11 +137,6 @@ offset_top = -5.0
 offset_right = -6.0
 offset_bottom = 18.0
 text = "SFX:"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("4_weva7")
-max_polyphony = 2
-bus = &"SFX"
 
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="Window_Sizes" to="." method="_on_window_sizes_item_selected"]
