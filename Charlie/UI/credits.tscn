@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://j31amio2qxow"]
 
-[ext_resource type="Texture2D" uid="uid://db38221a6ihup" path="res://Charlie/Textures/Grass.jpg" id="1_od1y5"]
+[ext_resource type="Texture2D" uid="uid://cxeoi4jan088h" path="res://Charlie/Textures/Fabric.jpg" id="1_od1y5"]
 [ext_resource type="Texture2D" uid="uid://b3y3l2jvdtx7m" path="res://Charlie/Textures/Sun.jpg" id="2_p1ufu"]
 
 [sub_resource type="FontFile" id="FontFile_di2ki"]
@@ -58,8 +58,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(652, 336)
-scale = Vector2(1.37778, 1.37778)
+position = Vector2(625.5, 275)
+scale = Vector2(0.344004, 0.416185)
 texture = ExtResource("1_od1y5")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]

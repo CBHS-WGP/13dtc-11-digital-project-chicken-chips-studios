@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ggmokxxoct5u"]
 
 [ext_resource type="Script" uid="uid://kvjqhu5goo7l" path="res://Charlie/Inventory/Inventory_handler.gd" id="1_2s7m8"]
-[ext_resource type="Texture2D" uid="uid://db38221a6ihup" path="res://Charlie/Textures/Grass.jpg" id="1_cu82g"]
+[ext_resource type="Texture2D" uid="uid://cxeoi4jan088h" path="res://Charlie/Textures/Fabric.jpg" id="2_2s7m8"]
 [ext_resource type="AudioStream" uid="uid://br6gwwblklqnr" path="res://Charles Tracey - Project Manager/sfx/backpackrustle.mp3" id="3_2s7m8"]
 
 [sub_resource type="Animation" id="Animation_47dbb"]
@@ -110,7 +110,7 @@ mouse_filter = 2
 layout_mode = 0
 offset_right = 244.0
 offset_bottom = 721.0
-texture = ExtResource("1_cu82g")
+texture = ExtResource("2_2s7m8")
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10

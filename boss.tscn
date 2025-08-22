@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b1x770wv6m518"]
+[gd_scene load_steps=17 format=3 uid="uid://b1x770wv6m518"]
 
 [ext_resource type="Script" uid="uid://bwgpfmpy6an1u" path="res://boss.gd" id="1_0bnu1"]
 [ext_resource type="FontFile" uid="uid://wsa2utca31dd" path="res://Charles Tracey - Project Manager/call-of-ops-duty-font/CallOfOpsDuty-qAyq.ttf" id="2_6xxrv"]
@@ -80,6 +80,9 @@ size = Vector3(1, 1, 0.500885)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6xxrv"]
 size = Vector3(7.85901, 4.55225, 7.99686)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_skx2t"]
+size = Vector3(4.2627, 2.44629, 4.42859)
+
 [node name="BOSS" type="CharacterBody3D"]
 script = ExtResource("1_0bnu1")
 
@@ -148,7 +151,7 @@ collision_mask = 4
 monitorable = false
 
 [node name="Health_Indicator" type="Label3D" parent="Damage_Checker"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.34506, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.32252, 0)
 text = "aa"
 font = ExtResource("2_6xxrv")
 
@@ -158,6 +161,14 @@ shape = SubResource("BoxShape3D_6xxrv")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Enemy_Gun_Collider" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Gun_Collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0981445, 0.223145, 0.0443726)
+shape = SubResource("BoxShape3D_skx2t")
 
 [connection signal="area_entered" from="Inner detect" to="." method="_on_inner_detect_area_entered"]
 [connection signal="body_entered" from="Attack/Area3D" to="." method="_on_area_3d_body_entered"]

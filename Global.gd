@@ -13,7 +13,7 @@ var health = 100
 var settings_open = false
 var current_raycast 
 var equipped_item_id = str("null")
-var G32_bullets = 12
+var G32_bullets = 100
 var G32_bullets_in_mag = 12
 var P90_bullets = 100
 var P90_bullets_in_mag = 50

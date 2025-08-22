@@ -5,10 +5,11 @@ var speed = 2
 var gravity = 9.81
 @onready var nav = $NavigationAgent3D
 @onready var target = self
-var health = 100 
+var health = 300
 var inhitbox = false
 
 func _process(delta):
+	$Damage_Checker/Health_Indicator.text = str(health, "/300")
 	target_position()
 	if not is_on_floor():
 		velocity.y -= gravity * delta

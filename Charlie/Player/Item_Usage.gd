@@ -110,6 +110,7 @@ func _shoot():
 		#Sets the actual position
 		instance.global_position = ray.get_collider().position
 		#Enemy damage if nessesary
+		print(hit.get_collision_mask())
 		if hit.get_collision_mask() == 64:
 			hit.get_parent().health = hit.get_parent().health - 15
 		else:
