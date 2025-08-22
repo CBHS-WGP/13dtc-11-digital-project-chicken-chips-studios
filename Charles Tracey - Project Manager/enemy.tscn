@@ -90,6 +90,12 @@ collision_mask = 64
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Gun_Collider"]
 shape = SubResource("BoxShape3D_m83rg")
 
+[node name="Area3D2" type="Area3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D2"]
+transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 3.82137e-15, 4.37114e-08, -1, -1, 1.31134e-07, 1.91069e-15, -1.13958, 0, 7.37733)
+polygon = PackedVector2Array(7.827, 1.11, 13, 4.009, 13, -1.415)
+
 [connection signal="area_entered" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_area_entered"]
 [connection signal="area_exited" from="Inner Detection Radius" to="." method="_on_inner_detection_radius_area_exited"]
 [connection signal="area_exited" from="Outer Detection Radius" to="." method="_on_outer_detection_radius_area_exited"]
