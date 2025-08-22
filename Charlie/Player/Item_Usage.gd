@@ -100,7 +100,7 @@ func _shoot():
 	if ray.is_colliding():
 		hit = ray.get_collider()
 		pos = Vector3(ray.get_collision_point())
-		print(ray.get_collider().global_position)
+		#print(ray.get_collider().global_position)
 		var instance = Explosion.instantiate()
 		instance.position = Vector3(pos)
 		#gets the main scene tree and put thi instance under the main node
@@ -110,11 +110,12 @@ func _shoot():
 		#Sets the actual position
 		instance.global_position = ray.get_collider().position
 		#Enemy damage if nessesary
-		print(hit.get_collision_mask())
+		#print(hit.get_collision_mask())
 		if hit.get_collision_mask() == 64:
 			hit.get_parent().health = hit.get_parent().health - 15
 		else:
-			print("poke")
+			pass
+			#print("poke")
 
 
 func _on_p_90_shoot_timer_timeout() -> void:
