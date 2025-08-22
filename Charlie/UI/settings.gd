@@ -1,5 +1,8 @@
 extends Control
 
+
+
+
 #dictionary of all allowed resolutions (can be easily expanded in the future)
 var dictionaryContainer = {
 	0: Vector2(1280, 720),
@@ -7,7 +10,9 @@ var dictionaryContainer = {
 	2: Vector2(1842, 1036),
 	3: Vector2(256, 144)
 	}
-	
+
+
+
 func _on_check_box_toggled(toggled_on):
 		if toggled_on == true:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

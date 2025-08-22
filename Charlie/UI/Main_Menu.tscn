@@ -625,10 +625,12 @@ stream = ExtResource("6_dmeyk")
 volume_db = 9.45
 autoplay = true
 paused = true
+bus = &"Music"
 
 [node name="Main_Menu_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ve0bo")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]

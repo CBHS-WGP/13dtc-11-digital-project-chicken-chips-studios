@@ -1,0 +1,14 @@
+extends HSlider
+
+#code for SFX slider
+@export var bus_name: String
+var bus_index: int
+
+func _ready():
+	bus_index = AudioServer.get_bus_index(bus_name)
+	value_changed.connect(_on_drag_ended)
+	value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
+	
+func _on_drag_ended(value_changed: bool) -> void:
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+	$AudioStreamPlayer.play()

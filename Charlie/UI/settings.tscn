@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6hnwyuweh4nf"]
+[gd_scene load_steps=7 format=3 uid="uid://b6hnwyuweh4nf"]
 
 [ext_resource type="Texture2D" uid="uid://b3y3l2jvdtx7m" path="res://Charlie/Textures/Sun.jpg" id="1_fa8c8"]
 [ext_resource type="Script" uid="uid://bgmhktyj73erp" path="res://Charlie/UI/settings.gd" id="1_yqnya"]
+[ext_resource type="Script" uid="uid://8k6ak6iatol" path="res://Charlie/UI/music_slider_script.gd" id="3_ngpyx"]
+[ext_resource type="Script" uid="uid://beu1ykp6an7a1" path="res://Charlie/UI/sfx_slider.gd" id="4_51o7t"]
+[ext_resource type="AudioStream" uid="uid://dcedyg17gugpu" path="res://Charlie/SFX/P90_Single Shot.wav" id="4_weva7"]
 
 [sub_resource type="Theme" id="Theme_yqnya"]
 default_font_size = 23
@@ -98,5 +101,55 @@ offset_right = 40.0
 offset_bottom = 1.0
 text = "Level of Detail"
 
+[node name="Music" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = -311.0
+offset_top = 51.0
+offset_right = -141.0
+offset_bottom = 67.0
+max_value = 1.5
+step = 0.01
+script = ExtResource("3_ngpyx")
+bus_name = "Music"
+
+[node name="Label" type="Label" parent="Music"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 19.0
+text = "Music:"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("4_weva7")
+max_polyphony = 2
+bus = &"Music"
+
+[node name="SFX" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = -307.0
+offset_top = 86.0
+offset_right = -142.0
+offset_bottom = 102.0
+max_value = 1.5
+step = 0.01
+script = ExtResource("4_51o7t")
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="SFX"]
+layout_mode = 0
+offset_left = -46.0
+offset_top = -5.0
+offset_right = -6.0
+offset_bottom = 18.0
+text = "SFX:"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_weva7")
+max_polyphony = 2
+bus = &"SFX"
+
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="Window_Sizes" to="." method="_on_window_sizes_item_selected"]
+[connection signal="drag_ended" from="Music" to="Music" method="_on_drag_ended"]
+[connection signal="drag_ended" from="SFX" to="SFX" method="_on_drag_ended"]
