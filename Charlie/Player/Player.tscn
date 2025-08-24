@@ -627,6 +627,8 @@ PlayerBody = NodePath("../..")
 
 [node name="Options_Box" parent="HUD" instance=ExtResource("7_g6nvv")]
 layout_mode = 1
+offset_top = 1103.0
+offset_bottom = 1143.0
 
 [node name="Collision_Player" type="AnimationPlayer" parent="."]
 libraries = {

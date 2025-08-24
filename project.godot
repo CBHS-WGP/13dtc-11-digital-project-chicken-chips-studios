@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Dunsandler"
-run/main_scene="uid://b5uavx16u4g8q"
+run/main_scene="uid://cvjmminf2yfon"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
