@@ -1,6 +1,7 @@
-[gd_resource type="Environment" load_steps=13 format=3 uid="uid://ccl85ojwrmelb"]
+[gd_resource type="Environment" load_steps=14 format=3 uid="uid://ccl85ojwrmelb"]
 
 [ext_resource type="Shader" uid="uid://dud5rmvfoxvok" path="res://stylisedsky.gdshader" id="1_big14"]
+[ext_resource type="Texture2D" uid="uid://doqje111txn0h" path="res://Charlie/Textures/NASA_MOON-removebg-preview.png" id="2_md6is"]
 
 [sub_resource type="Curve" id="Curve_wn6u5"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.115789, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.741062), 0.0, 0.0, 0, 0]
@@ -51,8 +52,9 @@ shader_parameter/top_color = Color(0.0186674, 0.0301238, 0.0534126, 1)
 shader_parameter/bottom_color = Color(0.0234666, 0.0236328, 0.0425126, 1)
 shader_parameter/sun_scatter = Color(0.0480895, 0.0640846, 0.129138, 1)
 shader_parameter/astro_tint = Color(1, 1, 1, 1)
+shader_parameter/astro_sampler = ExtResource("2_md6is")
 shader_parameter/astro_scale = 10.0
-shader_parameter/astro_intensity = 2.0
+shader_parameter/astro_intensity = 1.0
 shader_parameter/stars_intensity = 3.0
 shader_parameter/shooting_stars_intensity = 0.1
 shader_parameter/shooting_star_sampler = SubResource("CompressedTexture2D_fhruy")
