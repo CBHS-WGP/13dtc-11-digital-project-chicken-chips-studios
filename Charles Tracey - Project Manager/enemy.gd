@@ -99,3 +99,8 @@ func _on_inner_detection_radius_area_exited(area: Area3D) -> void:
 		print("exited")
 		speed = 0
 		target = self
+
+
+func _on_eyeline_area_entered(area: Area3D) -> void:
+	if area.is_in_group("player"):
+		target = player
