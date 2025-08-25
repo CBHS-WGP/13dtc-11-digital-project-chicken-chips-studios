@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://darn15nira1gy"]
+
+[ext_resource type="PackedScene" uid="uid://cpvtn45yf4u2q" path="res://Patrick/SatBox/BoxSat.glb" id="1_hyk32"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BoxSat" parent="." instance=ExtResource("1_hyk32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606706, 0, -0.769551)
