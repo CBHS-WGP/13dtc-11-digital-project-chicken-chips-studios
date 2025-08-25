@@ -6,11 +6,12 @@ signal OnItemDropped(fromSlotID, toSlotID)
 
 @export var EquippedHighlight : Panel
 @export var IconSlot : TextureRect
-
+@export var equipped_item_sprite : Sprite2D
 var InventorySlotID : int = -1
 var SlotFilled : bool = false
 
 var SlotData : ItemData
+
 
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
@@ -56,3 +57,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		Global.item_update.emit()
 		print("null")
 		
+
+
+
+func _on_timer_timeout() -> void:
+	if InventorySlotID == 4:
+		$Hand.visible = true

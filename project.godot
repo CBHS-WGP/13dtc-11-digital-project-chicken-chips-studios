@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="The Dunsandler"
-run/main_scene="uid://cvjmminf2yfon"
+run/main_scene="uid://b5uavx16u4g8q"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://Charlie/Music/default_bus_layout.tres"
 
 [autoload]
 
