@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bmb6xbfgijokl" path="res://Charlie/Enemy_2/enemy_2.gd" id="1_e6d0d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_na3hx"]
-margin = 0.2
 radius = 0.152581
 height = 0.326006
 
@@ -78,7 +77,7 @@ shape = SubResource("SphereShape3D_ofouk")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 2.0
-path_height_offset = 0.5
+path_height_offset = 0.1
 path_max_distance = 10.01
 debug_enabled = true
 debug_path_custom_color = Color(0.319959, 0.243368, 0.0648146, 1)
