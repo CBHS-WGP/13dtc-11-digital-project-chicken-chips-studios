@@ -5,7 +5,6 @@ class_name InventoryHandler
 @export_flags_3d_physics var CollisionMask : int
 #0, 1, 2 and 3 are inv, slot 4 is equipped slot (need the int to be five tho)
 @export var ItemSlotsCount : int = 5
-
 @export var InventoryGrid : GridContainer
 @export var InventorySlotPrefab : PackedScene = preload("res://Charlie/Inventory/Inv_Slot.tscn")
 @export var EquippingSlot : Control

@@ -138,6 +138,11 @@ offset_right = -6.0
 offset_bottom = 18.0
 text = "SFX:"
 
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="Window_Sizes" to="." method="_on_window_sizes_item_selected"]
 [connection signal="drag_ended" from="Music" to="Music" method="_on_drag_ended"]

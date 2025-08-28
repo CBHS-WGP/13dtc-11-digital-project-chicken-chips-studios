@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxr1qv6xisbqe"]
+
+[ext_resource type="Script" uid="uid://bmb6xbfgijokl" path="res://Charlie/Enemy_2/enemy_2.gd" id="1_e6d0d"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_na3hx"]
+radius = 0.152581
+height = 0.326006
+
+[sub_resource type="SphereMesh" id="SphereMesh_p6yyp"]
+radius = 0.15
+height = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_wp0ih"]
+size = Vector3(0.15, 0.15, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5upyl"]
+size = Vector3(0.05, 0.15, 0.05)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ofouk"]
+radius = 0.116425
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6d0d"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Enemy_2" type="CharacterBody3D" groups=["enemy"]]
+disable_mode = 2
+wall_min_slide_angle = 1.91986
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_max_angle = 1.91986
+script = ExtResource("1_e6d0d")
+
+[node name="Normal_Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_na3hx")
+disabled = true
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
+mesh = SubResource("SphereMesh_p6yyp")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170004)
+mesh = SubResource("BoxMesh_wp0ih")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(0.637178, -0.550541, -0.539359, 0.65379, 0.756676, 0, 0.40812, -0.352628, 0.842076, 0.141786, -0.111851, 0.0627601)
+mesh = SubResource("BoxMesh_5upyl")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(0.581561, -0.502486, 0.639761, 0.65379, 0.756676, -1.60741e-08, -0.484092, 0.41827, 0.768574, 0.12098, -0.111851, -0.112571)
+mesh = SubResource("BoxMesh_5upyl")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(-0.684677, 0.591582, -0.425732, 0.65379, 0.756676, -7.3667e-08, 0.322141, -0.278339, -0.904849, -0.149569, -0.111851, 0.0627601)
+mesh = SubResource("BoxMesh_5upyl")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(-0.420222, 0.363084, 0.831615, 0.65379, 0.756676, -1.60741e-08, -0.629263, 0.543702, -0.555352, -0.129554, -0.111851, -0.12179)
+mesh = SubResource("BoxMesh_5upyl")
+skeleton = NodePath("")
+
+[node name="Eye Collision" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Eye Collision"]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Eye Collision/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.139093)
+shape = SubResource("SphereShape3D_ofouk")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 2.0
+path_height_offset = 0.1
+path_max_distance = 10.01
+debug_enabled = true
+debug_path_custom_color = Color(0.319959, 0.243368, 0.0648146, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_e6d0d")

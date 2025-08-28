@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciulnl5upgiim"]
+[gd_scene load_steps=10 format=3 uid="uid://ciulnl5upgiim"]
 
 [ext_resource type="Script" uid="uid://bjbemg3f2fft" path="res://Charlie/Inventory/inv_slot.gd" id="1_0xrjo"]
 [ext_resource type="StyleBox" uid="uid://by2sysoje0u1" path="res://Charlie/Box_Styles/test_inv_slot_hover_style.tres" id="2_22eic"]
 [ext_resource type="Texture2D" uid="uid://p7o54dxg0vsx" path="res://Charlie/Textures/Bayonet/textures/MTL_Scabbard_normal.png" id="3_18x75"]
+[ext_resource type="Texture2D" uid="uid://bc3nh6jj14w6k" path="res://Charlie/Textures/Inventory_Item_Textures/Hand.png" id="4_18x75"]
 
 [sub_resource type="Theme" id="Theme_0xrjo"]
 
@@ -17,7 +18,7 @@ texture = SubResource("GradientTexture1D_18x75")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wfty"]
 texture = ExtResource("3_18x75")
 
-[node name="Inv_Slot" type="Panel" node_paths=PackedStringArray("EquippedHighlight", "IconSlot")]
+[node name="Inv_Slot" type="Panel" node_paths=PackedStringArray("EquippedHighlight", "IconSlot", "equipped_item_sprite")]
 process_priority = 10000
 offset_right = 100.0
 offset_bottom = 100.0
@@ -28,6 +29,7 @@ mouse_default_cursor_shape = 2
 script = ExtResource("1_0xrjo")
 EquippedHighlight = NodePath("Highlight")
 IconSlot = NodePath("TextureRect")
+equipped_item_sprite = NodePath("Hand")
 
 [node name="Item_Slot" type="Button" parent="."]
 layout_mode = 1
@@ -51,6 +53,12 @@ theme_override_styles/focus = ExtResource("2_22eic")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kq1r1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_8wfty")
 theme_override_styles/normal = ExtResource("2_22eic")
+
+[node name="Hand" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(50, 50)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_18x75")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -76,4 +84,9 @@ offset_right = 100.0
 offset_bottom = 100.0
 mouse_filter = 2
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
 [connection signal="button_down" from="Item_Slot" to="." method="_on_item_slot_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

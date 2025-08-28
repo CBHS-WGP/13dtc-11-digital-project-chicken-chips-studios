@@ -1,8 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwuqvkxi0aqeo"]
 
 [ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_nwbxu"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ho42y"]
+[ext_resource type="PackedScene" uid="uid://cpvtn45yf4u2q" path="res://Patrick/SatBox/BoxSat.glb" id="2_nwbxu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1uty"]
 
@@ -21,9 +20,8 @@ collision_mask = 33
 script = ExtResource("1_nwbxu")
 ItemHighlightMesh = NodePath("Glow")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_ho42y")
-skeleton = NodePath("")
+[node name="BoxSat" parent="." instance=ExtResource("2_nwbxu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0339878, 0.0186203, 0.0220412)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_f1uty")
