@@ -85,22 +85,19 @@ func dead(_delta):
 	if health == 0:
 		get_tree().quit()
 
-
-func _on_inner_detection_radius_body_exited(_body: Node3D) -> void:
-	insideinner = false
-
-
 func _on_inner_detection_radius_area_entered(area: Area3D) -> void:
-	if area.is_in_group("player"):
+	if area.is_in_group("playerhitbox"):
 		insideinner = true
 
 func _on_inner_detection_radius_area_exited(area: Area3D) -> void:
-	if area.is_in_group("player"):
+	if area.is_in_group("playerhitbox"):
 		print("exited")
 		speed = 0
 		target = self
+		insideinner = false
 
 
 func _on_eyeline_area_entered(area: Area3D) -> void:
-	if area.is_in_group("player"):
+	if area.is_in_group("playerhitbox"):
 		target = player
+		insideinner = true

@@ -45,10 +45,6 @@ script = ExtResource("1_bkyi2")
 [node name="Wayne" parent="." groups=["player"] instance=ExtResource("1_am1u2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.487481, 0)
 
-[node name="Options_Box" parent="Wayne/HUD" index="4"]
-offset_top = 1103.0
-offset_bottom = 1143.0
-
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
@@ -119,7 +115,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.921, 1.86, -5.97462)
 
 [node name="enemy" parent="Enemies" instance=ExtResource("9_do8ai")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0228264, 1.32107, 10.81)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.240618, 1.32107, 19.6592)
 
 [node name="RigidBody3D" parent="." instance=ExtResource("5_5m3ab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713917, -1.3083)

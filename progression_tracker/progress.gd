@@ -1,6 +1,6 @@
 extends Node
 #Varible for the path to the enemy, plus a reference to where the sqawn node.  
-@onready var enemy1 = preload("res://Charles Tracey - Project Manager/enemyalreadyfollowing.tscn")
+@onready var enemy1 = preload("res://Charles Tracey - Project Manager/enemy.tscn")
 var spawn
 @onready var weapons_cache = preload("res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/Weapons_Cache_Found.tscn")
 var cache_spawn
