@@ -138,10 +138,28 @@ offset_right = -6.0
 offset_bottom = 18.0
 text = "SFX:"
 
-[node name="Control" type="Control" parent="."]
+[node name="Controls" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Controls"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -195.0
+offset_right = 390.0
+offset_bottom = 88.0
+text = "Controls:
+Mouse: Look
+W,A,S,D: Move
+Shift: Sprint
+Ctrl: Crouch
+E: Inventory
+F: Pickup/use item
+Left Click: Use weapon
+R: Reload
+
+"
 
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="Window_Sizes" to="." method="_on_window_sizes_item_selected"]
