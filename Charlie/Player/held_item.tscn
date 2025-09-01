@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
 [ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
-[ext_resource type="PackedScene" uid="uid://ccblkv2im1cmg" path="res://Patrick/G32/G32_gun.tscn" id="3_7ynmh"]
+[ext_resource type="PackedScene" uid="uid://dc7ojos4jdqgn" path="res://Patrick/G32finished.glb" id="3_jtwlh"]
 [ext_resource type="AudioStream" uid="uid://c01i8ioih8f6h" path="res://Charlie/SFX/G32_Shot.wav" id="4_jtwlh"]
 [ext_resource type="PackedScene" uid="uid://c0tmpthnt00lw" path="res://Patrick/p90gun/P90main.glb" id="4_see5a"]
 [ext_resource type="AudioStream" uid="uid://dcedyg17gugpu" path="res://Charlie/SFX/P90_Single Shot.wav" id="5_fglwj"]
@@ -367,93 +367,93 @@ transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransitio
 [sub_resource type="Animation" id="Animation_see5a"]
 resource_name = "Focus"
 length = 0.3
-tracks/0/type = "position_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
-tracks/0/interp = 2
+tracks/0/path = NodePath("G32Gun:rotation")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541, 0.266667, 1, 0, -0.053, -0.8)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("G32Gun:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-1.5708, -3.14159, 0), Vector3(0, -3.14159, 0)]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541, 0.266667, 1, 0, -0.153, -0.8)
 
 [sub_resource type="Animation" id="Animation_0gmfa"]
 length = 0.001
-tracks/0/type = "position_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
+tracks/0/path = NodePath("G32Gun:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("G32Gun:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-1.5708, -3.14159, 0)]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541)
 
 [sub_resource type="Animation" id="Animation_fglwj"]
 resource_name = "Un_Focus"
 length = 0.3
-tracks/0/type = "position_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
+tracks/0/path = NodePath("G32Gun:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.053, -0.8, 0.266667, 1, 0.5, -0.154, -0.541)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("G32Gun:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -3.14159, 0), Vector3(-1.5708, -3.14159, 0)]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -0.053, -0.8, 0.266667, 1, 0.5, -0.154, -0.541)
 
 [sub_resource type="Animation" id="Animation_7ynmh"]
 resource_name = "iDLE"
 length = 10.0
-tracks/0/type = "position_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("G32Gun")
+tracks/0/path = NodePath("G32Gun:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541, 5.03333, 1, 0.5, -0.16, -0.541, 10, 1, 0.5, -0.154, -0.541)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("G32Gun:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.43333, 2.4, 4.6, 6.9, 8.2, 10),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-1.5708, -3.14159, 0), Vector3(-1.62316, -3.07178, -0.0523599), Vector3(-1.51844, -3.19395, 0.0349066), Vector3(-1.5708, -3.14159, 0.10472), Vector3(-1.5708, -3.12414, -0.0349066), Vector3(-1.53589, -3.19395, 0.0349066), Vector3(-1.5708, -3.14159, 0)]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("G32Gun")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.5, -0.154, -0.541, 5.03333, 1, 0.5, -0.16, -0.541, 10, 1, 0.5, -0.154, -0.541)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jtwlh"]
 _data = {
@@ -556,10 +556,22 @@ libraries = {
 }
 
 [node name="G32" type="Node3D" parent="."]
-visible = false
 
-[node name="G32Gun" parent="G32" instance=ExtResource("3_7ynmh")]
+[node name="G32Gun" parent="G32" instance=ExtResource("3_jtwlh")]
 transform = Transform3D(-0.1, 2.53518e-07, 9.17733e-13, 0, -3.61999e-07, 0.1, 2.53518e-07, 0.1, 3.61999e-07, 0.5, -0.154, -0.541)
+
+[node name="G32" type="AudioStreamPlayer3D" parent="G32/G32Gun"]
+transform = Transform3D(10, -2.6226e-05, -9.4938e-11, 2.6226e-05, 10, 3.57628e-05, 1.14638e-12, -3.57628e-05, 10, 0, 1.02, 0.426071)
+stream = ExtResource("4_jtwlh")
+max_polyphony = 6
+panning_strength = 0.65
+bus = &"SFX"
+
+[node name="Gun_Cast" type="RayCast3D" parent="G32/G32Gun"]
+transform = Transform3D(-10, -2.6226e-05, -8.74133e-07, -2.6226e-05, 10, -3.57628e-05, 8.74227e-07, -3.57628e-05, -10, 0.0149021, 1.15086, 1.9691)
+target_position = Vector3(0, 0, -1000)
+collision_mask = 65
+collide_with_areas = true
 
 [node name="GunTree" type="AnimationTree" parent="G32/G32Gun"]
 root_node = NodePath("../..")
@@ -574,21 +586,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_jtwlh")
 }
 
-[node name="Gun_Cast" type="RayCast3D" parent="G32/G32Gun"]
-transform = Transform3D(-10, 1.7053e-13, -8.74228e-07, 1.7053e-13, 10, -5.68434e-14, 8.74228e-07, -8.52651e-14, -10, 0.0149028, 0.130857, 1.54303)
-target_position = Vector3(0, 0, -1000)
-collision_mask = 65
-collide_with_areas = true
-
-[node name="G32" type="AudioStreamPlayer3D" parent="G32/G32Gun"]
-stream = ExtResource("4_jtwlh")
-max_polyphony = 6
-panning_strength = 0.65
-bus = &"SFX"
-
 [node name="P90" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.469404, -0.146947, -0.308476)
-visible = false
 
 [node name="P90main" parent="P90" instance=ExtResource("4_see5a")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0138588, 0, 0.125819)
@@ -598,7 +597,7 @@ wait_time = 0.075
 autostart = true
 
 [node name="P90_Gun_Cast" type="RayCast3D" parent="P90"]
-transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, 0, -0.327207)
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, -8.9407e-08, 0, 0.592456)
 target_position = Vector3(0, 0, 1000)
 collision_mask = 65
 collide_with_areas = true

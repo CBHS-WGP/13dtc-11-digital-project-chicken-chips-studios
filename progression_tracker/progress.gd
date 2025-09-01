@@ -42,23 +42,26 @@ var objective_1 = 0
 #Killing the boss ends the game
 
 func _process(_delta):
-	print(spawned)
 	if current_objective == 2:
 		var instance = weapons_cache.instantiate()
 		cache_spawn.add_child(instance)
 		current_objective = 2.1
 	if current_objective == 2.5:
-		for i in spawn_enemies_obj_2:
+		for i in spawn_enemies_obj_2 / 2:
 			var instance2 = enemy1.instantiate()
-			spawned = spawned + 1
-			spawn_enemy(instance2)
+			var instance3 = enemy1.instantiate()
+			spawned = spawned + 2
+			spawn_enemy(instance2, instance3)
 		for i in spawn_enemies_obj_2 / 2:
 			var instance2 = enemy2.instantiate()
-			spawn_enemy(instance2)
+			var instance3 = enemy2.instantiate()
+			spawn_enemy(instance2, instance3)
 		if spawned < spawn_enemies_obj_2:
 			for i in spawn_enemies_obj_2 - spawned:
 				var instance2 = enemy1.instantiate()
-				spawn_enemy(instance2)
+				instance2.position.x = randf() * 4
+				instance2.position.z = randf() * 4
+				spawn1.add_child(instance2)
 		current_objective = 2.55
 	if obj_2_enemies_killed >= 10 and current_objective == 2.6:
 		current_objective = 3
@@ -70,8 +73,10 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
 		print("You reached objective ", current_objective)
 		
-func spawn_enemy(instance2):
+func spawn_enemy(instance2, instance3):
 	instance2.position.x = randf() * 4
 	instance2.position.z = randf() * 4
+	instance3.position.x = randf() * 4
+	instance3.position.z = randf() * 4
 	spawn1.add_child(instance2)
-	spawn2.add_child(instance2)
+	spawn2.add_child(instance3)
