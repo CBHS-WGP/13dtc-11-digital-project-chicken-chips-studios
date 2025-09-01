@@ -78,12 +78,14 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if (EquippedSlot == data["ID"]):
 		EquippedSlot = -1
+	if data == null:
+		pass
+	else:
+		var newItem = InventorySlots[data["ID"]].SlotData.ItemModelPrefab.instantiate() as Node3D
+		InventorySlots[data["ID"]].FillSlot(null, false)
 	
-	var newItem = InventorySlots[data["ID"]].SlotData.ItemModelPrefab.instantiate() as Node3D
-	InventorySlots[data["ID"]].FillSlot(null, false)
-	
-	PlayerBody.get_parent().add_child(newItem)
-	newItem.global_position = GetWorldMousePosition()
+		PlayerBody.get_parent().add_child(newItem)
+		newItem.global_position = GetWorldMousePosition()
 
 func GetWorldMousePosition() -> Vector3:
 	var mousePos = get_viewport().get_mouse_position()
