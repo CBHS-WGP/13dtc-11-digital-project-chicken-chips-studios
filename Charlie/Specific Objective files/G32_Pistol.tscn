@@ -181,18 +181,18 @@ script = ExtResource("1_718u2")
 ItemHighlightMesh = NodePath("Glow")
 
 [node name="Gun" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.037, -1.83588e-09, 0, 1.61732e-09, 0.042, 0, 0, 0, 0.424, 0, 0, 0)
+transform = Transform3D(0.015, -7.43093e-10, 0, 6.5567e-10, 0.017, 0, 0, 0, 0.172, 0, 0, 0)
 lod_bias = 128.0
 mesh = SubResource("ArrayMesh_c5b8j")
 skeleton = NodePath("")
 
 [node name="Glow" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.04, -1.87959e-09, 0, 1.74845e-09, 0.043, 0, 0, 0, 0.43, 0, 0, 0)
+transform = Transform3D(0.016, -7.43091e-10, 0, 6.9938e-10, 0.017, 0, 0, 0, 0.172, 0, 0, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_ifqch")
 mesh = SubResource("ArrayMesh_c5b8j")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.826128, 0, -0.563483, 0, 1, 0, 0.563483, 0, 0.826128, 0.136992, 0.0128479, -0.159533)
+transform = Transform3D(0.330451, 0, -0.225393, 0, 0.4, 0, 0.225393, 0, 0.330451, 0.0774267, 0.0128479, -0.0624955)
 shape = SubResource("BoxShape3D_718u2")

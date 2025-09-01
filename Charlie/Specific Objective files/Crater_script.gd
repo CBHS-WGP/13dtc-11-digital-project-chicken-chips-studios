@@ -7,7 +7,6 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	print(Progress.current_objective)
 	if Progress.current_objective > 2.6 and Crater.position.y > -20:
 		$"../Hiding crater/StaticBody3D/CollisionShape3D".disabled = true
 		$"../Hiding crater/Hiding crater".visible = false

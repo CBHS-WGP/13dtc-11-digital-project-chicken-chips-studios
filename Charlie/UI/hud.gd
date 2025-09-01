@@ -11,10 +11,10 @@ func _process(_delta):
 	elif Progress.current_objective == 2.1:
 		$Main_Objective.text = str("Find the weapons cache")
 	elif Progress.current_objective == 2.6:
-		$Main_Objective.text = str("Kill all 10 enemies!")
+		$Main_Objective.text = str("Kill all the enemies!")
 		$Sub_Objective.visible = true
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = true
-		$Sub_Objective.text = str("Killed:", Progress.obj_2_enemies_killed, "/10")
+		$Sub_Objective.text = str("Killed:", Progress.obj_2_enemies_killed, "/", Progress.spawn_enemies_obj_2)
 	elif Progress.current_objective == 3:
 		$Sub_Objective.visible = false
 		$Objective_Control/UI_Control/Back_Bottom_UI.visible = false

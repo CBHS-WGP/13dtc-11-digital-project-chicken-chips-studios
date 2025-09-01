@@ -9,11 +9,12 @@ var current_location
 var next_location
 var new_velocity
 var pos
+var health = 20
 const SPEED = 2.5
 const GRAVITY = 9.81
 func _physics_process(delta: float) -> void:
 	if jump_ray(animate) == true:
-		print("jumping")
+		#print("jumping")
 		#velocity.x = pos[0] * 0.05
 		#velocity.z = pos[2] * 0.05
 		if global_position[1] > pos[1]:
