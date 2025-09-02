@@ -10,9 +10,13 @@ var next_location
 var new_velocity
 var pos
 var health = 20
-const SPEED = 2.5
+const SPEED = 4
 const GRAVITY = 9.81
+func _ready() -> void:
+	$Model/Freakboy/AnimationPlayer.play("Ball")
+
 func _physics_process(delta: float) -> void:
+	$Model/Freakboy.rotation.x = $Model/Freakboy.rotation.x + 0.08
 	if jump_ray(animate) == true:
 		#print("jumping")
 		#velocity.x = pos[0] * 0.05
