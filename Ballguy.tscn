@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4cb3hjqfvjyv"]
+
+[ext_resource type="PackedScene" uid="uid://cx2obhb2qmmpj" path="res://Patrick/ballguy/Freakboy.glb" id="1_uxbl4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Freakboy" parent="." instance=ExtResource("1_uxbl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10711, 1.14058, -0.476813)
