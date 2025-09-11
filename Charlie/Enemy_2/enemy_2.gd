@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 
 	
 	#having on ly the actual model mode to look at the player
-	$Model.look_at(player.global_position)
+	$Model.look_at(player.global_position, Vector3(player.global_position[0],0,player.global_position[2]))
 	$Launcher.look_at(player.global_position)
 	move_and_slide()
 
@@ -79,7 +79,7 @@ func floor_ray():
 		pos = floor.get_collision_point()
 		
 		if pos[1] < floor.position[1]:
-			global_position[1] = move_toward(global_position[1], global_position[1] + (pos[1] + 1.2), 0.25)
+			global_position[1] = move_toward(global_position[1], global_position[1] + (pos[1] + 1.15), 0.02)
 	else:
 		on_floor = false
 

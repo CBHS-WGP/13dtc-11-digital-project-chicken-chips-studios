@@ -257,7 +257,7 @@ radius = 0.152581
 height = 0.326006
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ofouk"]
-radius = 0.116425
+radius = 0.23025
 
 [node name="Enemy_2" type="CharacterBody3D" groups=["enemy"]]
 disable_mode = 2
@@ -330,7 +330,7 @@ libraries = {
 }
 
 [node name="Normal_Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.42249)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.598159, 0.0129071)
 shape = SubResource("CapsuleShape3D_na3hx")
 disabled = true
 
@@ -341,7 +341,7 @@ collision_layer = 64
 collision_mask = 64
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Eye Collision/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26034)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0989805, 0.0011988)
 shape = SubResource("SphereShape3D_ofouk")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
