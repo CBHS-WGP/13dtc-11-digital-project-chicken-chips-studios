@@ -72,14 +72,14 @@ func jump_ray():
 		can_jump = false
 
 func floor_ray():
-	print(floor.is_colliding())
-	if floor.is_colliding() == true and finding_floor == true:
+	print(floor.get_collider())
+	if floor.is_colliding() == true and floor.get_collider().name != str("Wayne") and finding_floor == true:
 		on_floor = true
 		velocity.y = 0
 		pos = floor.get_collision_point()
 		
 		if pos[1] < floor.position[1]:
-			global_position[1] = move_toward(global_position[1], global_position[1] + (pos[1] + 1.15), 0.02)
+			global_position[1] = move_toward(global_position[1], global_position[1] + (pos[1] + 1.15), 0.01)
 	else:
 		on_floor = false
 
