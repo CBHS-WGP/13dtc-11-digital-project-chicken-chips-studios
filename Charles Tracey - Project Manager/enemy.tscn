@@ -91,6 +91,8 @@ collision_mask = 64
 shape = SubResource("BoxShape3D_m83rg")
 
 [node name="Eyeline" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Eyeline"]
 transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 3.82137e-15, 4.37114e-08, -1, -1, 1.31134e-07, 1.91069e-15, -1.13958, 0, 7.37733)
@@ -104,3 +106,4 @@ polygon = PackedVector2Array(7.827, 1.11, 17.546, 6.58, 17.5456, -2.23985)
 [connection signal="area_entered" from="Damage_Checker" to="." method="_on_damage_checker_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Crouching_Checker" to="." method="_on_crouching_checker_timeout"]
+[connection signal="area_entered" from="Eyeline" to="." method="_on_eyeline_area_entered"]

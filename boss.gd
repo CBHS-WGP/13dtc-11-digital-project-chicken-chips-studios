@@ -28,9 +28,15 @@ func _process(delta):
 	
 func target_position():
 	if target == player:
-		print("hello")
 		nav.set_target_position(player.global_transform.origin)
-		look_at(player.global_transform.origin)
+		var target_pos = $"../../Wayne/Enemy detect".global_transform.origin
+		var my_pos = global_transform.origin
+		
+		var direction = (target_pos - my_pos).normalized()
+		var target_angle = atan2(direction.x, direction.z)
+		
+		rotation.y = lerp_angle(rotation.y, target_angle + PI, 0.04)
+		
 		rotation.x = 0
 		rotation.z = 0
 
