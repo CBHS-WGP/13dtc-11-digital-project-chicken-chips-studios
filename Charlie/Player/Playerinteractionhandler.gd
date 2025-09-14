@@ -19,28 +19,31 @@ func PickupNearestItem():
 		if (item.global_position.distance_to(global_position) < nearestItemDistance):
 			nearestItemDistance = item.global_position.distance_to(global_position)
 			nearestItem = item
-	if (nearestItem != null) and nearestItem.name != "Magazine":
+		#I nee to set the pistol magazine name thing to work properly!!
+		#fix
+		#fix
+	if (nearestItem != null) and nearestItem.name != "Pistol_Magazine":
 		nearestItem.queue_free()
 		NearbyAreas.remove_at(NearbyAreas.find(nearestItem))
 		var itemPrefab = nearestItem.scene_file_path
 		for i in ItemTypes.size():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
 				print("Item id:" + str(i) + " Item Name:" + ItemTypes[i].ItemName)
-				OnItemPickedUp.emit(ItemTypes[i])
+				if i != 4:
+					OnItemPickedUp.emit(ItemTypes[i])
 				
 				#One time use script for when the player picks up the sattelite box
-				if ItemTypes[i].ItemName == "Sattelite_Box" and sattelite_box_collected == false:
+				if i == 0 and sattelite_box_collected == false:
 					sattelite_box_collected = true
 					print("SATTELLITE BOX COLLECTED")
 					if Progress.current_objective == 0:
 						Progress.current_objective = 0.5
 					if Progress.current_objective == 1:
 						Progress.current_objective = 1.5
-				
+				elif i == 4:
+					nearestItem.queue_free()
+					Global.G32_bullets = Global.G32_bullets + 12
 				return
-	elif (nearestItem != null) and nearestItem.name == str("Magazine"):
-		nearestItem.queue_free()
-		Global.pistol_bullets = Global.pistol_bullets + 12
 	printerr("Item not found")
 
 

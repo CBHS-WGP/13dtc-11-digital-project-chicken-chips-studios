@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cydmgo8i3qo0x"]
+[gd_scene load_steps=56 format=3 uid="uid://cydmgo8i3qo0x"]
 
 [ext_resource type="Script" uid="uid://dx0m4gdlhxsga" path="res://Charlie/Player/Item_Usage.gd" id="1_dneek"]
 [ext_resource type="PackedScene" uid="uid://btyt7y6cml5ys" path="res://Charlie/Models/M7_Bayonet_Demo.tscn" id="1_qo06o"]
@@ -509,6 +509,83 @@ _data = {
 &"flash": SubResource("Animation_jtwlh")
 }
 
+[sub_resource type="Animation" id="Animation_en3nj"]
+resource_name = "idle_and_random_movement"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.43333, 3.3, 4.33333, 7.8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0.0174533, -3.14159, -0.0349066), Vector3(0.0523599, -3.12414, 0), Vector3(0.0541052, -3.14334, 0.0244346), Vector3(-0.0174533, -3.1765, 0.0698132), Vector3(-0.0523599, -3.1765, 0), Vector3(0, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f3xy8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1j075"]
+_data = {
+&"RESET": SubResource("Animation_f3xy8"),
+&"idle_and_random_movement": SubResource("Animation_en3nj")
+}
+
+[sub_resource type="Animation" id="Animation_1j075"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.469404, -0.146947, -0.308476)
+
+[sub_resource type="Animation" id="Animation_6g5ix"]
+resource_name = "focus"
+length = 0.4
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.469404, -0.146947, -0.308476, 0.4, 1, 0, -0.15, -0.7)
+
+[sub_resource type="Animation" id="Animation_2nlmr"]
+resource_name = "unfocus"
+length = 0.3
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.15, -0.7, 0.266667, 1, 0.469404, -0.146947, -0.308476)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6g5ix"]
+_data = {
+&"RESET": SubResource("Animation_1j075"),
+&"focus": SubResource("Animation_6g5ix"),
+&"unfocus": SubResource("Animation_2nlmr")
+}
+
 [node name="Held Item" type="Node3D"]
 script = ExtResource("1_dneek")
 
@@ -587,7 +664,7 @@ libraries = {
 }
 
 [node name="P90" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.469404, -0.146947, -0.308476)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.469404, -0.146947, -0.308476)
 
 [node name="P90main" parent="P90" instance=ExtResource("4_see5a")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0138588, 0, 0.125819)
@@ -618,5 +695,15 @@ stream = ExtResource("5_fglwj")
 max_polyphony = 4
 panning_strength = 0.65
 bus = &"SFX"
+
+[node name="Gun_Idle" type="AnimationPlayer" parent="P90"]
+libraries = {
+&"": SubResource("AnimationLibrary_1j075")
+}
+
+[node name="Gun_Focus" type="AnimationPlayer" parent="P90"]
+libraries = {
+&"": SubResource("AnimationLibrary_6g5ix")
+}
 
 [connection signal="timeout" from="P90/P90_Shoot_Timer" to="." method="_on_p_90_shoot_timer_timeout"]

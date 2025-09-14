@@ -65,12 +65,17 @@ func _process(delta):
 	elif Global.equipped_item_id == str("P90"):
 		_hiding()
 		$P90.visible = true
+		if $P90/Gun_Idle.is_playing() == false:
+			$P90/Gun_Idle.play("idle_and_random_movement")
 		ray = $P90/P90_Gun_Cast
 		if Input.is_action_just_pressed("R") and Global.P90_bullets_in_mag < 50 and Global.inv_open == false and Global.settings_open == false:
 			var Temp_Array = _bullet_calculator(Global.P90_bullets_in_mag, Global.P90_bullets, 50)
 			Global.P90_bullets_in_mag = Temp_Array[0]
 			Global.P90_bullets = Temp_Array[1]
-
+		if Input.is_action_just_pressed("rightclick"):
+			$P90/Gun_Focus.play("focus")
+		elif Input.is_action_just_released("rightclick"):
+			$P90/Gun_Focus.play("unfocus")
 
 
 func _hiding():
@@ -98,6 +103,7 @@ func _bullet_calculator(in_mag, current, max) -> Array:
 
 func _shoot():
 	if ray.is_colliding():
+		print(ray.get_collider())
 		hit = ray.get_collider()
 		pos = Vector3(ray.get_collision_point())
 		#print(ray.get_collider().global_position)
