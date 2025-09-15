@@ -10,7 +10,7 @@ var current_location
 var next_location
 var new_velocity
 var pos
-var health = 20
+var health = 40
 var on_floor = false
 var finding_floor = true
 var can_jump = true
@@ -21,6 +21,11 @@ func _ready() -> void:
 	$Model/Freakboy/AnimationPlayer.play("Ball")
 
 func _physics_process(delta: float) -> void:
+	
+	if health <= 0:
+		queue_free()
+	
+	$"Bayonet damage checker/Health_Indicator".text = str(health, "/40")
 	jump_ray()
 	floor_ray()
 	if animate == true:
@@ -56,6 +61,10 @@ func _physics_process(delta: float) -> void:
 func target_location(target_location):
 	nav_agent.set_target_position(target_location)
 	
+
+
+
+
 func jump_ray():
 	if launcher.is_colliding() and launcher.enabled == true and can_jump == true:
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = false
@@ -72,7 +81,7 @@ func jump_ray():
 		$Model/Freakboy.rotation = lerp(Vector3($Model/Freakboy.rotation), Vector3(0, 24, 0), 0.1)
 		$Launcher/Launch_Delay.start()
 		$"Launcher/Stop overlap".start()
-		velocity.y = SPEED * 1.5
+		velocity.y = SPEED
 		velocity.x = velocity[0] * 1.03
 		velocity.z = velocity[2] * 1.03
 		can_jump = false
@@ -101,3 +110,7 @@ func _on_unstick_enemy_timeout() -> void:
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
 		velocity.y = SPEED * 2
+
+
+func _on_bayonet_damage_checker_area_entered(area: Area3D):
+	health = health - 20

@@ -121,7 +121,6 @@ func _shoot():
 			hit.get_parent().health = hit.get_parent().health - 15
 		else:
 			pass
-			#print("poke")
 
 
 func _on_p_90_shoot_timer_timeout() -> void:
