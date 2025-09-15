@@ -1,9 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://dxr1qv6xisbqe"]
+[gd_scene load_steps=31 format=4 uid="uid://dxr1qv6xisbqe"]
 
 [ext_resource type="Script" uid="uid://bmb6xbfgijokl" path="res://Charlie/Enemy_2/enemy_2.gd" id="1_e6d0d"]
 [ext_resource type="Texture2D" uid="uid://byqwyk8wgpfhn" path="res://Patrick/ballguy/Freakboy_FreakBDiffuse.png" id="2_wp0ih"]
 [ext_resource type="Texture2D" uid="uid://b4t7bg1ufg82a" path="res://Patrick/ballguy/Freakboy_FreakBmetal-FreakBRough.png" id="3_5upyl"]
 [ext_resource type="Texture2D" uid="uid://cwxiyqxi1217n" path="res://Patrick/ballguy/Freakboy_FreakBNorm.png" id="4_ofouk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_na3hx"]
+margin = 0.2
+radius = 0.249865
+height = 0.526565
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01j5o"]
 resource_name = "Material.001"
@@ -243,24 +248,188 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = PackedFloat32Array(0, 1, 0.143268, 3.36539e-14, -5.57906e-08, 0.989684)
 
+[sub_resource type="Animation" id="Animation_wp0ih"]
+resource_name = "Rotate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(-3.14159, -3.14159, 0), Vector3(-6.28319, -3.14159, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 5.76038e-08, 0.646416, 0.762985, 4.88031e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.561092, -9.86757e-08, -1.5161e-07, 0.827754)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.427183, -1.06581e-13, -1.66351e-07, 0.904165)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Skeleton3D:Bone.004")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.312442, -2.75335e-14, -1.21669e-07, 0.949937)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Armature/Skeleton3D:Bone.005")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0.265487, 2.39808e-14, -1.03385e-07, 0.964114)
+
+[sub_resource type="Animation" id="Animation_5upyl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 5.76038e-08, 0.646416, 0.762985, 4.88031e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.561092, -9.86757e-08, -1.5161e-07, 0.827754)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.427183, -1.06581e-13, -1.66351e-07, 0.904165)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Skeleton3D:Bone.004")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.312442, -2.75335e-14, -1.21669e-07, 0.949937)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Armature/Skeleton3D:Bone.005")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0.265487, 2.39808e-14, -1.03385e-07, 0.964114)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xa32v"]
 _data = {
 &"Attack": SubResource("Animation_p757g"),
 &"Attack_001": SubResource("Animation_rmjtw"),
 &"Ball": SubResource("Animation_vhtic"),
-&"BasePose": SubResource("Animation_y6o72")
+&"BasePose": SubResource("Animation_y6o72"),
+&"RESET": SubResource("Animation_5upyl"),
+&"Rotate": SubResource("Animation_wp0ih")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_na3hx"]
-margin = 0.2
-radius = 0.152581
-height = 0.326006
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ofouk"]
+animation = &"Attack_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wp0ih"]
+animation = &"Ball"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_601sr"]
+animation = &"Ball"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ns06r"]
+animation = &"Rotate"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5upyl"]
+animation = &"Rotate"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ns06r"]
+switch_mode = 1
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y5nc5"]
+advance_mode = 2
+advance_condition = &"rotate"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u1p43"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5upyl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ofouk"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q8v1a"]
+break_loop_at_end = true
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"rotate"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v4i0u"]
+break_loop_at_end = true
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"rotate"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wp0ih"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ns06r"]
+states/Attack_001/node = SubResource("AnimationNodeAnimation_ofouk")
+states/Attack_001/position = Vector2(583, 197)
+states/Ball/node = SubResource("AnimationNodeAnimation_601sr")
+states/Ball/position = Vector2(432, 160)
+"states/Ball 2/node" = SubResource("AnimationNodeAnimation_wp0ih")
+"states/Ball 2/position" = Vector2(345, 46)
+states/Rotate/node = SubResource("AnimationNodeAnimation_5upyl")
+states/Rotate/position = Vector2(517, 46)
+"states/Rotate 2/node" = SubResource("AnimationNodeAnimation_ns06r")
+"states/Rotate 2/position" = Vector2(679, 36)
+states/Start/position = Vector2(169, 95)
+transitions = ["Rotate", "Attack_001", SubResource("AnimationNodeStateMachineTransition_ns06r"), "Attack_001", "Ball", SubResource("AnimationNodeStateMachineTransition_y5nc5"), "Ball", "Rotate", SubResource("AnimationNodeStateMachineTransition_u1p43"), "Start", "Ball 2", SubResource("AnimationNodeStateMachineTransition_5upyl"), "Ball 2", "Rotate", SubResource("AnimationNodeStateMachineTransition_ofouk"), "Rotate", "Rotate 2", SubResource("AnimationNodeStateMachineTransition_q8v1a"), "Rotate 2", "Rotate", SubResource("AnimationNodeStateMachineTransition_v4i0u"), "Rotate 2", "Attack_001", SubResource("AnimationNodeStateMachineTransition_wp0ih")]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ofouk"]
 radius = 0.23025
 
 [node name="Enemy_2" type="CharacterBody3D" groups=["enemy"]]
 disable_mode = 2
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 wall_min_slide_angle = 1.91986
 floor_stop_on_slope = false
 floor_constant_speed = true
@@ -268,7 +437,34 @@ floor_max_angle = 1.91986
 safe_margin = 2.0
 script = ExtResource("1_e6d0d")
 
+[node name="Launcher" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156, 0)
+shape = SubResource("CapsuleShape3D_na3hx")
+
+[node name="Looking_for_Target" type="RayCast3D" parent="Launcher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, -0.26)
+target_position = Vector3(0, 1, -2)
+collision_mask = 16
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Floor_Search" type="RayCast3D" parent="Launcher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.272216, 0)
+target_position = Vector3(0, -0.1, 0)
+debug_shape_custom_color = Color(0, 0.945098, 0, 1)
+debug_shape_thickness = 5
+
+[node name="Stop overlap" type="Timer" parent="Launcher"]
+wait_time = 0.3
+
+[node name="Launch_Delay" type="Timer" parent="Launcher"]
+wait_time = 2.0
+
+[node name="Unstick_Enemy" type="Timer" parent="Launcher"]
+wait_time = 3.0
+
 [node name="Model" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.346412, 0)
 
 [node name="Freakboy" type="Node3D" parent="Model"]
 transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -0.0130191, -0.0903471, 0.0742944)
@@ -289,35 +485,35 @@ bones/1/parent = -1
 bones/1/rest = Transform3D(-1, -3.55271e-15, 1.50996e-07, 1.1533e-07, -0.64546, 0.763794, 9.74617e-08, 0.763794, 0.64546, 0, 5.96046e-08, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 5.96046e-08, 0)
-bones/1/rotation = Quaternion(6.848e-08, 0.421035, 0.907045, 3.17872e-08)
+bones/1/rotation = Quaternion(5.76038e-08, 0.646416, 0.762985, 4.88031e-08)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 7.21216e-08, -2.56756e-07, -1.86e-07, 0.878556, -0.47764, 1.91126e-07, 0.47764, 0.878556, -3.52212e-15, 0.582256, -2.98023e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(-3.52212e-15, 0.582256, -2.98023e-08)
-bones/2/rotation = Quaternion(0.246419, -1.15533e-07, -6.65836e-08, 0.969163)
+bones/2/rotation = Quaternion(0.561092, -9.86758e-08, -1.5161e-07, 0.827754)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Bone.003"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 1.52023e-07, -3.09003e-08, -1.52023e-07, 0.92065, -0.390389, -3.08998e-08, 0.390389, 0.92065, 8.82202e-14, 0.588423, 1.49012e-07)
 bones/3/enabled = true
 bones/3/position = Vector3(8.82202e-14, 0.588423, 1.49012e-07)
-bones/3/rotation = Quaternion(0.199186, -1.29024e-13, -7.75658e-08, 0.979962)
+bones/3/rotation = Quaternion(0.427183, -1.04805e-13, -1.66351e-07, 0.904165)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Bone.004"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, 9.44469e-08, -1.1627e-08, -9.44469e-08, 0.970142, -0.242536, -1.16269e-08, 0.242536, 0.970143, 1.71659e-14, 0.574899, -1.19209e-07)
 bones/4/enabled = true
 bones/4/position = Vector3(1.71659e-14, 0.574899, -1.19209e-07)
-bones/4/rotation = Quaternion(0.122183, -2.4127e-14, -4.75799e-08, 0.992508)
+bones/4/rotation = Quaternion(0.312442, -2.75335e-14, -1.21669e-07, 0.949937)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "Bone.005"
 bones/5/parent = 4
 bones/5/rest = Transform3D(1, 1.1043e-07, -1.59859e-08, -1.1043e-07, 0.958949, -0.28358, -1.59861e-08, 0.28358, 0.958949, -1.34332e-15, 0.395061, 5.96046e-08)
 bones/5/enabled = true
 bones/5/position = Vector3(-1.34332e-15, 0.395061, 5.96046e-08)
-bones/5/rotation = Quaternion(0.143268, 3.42865e-14, -5.57906e-08, 0.989684)
+bones/5/rotation = Quaternion(0.265487, 2.35367e-14, -1.03385e-07, 0.964114)
 bones/5/scale = Vector3(1, 1, 1)
 
 [node name="Mainlow" type="MeshInstance3D" parent="Model/Freakboy/Armature/Skeleton3D"]
@@ -329,12 +525,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_xa32v")
 }
 
-[node name="Normal_Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.598159, 0.0129071)
-shape = SubResource("CapsuleShape3D_na3hx")
-disabled = true
+[node name="Smooth_Animation" type="AnimationTree" parent="Model/Freakboy"]
+tree_root = SubResource("AnimationNodeStateMachine_ns06r")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack = false
+parameters/conditions/rotate = false
 
 [node name="Eye Collision" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.635821, 0)
 
 [node name="Area3D" type="Area3D" parent="Eye Collision"]
 collision_layer = 64
@@ -345,31 +543,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0989805, 0.0011988)
 shape = SubResource("SphereShape3D_ofouk")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 2.0
+path_desired_distance = 5.0
 path_height_offset = 0.5
 path_max_distance = 10.01
+avoidance_enabled = true
 debug_enabled = true
 debug_path_custom_color = Color(0.319959, 0.243368, 0.0648146, 1)
 
-[node name="Launcher" type="Node3D" parent="."]
-
-[node name="Looking_for_Target" type="RayCast3D" parent="Launcher"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.259909)
-target_position = Vector3(0, 1, -2)
-collision_mask = 16
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="Floor_Search" type="RayCast3D" parent="Launcher"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74067, 0)
-debug_shape_custom_color = Color(0, 0.945098, 0, 1)
-debug_shape_thickness = 5
-
-[node name="Stop overlap" type="Timer" parent="Launcher"]
-wait_time = 0.3
-
-[node name="Launch_Delay" type="Timer" parent="Launcher"]
-wait_time = 2.0
-
 [connection signal="timeout" from="Launcher/Stop overlap" to="." method="_on_stop_overlap_timeout"]
 [connection signal="timeout" from="Launcher/Launch_Delay" to="." method="_on_launch_delay_timeout"]
+[connection signal="timeout" from="Launcher/Unstick_Enemy" to="." method="_on_unstick_enemy_timeout"]

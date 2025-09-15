@@ -35,6 +35,10 @@ func _physics_process(delta: float) -> void:
 			launcher.enabled = true
 			animate = false
 	else:
+		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
+		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
+		#have the model face and rotate the correct direction
+		$Model.look_at(player.global_position, Vector3(0, player.global_position[1], 0))
 		$Model/Freakboy.rotation.x = $Model/Freakboy.rotation.x + 0.08
 		current_location = global_transform.origin
 		next_location = nav_agent.get_next_path_position()
@@ -46,7 +50,6 @@ func _physics_process(delta: float) -> void:
 
 	
 	#having on ly the actual model mode to look at the player
-	$Model.look_at(player.global_position, Vector3(player.global_position[0],0,player.global_position[2]))
 	$Launcher.look_at(player.global_position)
 	move_and_slide()
 
@@ -55,6 +58,9 @@ func target_location(target_location):
 	
 func jump_ray():
 	if launcher.is_colliding() and launcher.enabled == true and can_jump == true:
+		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = false
+		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = true
+		$Launcher/Unstick_Enemy.start()
 		hit = launcher.get_collider()
 		pos = player.global_position
 		launcher.enabled = false
@@ -72,14 +78,12 @@ func jump_ray():
 		can_jump = false
 
 func floor_ray():
-	#print(floor.get_collider())
 	if floor.is_colliding() == true and floor.get_collider().name != str("Wayne") and finding_floor == true:
 		on_floor = true
 		velocity.y = 0
 		pos = floor.get_collision_point()
-		
 		if pos[1] < floor.position[1]:
-			global_position[1] = move_toward(global_position[1], global_position[1] + (pos[1] + 1.15), 0.01)
+			global_position[1] = move_toward(global_position[1], global_position[1] + (pos[1] + 1.15 + 0.639 + 0.301), 0.01)
 	else:
 		on_floor = false
 
@@ -90,3 +94,10 @@ func _on_stop_overlap_timeout() -> void:
 
 func _on_launch_delay_timeout() -> void:
 	can_jump = true
+
+#enemy sometimes gets stuck on player, this should make him jump off
+func _on_unstick_enemy_timeout() -> void:
+	if can_jump == true and finding_floor == true and on_floor == false:
+		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
+		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
+		velocity.y = SPEED * 2
