@@ -7,6 +7,7 @@ func _ready():
 	get_window().size = Global.resolution
 	size = Global.resolution
 	$AnimationPlayer.play("Startup_Animation")
+	$Control/Sprite2D/Rotate.play("Move")
 
 
 #Quits the game

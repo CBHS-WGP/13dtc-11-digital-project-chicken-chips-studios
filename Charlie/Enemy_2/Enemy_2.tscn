@@ -406,6 +406,7 @@ advance_mode = 2
 advance_condition = &"rotate"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wp0ih"]
+switch_mode = 1
 advance_mode = 2
 advance_condition = &"attack"
 

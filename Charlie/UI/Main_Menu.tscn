@@ -1,12 +1,100 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvjmminf2yfon"]
+[gd_scene load_steps=24 format=3 uid="uid://cvjmminf2yfon"]
 
 [ext_resource type="Script" uid="uid://casg4qwba6q88" path="res://Charlie/UI/Main_Menu_Script.gd" id="1_lgnsp"]
 [ext_resource type="Texture2D" uid="uid://bhtvgdgw2w1fd" path="res://Charlie/Textures/Chip_Logo.png" id="2_k8rte"]
 [ext_resource type="Texture2D" uid="uid://df6vqhku6e0tc" path="res://Patrick/Placeholder_Files/Placeholder_Earth.png" id="2_xirei"]
+[ext_resource type="FontFile" uid="uid://fc22rcuqlr7d" path="res://Charlie/Fonts/crostan/Crostan-Bold.otf" id="3_6gigt"]
+[ext_resource type="Texture2D" uid="uid://dewhpdeywkp7t" path="res://Charlie/Textures/Bayonet/textures/Oval.png" id="3_vfdip"]
 [ext_resource type="PackedScene" uid="uid://b6hnwyuweh4nf" path="res://Charlie/UI/settings.tscn" id="4_xirei"]
 [ext_resource type="FontFile" uid="uid://gsgju0cbsjmq" path="res://Charlie/Fonts/impact/impact.ttf" id="5_ve0bo"]
 [ext_resource type="VideoStream" uid="uid://dn8e6r6su8gco" path="res://Patrick/Cutscenes/DEMO_Intro.ogv" id="6_dmeyk"]
 [ext_resource type="AudioStream" uid="uid://xrm3f7mt33o6" path="res://Charlie/Music/Dunsandler_Titile_GameVer.wav" id="6_ve0bo"]
+
+[sub_resource type="Animation" id="Animation_vfdip"]
+resource_name = "Move"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Oval:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0226893, -0.0575959, -0.0226893]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Oval3:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.43333, 3.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.251327, 0.286234, 0.251327]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 1.43333, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0349066, 0.0174533, 0.0349066]
+}
+
+[sub_resource type="Animation" id="Animation_i1p0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Oval:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0226893]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Oval3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.251327]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxgyy"]
+_data = {
+&"Move": SubResource("Animation_vfdip"),
+&"RESET": SubResource("Animation_i1p0h")
+}
 
 [sub_resource type="Animation" id="Animation_xtcex"]
 resource_name = "Options_Close"
@@ -478,6 +566,44 @@ position = Vector2(22.2222, 17)
 scale = Vector2(0.666667, 0.666667)
 texture = ExtResource("2_xirei")
 
+[node name="Oval" type="Sprite2D" parent="Control/Sprite2D"]
+position = Vector2(67.7, -360.887)
+rotation = -0.0226893
+scale = Vector2(0.576981, 0.247372)
+texture = ExtResource("3_vfdip")
+
+[node name="Oval2" type="Sprite2D" parent="Control/Sprite2D"]
+position = Vector2(67.7, -355.887)
+rotation = 0.13439
+scale = Vector2(0.576981, 0.247372)
+texture = ExtResource("3_vfdip")
+
+[node name="Oval3" type="Sprite2D" parent="Control/Sprite2D"]
+position = Vector2(67.7, -355.887)
+rotation = 0.251327
+scale = Vector2(0.576981, 0.247372)
+texture = ExtResource("3_vfdip")
+
+[node name="Label" type="Label" parent="Control/Sprite2D"]
+offset_left = -338.0
+offset_top = -468.999
+offset_right = 583.0
+offset_bottom = -318.999
+rotation = 0.0872665
+theme_override_colors/font_color = Color(0, 0, 0.52549, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.763123, 0.909215, 0.845852, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_fonts/font = ExtResource("3_6gigt")
+theme_override_font_sizes/font_size = 130
+text = "The Dunsandler"
+
+[node name="Rotate" type="AnimationPlayer" parent="Control/Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_qxgyy")
+}
+playback_auto_capture_transition_type = 7
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_e3eqo")
@@ -519,10 +645,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -957.0
-offset_top = -538.5
-offset_right = 957.0
-offset_bottom = 538.5
+offset_left = -967.0
+offset_top = -541.0
+offset_right = 947.0
+offset_bottom = 536.0
 grow_horizontal = 2
 grow_vertical = 2
 

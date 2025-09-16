@@ -89,7 +89,6 @@ shape = SubResource("BoxShape3D_1dvhd")
 
 [node name="Glow" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.39348, -2.03507, -1.0985, -1.84145, -1.75226, 0.910296, -1.39903, 0.279391, -2.2923, -0.0119936, 0.00409396, -0.0131661)
-visible = false
 material_override = SubResource("StandardMaterial3D_1dvhd")
 lod_bias = 0.05
 mesh = SubResource("ArrayMesh_7l4hj")
