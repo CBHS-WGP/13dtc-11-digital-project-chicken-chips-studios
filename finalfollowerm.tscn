@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://co78hnoqnlikj"]
+
+[ext_resource type="PackedScene" uid="uid://b6nqfubgpnky0" path="res://Patrick/ENEMYFOLLOWER/FINALFOLLOWERM.glb" id="1_2y3v5"]
+
+[node name="FINALFOLLOWERM" instance=ExtResource("1_2y3v5")]
+
+[node name="handle" parent="rig/Skeleton3D" index="0"]
+transform = Transform3D(0.171868, 1.30385e-07, 1.90921e-07, -1.08033e-07, 0.171868, 1.69035e-07, -1.74157e-07, -1.48546e-07, 0.171868, 1.16352, 2.03697, 0.0397725)
+
+[node name="handle_001" parent="rig/Skeleton3D" index="1"]
+transform = Transform3D(0.171868, 3.72529e-09, -1.86265e-08, -1.86265e-09, 0.171868, -9.0804e-09, 2.23517e-08, 9.77889e-09, 0.171868, -1.16185, 2.01893, 0.286843)

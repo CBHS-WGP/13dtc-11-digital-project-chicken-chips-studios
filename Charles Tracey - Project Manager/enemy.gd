@@ -7,7 +7,7 @@ var gravity = 9.81
 var health = 100
 var inhitbox = false
 @onready var player = $"../../Wayne/Enemy detect"
-var target = player
+var target = self
 var insideinner = false
 const rotation_speed = 5.0
 
@@ -18,8 +18,6 @@ func _process(delta):
 		velocity.y -= gravity * delta
 	else:
 		velocity.y -= 2
-	
-	target_position(delta)
 	
 	var next_location = nav.get_next_path_position()
 	var current_location = global_transform.origin
@@ -38,7 +36,7 @@ func _process(delta):
 # if target equals player and in inner radius, the enemy will follow the player.
 func target_position(delta):
 	if target == player:
-		print("go")
+		$FINALFOLLOWERM/AnimationPlayer.play("RUNMAIN")
 		nav.set_target_position(player.global_transform.origin)
 		var target_pos = $"../../Wayne/Enemy detect".global_transform.origin
 		var my_pos = global_transform.origin
@@ -91,8 +89,10 @@ func _on_inner_detection_radius_area_entered(area: Area3D) -> void:
 	if area.is_in_group("playerhitbox"):
 		insideinner = true
 
-func _on_inner_detection_radius_area_exited(area: Area3D) -> void:
-	if area.is_in_group("playerhitbox"):
+func _on_outer_detection_radius_area_exited(area: Area3D) -> void:
+	if area.is_in_group("playerhitbox") and target == player:
+		$FINALFOLLOWERM/AnimationPlayer.play("POINT")
+	
 		print("exited")
 		speed = 0
 		target = self

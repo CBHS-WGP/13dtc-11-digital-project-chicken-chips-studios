@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://bnntygc66k344"
+=======
+uid="uid://d38q84218vl7p"
+>>>>>>> Stashed changes
 path="res://.godot/imported/SatBOXINV.png-93260f7784f215e04e6140875c2489f5.ctex"
 metadata={
 "vram_texture": false
