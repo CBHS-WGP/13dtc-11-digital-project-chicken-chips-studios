@@ -32,7 +32,7 @@ func _process(_delta):
 	#Code to update the health HUD visual
 	$Heatlh_Visualizer/Heart_Beating.play("Fast_pulse")
 	damage_taken = (100 - Global.health) * 2.25
-	$Heatlh_Visualizer/Health.text = str("Health:", Global.health, "/100")
+	$Heatlh_Visualizer/Health.text = str("Health:", "%.0f" % Global.health, "/100")
 	
 	$Heatlh_Visualizer/Red_Hue.modulate = Color8(255, 255, 255, damage_taken/2.5)
 	if damage_taken <= 112:

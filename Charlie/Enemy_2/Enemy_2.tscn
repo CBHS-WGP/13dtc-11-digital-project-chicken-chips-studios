@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dxr1qv6xisbqe"]
+[gd_scene load_steps=33 format=4 uid="uid://dxr1qv6xisbqe"]
 
 [ext_resource type="Script" uid="uid://bmb6xbfgijokl" path="res://Charlie/Enemy_2/enemy_2.gd" id="1_e6d0d"]
 [ext_resource type="Texture2D" uid="uid://byqwyk8wgpfhn" path="res://Patrick/ballguy/Freakboy_FreakBDiffuse.png" id="2_wp0ih"]
@@ -9,6 +9,9 @@
 margin = 0.2
 radius = 0.249865
 height = 0.526565
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wp0ih"]
+size = Vector3(1, 1, 3.04749)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01j5o"]
 resource_name = "Material.001"
@@ -112,7 +115,7 @@ tracks/5/keys = PackedFloat32Array(0, 1, 0.143268, 3.36539e-14, -5.57906e-08, 0.
 
 [sub_resource type="Animation" id="Animation_rmjtw"]
 resource_name = "Attack_001"
-length = 0.333333
+length = 2.0
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -155,6 +158,30 @@ tracks/5/path = NodePath("Armature/Skeleton3D:Bone.005")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = PackedFloat32Array(0, 1, 0.265487, 2.48734e-14, -1.03385e-07, 0.964114, 0.0333333, 1, 0.265487, 2.48734e-14, -1.03385e-07, 0.964114, 0.0666667, 1, 0.259283, 3.60277e-10, -1.03457e-07, 0.965801, 0.1, 1, 0.244405, 1.22167e-09, -1.03614e-07, 0.969673, 0.133333, 1, 0.22083, 2.57915e-09, -1.03811e-07, 0.975312, 0.166667, 1, 0.19105, 4.28117e-09, -1.03972e-07, 0.98158, 0.2, 1, 0.158352, 6.13398e-09, -1.04037e-07, 0.987383, 0.233333, 1, 0.127545, 7.86447e-09, -1.03995e-07, 0.991833, 0.266667, 1, 0.101414, 9.32096e-09, -1.0388e-07, 0.994844, 0.3, 1, 0.0827186, 8.19094e-09, -8.87938e-08, 0.996573, 0.333333, 1, 0.0741728, 4.98754e-14, -2.88839e-08, 0.997245)
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Attacking_Player/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.666667, 1.13333, 1.23333, 1.66667, 1.76667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Attacking_Player:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.666667, 1.14384, 1.23333, 1.67154, 1.7783),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.013, -3, -0.27), Vector3(-0.013, -3, -2), Vector3(-0.013, -3, 2), Vector3(-0.013, -3, -2), Vector3(-0.013, -3, 2), Vector3(-0.013, -3, -2), Vector3(-0.013, -3, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_vhtic"]
 resource_name = "Ball"
@@ -297,6 +324,42 @@ tracks/5/path = NodePath("Armature/Skeleton3D:Bone.005")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = PackedFloat32Array(0, 1, 0.265487, 2.39808e-14, -1.03385e-07, 0.964114)
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Attacking_Player/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Attacking_Player/CollisionShape3D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Attacking_Player:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0130191, -1.00071, -0.270214)]
+}
 
 [sub_resource type="Animation" id="Animation_wp0ih"]
 resource_name = "Rotate"
@@ -472,6 +535,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.346412, 0)
 [node name="Freakboy" type="Node3D" parent="Model"]
 transform = Transform3D(-0.2, 0, -5.07036e-07, 0, 0.2, 0, 5.07036e-07, 0, -0.2, -0.0130191, -0.0903471, 0.0742944)
 
+[node name="Attacking_Player" type="Area3D" parent="Model/Freakboy"]
+transform = Transform3D(1, 0, 2.27374e-13, 0, 1, 0, -2.27374e-13, 0, 1, -0.0130191, -1.00071, -0.270214)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Freakboy/Attacking_Player"]
+transform = Transform3D(1, 0, 6.82121e-13, 0, 1, 0, -6.82121e-13, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_wp0ih")
+disabled = true
+
 [node name="Armature" type="Node3D" parent="Model/Freakboy"]
 transform = Transform3D(1.67093, 0, 0, 0, 1.67093, 0, 0, 0, 1.67093, 0, -1.27688, -0.0732637)
 
@@ -481,7 +554,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, 0)
 bones/0/enabled = true
 bones/0/position = Vector3(0, 5.96046e-08, 0)
-bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/rotation = Quaternion(0.318795, 0, -7.07867e-17, 0.947824)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Bone.001"
 bones/1/parent = -1
@@ -566,4 +639,5 @@ debug_path_custom_color = Color(0.319959, 0.243368, 0.0648146, 1)
 [connection signal="timeout" from="Launcher/Stop overlap" to="." method="_on_stop_overlap_timeout"]
 [connection signal="timeout" from="Launcher/Launch_Delay" to="." method="_on_launch_delay_timeout"]
 [connection signal="timeout" from="Launcher/Unstick_Enemy" to="." method="_on_unstick_enemy_timeout"]
+[connection signal="area_entered" from="Model/Freakboy/Attacking_Player" to="." method="_on_attacking_player_area_entered"]
 [connection signal="area_entered" from="Bayonet damage checker" to="." method="_on_bayonet_damage_checker_area_entered"]

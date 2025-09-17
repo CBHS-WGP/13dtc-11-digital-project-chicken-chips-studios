@@ -14,6 +14,7 @@ var health = 40
 var on_floor = false
 var finding_floor = true
 var can_jump = true
+var shouldjump
 const SPEED = 4
 const GRAVITY = 9.81
 func _ready() -> void:
@@ -106,6 +107,17 @@ func _on_launch_delay_timeout() -> void:
 
 #enemy sometimes gets stuck on player, this should make him jump off
 func _on_unstick_enemy_timeout() -> void:
+	#for i in 10:
+	#	shouldjump[i] = on_floor
+	#for i in shouldjump:
+	#	if shouldjump[i] == false:
+	#		var list = 0
+	#		list = list + 1
+	#		if list >= 5:
+				#if can_jump == true and finding_floor == true:
+					#$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
+					#$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
+					#velocity.y = SPEED * 2
 	if can_jump == true and finding_floor == true and on_floor == false:
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
@@ -114,3 +126,9 @@ func _on_unstick_enemy_timeout() -> void:
 
 func _on_bayonet_damage_checker_area_entered(area: Area3D):
 	health = health - 20
+
+
+func _on_attacking_player_area_entered(area: Area3D):
+	print(area)
+	if area.is_in_group("playerhitbox"):
+		Global.shot_small.emit()

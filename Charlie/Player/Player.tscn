@@ -40,11 +40,16 @@ var direction = Vector3(0, 0, 0)
 #Emmited from the enemy, sent to global, and callected by the player script to decrase health
 func _ready():
 	Global.shot.connect(healthdecrease)
+	Global.shot_small.connect(healthdecrease2)
 	
 	#Changes the health, and when it hits 0, send to credits
 func healthdecrease():
 	if Global.health > 0:
 		Global.health = Global.health - 20
+		print(\"TAKEDAMAMGE\")
+func healthdecrease2():
+	if Global.health > 0:
+		Global.health = Global.health - 8
 		print(\"TAKEDAMAMGE\")
 
 
