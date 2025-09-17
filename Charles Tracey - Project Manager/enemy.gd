@@ -2,12 +2,12 @@ extends CharacterBody3D
 
 
 @onready var nav = $NavigationAgent3D
-var speed = 0
+var speed = 2
 var gravity = 9.81
 var health = 100
 var inhitbox = false
 @onready var player = $"../../Wayne/Enemy detect"
-var target = self
+var target = player
 var insideinner = false
 const rotation_speed = 5.0
 
@@ -18,6 +18,9 @@ func _process(delta):
 		velocity.y -= gravity * delta
 	else:
 		velocity.y -= 2
+	
+	target_position(delta)
+	
 	var next_location = nav.get_next_path_position()
 	var current_location = global_transform.origin
 	var new_velocity = (next_location - current_location).normalized() * speed
@@ -35,6 +38,7 @@ func _process(delta):
 # if target equals player and in inner radius, the enemy will follow the player.
 func target_position(delta):
 	if target == player:
+		print("go")
 		nav.set_target_position(player.global_transform.origin)
 		var target_pos = $"../../Wayne/Enemy detect".global_transform.origin
 		var my_pos = global_transform.origin
