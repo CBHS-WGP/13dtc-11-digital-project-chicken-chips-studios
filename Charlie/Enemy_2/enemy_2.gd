@@ -19,7 +19,6 @@ const SPEED = 4
 const GRAVITY = 9.81
 func _ready() -> void:
 	launcher.enabled = true
-	$Model/Freakboy/AnimationPlayer.play("Ball")
 
 func _physics_process(delta: float) -> void:
 	#function that runs every frame, updating if the player has been on the floor at all for the past 10 frames

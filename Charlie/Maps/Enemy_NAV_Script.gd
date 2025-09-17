@@ -10,8 +10,7 @@ func _ready():
 		Progress.cache_spawn = $Cache_Spawn
 		Progress.spawn1 = $Enemy_Spawn1
 		Progress.spawn2 = $Enemy_Spawn2
-		print(Progress.spawn1)
-		print(Progress.spawn2)
+		Progress.spawn3 = $"Freakboy_Spawns!/StaticBody3D/Floor"
 
 func _process(_delta):
 	get_tree().call_group("enemy", "target_position", target.global_transform.origin)
