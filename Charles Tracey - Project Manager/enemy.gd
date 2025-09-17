@@ -73,7 +73,7 @@ func _on_timer_timeout():
 		Global.shot.emit()
 
 
-func _on_damage_checker_area_entered(_area):
+func _on_damage_checker_area_entered(area):
 	health = health - 20
 
 

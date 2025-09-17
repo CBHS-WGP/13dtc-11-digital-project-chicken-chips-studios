@@ -490,7 +490,8 @@ transitions = ["Rotate", "Attack_001", SubResource("AnimationNodeStateMachineTra
 [sub_resource type="SphereShape3D" id="SphereShape3D_ofouk"]
 radius = 0.41594
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_wp0ih"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5upyl"]
+size = Vector3(0.473999, 0.524292, 0.508789)
 
 [node name="Enemy_2" type="CharacterBody3D" groups=["enemy"]]
 disable_mode = 2
@@ -502,10 +503,15 @@ floor_constant_speed = true
 floor_max_angle = 1.91986
 safe_margin = 2.0
 script = ExtResource("1_e6d0d")
+shouldjump = [false, false, false, false, false, false, false, false, false, false, false]
 
 [node name="Launcher" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156, 0)
 shape = SubResource("CapsuleShape3D_na3hx")
+
+[node name="Health_Indicator" type="Label3D" parent="Launcher"]
+transform = Transform3D(-1, 2.60209e-18, -8.74234e-08, 0, 1, 0, 8.74234e-08, 0, -1, 0, 0.604229, -7.45058e-09)
+text = "aa"
 
 [node name="Looking_for_Target" type="RayCast3D" parent="Launcher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, -0.26)
@@ -554,7 +560,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, 0)
 bones/0/enabled = true
 bones/0/position = Vector3(0, 5.96046e-08, 0)
-bones/0/rotation = Quaternion(0.318795, 0, -7.07867e-17, 0.947824)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Bone.001"
 bones/1/parent = -1
@@ -620,14 +626,11 @@ shape = SubResource("SphereShape3D_ofouk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43779, 0)
 collision_layer = 4
 collision_mask = 4
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bayonet damage checker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.626483, 0)
-shape = SubResource("SphereShape3D_wp0ih")
-
-[node name="Health_Indicator" type="Label3D" parent="Bayonet damage checker"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.253808, 0)
-text = "aa"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0197144, -0.580585, -0.0200129)
+shape = SubResource("BoxShape3D_5upyl")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 5.0

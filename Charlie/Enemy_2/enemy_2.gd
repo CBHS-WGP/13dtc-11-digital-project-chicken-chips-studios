@@ -14,7 +14,7 @@ var health = 40
 var on_floor = false
 var finding_floor = true
 var can_jump = true
-var shouldjump
+@export var shouldjump = Array([], TYPE_BOOL, "", false )
 const SPEED = 4
 const GRAVITY = 9.81
 func _ready() -> void:
@@ -22,11 +22,18 @@ func _ready() -> void:
 	$Model/Freakboy/AnimationPlayer.play("Ball")
 
 func _physics_process(delta: float) -> void:
+	#function that runs every frame, updating if the player has been on the floor at all for the past 10 frames
+	#overflow section
+	shouldjump[10] = false
+	shouldjump[0] = on_floor
+	for i in range(shouldjump.size() - 1, 0, -1):
+		shouldjump[i] = shouldjump[i - 1] 
+	
 	
 	if health <= 0:
 		queue_free()
-	
-	$"Bayonet damage checker/Health_Indicator".text = str(health, "/40")
+
+	$Launcher/Health_Indicator.text = str(health, "/40")
 	jump_ray()
 	floor_ray()
 	if animate == true:
@@ -107,24 +114,19 @@ func _on_launch_delay_timeout() -> void:
 
 #enemy sometimes gets stuck on player, this should make him jump off
 func _on_unstick_enemy_timeout() -> void:
-	#for i in 10:
-	#	shouldjump[i] = on_floor
-	#for i in shouldjump:
-	#	if shouldjump[i] == false:
-	#		var list = 0
-	#		list = list + 1
-	#		if list >= 5:
-				#if can_jump == true and finding_floor == true:
-					#$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
-					#$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
-					#velocity.y = SPEED * 2
-	if can_jump == true and finding_floor == true and on_floor == false:
+	var amount = 0
+	for i in range(shouldjump.size() - 1):
+		print(shouldjump[i])
+		if shouldjump[i - 1] == false:
+			amount = amount + 1
+	print(amount)
+	if can_jump == true and finding_floor == true and amount >= 9:
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
 		velocity.y = SPEED * 2
 
 
-func _on_bayonet_damage_checker_area_entered(area: Area3D):
+func _on_bayonet_damage_checker_area_entered(area):
 	health = health - 20
 
 
