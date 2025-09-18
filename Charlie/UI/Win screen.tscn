@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpwp74qnt5lou"]
+
+[ext_resource type="Script" uid="uid://foyta3od57e1" path="res://Charlie/UI/credits_quitting.gd" id="1_dauja"]
+[ext_resource type="Texture2D" uid="uid://df6vqhku6e0tc" path="res://Patrick/Placeholder_Files/Placeholder_Earth.png" id="1_mk8bq"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dauja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(607, 364)
+scale = Vector2(0.69537, 0.69537)
+texture = ExtResource("1_mk8bq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 181.0
+offset_right = 334.0
+offset_bottom = 516.0
+text = "YOU WIN!
+
+Credits:
+Programming - Cartogen, Tacobellbeans
+Models and design direction - Sinergy
+Music and Sound - Cartogen (M.M.I audio)
+:Special thanks:
+Dihtthew
+Kinzett Baby
+AstroNatural
+
+Hope you enjoyed this digital outcome!
+"
+horizontal_alignment = 1
+
+[node name="QUIT" type="Button" parent="."]
+offset_left = 1116.0
+offset_top = 653.0
+offset_right = 1280.0
+offset_bottom = 719.0
+text = "Quit"
+
+[connection signal="pressed" from="QUIT" to="." method="_on_quit_pressed"]

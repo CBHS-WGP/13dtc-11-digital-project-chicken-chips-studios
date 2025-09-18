@@ -46348,15 +46348,16 @@ shape = SubResource("BoxShape3D_hryg0")
 [node name="Damage_Checker" type="Area3D" parent="."]
 collision_layer = 4
 collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101227, 0)
+shape = SubResource("BoxShape3D_8uhvq")
 
 [node name="Health_Indicator" type="Label3D" parent="Damage_Checker"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.34506, 0)
 text = "aa"
 font = ExtResource("2_hryg0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Damage_Checker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101227, 0)
-shape = SubResource("BoxShape3D_8uhvq")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

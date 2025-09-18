@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://casg4qwba6q88" path="res://Charlie/UI/Main_Menu_Script.gd" id="1_lgnsp"]
 [ext_resource type="Texture2D" uid="uid://bhtvgdgw2w1fd" path="res://Charlie/Textures/Chip_Logo.png" id="2_k8rte"]
-[ext_resource type="Texture2D" uid="uid://df6vqhku6e0tc" path="res://Patrick/Placeholder_Files/Placeholder_Earth.png" id="2_xirei"]
+[ext_resource type="Texture2D" uid="uid://bvnr1l0gds4kf" path="res://Patrick/Background/BAckgroundMAin.png" id="2_vfdip"]
 [ext_resource type="FontFile" uid="uid://fc22rcuqlr7d" path="res://Charlie/Fonts/crostan/Crostan-Bold.otf" id="3_6gigt"]
 [ext_resource type="Texture2D" uid="uid://dewhpdeywkp7t" path="res://Charlie/Textures/Bayonet/textures/Oval.png" id="3_vfdip"]
 [ext_resource type="PackedScene" uid="uid://b6hnwyuweh4nf" path="res://Charlie/UI/settings.tscn" id="4_xirei"]
@@ -564,31 +564,31 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(22.2222, 17)
 scale = Vector2(0.666667, 0.666667)
-texture = ExtResource("2_xirei")
+texture = ExtResource("2_vfdip")
 
 [node name="Oval" type="Sprite2D" parent="Control/Sprite2D"]
-position = Vector2(67.7, -360.887)
+position = Vector2(-29.8, -342.887)
 rotation = -0.0226893
 scale = Vector2(0.576981, 0.247372)
 texture = ExtResource("3_vfdip")
 
 [node name="Oval2" type="Sprite2D" parent="Control/Sprite2D"]
-position = Vector2(67.7, -355.887)
+position = Vector2(-29.8, -337.887)
 rotation = 0.13439
 scale = Vector2(0.576981, 0.247372)
 texture = ExtResource("3_vfdip")
 
 [node name="Oval3" type="Sprite2D" parent="Control/Sprite2D"]
-position = Vector2(67.7, -355.887)
+position = Vector2(-29.8, -337.888)
 rotation = 0.251327
 scale = Vector2(0.576981, 0.247372)
 texture = ExtResource("3_vfdip")
 
 [node name="Label" type="Label" parent="Control/Sprite2D"]
-offset_left = -338.0
-offset_top = -468.999
-offset_right = 583.0
-offset_bottom = -318.999
+offset_left = -435.5
+offset_top = -450.999
+offset_right = 485.5
+offset_bottom = -300.999
 rotation = 0.0872665
 theme_override_colors/font_color = Color(0, 0, 0.52549, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
@@ -597,6 +597,7 @@ theme_override_constants/shadow_offset_x = 8
 theme_override_fonts/font = ExtResource("3_6gigt")
 theme_override_font_sizes/font_size = 130
 text = "The Dunsandler"
+metadata/_edit_use_anchors_ = true
 
 [node name="Rotate" type="AnimationPlayer" parent="Control/Sprite2D"]
 libraries = {

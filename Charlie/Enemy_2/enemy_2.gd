@@ -143,7 +143,8 @@ func _on_unstick_enemy_timeout() -> void:
 			amount = amount + 1
 	print(amount)
 	#changes back the conditions to rolling as hes not attacking, hes just jumping
-	if can_jump == true and finding_floor == true and amount >= 9:
+	#NOTE: extra collider is nessesary to stop the enemy from jumping in the air if he were to go high in the sky (try to remedy double jumps).
+	if can_jump == true and finding_floor == true and amount >= 9 and $Launcher/General_Floor_extra_check.is_colliding() == true:
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
 		#apply a large jump thats larger than the player, to unstick.

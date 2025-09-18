@@ -78,7 +78,9 @@ func _on_timer_timeout():
 
 
 func _on_damage_checker_area_entered(area):
-	health = health - 20
+	print("hit")
+	if area.is_in_group("M7"):
+		health = health - 20
 
 
 

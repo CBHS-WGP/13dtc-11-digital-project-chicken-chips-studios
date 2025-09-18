@@ -41,6 +41,7 @@ enemy=""
 Ceiling=""
 playerhitbox=""
 player=""
+M7=""
 
 [gui]
 
