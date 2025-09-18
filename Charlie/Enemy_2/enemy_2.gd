@@ -12,7 +12,7 @@ var new_velocity
 var pos
 var health = 40
 var on_floor = false
-var finding_floor = true
+var finding_floor = false
 var can_jump = true
 @export var shouldjump = Array([], TYPE_BOOL, "", false )
 const SPEED = 4
@@ -40,8 +40,6 @@ func _physics_process(delta: float) -> void:
 		#velocity.z = pos[2] * 0.05
 		if  on_floor == false:
 			velocity.y -= GRAVITY * delta
-		#if global_position[1] >= pos[1]:
-			#velocity.y -= GRAVITY * delta
 		else:
 			velocity.y = 0
 			launcher.enabled = true

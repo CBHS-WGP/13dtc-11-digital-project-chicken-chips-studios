@@ -7,17 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://ggmokxxoct5u" path="res://Charlie/Inventory/inventory.tscn" id="4_7bwoj"]
 [ext_resource type="PackedScene" uid="uid://dwuqvkxi0aqeo" path="res://Charlie/Specific Objective files/Satellite/Sattelite_Box.tscn" id="4_m73r6"]
 [ext_resource type="PackedScene" uid="uid://u7d4ea0b411t" path="res://Charlie/UI/hud.tscn" id="5_7bwoj"]
-[ext_resource type="Texture2D" uid="uid://d1n83mxafmrys" path="res://Charlie/Textures/Inventory_Item_Textures/Sattelite_Box.png" id="5_rn0aa"]
+[ext_resource type="Texture2D" uid="uid://b24sk2cr1ry2p" path="res://Patrick/inv/SatBOXINV.png" id="5_ikvbr"]
 [ext_resource type="PackedScene" uid="uid://b6hnwyuweh4nf" path="res://Charlie/UI/settings.tscn" id="7_g6nvv"]
-[ext_resource type="Texture2D" uid="uid://cdv2e0o6y5vsu" path="res://Charlie/Textures/Inventory_Item_Textures/M7_Bayonet.png" id="7_rn0aa"]
+[ext_resource type="Texture2D" uid="uid://brc2beil6utv8" path="res://Patrick/inv/M7.png" id="7_qnqxm"]
 [ext_resource type="PackedScene" uid="uid://b2bkdg7hpkp2a" path="res://Charlie/Specific Objective files/M7_Bayonet.tscn" id="8_3x0hu"]
-[ext_resource type="Texture2D" uid="uid://85tair1wsf4g" path="res://Charlie/Textures/Inventory_Item_Textures/G32_Pistol.png" id="9_0csyg"]
+[ext_resource type="Texture2D" uid="uid://cvuyp546jmt02" path="res://Patrick/inv/GUNINV.png" id="9_8w7ki"]
 [ext_resource type="PackedScene" uid="uid://lxbuewtc8tss" path="res://Charlie/Specific Objective files/G32_Pistol.tscn" id="10_aq3s3"]
 [ext_resource type="Texture2D" uid="uid://b51gpagy111mg" path="res://Charlie/Textures/Inventory_Item_Textures/Bullets.png" id="10_hdjcv"]
 [ext_resource type="Script" uid="uid://dnxded2b7jdos" path="res://Charlie/Player/pickup_ray.gd" id="11_hdjcv"]
 [ext_resource type="PackedScene" uid="uid://ciipxd6ikrq4y" path="res://Charlie/Specific Objective files/Satellite/Bullet_Magazine.tscn" id="12_u0fbb"]
 [ext_resource type="Script" uid="uid://c3j85a5vn4fs8" path="res://Charlie/Player/hud_animation.gd" id="12_ys5wq"]
-[ext_resource type="Texture2D" uid="uid://xhxlwsc3rqxv" path="res://Charlie/Textures/Inventory_Item_Textures/p90.png" id="13_5r2l6"]
+[ext_resource type="Texture2D" uid="uid://c8xlvj6fnqp7t" path="res://Patrick/inv/P90.png" id="13_f015h"]
 [ext_resource type="PackedScene" uid="uid://cn4jcye1uyc4p" path="res://Charlie/Specific Objective files/P90.tscn" id="14_ykdt2"]
 [ext_resource type="Script" uid="uid://cykxpmhg3g5kv" path="res://Charlie/Player/flahlight.gd" id="16_ykdt2"]
 [ext_resource type="PackedScene" uid="uid://bfas0lhfhfbo1" path="res://Patrick/Misc/torch.glb" id="17_ikvbr"]
@@ -171,21 +171,21 @@ height = 1.8
 [sub_resource type="Resource" id="Resource_3x0hu"]
 script = ExtResource("3_m73r6")
 ItemName = "Sattelite_Box"
-Icon = ExtResource("5_rn0aa")
+Icon = ExtResource("5_ikvbr")
 ItemModelPrefab = ExtResource("4_m73r6")
 metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 
 [sub_resource type="Resource" id="Resource_0csyg"]
 script = ExtResource("3_m73r6")
 ItemName = "M7 Bayonet"
-Icon = ExtResource("7_rn0aa")
+Icon = ExtResource("7_qnqxm")
 ItemModelPrefab = ExtResource("8_3x0hu")
 metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 
 [sub_resource type="Resource" id="Resource_ys5wq"]
 script = ExtResource("3_m73r6")
 ItemName = "G32 Pistol"
-Icon = ExtResource("9_0csyg")
+Icon = ExtResource("9_8w7ki")
 ItemModelPrefab = ExtResource("10_aq3s3")
 metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 
@@ -212,7 +212,7 @@ metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 [sub_resource type="Resource" id="Resource_ikvbr"]
 script = ExtResource("3_m73r6")
 ItemName = "P90"
-Icon = ExtResource("13_5r2l6")
+Icon = ExtResource("13_f015h")
 ItemModelPrefab = ExtResource("14_ykdt2")
 metadata/_custom_type_script = "uid://b6d2uymxqkxml"
 
