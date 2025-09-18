@@ -14,6 +14,7 @@ func _input(event):
 		camera_input = event.relative
 	
 func _process(delta):
+	#only allows the camera to move with the mouse when the inventory and settings are closed
 	if Global.inv_open == false and Global.settings_open == false:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		Input.warp_mouse(mouse_pos)
@@ -23,6 +24,7 @@ func _process(delta):
 		cam.rotation_degrees.x = clamp(cam.rotation_degrees.x, -52, 80)
 		camera_input = Vector2.ZERO
 	else:
+		#else give the player use of the mouse for the ui elements
 		mouse_pos = get_viewport().get_mouse_position()
 		Input.warp_mouse(mouse_pos)
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED

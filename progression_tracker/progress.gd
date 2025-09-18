@@ -66,7 +66,7 @@ func _process(_delta):
 	#Player death
 	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Charlie/UI/credits.tscn")
-		print("You reached objective ", current_objective)
+		#print("You reached objective ", current_objective)
 		
 func spawn_enemy(instance2, instance3):
 	instance2.position.x = randf() * 4
