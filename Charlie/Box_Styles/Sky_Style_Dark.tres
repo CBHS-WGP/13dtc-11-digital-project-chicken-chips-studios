@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=14 format=3 uid="uid://ccl85ojwrmelb"]
 
-[ext_resource type="Shader" uid="uid://dud5rmvfoxvok" path="res://stylisedsky.gdshader" id="1_big14"]
+[ext_resource type="Shader" uid="uid://dud5rmvfoxvok" path="res://Charles Tracey - Project Manager/dayandnightshaders/stylisedsky.gdshader" id="1_big14"]
 [ext_resource type="Texture2D" uid="uid://doqje111txn0h" path="res://Charlie/Textures/NASA_MOON-removebg-preview.png" id="2_md6is"]
 
 [sub_resource type="Curve" id="Curve_wn6u5"]
