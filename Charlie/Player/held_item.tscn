@@ -685,6 +685,7 @@ transform = Transform3D(-0.1, 2.53518e-07, 9.17733e-13, 0, -3.61999e-07, 0.1, 2.
 [node name="G32" type="AudioStreamPlayer3D" parent="G32/G32Gun"]
 transform = Transform3D(10, -2.6226e-05, -9.4938e-11, 2.6226e-05, 10, 3.57628e-05, 1.14638e-12, -3.57628e-05, 10, 0, 1.02, 0.426071)
 stream = ExtResource("4_jtwlh")
+volume_db = -15.0
 max_polyphony = 6
 panning_strength = 0.65
 bus = &"SFX"
@@ -737,6 +738,7 @@ libraries = {
 
 [node name="Shoot" type="AudioStreamPlayer3D" parent="P90"]
 stream = ExtResource("5_fglwj")
+volume_db = -15.0
 max_polyphony = 4
 panning_strength = 0.65
 bus = &"SFX"

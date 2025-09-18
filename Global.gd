@@ -5,6 +5,7 @@ signal shot_small
 #fired when the player presses F on an available object in 3D space.
 signal item_update
 
+#various global varibles with intuitive names
 var inv_open = false
 var sensitivity = 0.15
 var resolution = Vector2(1280, 720)
@@ -19,6 +20,8 @@ var G32_bullets_in_mag = 12
 var P90_bullets = 100
 var P90_bullets_in_mag = 50
 var flashlight_out = true
+
+#Charles code for some sort of ending game? Might be spagetti code
 func dead(_delta):
 	if health == 0:
 		get_tree().quit()

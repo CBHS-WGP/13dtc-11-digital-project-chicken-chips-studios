@@ -6,9 +6,6 @@ var flashlight_position_smoothness := 15.0
 @onready var flashlight = self
 
 func _process(delta):
-	#update_flashlight(delta)
-	
-	
 	if Input.is_action_just_pressed("flashlight") and $Flashlight.is_playing() == false:
 		if Global.flashlight_out == false:
 			$Flashlight.play("up")
@@ -19,6 +16,7 @@ func _process(delta):
 			
 
 func update_flashlight(delta: float) -> void:
+	#Allows for the flashlight to not move around in a jagged fashion, instead the light smoothly moves with the player camera
 	flashlight.global_transform = Transform3D(
 		flashlight.global_transform.basis.slerp(cam.global_transform.basis, delta * flashlight_rotation_smoothness),
 		flashlight.global_transform.origin.slerp(cam.global_transform.origin, delta * flashlight_position_smoothness)

@@ -31,6 +31,7 @@ func _on_body_entered(body):
 	if Progress.current_objective == 2.1 and body.is_in_group("player") and Progress.weapons_cache_found == false:
 		Progress.weapons_cache_found == true
 		Progress.current_objective = 2.5
+	#the player has found the impact site
 	if Progress.current_objective == 3 and body.is_in_group("player") and Progress.impact_site_discovered == false:
 		Progress.current_objective = 3.5
 		Progress.impact_site_discovered = true

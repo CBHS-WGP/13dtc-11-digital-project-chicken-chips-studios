@@ -1,5 +1,5 @@
 extends CPUParticles3D
-
+#Gun explosion effect
 func _ready():
 	emitting = true
 

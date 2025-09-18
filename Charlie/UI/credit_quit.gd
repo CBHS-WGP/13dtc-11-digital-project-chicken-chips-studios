@@ -6,3 +6,8 @@ func _ready() -> void:
 
 func _on_quit_2_button_down() -> void:
 	get_tree().quit()
+#Autoplay isnt working for some reason
+func _process(_delta):
+	print($Corruption.playing)
+	if $Corruption.playing == false:
+		$Corruption.playing = true

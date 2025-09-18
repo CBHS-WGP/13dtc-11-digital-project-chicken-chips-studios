@@ -22,7 +22,7 @@ buses/default_bus_layout="res://Charlie/Music/default_bus_layout.tres"
 [autoload]
 
 Global="*res://Global.gd"
-Progress="*res://progression_tracker/progress.gd"
+Progress="*res://Charles Tracey - Project Manager/progress.gd"
 
 [display]
 

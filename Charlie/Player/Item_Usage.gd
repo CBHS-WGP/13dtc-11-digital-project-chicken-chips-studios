@@ -33,17 +33,20 @@ func _process(delta):
 				Bayonetanimation["parameters/conditions/swinging == true"] = false
 				Bayonetanimation["parameters/conditions/swinging == false"] = true
 	
-	
+	#code for the pistol when being held
 	elif Global.equipped_item_id == str("G32 Pistol"):
 		_hiding()
 		$G32.visible = true
 		ray = $G32/G32Gun/Gun_Cast
+		#allows for shooting is being held without UI apps open, taking away a bullet and running the
+		#_shoot() function.
 		if Global.inv_open == false and Global.settings_open == false:
 			if Input.is_action_just_pressed("leftclick") and Global.G32_bullets_in_mag > 0:
 				Global.G32_bullets_in_mag -= 1
 				$G32/G32Gun/G32.pitch_scale = randf_range(0.85, 1.10)
 				$G32/G32Gun/G32.play()
 				_shoot()
+			#condition statement changes for node state machine, ensuring correct animation.
 			if Input.is_action_just_pressed("rightclick"):
 				Gun_Animation["parameters/conditions/focus"] = false
 				Gun_Animation["parameters/conditions/unfocus"] = true
@@ -53,15 +56,16 @@ func _process(delta):
 		elif Global.inv_open == true or Global.settings_open == true:
 			Gun_Animation["parameters/conditions/focus"] = true
 			Gun_Animation["parameters/conditions/unfocus"] = false
-		
+		#Reloads the G32 based on its current varibles through the _bullet_calculator() function
 		if Input.is_action_just_pressed("R") and Global.G32_bullets_in_mag < 12 and Global.inv_open == false and Global.settings_open == false:
 			var Temp_Array = _bullet_calculator(Global.G32_bullets_in_mag, Global.G32_bullets, 12)
 			Global.G32_bullets_in_mag = Temp_Array[0]
 			Global.G32_bullets = Temp_Array[1]
+	#Shows the sattelite box, has no other function
 	elif Global.equipped_item_id == str("Sattelite_Box"):
 		_hiding()
 		$Cube.visible = true
-		
+	#Like the G32, the P90 can reload, however it doesnt use a node state machine, instead having a constant idle animation.
 	elif Global.equipped_item_id == str("P90"):
 		_hiding()
 		$P90.visible = true
@@ -77,7 +81,7 @@ func _process(delta):
 		elif Input.is_action_just_released("rightclick"):
 			$P90/Gun_Focus.play("unfocus")
 
-
+#Function used in all items to hide all the items beofre showing the correct one in each section.
 func _hiding():
 		for child in get_children():
 			child.visible = false
@@ -102,6 +106,7 @@ func _bullet_calculator(in_mag, current, max) -> Array:
 	
 
 func _shoot():
+	#Used by the guns to calucllate what was hit and where.
 	if ray.is_colliding():
 		print(ray.get_collider())
 		hit = ray.get_collider()
@@ -124,6 +129,8 @@ func _shoot():
 
 
 func _on_p_90_shoot_timer_timeout() -> void:
+	#Turns on a muzzle flash that extends outwards like a bullet trail for the P90
+	#This assists greatly with aiming, also removes a bullet like line 44 + 45 for the G32
 	if Global.equipped_item_id == str("P90"):
 		if Input.is_action_pressed("leftclick") and Global.P90_bullets_in_mag > 0  and Global.inv_open == false and Global.settings_open == false:
 			$"P90/Proto_Muzzle_flash".play("flash")

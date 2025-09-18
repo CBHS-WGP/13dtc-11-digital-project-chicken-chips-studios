@@ -1,5 +1,9 @@
 extends Area3D
+
+#Sets the node where the crater fog is for later
 @onready var Crater = $"../Hiding crater"
+
+#at the start ensure everything is set in place so the player cant acsess the crater yet
 func _ready() -> void:
 	$Pointer.visible = false
 	$"../Hiding crater/Hiding crater".visible = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpwp74qnt5lou"]
+[gd_scene load_steps=4 format=3 uid="uid://bpwp74qnt5lou"]
 
 [ext_resource type="Script" uid="uid://foyta3od57e1" path="res://Charlie/UI/credits_quitting.gd" id="1_dauja"]
 [ext_resource type="Texture2D" uid="uid://df6vqhku6e0tc" path="res://Patrick/Placeholder_Files/Placeholder_Earth.png" id="1_mk8bq"]
+[ext_resource type="AudioStream" uid="uid://bxn0p1gv5hcsv" path="res://Charlie/Music/D02_Win_DEMO.wav" id="3_xic71"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -39,10 +40,16 @@ Hope you enjoyed this digital outcome!
 horizontal_alignment = 1
 
 [node name="QUIT" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1116.0
 offset_top = 653.0
 offset_right = 1280.0
 offset_bottom = 719.0
 text = "Quit"
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xic71")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="QUIT" to="." method="_on_quit_pressed"]

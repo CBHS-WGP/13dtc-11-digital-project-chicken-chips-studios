@@ -42,15 +42,18 @@ func _physics_process(delta: float) -> void:
 	#Important subroutines to have the enemy have gravity and it jump ability.
 	jump_ray()
 	floor_ray()
-	
+	#Jump ray defines if the enemy is animating (jumping in the air)
 	if animate == true:
+		#add gravity if not on floor
 		if  on_floor == false:
 			velocity.y -= GRAVITY * delta
+		#if on ground animate off, and stop all gravity, the enemy has hit the ground
 		else:
 			velocity.y = 0
 			launcher.enabled = true
 			animate = false
 	else:
+		#when the enemy is on the ground he will roll toard as usual
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/rotate"] = true
 		$Model/Freakboy/Smooth_Animation["parameters/conditions/attack"] = false
 		#have the model face and rotate the correct direction
@@ -61,6 +64,7 @@ func _physics_process(delta: float) -> void:
 		new_velocity = (next_location - current_location).normalized() * SPEED
 		velocity.x = velocity.move_toward(new_velocity, 0.25)[0]
 		velocity.z = velocity.move_toward(new_velocity, 0.25)[2]
+		#nessesary backup gravity for specific cases which i found while testing
 		if on_floor == false:
 			velocity.y -= GRAVITY * delta
 

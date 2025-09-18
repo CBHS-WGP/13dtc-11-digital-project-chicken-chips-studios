@@ -1,6 +1,6 @@
 extends HSlider
 
-#code for music slider
+#code for music slider, Taken from Cyprihaull, last years outcome.
 @export var bus_name: String
 var bus_index: int
 

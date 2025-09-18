@@ -1,6 +1,6 @@
 extends HSlider
 
-#code for SFX slider
+#code for SFX slider taken from Cyprihaull, last years outcome
 @export var bus_name: String
 var bus_index: int
 

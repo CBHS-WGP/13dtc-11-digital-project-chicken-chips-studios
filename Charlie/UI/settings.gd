@@ -29,6 +29,7 @@ func _on_window_sizes_item_selected(index):
 	
 	#Extremely convoluted way of selecting a window size 
 	#THIS IS OLD CODE I COULD USE AS PART OF THE PROGRAMMING STANDARD!
+	
 	#if $Options/Options_Box/Window_Sizes.selected == 2:
 		#Global.resolution = Vector2(1280, 720)
 		#get_window().size = Global.resolution

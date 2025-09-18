@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwx8sm2f7752d"]
 
-[ext_resource type="Script" uid="uid://pierbaveg43y" path="res://progression_tracker/progress.gd" id="1_3u7nt"]
+[ext_resource type="Script" uid="uid://pierbaveg43y" path="res://Charles Tracey - Project Manager/progress.gd" id="1_3u7nt"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_3u7nt")
