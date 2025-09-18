@@ -1,5 +1,6 @@
 extends Area3D
 
+#
 signal OnItemPickedUp(item)
 
 @export var ItemTypes : Array[ItemData] = []
@@ -7,21 +8,21 @@ signal OnItemPickedUp(item)
 var NearbyAreas : Array[InteractableItem]
 var sattelite_box_collected = false
 
-
+#efficient way to call a function on button press
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("F")):
 		PickupNearestItem()
 
 func PickupNearestItem():
+	#collects all the items in the pickup area and selects the one closest to the player.
 	var nearestItem : InteractableItem = null
 	var nearestItemDistance : float = INF
 	for item in NearbyAreas:
 		if (item.global_position.distance_to(global_position) < nearestItemDistance):
 			nearestItemDistance = item.global_position.distance_to(global_position)
 			nearestItem = item
-		#I nee to set the pistol magazine name thing to work properly!!
-		#fix
-		#fix
+#If there is an item (except pistol magazine), set the current item to be used in the inventory handler.
+#The signal is sent on line 34, with the desired item in the brackets.
 	if (nearestItem != null) and nearestItem.name != "Pistol_Magazine":
 		nearestItem.queue_free()
 		NearbyAreas.remove_at(NearbyAreas.find(nearestItem))
@@ -32,7 +33,7 @@ func PickupNearestItem():
 				if i != 4:
 					OnItemPickedUp.emit(ItemTypes[i])
 				
-				#One time use script for when the player picks up the sattelite box
+				#One time use script for when the player picks up the sattelite box (ID: 0)
 				if i == 0 and sattelite_box_collected == false:
 					sattelite_box_collected = true
 					print("SATTELLITE BOX COLLECTED")
@@ -40,6 +41,7 @@ func PickupNearestItem():
 						Progress.current_objective = 0.5
 					if Progress.current_objective == 1:
 						Progress.current_objective = 1.5
+				#Adds 12 bullets to the G32 is the Pistol magazine is picked up (ID: 4)
 				elif i == 4:
 					nearestItem.queue_free()
 					Global.G32_bullets = Global.G32_bullets + 12

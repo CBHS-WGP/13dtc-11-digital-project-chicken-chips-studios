@@ -1,4 +1,8 @@
 extends Panel
+#This is an inventory tutorial script
+#for more info:
+#https://www.youtube.com/watch?v=XLjCmdy8jdw
+
 class_name InventorySlot
 
 signal OnItemEquiped(SlotID)
@@ -16,8 +20,7 @@ var SlotData : ItemData
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		pass
-		#if (event.button_index == MOUSE_BUTTON_LEFT):
-			#OnItemEquiped.emit(InventorySlotID)
+
 
 func FillSlot(data : ItemData, equipped : bool):
 	SlotData = data
