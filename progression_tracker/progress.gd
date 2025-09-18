@@ -53,7 +53,6 @@ func _process(_delta):
 			var instance3 = enemy1.instantiate()
 			spawned = spawned + 2
 			spawn_enemy(instance2, instance3)
-		#spawn3.disabled = true
 		if spawned < spawn_enemies_obj_2:
 			for i in spawn_enemies_obj_2 - spawned:
 				var instance2 = enemy1.instantiate()

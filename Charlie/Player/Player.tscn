@@ -95,7 +95,7 @@ func _physics_process(delta):
 			else:
 				#variables for regular walking
 				acceleration = 0.15
-				MAX_SPEED = 4.5
+				MAX_SPEED = 4.5  * 6
 				walkandrun()
 	
 
