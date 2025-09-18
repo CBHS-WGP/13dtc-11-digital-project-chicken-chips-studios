@@ -45,6 +45,9 @@ script = ExtResource("1_bkyi2")
 [node name="Wayne" parent="." groups=["player"] instance=ExtResource("1_am1u2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.487481, 0)
 
+[node name="torch" parent="Wayne/Camera/Camera/Additional_Flahlight" index="0"]
+transform = Transform3D(0.04, 0, 0, 0, -0.04, -5.32388e-08, 0, 1.01407e-07, -0.021, -0.220269, -0.172558, -0.313136)
+
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
@@ -115,7 +118,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.921, 1.86, -5.97462)
 
 [node name="enemy" parent="Enemies" instance=ExtResource("9_do8ai")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.240618, 1.32107, 19.6592)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.68074, 12.7768)
 
 [node name="RigidBody3D" parent="." instance=ExtResource("5_5m3ab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713917, -1.3083)
