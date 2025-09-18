@@ -1,6 +1,6 @@
 extends Node
 #Varible for the path to the enemy, plus a reference to where the sqawn node.  
-@onready var enemy1 = preload("res://Charles Tracey - Project Manager/enemy.tscn")
+@onready var enemy1 = preload("res://Charles Tracey - Project Manager/enemycultist/enemy.tscn")
 @onready var enemy2 = preload("res://Charlie/Enemy_2/Enemy_2.tscn")
 var spawn1
 var spawn2

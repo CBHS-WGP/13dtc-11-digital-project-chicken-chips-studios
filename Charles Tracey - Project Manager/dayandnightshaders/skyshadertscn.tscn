@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://clpvta421nsxn"]
+
+[ext_resource type="Environment" uid="uid://df0il4b5dl7g6" path="res://Charles Tracey - Project Manager/dayandnightshaders/skyshader_enviroment.tres" id="1_hd4kp"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_hd4kp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.52605, 0.134157, 0.839805, 0.810545, -0.219858, 0.542844, 0.257463, 0.966263, 0.00691551, 0, 0, 0)
+shadow_enabled = true

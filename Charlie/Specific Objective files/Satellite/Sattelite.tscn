@@ -1,10 +1,10 @@
 [gd_scene load_steps=34 format=4 uid="uid://dvb1wioo3eayi"]
 
 [ext_resource type="PackedScene" uid="uid://duekgil185vcu" path="res://Charlie/Specific Objective files/Player_POI_Discovery_Areas/Sattelite_Found.tscn" id="2_662rk"]
-[ext_resource type="Texture2D" uid="uid://cfu3weluj16yl" path="res://Charles Tracey - Project Manager/dish/textures/Dish_Part1_baseColor.jpeg" id="2_hye2s"]
-[ext_resource type="Texture2D" uid="uid://c1jdad0cd4at0" path="res://Charles Tracey - Project Manager/dish/textures/Dish_Part2_baseColor.jpeg" id="3_aoxok"]
-[ext_resource type="Texture2D" uid="uid://cutq2wgbns46x" path="res://Charles Tracey - Project Manager/dish/textures/Dish_Plating_baseColor.jpeg" id="4_u7sr0"]
-[ext_resource type="Texture2D" uid="uid://diof5tymxl4ch" path="res://Charles Tracey - Project Manager/dish/textures/Dish_Antenna_baseColor.jpeg" id="5_heph7"]
+[ext_resource type="Texture2D" uid="uid://cfu3weluj16yl" path="res://Charles Tracey - Project Manager/modelsfromonline_extrafiles/dish/textures/Dish_Part1_baseColor.jpeg" id="2_hye2s"]
+[ext_resource type="Texture2D" uid="uid://c1jdad0cd4at0" path="res://Charles Tracey - Project Manager/modelsfromonline_extrafiles/dish/textures/Dish_Part2_baseColor.jpeg" id="3_aoxok"]
+[ext_resource type="Texture2D" uid="uid://cutq2wgbns46x" path="res://Charles Tracey - Project Manager/modelsfromonline_extrafiles/dish/textures/Dish_Plating_baseColor.jpeg" id="4_u7sr0"]
+[ext_resource type="Texture2D" uid="uid://diof5tymxl4ch" path="res://Charles Tracey - Project Manager/modelsfromonline_extrafiles/dish/textures/Dish_Antenna_baseColor.jpeg" id="5_heph7"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hye2s"]
 

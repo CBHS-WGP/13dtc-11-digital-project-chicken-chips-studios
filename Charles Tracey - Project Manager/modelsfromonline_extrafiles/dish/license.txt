@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dish
+* source:	https://sketchfab.com/3d-models/dish-57251a5f9a4843179142ce99fcf83626
+* author:	local.yany (https://sketchfab.com/local.yany)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dish" (https://sketchfab.com/3d-models/dish-57251a5f9a4843179142ce99fcf83626) by local.yany (https://sketchfab.com/local.yany) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
