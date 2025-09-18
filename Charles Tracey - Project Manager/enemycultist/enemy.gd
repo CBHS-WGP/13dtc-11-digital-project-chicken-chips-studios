@@ -1,0 +1,110 @@
+extends CharacterBody3D
+
+#Variables Below: speed, gravity, health, inhitbox (set to true = player will start to take damage)
+#
+@onready var nav = $NavigationAgent3D
+var speed = 2
+var gravity = 9.81
+var health = 100
+var inhitbox = false
+@onready var player = $"../../Wayne/Enemy detect"
+var target = self
+var insideinner = false
+const rotation_speed = 5.0
+
+#Func below means that the target will
+func _ready() -> void:
+	target = player
+
+# Code which makes the enemy move towards the player
+func _process(delta):
+	#print(global_position.y)
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	else:
+		velocity.y -= 2
+	
+	var next_location = nav.get_next_path_position()
+	var current_location = global_transform.origin
+	var new_velocity = (next_location - current_location).normalized() * speed
+	velocity = velocity.move_toward(new_velocity, 0.25)
+	move_and_slide()
+
+
+
+	$Damage_Checker/Health_Indicator.text = str(health,"/100")
+	if health <= 0:
+		if Progress.current_objective == 2.6:
+			Progress.obj_2_enemies_killed += 1
+		queue_free()
+
+# if target equals player and in inner radius, the enemy will follow the player.
+func target_position(delta):
+	if target == player:
+		$FINALFOLLOWERM/AnimationPlayer.play("RUNMAIN")
+		nav.set_target_position(player.global_transform.origin)
+		var target_pos = $"../../Wayne/Enemy detect".global_transform.origin
+		var my_pos = global_transform.origin
+		
+		var direction = (target_pos - my_pos).normalized()
+		var target_angle = atan2(direction.x, direction.z)
+		
+		rotation.y = lerp_angle(rotation.y, target_angle + PI, 0.04)
+		
+		rotation.x = 0
+		rotation.z = 0
+
+# This is the hitboxarea. 
+func _on_area_3d_area_shape_entered(_area_rid: RID, area: Area3D, _area_shape_index: int, _local_shape_index: int) -> void:
+	if area.is_in_group("playerhitbox"):
+		target = player
+		print("hit2")
+		inhitbox = true
+
+
+func _on_area_3d_area_shape_exited(_area_rid: RID, area: Area3D, _area_shape_index: int, _local_shape_index: int) -> void:
+	if area != null:
+		if area.is_in_group("playerhitbox"):
+			target = self
+			inhitbox = false
+
+
+
+# This codes plays every second, if the player area is inside the enemy then hitbox is set to true and the player will start to take damage.
+func _on_timer_timeout():
+	if inhitbox == true:
+		print("hit")
+		Global.shot.emit()
+
+
+func _on_damage_checker_area_entered(area):
+	health = health - 20
+
+
+
+func _on_crouching_checker_timeout() -> void:
+	if insideinner == true and Global.crouching == false:
+			target = player
+			speed = 2
+
+func dead(_delta):
+	if health == 0:
+		get_tree().quit()
+
+func _on_inner_detection_radius_area_entered(area: Area3D) -> void:
+	if area.is_in_group("playerhitbox"):
+		insideinner = true
+
+func _on_outer_detection_radius_area_exited(area: Area3D) -> void:
+	if area.is_in_group("playerhitbox") and target == player:
+		$FINALFOLLOWERM/AnimationPlayer.play("POINT")
+	
+		print("exited")
+		speed = 0
+		target = self
+		insideinner = false
+
+func _on_eyeline_area_entered(area: Area3D) -> void:
+	if area.is_in_group("playerhitbox"):
+		target = player
+		speed = 2
