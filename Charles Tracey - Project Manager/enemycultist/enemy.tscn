@@ -49274,7 +49274,7 @@ bones/411/rotation = Quaternion(-0.00494291, 8.83228e-11, -0.150814, 0.98855)
 bones/411/scale = Vector3(1, 1, 1)
 
 [node name="handle" type="BoneAttachment3D" parent="FINALFOLLOWERM/rig/Skeleton3D"]
-transform = Transform3D(0.172262, 0.00635819, 0.00584455, -0.00763215, 0.158524, 0.0645601, -0.00348833, -0.0640202, 0.159409, 0.370126, 1.86594, 1.1911)
+transform = Transform3D(0.172262, 0.00635822, 0.00584452, -0.00763215, 0.158524, 0.0645601, -0.00348834, -0.0640202, 0.159409, 0.370126, 1.86594, 1.1911)
 bone_name = "handle"
 bone_idx = 239
 

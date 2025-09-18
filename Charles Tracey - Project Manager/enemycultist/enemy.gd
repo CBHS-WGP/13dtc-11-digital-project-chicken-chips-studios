@@ -94,21 +94,17 @@ func _on_crouching_checker_timeout() -> void:
 # If health = 0 the enemy dies.
 func dead(_delta):
 	if health == 0:
-		
 		if not $FINALFOLLOWERM/AnimationPlayer.is_playing():
 			get_tree().quit()
 
 # Inside inner is set to true, so now the stealth func can run and the enemy may/ may not detect player if it is crouching or not.
 func _on_inner_detection_radius_area_entered(area: Area3D) -> void:
 	if area.is_in_group("playerhitbox"):
-		if insideinner == false:
-			$FINALFOLLOWERM/AnimationPlayer.play("POINT")
 		insideinner = true
 
 # The enemy will stop following the player after a certain radius.
 func _on_outer_detection_radius_area_exited(area: Area3D) -> void:
 	if area.is_in_group("playerhitbox") and target == player:
-		$FINALFOLLOWERM/AnimationPlayer.play("POINT")
 		print("exited")
 		speed = 0
 		target = self
@@ -119,5 +115,3 @@ func _on_eyeline_area_entered(area: Area3D) -> void:
 	if area.is_in_group("playerhitbox"):
 		target = player
 		speed = 2
-		if insideinner == false:
-			$FINALFOLLOWERM/AnimationPlayer.play("POINT")
