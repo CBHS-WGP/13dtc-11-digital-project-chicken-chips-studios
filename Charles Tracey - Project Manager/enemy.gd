@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-
+#Variables Below:
 @onready var nav = $NavigationAgent3D
 var speed = 2
 var gravity = 9.81
@@ -10,6 +10,9 @@ var inhitbox = false
 var target = self
 var insideinner = false
 const rotation_speed = 5.0
+
+func _ready() -> void:
+	target = player
 
 # Code which makes the enemy move towards the player
 func _process(delta):
@@ -49,6 +52,7 @@ func target_position(delta):
 		rotation.x = 0
 		rotation.z = 0
 
+# This is the 
 func _on_area_3d_area_shape_entered(_area_rid: RID, area: Area3D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("playerhitbox"):
 		target = player
