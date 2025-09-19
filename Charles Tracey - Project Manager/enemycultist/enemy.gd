@@ -94,8 +94,7 @@ func _on_crouching_checker_timeout() -> void:
 # If health = 0 the enemy dies.
 func dead(_delta):
 	if health == 0:
-		if not $FINALFOLLOWERM/AnimationPlayer.is_playing():
-			get_tree().quit()
+		get_tree().quit()
 
 # Inside inner is set to true, so now the stealth func can run and the enemy may/ may not detect player if it is crouching or not.
 func _on_inner_detection_radius_area_entered(area: Area3D) -> void:
@@ -109,6 +108,7 @@ func _on_outer_detection_radius_area_exited(area: Area3D) -> void:
 		speed = 0
 		target = self
 		insideinner = false
+		$FINALFOLLOWERM/AnimationPlayer.play("POINT")
 		
 # The code below is for the enemy eyeline, if the player is in the enemies eyeline the enemy will detect it and will start to move towards the player.
 func _on_eyeline_area_entered(area: Area3D) -> void:

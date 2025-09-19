@@ -45,7 +45,6 @@ func target_position():
 		rotation.z = 0
 
 # This is the hitbox area code - if the player is in the centre hitbox, this code is triggered and thus the player will start to take damage.
-
 func _on_inner_detect_area_entered(area: Area3D) -> void:
 	if area.is_in_group("playerhitbox"):
 		print("entered and hit")

@@ -14,7 +14,7 @@ albedo_color = Color(1.01075e-06, 0.643502, 0.281243, 1)
 material = SubResource("StandardMaterial3D_mihky")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_skx2t"]
-radius = 0.730706
+radius = 0.992799
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0bnu1"]
 
@@ -141,7 +141,7 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outer detect"]
-transform = Transform3D(24.15, 0, 0, 0, 24.15, 0, 0, 0, 24.15, 0, 0, 0)
+transform = Transform3D(27.14, 0, 0, 0, 27.14, 0, 0, 0, 27.14, 0, 0, 0)
 shape = SubResource("SphereShape3D_0bnu1")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
