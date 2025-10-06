@@ -5,13 +5,13 @@ var speed = 2
 var gravity = 9.81
 @onready var nav = $NavigationAgent3D
 @onready var target = self
-var health = 300
+var health = 410
 var inhitbox = false
 
 # Code which makes the boss move towards the player
 func _process(delta):
 	#health bar
-	$Damage_Checker/Health_Indicator.text = str(health, "/300")
+	$Damage_Checker/Health_Indicator.text = str(health, "/410")
 	target_position()
 	#Gravity
 	if not is_on_floor():
@@ -57,7 +57,8 @@ func _on_inner_detect_area_entered(area: Area3D) -> void:
 #Boss death
 func _on_damage_checker_area_entered(area: Area3D) -> void:
 	health = health - 20
-	if health < 0:
+	if health <= 0:
+		Progress.boss_killed = true
 		queue_free()
 
 #Doing damage to the player if it is in the boss hitbox.

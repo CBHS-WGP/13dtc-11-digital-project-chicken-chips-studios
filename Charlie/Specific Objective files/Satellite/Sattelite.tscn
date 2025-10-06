@@ -412,5 +412,5 @@ skeleton = NodePath("")
 
 [node name="Press" type="Label3D" parent="."]
 transform = Transform3D(-0.999937, 0, -0.011257, 0, 1, 0, 0.011257, 0, -0.999937, 0, -0.419458, -0.266037)
-text = "Press F to insert sattelite cube"
+text = "While holding the satellite cube, Press F to insert."
 font_size = 15

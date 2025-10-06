@@ -20,6 +20,7 @@ var G32_bullets_in_mag = 12
 var P90_bullets = 100
 var P90_bullets_in_mag = 50
 var flashlight_out = true
+var fullscreen_toggle
 
 #Charles code for some sort of ending game? Might be spagetti code
 func dead(_delta):

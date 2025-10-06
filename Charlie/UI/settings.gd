@@ -1,6 +1,8 @@
 extends Control
 
-
+func _ready() -> void:
+	if Global.fullscreen_toggle != null:
+		$CheckBox.button_pressed = Global.fullscreen_toggle
 
 
 #dictionary of all allowed resolutions (can be easily expanded in the future)
@@ -15,8 +17,10 @@ var dictionaryContainer = {
 
 func _on_check_box_toggled(toggled_on):
 		if toggled_on == true:
+			Global.fullscreen_toggle = true
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		else:
+			Global.fullscreen_toggle = false
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			get_window().size = Global.resolution
 

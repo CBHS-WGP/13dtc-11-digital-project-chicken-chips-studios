@@ -49274,7 +49274,7 @@ bones/411/rotation = Quaternion(-0.00494291, 8.83228e-11, -0.150814, 0.98855)
 bones/411/scale = Vector3(1, 1, 1)
 
 [node name="handle" type="BoneAttachment3D" parent="FINALFOLLOWERM/rig/Skeleton3D"]
-transform = Transform3D(0.130878, 0.0257846, -0.109106, 0.0685873, 0.113448, 0.108608, 0.0890769, -0.124883, 0.0776536, 0.111034, 1.78779, 1.47902)
+transform = Transform3D(0.130878, 0.0257847, -0.109106, 0.0685874, 0.113448, 0.108608, 0.0890769, -0.124883, 0.0776536, 0.111034, 1.78779, 1.47902)
 bone_name = "handle"
 bone_idx = 239
 
@@ -49283,7 +49283,7 @@ mesh = SubResource("ArrayMesh_pqin3")
 skeleton = NodePath("")
 
 [node name="handle_001" type="BoneAttachment3D" parent="FINALFOLLOWERM/rig/Skeleton3D"]
-transform = Transform3D(0.116289, 0.117581, 0.0468007, -0.0059285, -0.0584277, 0.161523, 0.126414, -0.110903, -0.0354772, -1.43986, 3.15068, -0.121801)
+transform = Transform3D(0.116289, 0.117581, 0.0468007, -0.00592853, -0.0584277, 0.161523, 0.126414, -0.110903, -0.0354772, -1.43986, 3.15068, -0.121801)
 bone_name = "handle.001"
 bone_idx = 381
 

@@ -3,7 +3,7 @@ extends CharacterBody3D
 #Variables Below: speed, gravity, health, inhitbox, etc 
 
 @onready var nav = $NavigationAgent3D
-var speed = 2
+var speed = 2.5
 var gravity = 9.81
 var health = 100
 var inhitbox = false

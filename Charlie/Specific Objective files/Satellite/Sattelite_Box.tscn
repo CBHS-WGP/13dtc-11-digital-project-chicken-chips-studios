@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwuqvkxi0aqeo"]
+[gd_scene load_steps=8 format=3 uid="uid://dwuqvkxi0aqeo"]
 
 [ext_resource type="Script" uid="uid://bnrgcd7mxborh" path="res://Charlie/Specific Objective files/Satellite/item_pickup_script.gd" id="1_nwbxu"]
 [ext_resource type="PackedScene" uid="uid://cpvtn45yf4u2q" path="res://Patrick/SatBox/BoxSat.glb" id="2_nwbxu"]
@@ -13,6 +13,17 @@ albedo_color = Color(0, 1, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_nwbxu"]
 material = SubResource("StandardMaterial3D_f1uty")
 size = Vector3(1.1, 1.1, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de6q4"]
+albedo_color = Color(0, 1, 1, 1)
+emission_enabled = true
+emission = Color(0.474878, 0.527628, 0.701699, 1)
+emission_energy_multiplier = 2.84
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nwbxu"]
+material = SubResource("StandardMaterial3D_de6q4")
+bottom_radius = 0.1
+height = 100.0
 
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh") groups=["item"]]
 collision_layer = 33
@@ -30,3 +41,8 @@ shape = SubResource("BoxShape3D_f1uty")
 visible = false
 mesh = SubResource("BoxMesh_nwbxu")
 skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.6005, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_nwbxu")

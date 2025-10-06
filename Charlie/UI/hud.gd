@@ -7,9 +7,9 @@ func _process(_delta):
 	if Progress.current_objective == 0 or Progress.current_objective == 0.5:
 		$Main_Objective.text = str("Locate the sattellite for inspection")
 	elif Progress.current_objective == 1:
-		$Main_Objective.text = str("Locate the cube for the sattilite!")
+		$Main_Objective.text = str("Locate the cube for the satellite!")
 	elif Progress.current_objective == 1.5:
-		$Main_Objective.text = str("Use the parts to repair the sattelite")
+		$Main_Objective.text = str("Use the parts to repair the satellite")
 	elif Progress.current_objective == 2.1:
 		$Main_Objective.text = str("Find the weapons cache")
 	elif Progress.current_objective == 2.6:

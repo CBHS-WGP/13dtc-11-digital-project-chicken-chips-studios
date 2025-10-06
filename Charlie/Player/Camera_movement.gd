@@ -26,5 +26,4 @@ func _process(delta):
 	else:
 		#else give the player use of the mouse for the ui elements
 		mouse_pos = get_viewport().get_mouse_position()
-		Input.warp_mouse(mouse_pos)
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
